@@ -36,7 +36,7 @@ This repository contains the 2021 measure artifacts for all FHIR based eCQMs. It
 ## Refresh IG Processing
 
 Note that there are known issues with the refresh ig processing of MAT-extracted
-measure content that we are still working through as part of Connectathon 26 (2021-JAN).
+measure content that we are still working through.
 
 ## Extracting MAT Packages
 
