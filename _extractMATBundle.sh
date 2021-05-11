@@ -2,7 +2,7 @@
 #DO NOT EDIT WITH WINDOWS
 tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
 input_cache_path=./input-cache
-mat_bundle=/Users/abdulllahrafiqi/Desktop/GitRepo/ecqm-content-r4/bundles/mat/CMS124FHIR-v0-0-001-FHIR-4-0-1/CMS124FHIR-v0-0-001-FHIR-4-0-1.json
+mat_bundle=/Users/abdulllahrafiqi/Desktop/GitRepo/ecqm-content-r4-2021/bundles/mat/CMS125FHIR-v0-0-002-FHIR-4-0-1/CMS125FHIR-v0-0-002-FHIR-4-0-1.json
 
 set -e
 
