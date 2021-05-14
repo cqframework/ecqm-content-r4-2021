@@ -1,0 +1,24 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.196.12.1521",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1521",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.196.12.1521"
+  } ],
+  "version": "20200310",
+  "name": "Secobarbital",
+  "title": "Secobarbital",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:07-04:00",
+    "contains": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "312914",
+      "display": "secobarbital sodium 100 MG Oral Capsule"
+    } ]
+  }
+}

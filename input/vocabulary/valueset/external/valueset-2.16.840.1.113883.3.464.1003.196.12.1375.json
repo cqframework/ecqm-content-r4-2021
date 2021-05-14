@@ -1,0 +1,74 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.196.12.1375",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1375",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.196.12.1375"
+  } ],
+  "version": "20170504",
+  "name": "Dexbrompheniramine",
+  "title": "Dexbrompheniramine",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:05-04:00",
+    "contains": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1190580",
+      "display": "codeine phosphate 1.2 MG/ML / dexbrompheniramine maleate 0.133 MG/ML / pseudoephedrine hydrochloride 4 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1190600",
+      "display": "dexbrompheniramine maleate 0.133 MG/ML / dextromethorphan hydrobromide 2 MG/ML / pseudoephedrine hydrochloride 4 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1369403",
+      "display": "chlophedianol hydrochloride 2.5 MG/ML / dexbrompheniramine maleate 0.2 MG/ML / phenylephrine hydrochloride 1 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1441376",
+      "display": "chlophedianol hydrochloride 2.5 MG/ML / dexbrompheniramine maleate 0.2 MG/ML / pseudoephedrine hydrochloride 6 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1491637",
+      "display": "dexbrompheniramine maleate 1 MG / phenylephrine hydrochloride 5 MG Oral Tablet"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1539185",
+      "display": "dexbrompheniramine maleate 0.2 MG/ML / phenylephrine hydrochloride 1 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1545306",
+      "display": "dexbrompheniramine maleate 1 MG Chewable Tablet"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1545309",
+      "display": "dexbrompheniramine maleate 0.4 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1551286",
+      "display": "chlophedianol hydrochloride 2.5 MG/ML / dexbrompheniramine maleate 0.2 MG/ML Oral Solution"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1798453",
+      "display": "acetaminophen 500 MG / dexbrompheniramine maleate 1 MG Oral Tablet"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "2391334",
+      "display": "dexbrompheniramine maleate 2 MG / phenylephrine hydrochloride 7.5 MG Oral Tablet"
+    } ]
+  }
+}

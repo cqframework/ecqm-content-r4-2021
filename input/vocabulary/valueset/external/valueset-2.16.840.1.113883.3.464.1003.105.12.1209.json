@@ -1,0 +1,74 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.105.12.1209",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1209",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.105.12.1209"
+  } ],
+  "version": "20210224",
+  "name": "AlcoholWithdrawal",
+  "title": "Alcohol Withdrawal",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:04-04:00",
+    "contains": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F10.230",
+      "display": "Alcohol dependence with withdrawal, uncomplicated"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F10.231",
+      "display": "Alcohol dependence with withdrawal delirium"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F10.232",
+      "display": "Alcohol dependence with withdrawal with perceptual disturbance"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F10.239",
+      "display": "Alcohol dependence with withdrawal, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "191476005",
+      "display": "Alcohol withdrawal hallucinosis (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "191480000",
+      "display": "Alcohol withdrawal syndrome (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "288041000119101",
+      "display": "Perceptual disturbance due to alcohol withdrawal (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "308742005",
+      "display": "Alcohol withdrawal-induced convulsion (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "723926008",
+      "display": "Perceptual disturbances and seizures co-occurrent and due to alcohol withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "85561006",
+      "display": "Uncomplicated alcohol withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "8635005",
+      "display": "Alcohol withdrawal delirium (disorder)"
+    } ]
+  }
+}

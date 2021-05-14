@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.117.1.7.1.424",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.117.1.7.1.424"
+  } ],
+  "version": "20210220",
+  "name": "Non-ElectiveInpatientEncounter",
+  "title": "Non-Elective Inpatient Encounter",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "183452005",
+      "display": "Emergency hospital admission (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "32485007",
+      "display": "Hospital admission (procedure)"
+    } ]
+  }
+}

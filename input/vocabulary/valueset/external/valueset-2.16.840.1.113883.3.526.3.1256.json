@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.526.3.1256",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1256",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.526.3.1256"
+  } ],
+  "version": "20170504",
+  "name": "AllergytoInfluenzaVaccine",
+  "title": "Allergy to Influenza Vaccine",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:05-04:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "294648008",
+      "display": "Allergy to influenza split virion vaccine (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "294649000",
+      "display": "Allergy to influenza surface antigen vaccine (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "294647003",
+      "display": "Allergy to vaccine product containing Influenza virus antigen (finding)"
+    } ]
+  }
+}

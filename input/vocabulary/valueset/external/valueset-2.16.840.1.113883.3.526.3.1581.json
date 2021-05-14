@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.526.3.1581",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1581",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.526.3.1581"
+  } ],
+  "version": "20200307",
+  "name": "LifestyleRecommendation",
+  "title": "Lifestyle Recommendation",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "313204009",
+      "display": "Lifestyle education (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "39155009",
+      "display": "Hypertension education (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "443402002",
+      "display": "Lifestyle education regarding hypertension (procedure)"
+    } ]
+  }
+}

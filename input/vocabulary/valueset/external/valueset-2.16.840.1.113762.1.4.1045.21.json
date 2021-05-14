@@ -1,0 +1,69 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1045.21",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.21",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113762.1.4.1045.21"
+  } ],
+  "version": "20210220",
+  "name": "IntravenousorIntra-arterialThrombolytic(t-PA)Therapy",
+  "title": "Intravenous or Intra-arterial Thrombolytic (t-PA) Therapy",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E03017",
+      "display": "Introduction of Other Thrombolytic into Peripheral Vein, Open Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E03317",
+      "display": "Introduction of Other Thrombolytic into Peripheral Vein, Percutaneous Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E04017",
+      "display": "Introduction of Other Thrombolytic into Central Vein, Open Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E04317",
+      "display": "Introduction of Other Thrombolytic into Central Vein, Percutaneous Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E05017",
+      "display": "Introduction of Other Thrombolytic into Peripheral Artery, Open Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E05317",
+      "display": "Introduction of Other Thrombolytic into Peripheral Artery, Percutaneous Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E06017",
+      "display": "Introduction of Other Thrombolytic into Central Artery, Open Approach"
+    }, {
+      "system": "http://www.cms.gov/Medicare/Coding/ICD10",
+      "version": "2021",
+      "code": "3E06317",
+      "display": "Introduction of Other Thrombolytic into Central Artery, Percutaneous Approach"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "307521008",
+      "display": "Intravenous infusion of thrombolytic (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "69245005",
+      "display": "Intra-arterial infusion of thrombolytic agent (procedure)"
+    } ]
+  }
+}

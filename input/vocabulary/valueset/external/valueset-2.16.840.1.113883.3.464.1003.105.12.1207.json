@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.105.12.1207",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1207",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.105.12.1207"
+  } ],
+  "version": "20210224",
+  "name": "REMSleepBehaviorDisorder",
+  "title": "REM Sleep Behavior Disorder",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:07-04:00",
+    "contains": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "G47.52",
+      "display": "REM sleep behavior disorder"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "415238003",
+      "display": "Rapid eye movement sleep behavior disorder (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "69020003",
+      "display": "Abnormal rapid eye movement sleep (finding)"
+    } ]
+  }
+}

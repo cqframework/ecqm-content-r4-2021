@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.526.3.1176",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1176",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.526.3.1176"
+  } ],
+  "version": "20170504",
+  "name": "HeartRate",
+  "title": "Heart Rate",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "68999-2",
+      "display": "Heart rate --supine"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "69000-8",
+      "display": "Heart rate --sitting"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "69001-6",
+      "display": "Heart rate --standing"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "code": "8867-4",
+      "display": "Heart rate"
+    } ]
+  }
+}

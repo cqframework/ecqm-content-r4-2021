@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.110.12.1088",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1088",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.110.12.1088"
+  } ],
+  "version": "20210224",
+  "name": "InfluenzaVirusLAIVProcedure",
+  "title": "Influenza Virus LAIV Procedure",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021",
+      "code": "90660",
+      "display": "Influenza virus vaccine, trivalent, live (LAIV3), for intranasal use"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021",
+      "code": "90672",
+      "display": "Influenza virus vaccine, quadrivalent, live (LAIV4), for intranasal use"
+    } ]
+  }
+}

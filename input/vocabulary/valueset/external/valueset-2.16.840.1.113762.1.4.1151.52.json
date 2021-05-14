@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1151.52",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1151.52",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113762.1.4.1151.52"
+  } ],
+  "version": "20200207",
+  "name": "BCGBacillusCalmetteGuerinforUrologyCare",
+  "title": "BCG Bacillus Calmette Guerin for Urology Care",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:05-04:00",
+    "contains": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1653484",
+      "display": "BCG, live, Tice strain 50 MG/ML Topical Suspension"
+    }, {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "code": "1653579",
+      "display": "BCG, live, Tice strain 50 MG Injection"
+    } ]
+  }
+}

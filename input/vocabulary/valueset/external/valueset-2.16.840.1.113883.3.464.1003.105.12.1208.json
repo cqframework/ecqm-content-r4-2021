@@ -1,0 +1,154 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.105.12.1208",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1208",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.105.12.1208"
+  } ],
+  "version": "20210224",
+  "name": "BenzodiazepineWithdrawal",
+  "title": "Benzodiazepine Withdrawal",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:05-04:00",
+    "contains": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.230",
+      "display": "Sedative, hypnotic or anxiolytic dependence with withdrawal, uncomplicated"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.231",
+      "display": "Sedative, hypnotic or anxiolytic dependence with withdrawal delirium"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.232",
+      "display": "Sedative, hypnotic or anxiolytic dependence with withdrawal with perceptual disturbance"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.239",
+      "display": "Sedative, hypnotic or anxiolytic dependence with withdrawal, unspecified"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.930",
+      "display": "Sedative, hypnotic or anxiolytic use, unspecified with withdrawal, uncomplicated"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.931",
+      "display": "Sedative, hypnotic or anxiolytic use, unspecified with withdrawal delirium"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.932",
+      "display": "Sedative, hypnotic or anxiolytic use, unspecified with withdrawal with perceptual disturbances"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "code": "F13.939",
+      "display": "Sedative, hypnotic or anxiolytic use, unspecified with withdrawal, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "361150008",
+      "display": "Sedative, hypnotic AND/OR anxiolytic withdrawal delirium (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "10028000",
+      "display": "Uncomplicated sedative, hypnotic AND/OR anxiolytic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "23601000119102",
+      "display": "Sedative withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "361151007",
+      "display": "Sedative withdrawal delirium (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "703849002",
+      "display": "Benzodiazepine withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "703850002",
+      "display": "Benzodiazepine withdrawal delirium (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724660009",
+      "display": "Hypnotic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724661008",
+      "display": "Anxiolytic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724662001",
+      "display": "Sedative withdrawal without complication (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724663006",
+      "display": "Hypnotic withdrawal without complication (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724664000",
+      "display": "Anxiolytic withdrawal without complication (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724665004",
+      "display": "Perceptual disturbances co-occurrent and due to sedative withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724666003",
+      "display": "Perceptual disturbances co-occurrent and due to hypnotic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724667007",
+      "display": "Perceptual disturbances co-occurrent and due to anxiolytic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724668002",
+      "display": "Seizure co-occurrent and due to sedative withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724669005",
+      "display": "Seizure co-occurrent and due to hypnotic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724670006",
+      "display": "Seizure co-occurrent and due to anxiolytic withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724671005",
+      "display": "Perceptual disturbances and seizures co-occurrent and due to sedative withdrawal (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "724672003",
+      "display": "Perceptual disturbances and seizures co-occurrent and due to hypnotic withdrawal (disorder)"
+    } ]
+  }
+}

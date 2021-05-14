@@ -1,0 +1,129 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.110.12.1041",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1041",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.110.12.1041"
+  } ],
+  "version": "20170504",
+  "name": "HepatitisAVaccineAdministered",
+  "title": "Hepatitis A Vaccine Administered",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021",
+      "code": "90633",
+      "display": "Hepatitis A vaccine (HepA), pediatric/adolescent dosage-2 dose schedule, for intramuscular use"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "313188000",
+      "display": "First hepatitis A junior vaccination (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "313189008",
+      "display": "Second hepatitis A junior vaccination (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "412742005",
+      "display": "Third hepatitis A junior vaccination (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "code": "412743000",
+      "display": "Booster hepatitis A junior vaccination (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170378007",
+      "display": "Administration of first dose of pediatric vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170379004",
+      "display": "Administration of second dose of vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170380001",
+      "display": "Administration of third dose of vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170381002",
+      "display": "Administration of booster dose of vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170434002",
+      "display": "Administration of first dose of vaccine product containing only Hepatitis A and Hepatitis B virus antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170435001",
+      "display": "Administration of second dose of vaccine product containing only Hepatitis A and B virus antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170436000",
+      "display": "Administration of third dose of vaccine product containing only Hepatitis A and Hepatitis B virus antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "170437009",
+      "display": "Administration of booster dose of vaccine product containing only Hepatitis A and Hepatitis B virus antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "243789007",
+      "display": "Administration of vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "312868009",
+      "display": "Administration of vaccine product containing only Hepatitis A and Hepatitis B virus antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "314177003",
+      "display": "Administration of vaccine product containing only Hepatitis A virus and Salmonella enterica subspecies enterica serovar Typhi antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "314178008",
+      "display": "Administration of first dose of vaccine product containing only Hepatitis A virus and Salmonella enterica subspecies enterica serovar Typhi antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "314179000",
+      "display": "Administration of second dose of vaccine product containing only Hepatitis A virus and Salmonella enterica subspecies enterica serovar Typhi antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "394691002",
+      "display": "Administration of booster dose of vaccine product containing only Hepatitis A virus and Salmonella enterica subspecies enterica serovar Typhi antigens (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "871752004",
+      "display": "Administration of second dose of pediatric vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "871753009",
+      "display": "Administration of third dose of pediatric vaccine product containing only Hepatitis A virus antigen (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "871754003",
+      "display": "Administration of booster dose of pediatric vaccine product containing only Hepatitis A virus antigen (procedure)"
+    } ]
+  }
+}

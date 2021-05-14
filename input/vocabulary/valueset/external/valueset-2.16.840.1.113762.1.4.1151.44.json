@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1151.44",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1151.44",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113762.1.4.1151.44"
+  } ],
+  "version": "20170303",
+  "name": "UnavailabilityofBacillusCalmetteGuerinforurologycare",
+  "title": "Unavailability of Bacillus Calmette Guerin for urology care",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:07-04:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "182856006",
+      "display": "Drug not available - out of stock (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "182857002",
+      "display": "Drug not available-off market (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "242990004",
+      "display": "Drug not available for administration (event)"
+    } ]
+  }
+}

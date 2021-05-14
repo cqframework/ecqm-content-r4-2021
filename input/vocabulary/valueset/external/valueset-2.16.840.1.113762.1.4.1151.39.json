@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1151.39",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1151.39",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113762.1.4.1151.39"
+  } ],
+  "version": "20170302",
+  "name": "MixedhistologyurothelialcellcarcinomaforUrologyCare",
+  "title": "Mixed histology urothelial cell carcinoma for Urology Care",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:06-04:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "128639004",
+      "display": "Transitional cell carcinoma, micropapillary (morphologic abnormality)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "255111004",
+      "display": "Squamous cell carcinoma of bladder (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "278046008",
+      "display": "Sarcoma of bladder (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "35917007",
+      "display": "Adenocarcinoma, no subtype (morphologic abnormality)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "59509005",
+      "display": "Plasmacytoid cell (morphologic abnormality)"
+    } ]
+  }
+}

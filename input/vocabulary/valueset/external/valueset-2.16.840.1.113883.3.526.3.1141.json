@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.526.3.1141",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1141",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.526.3.1141"
+  } ],
+  "version": "20190315",
+  "name": "Psychoanalysis",
+  "title": "Psychoanalysis",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "timestamp": "2021-05-11T15:44:07-04:00",
+    "contains": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021",
+      "code": "90845",
+      "display": "Psychoanalysis"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "28988002",
+      "display": "Psychoanalysis in depth (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "code": "61436009",
+      "display": "Psychoanalysis (procedure)"
+    } ]
+  }
+}
