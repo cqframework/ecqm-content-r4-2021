@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,EnableResultTypes" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="NCQA_Encounter" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1"/>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:54" localIdentifier="FHIRHelpers" path="FHIRHelpers" version="4.0.1"/>
+      <def localId="3" locator="6:1-6:53" localIdentifier="FHIRBase" path="NCQA_FHIRBase" version="1.0.0"/>
+      <def localId="4" locator="7:1-7:49" localIdentifier="Status" path="NCQA_Status" version="1.0.0"/>
+      <def localId="5" locator="8:1-8:59" localIdentifier="Terminology" path="NCQA_Terminology" version="1.0.0"/>
+   </includes>
+   <statements>
+      <def localId="30" locator="10:1-16:3" resultTypeName="t:Boolean" name="Encounter Has Diagnosis" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="30">
+               <a:s>define function &quot;Encounter Has Diagnosis&quot;(Encounter </a:s>
+               <a:s r="6">
+                  <a:s>FHIR.Encounter</a:s>
+               </a:s>
+               <a:s>, Conditions </a:s>
+               <a:s r="8">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="7">
+                     <a:s>FHIR.Condition</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="29">
+                  <a:s r="29">
+                     <a:s>AnyTrue(</a:s>
+                     <a:s r="28">
+                        <a:s>
+                           <a:s r="16">
+                              <a:s r="15">
+                                 <a:s>(</a:s>
+                                 <a:s r="15">
+                                    <a:s>
+                                       <a:s r="10">
+                                          <a:s r="9">
+                                             <a:s>
+                                                <a:s>Encounter.diagnosis</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> D</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>&#xd;
+      </a:s>
+                                    <a:s r="14">
+                                       <a:s>return </a:s>
+                                       <a:s r="13">
+                                          <a:s r="12">
+                                             <a:s r="11">
+                                                <a:s>D</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="12">
+                                                <a:s>condition</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="13">
+                                             <a:s>reference</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>CRef</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>&#xd;
+      </a:s>
+                        <a:s r="27">
+                           <a:s>return </a:s>
+                           <a:s r="26">
+                              <a:s>exists</a:s>
+                              <a:s r="25">
+                                 <a:s>(</a:s>
+                                 <a:s r="25">
+                                    <a:s>
+                                       <a:s r="18">
+                                          <a:s r="17">
+                                             <a:s>
+                                                <a:s>Conditions</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> C</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>&#xd;
+          </a:s>
+                                    <a:s r="24">
+                                       <a:s>where </a:s>
+                                       <a:s r="24">
+                                          <a:s r="20">
+                                             <a:s r="19">
+                                                <a:s>C</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="20">
+                                                <a:s>id</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> = </a:s>
+                                          <a:s r="23">
+                                             <a:s r="21">
+                                                <a:s>FHIRBase</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="23">
+                                                <a:s>&quot;GetId&quot;(</a:s>
+                                                <a:s r="22">
+                                                   <a:s>CRef</a:s>
+                                                </a:s>
+                                                <a:s>)</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+      )</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="29" locator="11:3-16:3" resultTypeName="t:Boolean" xsi:type="AnyTrue">
+            <source localId="28" locator="11:11-15:7" xsi:type="Query">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <source localId="16" locator="11:11-12:39" alias="CRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <expression localId="15" locator="11:11-12:35" xsi:type="Query">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <source localId="10" locator="11:12-11:32" alias="D">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Encounter.Diagnosis" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <expression localId="9" locator="11:12-11:30" path="diagnosis" xsi:type="Property">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Encounter.Diagnosis" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <source name="Encounter" xsi:type="OperandRef"/>
+                        </expression>
+                     </source>
+                     <return localId="14" locator="12:7-12:34">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <expression localId="13" locator="12:14-12:34" resultTypeName="fhir:string" path="reference" xsi:type="Property">
+                           <source localId="12" locator="12:14-12:24" resultTypeName="fhir:Reference" path="condition" scope="D" xsi:type="Property"/>
+                        </expression>
+                     </return>
+                  </expression>
+               </source>
+               <return localId="27" locator="13:7-15:7">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="t:Boolean" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <expression localId="26" locator="13:14-15:7" resultTypeName="t:Boolean" xsi:type="Exists">
+                     <operand localId="25" locator="13:20-15:7" xsi:type="Query">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <source localId="18" locator="13:21-13:32" alias="C">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <expression localId="17" locator="13:21-13:30" name="Conditions" xsi:type="OperandRef">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                           </expression>
+                        </source>
+                        <where localId="24" locator="14:11-14:45" resultTypeName="t:Boolean" xsi:type="Equal">
+                           <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="20" locator="14:17-14:20" resultTypeName="fhir:id" path="id" scope="C" xsi:type="Property"/>
+                           </operand>
+                           <operand localId="23" locator="14:24-14:45" resultTypeName="t:String" name="GetId" libraryName="FHIRBase" xsi:type="FunctionRef">
+                              <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="22" locator="14:41-14:44" resultTypeName="fhir:string" name="CRef" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                     </operand>
+                  </expression>
+               </return>
+            </source>
+         </expression>
+         <operand name="Encounter">
+            <operandTypeSpecifier localId="6" locator="10:53-10:66" resultTypeName="fhir:Encounter" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="Conditions">
+            <operandTypeSpecifier localId="8" locator="10:80-10:99" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="7" locator="10:85-10:98" resultTypeName="fhir:Condition" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="59" locator="18:1-24:5" resultTypeName="t:Boolean" name="Encounter Has Principal Diagnosis" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="59">
+               <a:s>define function &quot;Encounter Has Principal Diagnosis&quot;(Encounter </a:s>
+               <a:s r="31">
+                  <a:s>FHIR.Encounter</a:s>
+               </a:s>
+               <a:s>, Conditions </a:s>
+               <a:s r="33">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="32">
+                     <a:s>FHIR.Condition</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="58">
+                  <a:s r="58">
+                     <a:s>
+                        <a:s r="44">
+                           <a:s r="43">
+                              <a:s>( </a:s>
+                              <a:s r="43">
+                                 <a:s>singleton from </a:s>
+                                 <a:s r="42">
+                                    <a:s>( </a:s>
+                                    <a:s r="42">
+                                       <a:s>
+                                          <a:s r="35">
+                                             <a:s r="34">
+                                                <a:s>
+                                                   <a:s>Encounter.diagnosis</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> D</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>&#xd;
+      </a:s>
+                                       <a:s r="41">
+                                          <a:s>where </a:s>
+                                          <a:s r="41">
+                                             <a:s r="39">
+                                                <a:s r="36">
+                                                   <a:s>FHIRHelpers</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="39">
+                                                   <a:s>ToInteger ( </a:s>
+                                                   <a:s r="38">
+                                                      <a:s r="37">
+                                                         <a:s>D</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="38">
+                                                         <a:s>rank</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> )</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s r="40"> = 1</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>&#xd;
+  )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> PrincipalDiagnosis</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="57">
+                        <a:s>return </a:s>
+                        <a:s r="56">
+                           <a:s>exists </a:s>
+                           <a:s r="55">
+                              <a:s>( </a:s>
+                              <a:s r="55">
+                                 <a:s>
+                                    <a:s r="46">
+                                       <a:s r="45">
+                                          <a:s>
+                                             <a:s>Conditions</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> C</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+        </a:s>
+                                 <a:s r="54">
+                                    <a:s>where </a:s>
+                                    <a:s r="54">
+                                       <a:s r="48">
+                                          <a:s r="47">
+                                             <a:s>C</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="48">
+                                             <a:s>id</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> = </a:s>
+                                       <a:s r="53">
+                                          <a:s r="49">
+                                             <a:s>FHIRBase</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="53">
+                                             <a:s>&quot;GetId&quot; ( </a:s>
+                                             <a:s r="52">
+                                                <a:s r="51">
+                                                   <a:s r="50">
+                                                      <a:s>PrincipalDiagnosis</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="51">
+                                                      <a:s>condition</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="52">
+                                                   <a:s>reference</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> )</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+    )</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="58" locator="19:3-24:5" resultTypeName="t:Boolean" xsi:type="Query">
+            <source localId="44" locator="19:3-21:24" resultTypeName="fhir:Encounter.Diagnosis" alias="PrincipalDiagnosis">
+               <expression localId="43" locator="19:3-21:5" resultTypeName="fhir:Encounter.Diagnosis" xsi:type="SingletonFrom">
+                  <operand localId="42" locator="19:20-21:3" xsi:type="Query">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Encounter.Diagnosis" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <source localId="35" locator="19:22-19:42" alias="D">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Encounter.Diagnosis" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <expression localId="34" locator="19:22-19:40" path="diagnosis" xsi:type="Property">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Encounter.Diagnosis" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <source name="Encounter" xsi:type="OperandRef"/>
+                        </expression>
+                     </source>
+                     <where localId="41" locator="20:7-20:48" resultTypeName="t:Boolean" xsi:type="Equal">
+                        <operand localId="39" locator="20:13-20:44" resultTypeName="t:Integer" name="ToInteger" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="38" locator="20:37-20:42" resultTypeName="fhir:positiveInt" path="rank" scope="D" xsi:type="Property"/>
+                        </operand>
+                        <operand localId="40" locator="20:48" resultTypeName="t:Integer" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     </where>
+                  </operand>
+               </expression>
+            </source>
+            <return localId="57" locator="22:5-24:5" resultTypeName="t:Boolean">
+               <expression localId="56" locator="22:12-24:5" resultTypeName="t:Boolean" xsi:type="Exists">
+                  <operand localId="55" locator="22:19-24:5" xsi:type="Query">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <source localId="46" locator="22:21-22:32" alias="C">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <expression localId="45" locator="22:21-22:30" name="Conditions" xsi:type="OperandRef">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                        </expression>
+                     </source>
+                     <where localId="54" locator="23:9-23:80" resultTypeName="t:Boolean" xsi:type="Equal">
+                        <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="48" locator="23:15-23:18" resultTypeName="fhir:id" path="id" scope="C" xsi:type="Property"/>
+                        </operand>
+                        <operand localId="53" locator="23:22-23:80" resultTypeName="t:String" name="GetId" libraryName="FHIRBase" xsi:type="FunctionRef">
+                           <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="52" locator="23:41-23:78" resultTypeName="fhir:string" path="reference" xsi:type="Property">
+                                 <source localId="51" locator="23:41-23:68" resultTypeName="fhir:Reference" path="condition" scope="PrincipalDiagnosis" xsi:type="Property"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                     </where>
+                  </operand>
+               </expression>
+            </return>
+         </expression>
+         <operand name="Encounter">
+            <operandTypeSpecifier localId="31" locator="18:63-18:76" resultTypeName="fhir:Encounter" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="Conditions">
+            <operandTypeSpecifier localId="33" locator="18:90-18:109" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="32" locator="18:95-18:108" resultTypeName="fhir:Condition" name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="77" locator="26:1-30:3" resultTypeName="t:Boolean" name="Encounter Completed during Period" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="77">
+               <a:s>define function &quot;Encounter Completed during Period&quot;(Enc </a:s>
+               <a:s r="61">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="60">
+                     <a:s>FHIR.Encounter</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, timeperiod </a:s>
+               <a:s r="63">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="62">
+                     <a:s>DateTime</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="76">
+                  <a:s r="76">
+                     <a:s>exists </a:s>
+                     <a:s r="75">
+                        <a:s>( </a:s>
+                        <a:s r="75">
+                           <a:s>
+                              <a:s r="67">
+                                 <a:s r="66">
+                                    <a:s>( </a:s>
+                                    <a:s r="66">
+                                       <a:s r="64">
+                                          <a:s>Status</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="66">
+                                          <a:s>&quot;Finished Encounter&quot; ( </a:s>
+                                          <a:s r="65">
+                                             <a:s>Enc</a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                                 <a:s> EncounterPeriod</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>&#xd;
+      </a:s>
+                           <a:s r="74">
+                              <a:s>where &#xd;
+      </a:s>
+                              <a:s r="74">
+                                 <a:s r="72">
+                                    <a:s>end of </a:s>
+                                    <a:s r="71">
+                                       <a:s r="68">
+                                          <a:s>FHIRBase</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="71">
+                                          <a:s>&quot;Normalize Interval&quot; ( </a:s>
+                                          <a:s r="70">
+                                             <a:s r="69">
+                                                <a:s>EncounterPeriod</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="70">
+                                                <a:s>period</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="74"> during </a:s>
+                                 <a:s r="73">
+                                    <a:s>timeperiod</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>&#xd;
+  )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="76" locator="27:3-30:3" resultTypeName="t:Boolean" xsi:type="Exists">
+            <operand localId="75" locator="27:10-30:3" xsi:type="Query">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <source localId="67" locator="27:12-27:66" alias="EncounterPeriod">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <expression localId="66" locator="27:12-27:50" name="Finished Encounter" libraryName="Status" xsi:type="FunctionRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <operand localId="65" locator="27:44-27:46" name="Enc" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </expression>
+               </source>
+               <where localId="74" locator="28:7-29:87" resultTypeName="t:Boolean" xsi:type="In">
+                  <operand localId="72" locator="29:7-29:69" resultTypeName="t:DateTime" xsi:type="End">
+                     <operand localId="71" locator="29:14-29:69" name="Normalize Interval" libraryName="FHIRBase" xsi:type="FunctionRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <operand xsi:type="As">
+                           <operand localId="70" locator="29:46-29:67" resultTypeName="fhir:Period" path="period" scope="EncounterPeriod" xsi:type="Property"/>
+                           <asTypeSpecifier xsi:type="ChoiceTypeSpecifier">
+                              <choice name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:Timing" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:Age" xsi:type="NamedTypeSpecifier"/>
+                              <choice name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+                           </asTypeSpecifier>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="73" locator="29:78-29:87" name="timeperiod" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+         <operand name="Enc">
+            <operandTypeSpecifier localId="61" locator="26:57-26:76" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="60" locator="26:62-26:75" resultTypeName="fhir:Encounter" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="timeperiod">
+            <operandTypeSpecifier localId="63" locator="26:90-26:107" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="62" locator="26:99-26:106" resultTypeName="t:DateTime" name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="96" locator="32:1-35:64" name="Finished Encounter with Telehealth POS" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="96">
+               <a:s>define function &quot;Finished Encounter with Telehealth POS&quot;(Encounter </a:s>
+               <a:s r="79">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="78">
+                     <a:s>FHIR.Encounter</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="95">
+                  <a:s r="95">
+                     <a:s>
+                        <a:s r="83">
+                           <a:s r="82">
+                              <a:s>( </a:s>
+                              <a:s r="82">
+                                 <a:s r="80">
+                                    <a:s>Status</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="82">
+                                    <a:s>&quot;Finished Encounter&quot; ( </a:s>
+                                    <a:s r="81">
+                                       <a:s>Encounter</a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="94">
+                        <a:s>where </a:s>
+                        <a:s r="94">
+                           <a:s r="86">
+                              <a:s r="85">
+                                 <a:s r="84">
+                                    <a:s>E</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="85">
+                                    <a:s>class</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> is not null</a:s>
+                           </a:s>
+                           <a:s>&#xd;
+      and </a:s>
+                           <a:s r="93">
+                              <a:s r="90">
+                                 <a:s r="87">
+                                    <a:s>FHIRHelpers</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="90">
+                                    <a:s>ToCode ( </a:s>
+                                    <a:s r="89">
+                                       <a:s r="88">
+                                          <a:s>E</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="89">
+                                          <a:s>class</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> ~ </a:s>
+                              <a:s r="92">
+                                 <a:s r="91">
+                                    <a:s>Terminology</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="92">
+                                    <a:s>&quot;virtual&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="95" locator="33:3-35:64" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <source localId="83" locator="33:3-33:49" alias="E">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="82" locator="33:3-33:47" name="Finished Encounter" libraryName="Status" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <operand localId="81" locator="33:35-33:43" name="Encounter" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </source>
+            <where localId="94" locator="34:5-35:64" resultTypeName="t:Boolean" xsi:type="And">
+               <operand localId="86" locator="34:11-34:29" resultTypeName="t:Boolean" xsi:type="Not">
+                  <operand locator="34:11-34:29" resultTypeName="t:Boolean" xsi:type="IsNull">
+                     <operand localId="85" locator="34:11-34:17" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                  </operand>
+               </operand>
+               <operand localId="93" locator="35:11-35:64" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                  <operand localId="90" locator="35:11-35:40" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="89" locator="35:32-35:38" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                  </operand>
+                  <operand localId="92" locator="35:44-35:64" resultTypeName="t:Code" name="virtual" libraryName="Terminology" xsi:type="CodeRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Encounter">
+            <operandTypeSpecifier localId="79" locator="32:68-32:87" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="78" locator="32:73-32:86" resultTypeName="fhir:Encounter" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="123" locator="37:1-42:7" name="Finished Encounter with Outpatient POS" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="123">
+               <a:s>define function &quot;Finished Encounter with Outpatient POS&quot;(Encounter </a:s>
+               <a:s r="98">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="97">
+                     <a:s>FHIR.Encounter</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="122">
+                  <a:s r="122">
+                     <a:s>
+                        <a:s r="102">
+                           <a:s r="101">
+                              <a:s>( </a:s>
+                              <a:s r="101">
+                                 <a:s r="99">
+                                    <a:s>Status</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="101">
+                                    <a:s>&quot;Finished Encounter&quot; ( </a:s>
+                                    <a:s r="100">
+                                       <a:s>Encounter</a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="121">
+                        <a:s>where </a:s>
+                        <a:s r="121">
+                           <a:s r="105">
+                              <a:s r="104">
+                                 <a:s r="103">
+                                    <a:s>E</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="104">
+                                    <a:s>class</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> is not null</a:s>
+                           </a:s>
+                           <a:s>&#xd;
+      and </a:s>
+                           <a:s r="120">
+                              <a:s>( </a:s>
+                              <a:s r="120">
+                                 <a:s r="112">
+                                    <a:s r="109">
+                                       <a:s r="106">
+                                          <a:s>FHIRHelpers</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="109">
+                                          <a:s>ToCode ( </a:s>
+                                          <a:s r="108">
+                                             <a:s r="107">
+                                                <a:s>E</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="108">
+                                                <a:s>class</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> ~ </a:s>
+                                    <a:s r="111">
+                                       <a:s r="110">
+                                          <a:s>Terminology</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="111">
+                                          <a:s>&quot;ambulatory&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+          or </a:s>
+                                 <a:s r="119">
+                                    <a:s r="116">
+                                       <a:s r="113">
+                                          <a:s>FHIRHelpers</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="116">
+                                          <a:s>ToCode ( </a:s>
+                                          <a:s r="115">
+                                             <a:s r="114">
+                                                <a:s>E</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="115">
+                                                <a:s>class</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> ~ </a:s>
+                                    <a:s r="118">
+                                       <a:s r="117">
+                                          <a:s>Terminology</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="118">
+                                          <a:s>&quot;home health&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+      )</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="122" locator="38:3-42:7" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <source localId="102" locator="38:3-38:49" alias="E">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="101" locator="38:3-38:47" name="Finished Encounter" libraryName="Status" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <operand localId="100" locator="38:35-38:43" name="Encounter" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </source>
+            <where localId="121" locator="39:5-42:7" resultTypeName="t:Boolean" xsi:type="And">
+               <operand localId="105" locator="39:11-39:29" resultTypeName="t:Boolean" xsi:type="Not">
+                  <operand locator="39:11-39:29" resultTypeName="t:Boolean" xsi:type="IsNull">
+                     <operand localId="104" locator="39:11-39:17" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                  </operand>
+               </operand>
+               <operand localId="120" locator="40:11-42:7" resultTypeName="t:Boolean" xsi:type="Or">
+                  <operand localId="112" locator="40:13-40:69" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                     <operand localId="109" locator="40:13-40:42" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="108" locator="40:34-40:40" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                     </operand>
+                     <operand localId="111" locator="40:46-40:69" resultTypeName="t:Code" name="ambulatory" libraryName="Terminology" xsi:type="CodeRef"/>
+                  </operand>
+                  <operand localId="119" locator="41:14-41:71" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                     <operand localId="116" locator="41:14-41:43" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="115" locator="41:35-41:41" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                     </operand>
+                     <operand localId="118" locator="41:47-41:71" resultTypeName="t:Code" name="home health" libraryName="Terminology" xsi:type="CodeRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Encounter">
+            <operandTypeSpecifier localId="98" locator="37:68-37:87" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="97" locator="37:73-37:86" resultTypeName="fhir:Encounter" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="142" locator="44:1-47:67" name="Finished Encounter with Ambulatory POS" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="142">
+               <a:s>define function &quot;Finished Encounter with Ambulatory POS&quot;(Encounter </a:s>
+               <a:s r="125">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="124">
+                     <a:s>FHIR.Encounter</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="141">
+                  <a:s r="141">
+                     <a:s>
+                        <a:s r="129">
+                           <a:s r="128">
+                              <a:s>( </a:s>
+                              <a:s r="128">
+                                 <a:s r="126">
+                                    <a:s>Status</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="128">
+                                    <a:s>&quot;Finished Encounter&quot; ( </a:s>
+                                    <a:s r="127">
+                                       <a:s>Encounter</a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="140">
+                        <a:s>where </a:s>
+                        <a:s r="140">
+                           <a:s r="132">
+                              <a:s r="131">
+                                 <a:s r="130">
+                                    <a:s>E</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="131">
+                                    <a:s>class</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> is not null</a:s>
+                           </a:s>
+                           <a:s>&#xd;
+      and </a:s>
+                           <a:s r="139">
+                              <a:s r="136">
+                                 <a:s r="133">
+                                    <a:s>FHIRHelpers</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="136">
+                                    <a:s>ToCode ( </a:s>
+                                    <a:s r="135">
+                                       <a:s r="134">
+                                          <a:s>E</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="135">
+                                          <a:s>class</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> ~ </a:s>
+                              <a:s r="138">
+                                 <a:s r="137">
+                                    <a:s>Terminology</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="138">
+                                    <a:s>&quot;ambulatory&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="141" locator="45:3-47:67" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <source localId="129" locator="45:3-45:49" alias="E">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="128" locator="45:3-45:47" name="Finished Encounter" libraryName="Status" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <operand localId="127" locator="45:35-45:43" name="Encounter" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </source>
+            <where localId="140" locator="46:5-47:67" resultTypeName="t:Boolean" xsi:type="And">
+               <operand localId="132" locator="46:11-46:29" resultTypeName="t:Boolean" xsi:type="Not">
+                  <operand locator="46:11-46:29" resultTypeName="t:Boolean" xsi:type="IsNull">
+                     <operand localId="131" locator="46:11-46:17" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                  </operand>
+               </operand>
+               <operand localId="139" locator="47:11-47:67" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                  <operand localId="136" locator="47:11-47:40" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="135" locator="47:32-47:38" resultTypeName="fhir:Coding" path="class" scope="E" xsi:type="Property"/>
+                  </operand>
+                  <operand localId="138" locator="47:44-47:67" resultTypeName="t:Code" name="ambulatory" libraryName="Terminology" xsi:type="CodeRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Encounter">
+            <operandTypeSpecifier localId="125" locator="44:68-44:87" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="124" locator="44:73-44:86" resultTypeName="fhir:Encounter" name="fhir:Encounter" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+   </statements>
+</library>
+
+

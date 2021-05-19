@@ -1,0 +1,619 @@
+<!DOCTYPE html><html><head><title>Breast Cancer Screening</title></head><body><style>
+                    .body {
+                        font-family: Lato, Arial, Helvetica, sans-serif;
+                    }
+
+                    .narrativeTable {
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        width: 100%;
+                        table-layout: fixed;
+                    }
+                    .narrativeTable > tbody.title > tr > th, .narrativeTable > tbody.title > tr > td {
+                        border: 1px solid black;
+                        padding-top: 1em;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+
+                    .narrativeTable > tbody.title > tr > th:first-of-type {
+                        background-color: lightgray;
+                        width: 150px;
+                    }
+                    .narrativeTable > tbody.title > tr > td:first-of-type {
+                        width: 300px;
+                    }
+                    .narrativeTable > tbody.title > tr > th:last-of-type {
+                        background-color: lightgray;
+                        width: 100px;
+                        white-space:nowrap;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                    }
+                    .narrativeTable > tbody.title > tr > td:last-of-type {
+                        width: 150px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                    }
+
+                    .narrativeTable > tbody.a > tr > th, .narrativeTable > tbody.a > tr > td {
+                        border: 1px solid black;
+                        padding-top: 1em;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    .narrativeTable > tbody.a > tr > th {
+                        background-color: lightgray;
+                        width: 100px;
+                    }
+                    .narrativeTable > tbody.a > tr > td {
+                        width: 90%;
+                    }
+
+
+                    .narrativeTable > tbody.b tr:first-child > th {
+                        text-align: left;
+                        vertical-align: top;
+                        padding-top: 1em;
+                        padding-bottom: 0.5em;
+                        background-color: lightgray;
+                        border-bottom: 1px solid black;
+                        border-top: 1px solid black;
+                        width: 100px;
+                    }
+                    .narrativeTable > tbody.b > tr > td:first-child:not(:only-child) {
+                        font-weight: bold;
+                        border-right: 1px solid black;
+                    }
+
+                    .narrativeTable > tbody.b > tr > td:last-child:not(:only-child) {
+                        /*width: 90%;*/
+                        border-right: 1px solid black;
+                    }
+
+                    .narrativeTable > tbody.b > tr > td {
+                        padding-top: 1em;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+
+                    .narrativeTable td, .narrativeTable th {
+                        padding-left: 8px;
+                        padding-right: 8px;
+                    }
+
+                    .body pre {
+                        white-space: pre-wrap;       /* Since CSS 2.1 */
+                        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                        white-space: -pre-wrap;      /* Opera 4-6 */
+                        white-space: -o-pre-wrap;    /* Opera 7 */
+                        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+                    }
+
+                    .population-criteria ol {
+                        list-style-type: disc;
+                    }
+
+                    .narrativeTable li {
+                        padding: 3px;
+                    }
+
+                    .narrativeTable li > p {
+                        margin: 0;
+                    }
+
+                    .narrativeTable.special { 
+                        margin-top: 1em;
+                        margin-bottom: 1em;
+                    }
+
+                    table.special > tbody > tr > td, 
+                    table.special > thead > tr > th, 
+                    table.special > thead > tr > td {
+                        border: 1px black solid;
+                    }
+
+                    .narrativeTable.criteriaTable { 
+                        margin-top: 1em;
+                        margin-bottom: 1em;
+                    }
+
+                    table.criteriaTable > tbody > tr > td, 
+                    table.criteriaTable > thead > tr > th, 
+                    table.criteriaTable > thead > tr > td {
+                        border: 1px black solid;
+                    }
+
+                    .criteriaTable {
+                        border-spacing: 0;
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        width: 98%;
+                        margin-bottom: 4px;
+                    }
+                        
+                    .criteriaTable td {
+                        padding: 4px;
+                    }
+                        
+                    .criteriaTable > thead {
+                        background-color: #bfbfbf;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                </style><div class="body"><table class="narrativeTable"><tbody class="title"><tr class="title"><th>Measure title</th><td>Breast Cancer Screening</td><th>Measure ID</th><td>BCS-E</td></tr></tbody><tbody class="a"><tr><th>Description</th><td style="padding-top:0" colSpan="3"><div><p>The percentage of women 50–74 years of age who had a mammogram to screen for breast cancer.</p></div></td></tr><tr><th>Measurement period</th><td colSpan="3"><span><time dateTime="1640995200000">January 1</time> - <time dateTime="1672444800000">December 31</time>.</span></td></tr><tr><th>Copyright and disclaimer notice</th><td style="padding-top:0" colSpan="3"><div><p>HEDIS<sup>®</sup> is a registered trademark of the National Committee for Quality Assurance (“NCQA”). The HEDIS measures and specifications were developed by and are owned by NCQA. NCQA holds a copyright in these materials and may rescind or alter these materials at any time. Users of the HEDIS measures and specifications shall not have the right to alter, enhance or otherwise modify the HEDIS measures and specifications, and shall not disassemble, recompile or reverse engineer the HEDIS measures and specifications. Anyone desiring to use or reproduce the materials, subject to licensed user restrictions, without modification for an internal non-commercial purpose may do so without obtaining any approval from NCQA. Use of the Rules for Allowable Adjustments of HEDIS to make permitted adjustments of the materials does not constitute a modification. All other uses, including a commercial use (including but not limited to vendors using the measures and specifications with a product or service to calculate measure results), or any external reproduction, distribution and publication of the HEDIS measures or results (“rates”) therefrom must be approved by NCQA and are subject to a license at the discretion of NCQA. Any use of the materials to identify records or calculate measure results, for example, requires a custom license and may necessitate certification pursuant to NCQA’s Measure Certification Program.</p>
+<p>HEDIS measures and specifications are not clinical guidelines, do not establish a standard of medical care and have not been tested for all potential applications. The measures and specifications are provided “as is” without warranty of any kind. NCQA makes no representations, warranties or endorsements about the quality of any product, test or protocol identified as numerator compliant or otherwise identified as meeting the requirements of a HEDIS measure or specification. NCQA also makes no representations, warranties or endorsements about the quality of any organization or clinician who uses or reports performance measures. NCQA has no liability to anyone who relies on HEDIS measures and specifications or data reflective of performance under such measures and specifications.</p>
+<p>Unadjusted Uncertified Measures: A calculated measure result (a “rate”) from a HEDIS measure that has not been certified via NCQA’s Measure Certification Program, and is based on unadjusted HEDIS specifications, may not be called a “Health Plan HEDIS rate” until it is audited and designated reportable by an NCQA-Certified HEDIS Compliance Auditor. Until such time, such measure rates shall be designated or referred to as <strong>“Uncertified, Unaudited Health Plan HEDIS Rates.”</strong> </p>
+<p>Adjusted Uncertified Measures: A calculated measure result (a “rate”) from a HEDIS measure that has not been certified via NCQA’s Measure Certification Program, and is based on adjusted HEDIS specifications, may not be called an “Adjusted HEDIS rate” until it is audited and designated reportable by an NCQA-Certified HEDIS Compliance Auditor. Until such time, such measure rates shall be designated or referred to as <strong>“Adjusted, Uncertified, Unaudited HEDIS Rates.”</strong></p>
+<p>Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. NCQA disclaims all liability for use or accuracy of any coding contained in the specifications. </p>
+<p>The American Medical Association holds a copyright to the CPT<sup>®</sup> codes contained in the measure specifications. </p>
+<p>The American Hospital Association holds a copyright to the Uniform Billing Codes (“UB”) contained in the measure specifications. The UB Codes in the HEDIS specifications are included with the permission of the AHA. All uses of the UB Codes may require a license from the AHA. Anyone desiring to use the UB Codes in a commercial product to generate HEDIS results, or for any other commercial use, must obtain a commercial use license directly from the AHA. To inquire about licensing, contact <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#117;&#x62;&#48;&#52;&#64;&#x61;&#104;&#x61;&#46;&#111;&#x72;&#x67;">ub&#48;&#52;&#x40;&#97;&#x68;&#x61;.&#x6f;&#114;&#x67;</a>.</p>
+<p>Some measure specifications contain coding from LOINC<sup>®</sup> (<a href="http://loinc.org">http://loinc.org</a>). The LOINC table, LOINC codes, LOINC panels and form file, LOINC linguistic variants file, LOINC/RSNA Radiology Playbook, and LOINC/IEEE Medical Device Code Mapping Table are copyright © 1995–2021 Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and are available at no cost under the license at <a href="http://loinc.org/terms-of-use">http://loinc.org/terms-of-use</a>.</p>
+<p>“SNOMED” and “SNOMED CT” are registered trademarks of the International Health Terminology Standards Development Organisation (IHTSDO).</p>
+<p>“HL7” is the registered trademark of Health Level Seven International.</p>
+<p>No part of this publication may be reproduced or transmitted in any form or by any means, electronic or mechanical, including photocopy, recording or any information storage and retrieval system, without the written permission of NCQA.</p>
+<p>© 2021 by the National Committee for Quality Assurance<br />
+1100 13th Street, NW, Third Floor<br />
+Washington, DC 20005</p>
+<p>All rights reserved.</p>
+<p>NCQA Customer Support: 888-275-7585<br/>
+NCQA Fax: 202-955-3599<br/>
+NCQA Website: <a href="http://www.ncqa.org">www.ncqa.org</a><br/></p>
+<p>Submit policy clarification support questions via My NCQA (<a href="http://my.ncqa.org">http://my.ncqa.org</a>)</p></div></td></tr><tr><th>Clinical recommendation statement</th><td style="padding-top:0" colSpan="3"><div><p>The U.S. Preventive Services Task Force recommends screening women 50–74 years of age for breast cancer every 2 years. (B recommendation)</p></div></td></tr><tr><th>Citations</th><td style="padding-top:0" colSpan="3"><div><p>U.S. Preventive Services Task Force. 2016. “Screening for Breast Cancer: U.S. Preventive Services Task Force Recommendation Statement. <em>Ann Intern Med</em> 164(4):279–96.</p></div></td></tr></tbody><tbody class="b"><tr><th colSpan="4">Characteristics</th></tr><tr><td>Scoring</td><td colSpan="3"><span>Proportion.</span></td></tr><tr><td>Type</td><td colSpan="3"><span>Process.</span></td></tr><tr><td>Stratification</td><td colSpan="3"><ol style="list-style-type:decimal;margin-top:0"><li>Commercial.</li><li>Medicaid.</li><li>Medicare: Non-LIS/DE, Nondisability.</li><li>Medicare: LIS/DE.</li><li>Medicare: Disability.</li><li>Medicare: LIS/DE and Disability.</li><li>Medicare: Other.</li><li>Medicare: Unknown.</li></ol></td></tr><tr><td>Risk adjustment</td><td colSpan="3"><span>None.</span></td></tr><tr><td>Improvement notation</td><td colSpan="3"><span>A higher rate indicates better performance.</span></td></tr><tr><td>Guidance</td><td style="padding-top:0" colSpan="3"><div><p>For Medicare plans, I-SNP and LTI exclusions are not included in the measure calculation logic and need to be programmed manually.</p>
+<p><strong>Allocation:</strong><br/>
+The member was enrolled with a medical benefit throughout the Participation Period. </p>
+<p>No more than one gap in enrollment of up to 45 days for each full calendar year of the Participation Period (i.e., the Measurement Period and the year prior to the Measurement Period).  </p>
+<p>No gaps in enrollment are allowed from October 1 two years prior to the Measurement Period through December 31 two years prior to the Measurement Period. </p>
+<p><strong>Reporting:</strong><br/> 
+For Medicare plans, the SES stratifications are mutually exclusive. NCQA calculates a total rate for Medicare plans by adding all six Medicare stratifications.</p>
+<p>SES and product line stratifications are not included in the measure calculation logic and need to be programmed manually.</p></div></td></tr></tbody><tbody class="b"><tr><th colSpan="4">Definitions</th></tr><tr><td><span>Participation</span></td><td style="padding-top:0" colSpan="3"><div><p>The identifiers and descriptors for each organization’s coverage used to define members’ eligibility for measure reporting. Allocation for reporting is based on eligibility during the Participation Period.</p></div></td></tr><tr><td><span>Participation Period</span></td><td style="padding-top:0" colSpan="3"><div><p>October 1 two years prior to the Measurement Period through the end of the Measurement Period.</p></div></td></tr></tbody><tbody class="a"><tr><th>Initial Population</th><td style="padding-top:0" colSpan="3"><p><strong><span></span></strong></p><p><div><p>Women 52–74 years of age by the end of the Measurement Period who also meet the criteria for Participation.</p></div></p></td></tr><tr><th>Exclusions</th><td style="padding-top:0" colSpan="3"><p><strong><span></span></strong></p><p><div><style type='text/css'>
+ul.dashed {
+list-style-type: none;
+}
+
+ul.dashed > li {
+text-indent: -12px;
+margin-left: -28px;
+}
+
+ul.dashed > li:before {
+content: '– ';
+text-indent: 0;
+}
+</style>
+<ul>
+<li>Members in hospice or using hospice services any time during the Measurement Period.</li>
+<li>Members who had a bilateral mastectomy or both right and left unilateral mastectomies any time during the member’s history through the end of the Measurement Period.</li>
+<li>Medicare members 66 years of age and older by the end of the Measurement Period who meet either of the following:</li>
+<ul class='dashed'>
+<li>Enrolled in an Institutional SNP (I-SNP) any time during the Measurement Period.</li>
+<li>Living long-term in an institution any time during the Measurement Period, as identified by the LTI flag in the Monthly Membership Detail Data File. Use the run date of the file to determine if a member had an LTI flag during the Measurement Period.</li></ul>
+<li>Members 66 years of age and older by the end of the Measurement Period, with frailty and advanced illness.</li>
+<li>Members receiving palliative care during the Measurement Period.</li>
+</ul></div></p></td></tr><tr><th>Denominator</th><td style="padding-top:0" colSpan="3"><p><strong><span></span></strong></p><p><div><p>The Initial Population, minus Exclusions.</p></div></p></td></tr><tr><th>Numerator</th><td style="padding-top:0" colSpan="3"><p><strong><span></span></strong></p><p><div><p>One or more mammograms any time on or between October 1 two years prior to the Measurement Period and the end of the Measurement Period.</p></div></p></td></tr></tbody><tbody class="b"><tr><th colSpan="4">Data criteria (element level)</th></tr><tr><td colSpan="4"><p><strong>Value Sets:</strong></p><ul><li><p>BCSE_HEDIS_MY2022-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">Absence of Left Breast<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1329">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1329</a>)</li><li style="padding:0">Absence of Right Breast<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1330">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1330</a>)</li><li style="padding:0">Bilateral Mastectomy<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1042">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1042</a>)</li><li style="padding:0">Bilateral Modifier<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1043">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1043</a>)</li><li style="padding:0">Clinical Bilateral Modifier<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1951">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1951</a>)</li><li style="padding:0">Clinical Left Modifier<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1949">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1949</a>)</li><li style="padding:0">Clinical Right Modifier<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1950">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1950</a>)</li><li style="padding:0">Clinical Unilateral Mastectomy<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1948">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1948</a>)</li><li style="padding:0">History of Bilateral Mastectomy<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1331">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1331</a>)</li><li style="padding:0">Left Modifier<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1148">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1148</a>)</li><li style="padding:0">Mammography<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1168">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1168</a>)</li><li style="padding:0">Right Modifier<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1230">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1230</a>)</li><li style="padding:0">Unilateral Mastectomy<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1256">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1256</a>)</li><li style="padding:0">Unilateral Mastectomy Left<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1334">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1334</a>)</li><li style="padding:0">Unilateral Mastectomy Right<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1335">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1335</a>)</li></ul></li><li><p>NCQA_AdvancedIllnessandFrailty-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">Acute Inpatient<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1810">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1810</a>)</li><li style="padding:0">Advanced Illness<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1465">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1465</a>)</li><li style="padding:0">Dementia Medications<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1729">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1729</a>)</li><li style="padding:0">ED<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1086">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1086</a>)</li><li style="padding:0">Frailty Device<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1530">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1530</a>)</li><li style="padding:0">Frailty Diagnosis<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1531">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1531</a>)</li><li style="padding:0">Frailty Encounter<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1532">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1532</a>)</li><li style="padding:0">Frailty Symptom<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1533">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1533</a>)</li><li style="padding:0">Nonacute Inpatient<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1189">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1189</a>)</li><li style="padding:0">Observation<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1191">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1191</a>)</li><li style="padding:0">Online Assessments<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1446">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1446</a>)</li><li style="padding:0">Outpatient<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1202">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1202</a>)</li><li style="padding:0">Telephone Visits<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1246">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1246</a>)</li></ul></li><li><p>NCQA_Claims-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">Inpatient Stay<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1395">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1395</a>)</li><li style="padding:0">Nonacute Inpatient Stay<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1398">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1398</a>)</li></ul></li><li><p>NCQA_Hospice-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">Hospice Encounter<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1761">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1761</a>)</li><li style="padding:0">Hospice Intervention<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1762">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1762</a>)</li></ul></li><li><p>NCQA_PalliativeCare-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">Palliative Care Assessment<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2225">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2225</a>)</li><li style="padding:0">Palliative Care Encounter<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1450">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1450</a>)</li><li style="padding:0">Palliative Care Intervention<!-- --> (<a href="https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2224">https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2224</a>)</li></ul></li></ul><p><strong>Direct Reference Codes and Codesystems:</strong></p><ul><li><p>NCQA_PalliativeCare-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">codesystem &quot;ICD-10&quot;: &#x27;http://hl7.org/fhir/sid/icd-10-cm&#x27;</li><li style="padding:0">code &quot;Encounter for palliative care&quot;: &#x27;Z51.5&#x27; from &quot;ICD-10&quot; display &#x27;Encounter for palliative care&#x27;</li></ul></li><li><p>NCQA_Terminology-1.0.0</p><ul style="margin-top:5px"><li style="padding:0">codesystem &quot;claim-type&quot;: &#x27;http://terminology.hl7.org/CodeSystem/claim-type&#x27;</li><li style="padding:0">codesystem &quot;ConditionClinicalStatusCodes&quot;: &#x27;http://terminology.hl7.org/CodeSystem/condition-clinical&#x27;</li><li style="padding:0">codesystem &quot;coverage-type&quot;: &#x27;http://terminology.hl7.org/ValueSet/v3-ActCoverageTypeCode&#x27;</li><li style="padding:0">code &quot;active&quot;: &#x27;active&#x27; from &quot;ConditionClinicalStatusCodes&quot;</li><li style="padding:0">code &quot;Institutional&quot;: &#x27;institutional&#x27; from &quot;claim-type&quot;</li><li style="padding:0">code &quot;managed care policy&quot;: &#x27;MCPOL&#x27; from &quot;coverage-type&quot;</li><li style="padding:0">code &quot;Professional&quot;: &#x27;professional&#x27; from &quot;claim-type&quot;</li><li style="padding:0">code &quot;retiree health program&quot;: &#x27;RETIRE&#x27; from &quot;coverage-type&quot;</li><li style="padding:0">code &quot;subsidized health program&quot;: &#x27;SUBSIDIZ&#x27; from &quot;coverage-type&quot;</li></ul></li></ul></td></tr></tbody></table><h3><a id="toc">Table of Contents</a></h3><ol><li><a href="#pc-1">Population Criteria</a></li><li><a href="#definitions">Definitions</a></li><li><a href="#functions">Functions</a></li></ol><div class="population-criteria"><h3><a id="pc-1" href="#toc">Population Criteria</a></h3><ol><li><h4>Initial Population</h4><pre>define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  )in Interval[52, 74]
+    and Patient.gender.value = &#x27;female&#x27;
+    and &quot;Enrolled During Participation Period&quot;</pre></li><li><h4>Denominator</h4><pre>define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</pre></li><li><h4>Exclusions</h4><pre>define &quot;Exclusions&quot;:
+  Hospice.&quot;Hospice Intervention or Encounter&quot;
+    or &quot;Mastectomy Exclusion&quot;
+    or AdvancedIllnessFrailty.&quot;Advanced Illness and Frailty Exclusion Not Including Over Age 80&quot;
+    or PalliativeCare.&quot;Palliative Care Overlapping Period&quot; ( &quot;Measurement Period&quot; )</pre></li><li><h4>Numerator</h4><pre>define &quot;Numerator&quot;:
+  exists ( [Observation: &quot;Mammography&quot;] Mammogram
+      where FHIRBase.&quot;Normalize Interval&quot; ( Mammogram.effective ) ends during &quot;Participation Period&quot;
+  )</pre></li></ol></div><div><h3><a id="definitions" href="#toc">Definitions</a></h3><ul><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Bilateral Mastectomy Diagnosis<!-- -->&quot;</h4><pre>define &quot;Bilateral Mastectomy Diagnosis&quot;:
+  ( Status.&quot;Active Condition&quot; ( [Condition: &quot;History of Bilateral Mastectomy&quot;] ) ) BilateralMastectomyHistory
+    where FHIRBase.&quot;Prevalence Period&quot; ( BilateralMastectomyHistory ) starts on or before 
+    end of &quot;Measurement Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Bilateral Mastectomy Procedure<!-- -->&quot;</h4><pre>define &quot;Bilateral Mastectomy Procedure&quot;:
+  ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Bilateral Mastectomy&quot;] ) )
+    union ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Unilateral Mastectomy&quot;] ) ) UnilateralMastectomyProcedure
+        where UnilateralMastectomyProcedure.bodySite in &quot;Bilateral Modifier&quot;
+    )
+    union ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Clinical Unilateral Mastectomy&quot;] ) ) ClinicalUnilateralMastectomyProcedure
+        where ClinicalUnilateralMastectomyProcedure.bodySite in &quot;Clinical Bilateral Modifier&quot;
+    ) ) BilateralMastectomyPerformed
+    where FHIRBase.&quot;Normalize Interval&quot; ( BilateralMastectomyPerformed.performed ) ends on or before 
+    end of &quot;Measurement Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Denominator<!-- -->&quot;</h4><pre>define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Enrolled During Participation Period<!-- -->&quot;</h4><pre>define &quot;Enrolled During Participation Period&quot;:
+  Enrollment.&quot;Health Plan Enrollment Criteria&quot; ( &quot;Member Coverage&quot;, date from 
+  end of &quot;Measurement Period&quot;, Interval[date from &quot;October 1 Two Years Prior to the Measurement Period&quot;, date from 
+  end of &quot;Measurement Period&quot; - 2 years], 0 )
+    and Enrollment.&quot;Health Plan Enrollment Criteria&quot; ( &quot;Member Coverage&quot;, date from 
+    end of &quot;Measurement Period&quot;, Interval[date from start of &quot;Measurement Period&quot; - 1 year, date from 
+    end of &quot;Measurement Period&quot; - 1 year], 45 )
+    and Enrollment.&quot;Health Plan Enrollment Criteria&quot; ( &quot;Member Coverage&quot;, date from 
+    end of &quot;Measurement Period&quot;, Interval[date from start of &quot;Measurement Period&quot;, date from 
+    end of &quot;Measurement Period&quot;], 45 )</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Exclusions<!-- -->&quot;</h4><pre>define &quot;Exclusions&quot;:
+  Hospice.&quot;Hospice Intervention or Encounter&quot;
+    or &quot;Mastectomy Exclusion&quot;
+    or AdvancedIllnessFrailty.&quot;Advanced Illness and Frailty Exclusion Not Including Over Age 80&quot;
+    or PalliativeCare.&quot;Palliative Care Overlapping Period&quot; ( &quot;Measurement Period&quot; )</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Initial Population<!-- -->&quot;</h4><pre>define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  )in Interval[52, 74]
+    and Patient.gender.value = &#x27;female&#x27;
+    and &quot;Enrolled During Participation Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Left Mastectomy Diagnosis<!-- -->&quot;</h4><pre>define &quot;Left Mastectomy Diagnosis&quot;:
+  ( Status.&quot;Active Condition&quot; ( [Condition: &quot;Absence of Left Breast&quot;] ) ) LeftMastectomyDiagnosis
+    where FHIRBase.&quot;Prevalence Period&quot; ( LeftMastectomyDiagnosis ) starts on or before 
+    end of &quot;Measurement Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Left Mastectomy Procedure<!-- -->&quot;</h4><pre>define &quot;Left Mastectomy Procedure&quot;:
+  ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Unilateral Mastectomy Left&quot;] ) )
+    union ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Unilateral Mastectomy&quot;] ) ) UnilateralMastectomyProcedure
+        where UnilateralMastectomyProcedure.bodySite in &quot;Left Modifier&quot;
+    )
+    union ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Clinical Unilateral Mastectomy&quot;] ) ) ClinicalUnilateralMastectomyProcedure
+        where ClinicalUnilateralMastectomyProcedure.bodySite in &quot;Clinical Left Modifier&quot;
+    ) ) LeftMastectomyProcedure
+    where FHIRBase.&quot;Normalize Interval&quot; ( LeftMastectomyProcedure.performed ) ends on or before 
+    end of &quot;Measurement Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Mastectomy Exclusion<!-- -->&quot;</h4><pre>define &quot;Mastectomy Exclusion&quot;:
+  ( ( exists &quot;Right Mastectomy Diagnosis&quot;
+        or exists &quot;Right Mastectomy Procedure&quot;
+    )
+      and ( exists &quot;Left Mastectomy Diagnosis&quot;
+          or exists &quot;Left Mastectomy Procedure&quot;
+      )
+  )
+    or exists &quot;Bilateral Mastectomy Diagnosis&quot;
+    or exists &quot;Bilateral Mastectomy Procedure&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Member Coverage<!-- -->&quot;</h4><pre>define &quot;Member Coverage&quot;:
+  [Coverage] C
+    where FHIRBase.&quot;Normalize Interval&quot; ( C.period ) overlaps &quot;Participation Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Numerator<!-- -->&quot;</h4><pre>define &quot;Numerator&quot;:
+  exists ( [Observation: &quot;Mammography&quot;] Mammogram
+      where FHIRBase.&quot;Normalize Interval&quot; ( Mammogram.effective ) ends during &quot;Participation Period&quot;
+  )</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->October 1 Two Years Prior to the Measurement Period<!-- -->&quot;</h4><pre>define &quot;October 1 Two Years Prior to the Measurement Period&quot;:
+  DateTime((year from start of &quot;Measurement Period&quot; - 2), 10, 1, 0, 0, 0, 0, 0)</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Participation Period<!-- -->&quot;</h4><pre>define &quot;Participation Period&quot;:
+  Interval[&quot;October 1 Two Years Prior to the Measurement Period&quot;, 
+  end of &quot;Measurement Period&quot;]</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Right Mastectomy Diagnosis<!-- -->&quot;</h4><pre>define &quot;Right Mastectomy Diagnosis&quot;:
+  ( Status.&quot;Active Condition&quot; ( [Condition: &quot;Absence of Right Breast&quot;] ) ) RightMastectomyDiagnosis
+    where FHIRBase.&quot;Prevalence Period&quot; ( RightMastectomyDiagnosis ) starts on or before 
+    end of &quot;Measurement Period&quot;</pre></li><li><h4>BCSE_HEDIS_MY2022<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Right Mastectomy Procedure<!-- -->&quot;</h4><pre>define &quot;Right Mastectomy Procedure&quot;:
+  ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Unilateral Mastectomy Right&quot;] ) )
+    union ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Unilateral Mastectomy&quot;] ) ) UnilateralMastectomyProcedure
+        where UnilateralMastectomyProcedure.bodySite in &quot;Right Modifier&quot;
+    )
+    union ( ( Status.&quot;Completed Procedure&quot; ( [Procedure: &quot;Clinical Unilateral Mastectomy&quot;] ) ) ClinicalUnilateralMastectomyProcedure
+        where ClinicalUnilateralMastectomyProcedure.bodySite in &quot;Clinical Right Modifier&quot;
+    ) ) RightMastectomyProcedure
+    where FHIRBase.&quot;Normalize Interval&quot; ( RightMastectomyProcedure.performed ) ends on or before 
+    end of &quot;Measurement Period&quot;</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Acute Inpatient Discharge with Advanced Illness<!-- -->&quot;</h4><pre>define &quot;Acute Inpatient Discharge with Advanced Illness&quot;:
+  exists ( ( Claims.&quot;Medical Claims With Diagnosis&quot; ( Claims.&quot;Medical Claims With Nonacute or Acute Inpatient Discharge&quot; ( [Claim] ).AcuteInpatientDischarge, &quot;Advanced Illness ValueSet&quot; ).ServicePeriod ) InpatientDischarge
+      where date from 
+      end of InpatientDischarge during Interval[date from start of &quot;Measurement Period&quot; - 1 year, date from 
+      end of &quot;Measurement Period&quot;]
+  )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Acute Inpatient Encounter with Advanced Illness<!-- -->&quot;</h4><pre>define &quot;Acute Inpatient Encounter with Advanced Illness&quot;:
+  exists ( ( Status.&quot;Finished Encounter&quot; ( [Encounter: &quot;Acute Inpatient&quot;] ) ) InpatientEncounter
+      where Encounters.&quot;Encounter Has Diagnosis&quot; ( InpatientEncounter, [Condition: &quot;Advanced Illness&quot;] )
+        and date from start of FHIRBase.&quot;Normalize Interval&quot; ( InpatientEncounter.period ) during Interval[date from start of &quot;Measurement Period&quot; - 1 year, date from 
+        end of &quot;Measurement Period&quot;]
+  )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Advanced Illness and Frailty Exclusion Not Including Over Age 80<!-- -->&quot;</h4><pre>define &quot;Advanced Illness and Frailty Exclusion Not Including Over Age 80&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  )&gt;= 66
+    and &quot;Has Criteria Indicating Frailty&quot;
+    and ( &quot;Two Outpatient Visits with Advanced Illness on Different Dates of Service&quot;
+        or &quot;Acute Inpatient Encounter with Advanced Illness&quot;
+        or &quot;Acute Inpatient Discharge with Advanced Illness&quot;
+        or &quot;Dementia Medications In Year Before or During Measurement Period&quot;
+    )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Advanced Illness ValueSet<!-- -->&quot;</h4><pre>define &quot;Advanced Illness ValueSet&quot;:
+  FHIRBase.&quot;VS Cast Function&quot; ( &quot;Advanced Illness&quot; )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Dementia Medications In Year Before or During Measurement Period<!-- -->&quot;</h4><pre>define &quot;Dementia Medications In Year Before or During Measurement Period&quot;:
+  exists ( ( Status.&quot;Dispensed Medication&quot; ( [MedicationDispense: &quot;Dementia Medications&quot;] ) ) DementiaMedDispensed
+      where date from start of FHIRBase.&quot;Normalize Interval&quot; ( DementiaMedDispensed.whenHandedOver ) during Interval[date from start of &quot;Measurement Period&quot; - 1 year, date from 
+      end of &quot;Measurement Period&quot;]
+  )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Has Criteria Indicating Frailty<!-- -->&quot;</h4><pre>define &quot;Has Criteria Indicating Frailty&quot;:
+  exists ( [Observation: &quot;Frailty Device&quot;] FrailtyDeviceApplied
+      where FHIRBase.&quot;Normalize Interval&quot; ( FrailtyDeviceApplied.effective ) overlaps &quot;Measurement Period&quot;
+  )
+    or exists ( ( Status.&quot;Active Condition&quot; ( [Condition: &quot;Frailty Diagnosis&quot;] ) ) FrailtyDiagnosis
+        where FHIRBase.&quot;Prevalence Period&quot; ( FrailtyDiagnosis ) overlaps &quot;Measurement Period&quot;
+    )
+    or exists ( ( Status.&quot;Finished Encounter&quot; ( [Encounter: &quot;Frailty Encounter&quot;] ) ) FrailtyEncounter
+        where FHIRBase.&quot;Normalize Interval&quot; ( FrailtyEncounter.period ) overlaps &quot;Measurement Period&quot;
+    )
+    or exists ( [Observation: &quot;Frailty Symptom&quot;] FrailtySymptom
+        where FHIRBase.&quot;Normalize Interval&quot; ( FrailtySymptom.effective ) overlaps &quot;Measurement Period&quot;
+    )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Nonacute Inpatient Discharge with Advanced Illness<!-- -->&quot;</h4><pre>define &quot;Nonacute Inpatient Discharge with Advanced Illness&quot;:
+  ( ( Claims.&quot;Medical Claims With Diagnosis&quot; ( Claims.&quot;Medical Claims With Nonacute or Acute Inpatient Discharge&quot; ( [Claim] ).NonacuteInpatientDischarge, &quot;Advanced Illness ValueSet&quot; ).ServicePeriod ) DischargeWithDiagnosis
+    where date from 
+    end of DischargeWithDiagnosis during Interval[date from start of &quot;Measurement Period&quot; - 1 year, date from 
+    end of &quot;Measurement Period&quot;]) InpatientDischarge
+    return date from 
+    end of InpatientDischarge</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Outpatient Encounters or Discharges with Advanced Illness<!-- -->&quot;</h4><pre>define &quot;Outpatient Encounters or Discharges with Advanced Illness&quot;:
+  if ( &quot;Outpatient Encounters with Advanced Illness&quot;
+      union &quot;Nonacute Inpatient Discharge with Advanced Illness&quot;
+  ) is not null then ( &quot;Outpatient Encounters with Advanced Illness&quot;
+      union &quot;Nonacute Inpatient Discharge with Advanced Illness&quot;
+  ) 
+    else if &quot;Outpatient Encounters with Advanced Illness&quot; is null then &quot;Nonacute Inpatient Discharge with Advanced Illness&quot; 
+    else if &quot;Nonacute Inpatient Discharge with Advanced Illness&quot; is null then &quot;Outpatient Encounters with Advanced Illness&quot; 
+    else null</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Outpatient Encounters with Advanced Illness<!-- -->&quot;</h4><pre>define &quot;Outpatient Encounters with Advanced Illness&quot;:
+  ( ( Status.&quot;Finished Encounter&quot; ( [Encounter: &quot;Outpatient&quot;]
+    union [Encounter: &quot;Observation&quot;]
+    union [Encounter: &quot;ED&quot;]
+    union [Encounter: &quot;Telephone Visits&quot;]
+    union [Encounter: &quot;Online Assessments&quot;]
+    union [Encounter: &quot;Nonacute Inpatient&quot;] ) ) OutpatientEncounter
+    where Encounters.&quot;Encounter Has Diagnosis&quot; ( OutpatientEncounter, [Condition: &quot;Advanced Illness&quot;] )
+      and date from start of FHIRBase.&quot;Normalize Interval&quot; ( OutpatientEncounter.period ) during Interval[date from start of &quot;Measurement Period&quot; - 1 year, date from 
+      end of &quot;Measurement Period&quot;]) EncounterWithDiagnosis
+    return date from 
+    end of FHIRBase.&quot;Normalize Interval&quot; ( EncounterWithDiagnosis.period )</pre></li><li><h4>NCQA_AdvancedIllnessandFrailty<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Two Outpatient Visits with Advanced Illness on Different Dates of Service<!-- -->&quot;</h4><pre>define &quot;Two Outpatient Visits with Advanced Illness on Different Dates of Service&quot;:
+  exists ( from
+      &quot;Outpatient Encounters or Discharges with Advanced Illness&quot; OutpatientVisit1,
+      &quot;Outpatient Encounters or Discharges with Advanced Illness&quot; OutpatientVisit2
+      where OutpatientVisit2 1 day or more after OutpatientVisit1
+      return OutpatientVisit1
+  )</pre></li><li><h4>NCQA_Hospice<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Hospice Intervention or Encounter<!-- -->&quot;</h4><pre>define &quot;Hospice Intervention or Encounter&quot;:
+exists ((Status.&quot;Completed or Ongoing Procedure&quot;([Procedure:&quot;Hospice Intervention&quot;])) HospiceInt
+        where NCQAFHIRBase.&quot;Normalize Interval&quot;(HospiceInt.performed) overlaps &quot;Measurement Period&quot;
+)
+or exists ((Status.&quot;Finished Encounter&quot;([&quot;Encounter&quot;: &quot;Hospice Encounter&quot;])) HospiceEnc
+         where NCQAFHIRBase.&quot;Normalize Interval&quot; (HospiceEnc.period) overlaps &quot;Measurement Period&quot;
+)</pre></li></ul></div><div><h3><a id="functions" href="#toc">Functions</a></h3><ul><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToCalendarUnit<!-- -->&quot;</h4><pre>define function ToCalendarUnit(unit System.String):
+    case unit
+        when &#x27;ms&#x27; then &#x27;millisecond&#x27;
+        when &#x27;s&#x27; then &#x27;second&#x27;
+        when &#x27;min&#x27; then &#x27;minute&#x27;
+        when &#x27;h&#x27; then &#x27;hour&#x27;
+        when &#x27;d&#x27; then &#x27;day&#x27;
+        when &#x27;wk&#x27; then &#x27;week&#x27;
+        when &#x27;mo&#x27; then &#x27;month&#x27;
+        when &#x27;a&#x27; then &#x27;year&#x27;
+        else unit
+    end</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToCode<!-- -->&quot;</h4><pre>define function ToCode(coding FHIR.Coding):
+    if coding is null then
+        null
+    else
+        System.Code {
+          code: coding.code.value,
+          system: coding.system.value,
+          version: coding.version.value,
+          display: coding.display.value
+        }</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToConcept<!-- -->&quot;</h4><pre>define function ToConcept(concept FHIR.CodeableConcept):
+    if concept is null then
+        null
+    else
+        System.Concept {
+            codes: concept.coding C return ToCode(C),
+            display: concept.text.value
+        }</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToDate<!-- -->&quot;</h4><pre>define function ToDate(value date): value.value</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToDateTime<!-- -->&quot;</h4><pre>define function ToDateTime(value dateTime): value.value</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToDateTime<!-- -->&quot;</h4><pre>define function ToDateTime(value instant): value.value</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToQuantity<!-- -->&quot;</h4><pre>define function ToQuantity(quantity FHIR.Quantity):
+    case
+        when quantity is null then null
+        when quantity.value is null then null
+        when quantity.comparator is not null then
+            Message(null, true, &#x27;FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported&#x27;, &#x27;Error&#x27;, &#x27;FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.&#x27;)
+        when quantity.system is null or quantity.system.value = &#x27;http://unitsofmeasure.org&#x27;
+              or quantity.system.value = &#x27;http://hl7.org/fhirpath/CodeSystem/calendar-units&#x27; then
+            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, &#x27;1&#x27;)) }
+        else
+            Message(null, true, &#x27;FHIRHelpers.ToQuantity.InvalidFHIRQuantity&#x27;, &#x27;Error&#x27;, &#x27;Invalid FHIR Quantity code: &#x27; &amp; quantity.unit.value &amp; &#x27; (&#x27; &amp; quantity.system.value &amp; &#x27;|&#x27; &amp; quantity.code.value &amp; &#x27;)&#x27;)
+    end</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToString<!-- -->&quot;</h4><pre>define function ToString(value EncounterStatus): value.value</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToString<!-- -->&quot;</h4><pre>define function ToString(value MedicationDispenseStatus): value.value</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToString<!-- -->&quot;</h4><pre>define function ToString(value ProcedureStatus): value.value</pre></li><li><h4>FHIRHelpers<!-- -->-<!-- -->4.0.1<!-- -->.&quot;<!-- -->ToString<!-- -->&quot;</h4><pre>define function ToString(value string): value.value</pre></li><li><h4>NCQA_CQLBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Collapse Date Interval Workaround<!-- -->&quot;</h4><pre>define function &quot;Collapse Date Interval Workaround&quot;(intervals List&lt;Interval&lt;Date&gt;&gt;):
+  if intervals is null then { } as List&lt;Interval&lt;Date&gt;&gt;
+  else if Count(intervals)= 0 then { } as List&lt;Interval&lt;Date&gt;&gt;
+  else collapse ( intervals I where not AnyTrue( intervals J return I properly included in J ) ) per day</pre></li><li><h4>NCQA_CQLBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Collapsed Date Interval Stats<!-- -->&quot;</h4><pre>define function &quot;Collapsed Date Interval Stats&quot;(collapsedIntervals List&lt;Interval&lt;Date&gt;&gt;):
+  Tuple {
+    &quot;Intervals&quot;: collapsedIntervals,
+    &quot;Interval Count&quot;: Count(collapsedIntervals),
+    &quot;Total Days In Intervals&quot;: if Count(collapsedIntervals)= 0 then 0 
+                               else Sum(collapsedIntervals I
+                                        return Max({ duration in days of I + 1, 0 })),
+    &quot;Longest Interval&quot;: if Count(collapsedIntervals)= 0 then null as Interval&lt;Date&gt;
+                        else First(collapsedIntervals I
+                                    return Tuple {
+                                      &quot;interval&quot;: I,
+                                      &quot;days&quot;: Max({ duration in days of I + 1, 0 })
+                                    } sort by &quot;days&quot; desc).interval,
+    &quot;Total Days In Longest Interval&quot;: if Count(collapsedIntervals)= 0 then 0 
+                                      else Max({ duration in days of First(collapsedIntervals I
+                                                                              return Tuple {
+                                                                                &quot;interval&quot;: I,
+                                                                                &quot;days&quot;: Max({ duration in days of I + 1, 0 })
+                                                                              }
+                                                                              sort by &quot;days&quot; desc).interval + 1, 0 })
+  }</pre></li><li><h4>NCQA_CQLBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Date Interval Covering Relative to Base Interval<!-- -->&quot;</h4><pre>define function &quot;Date Interval Covering Relative to Base Interval&quot;(baseInterval Interval&lt;Date&gt;, coveringIntervals List&lt;Interval&lt;Date&gt;&gt;):
+  &quot;Collapse Date Interval Workaround&quot;((&quot;Sort Date Intervals&quot;(coveringIntervals)) sortedInterval
+                                        return baseInterval intersect sortedInterval)</pre></li><li><h4>NCQA_CQLBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Date Interval Gaps Relative to Base Interval<!-- -->&quot;</h4><pre>define function &quot;Date Interval Gaps Relative to Base Interval&quot;(baseInterval Interval&lt;Date&gt;, coveringIntervals List&lt;Interval&lt;Date&gt;&gt;):
+  ( Tuple {
+    sortedCoverings: &quot;Date Interval Covering Relative to Base Interval&quot;(baseInterval, coveringIntervals)
+  } ) variableDeclarations
+    return ( Tuple {
+              frontgaps:  if Count(variableDeclarations.sortedCoverings)= 0 then { baseInterval } 
+                          else ( variableDeclarations.sortedCoverings sortedCovering
+                                  return  if IndexOf(variableDeclarations.sortedCoverings, sortedCovering) = 0 
+                                          then ( Interval[start of baseInterval, start of sortedCovering] intersect baseInterval) except sortedCovering 
+                                          else Interval( start of variableDeclarations.sortedCoverings[IndexOf(variableDeclarations.sortedCoverings, sortedCovering)- 1], end of sortedCovering )
+                                                except variableDeclarations.sortedCoverings[IndexOf(variableDeclarations.sortedCoverings, sortedCovering)- 1]
+                                                except sortedCovering),
+              endgap: if Count(variableDeclarations.sortedCoverings)= 0 then { } as List&lt;Interval&lt;Date&gt;&gt;
+                      else { ( Interval( start of Last(variableDeclarations.sortedCoverings), end of baseInterval]
+                                except Last(variableDeclarations.sortedCoverings)) intersect baseInterval }
+             } ) calculations
+    return &quot;Collapse Date Interval Workaround&quot;( calculations.frontgaps union calculations.endgap )</pre></li><li><h4>NCQA_CQLBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Date Interval Gaps Relative to Base Interval Stats<!-- -->&quot;</h4><pre>define function &quot;Date Interval Gaps Relative to Base Interval Stats&quot;(baseInterval Interval&lt;Date&gt;, coveringIntervals List&lt;Interval&lt;Date&gt;&gt;):
+  ( Tuple {
+    &quot;Gap Intervals&quot;: &quot;Date Interval Gaps Relative to Base Interval&quot;(baseInterval, coveringIntervals)
+  } ) variableDeclarations
+    return ( &quot;Collapsed Date Interval Stats&quot;(variableDeclarations.&quot;Gap Intervals&quot;))</pre></li><li><h4>NCQA_CQLBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Sort Date Intervals<!-- -->&quot;</h4><pre>define function &quot;Sort Date Intervals&quot;(intervals List&lt;Interval&lt;Date&gt;&gt;):
+  if intervals is null then { } as List&lt;Interval&lt;Date&gt;&gt;
+  else if Count(intervals)= 0 then { } as List&lt;Interval&lt;Date&gt;&gt;
+  else ( ( intervals I
+            return Tuple { 
+                    interval: I,
+                    startOfInterval: if start of I is null then minimum Date else start of I
+                  } sort by startOfInterval asc 
+         ) sortedIntervals
+         return sortedIntervals.interval
+       )</pre></li><li><h4>NCQA_Claims<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Medical Claims With Diagnosis<!-- -->&quot;</h4><pre>define function &quot;Medical Claims With Diagnosis&quot;(claim List&lt;FHIR.Claim&gt;, DiagnosisValueSet List&lt;System.Code&gt;):
+  ( Tuple {
+    &quot;MedicalClaim&quot;: &quot;Professional or Institutional Claims&quot;(claim),
+    &quot;DiagnosesAsStrings&quot;: DiagnosisValueSet d
+      return d.code
+  } ) ClaimWithDiagnosis
+    return ( Tuple {
+      &quot;DiagnosisItems&quot;: if ClaimWithDiagnosis.&quot;MedicalClaim&quot; is null then null 
+        else ClaimWithDiagnosis.&quot;MedicalClaim&quot; DiagnosisLine
+        where exists ( ( ( DiagnosisLine.diagnosis.diagnosis ).coding ) HeaderCode
+            where HeaderCode.code.value in ClaimWithDiagnosis.&quot;DiagnosesAsStrings&quot;
+        )
+    } ) HeaderDefinition
+      return ( if exists HeaderDefinition.&quot;DiagnosisItems&quot; then ( Tuple {
+          Claim: HeaderDefinition.&quot;DiagnosisItems&quot;,
+          ServicePeriod: HeaderDefinition.DiagnosisItems.item NormalDate
+            return FHIRBase.&quot;Normalize Interval&quot; ( NormalDate.serviced )
+        }
+      ) 
+        else null ) FinalList
+        where FinalList is not null</pre></li><li><h4>NCQA_Claims<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Medical Claims With Nonacute or Acute Inpatient Discharge<!-- -->&quot;</h4><pre>define function &quot;Medical Claims With Nonacute or Acute Inpatient Discharge&quot;(claim List&lt;FHIR.Claim&gt;):
+  ( Tuple {
+    &quot;MedicalClaim&quot;: &quot;Professional or Institutional Claims&quot;(claim)
+  } ) ClaimWithInpatientStay
+    return ( Tuple {
+      &quot;InpatientStayLineItems&quot;: if ClaimWithInpatientStay.&quot;MedicalClaim&quot; is null then null 
+        else ( ClaimWithInpatientStay.&quot;MedicalClaim&quot; c
+          where exists ( ( c.item ) i
+              where exists ( FHIRHelpers.ToConcept ( i.revenue ).codes ) rev
+                where rev.code in &quot;Inpatient Stay&quot;
+          )
+      ),
+      &quot;NonacuteInpatientLineItems&quot;: if ClaimWithInpatientStay.&quot;MedicalClaim&quot; is null then null 
+        else ( ClaimWithInpatientStay.&quot;MedicalClaim&quot; c
+          where exists ( c.item i
+              where exists ( FHIRHelpers.ToConcept ( i.revenue ).codes ) rev
+                where rev.code in ( &quot;Nonacute Inpatient Stay&quot; )
+          )
+            or exists ( ( c.subType.coding ) tob
+                where tob.code.value in &quot;Nonacute Inpatient Stay&quot;
+            )
+      )
+    } ) LineItemDefinition
+      return Tuple {
+        &quot;InpatientDischarge&quot;: LineItemDefinition.&quot;InpatientStayLineItems&quot;,
+        &quot;NonacuteInpatientDischarge&quot;: LineItemDefinition.&quot;NonacuteInpatientLineItems&quot; nonAcuteInpatientStay
+          with LineItemDefinition.&quot;InpatientStayLineItems&quot; inpatientStay
+            such that nonAcuteInpatientStay.id = inpatientStay.id,
+        &quot;AcuteInpatientDischarge&quot;: LineItemDefinition.&quot;InpatientStayLineItems&quot; inpatientStay
+          without LineItemDefinition.&quot;NonacuteInpatientLineItems&quot; nonAcuteInpatientStay
+            such that inpatientStay.id = nonAcuteInpatientStay.id
+      }</pre></li><li><h4>NCQA_Claims<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Professional or Institutional Claims<!-- -->&quot;</h4><pre>define function &quot;Professional or Institutional Claims&quot;(claim List&lt;FHIR.Claim&gt;):
+  claim MedicalClaim
+    where ( FHIRHelpers.ToConcept ( MedicalClaim.type ).codes contains Terminology.&quot;Professional&quot;
+        or FHIRHelpers.ToConcept ( MedicalClaim.type ).codes contains Terminology.&quot;Institutional&quot;
+    )</pre></li><li><h4>NCQA_Encounter<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Encounter Has Diagnosis<!-- -->&quot;</h4><pre>define function &quot;Encounter Has Diagnosis&quot;(Encounter FHIR.Encounter, Conditions List&lt;FHIR.Condition&gt;):
+  AnyTrue((Encounter.diagnosis D
+      return D.condition.reference)CRef
+      return exists(Conditions C
+          where C.id = FHIRBase.&quot;GetId&quot;(CRef)
+      )
+  )</pre></li><li><h4>NCQA_FHIRBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->GetId<!-- -->&quot;</h4><pre>define function &quot;GetId&quot;(uri String):
+  if ( PositionOf(&#x27;/&#x27;, uri)&gt; 0 ) then Last(Split(uri, &#x27;/&#x27;))
+    else uri</pre></li><li><h4>NCQA_FHIRBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Normalize Abatement<!-- -->&quot;</h4><pre>define function &quot;Normalize Abatement&quot;(abatement Choice&lt;FHIR.dateTime, FHIR.Age, FHIR.Period, FHIR.Range, FHIR.string&gt;):
+  if abatement is FHIR.dateTime then Interval[FHIRHelpers.ToDateTime ( abatement as FHIR.dateTime ), FHIRHelpers.ToDateTime ( abatement as FHIR.dateTime )]
+    else if abatement is FHIR.Period then Interval[abatement.start.value, abatement.
+  end.value]
+    else if abatement is FHIR.string then Message(null as Interval&lt;DateTime&gt;, true, &#x27;1&#x27;, &#x27;Error&#x27;, &#x27;Cannot compute an interval from a String value&#x27;)
+    else if abatement is FHIR.Age then Interval[FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( abatement as FHIR.Age ), FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( abatement as FHIR.Age ) + 1 year ) 
+    else if abatement is FHIR.Range then Interval[FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( ( abatement as FHIR.Range ).low ), FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( ( abatement as FHIR.Range ).high ) + 1 year ) 
+    else null</pre></li><li><h4>NCQA_FHIRBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Normalize Interval<!-- -->&quot;</h4><pre>define function &quot;Normalize Interval&quot;(choice Choice&lt;FHIR.dateTime, FHIR.date, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range&gt;):
+  case
+    when choice is FHIR.dateTime then Interval[FHIRHelpers.ToDateTime ( choice as FHIR.dateTime ), FHIRHelpers.ToDateTime ( choice as FHIR.dateTime )]
+    when choice is FHIR.date then Interval[ToDateTime(choice as FHIR.date), ToDateTime(choice as FHIR.date)]
+    when choice is FHIR.Period then Interval[choice.start.value, choice.
+    end.value]
+    when choice is FHIR.instant then Interval[FHIRHelpers.ToDateTime ( choice as FHIR.instant ), FHIRHelpers.ToDateTime ( choice as FHIR.instant )]
+    when choice is FHIR.Age then Interval[FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( choice as FHIR.Age ), FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( choice as FHIR.Age ) + 1 year )
+    when choice is FHIR.Range then Interval[FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( ( choice as FHIR.Range ).low ), FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( ( choice as FHIR.Range ).high ) + 1 year )
+    when choice is FHIR.Timing then Message(null as Interval&lt;DateTime&gt;, true, &#x27;1&#x27;, &#x27;Error&#x27;, &#x27;Cannot compute a single interval from a Timing type&#x27;)
+    when choice is FHIR.string then Message(null as Interval&lt;DateTime&gt;, true, &#x27;1&#x27;, &#x27;Error&#x27;, &#x27;Cannot compute an interval from a String value&#x27;)
+    else null as Interval&lt;DateTime&gt;
+  end</pre></li><li><h4>NCQA_FHIRBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Normalize Onset<!-- -->&quot;</h4><pre>define function &quot;Normalize Onset&quot;(onset Choice&lt;FHIR.dateTime, FHIR.Age, FHIR.Period, FHIR.Range, FHIR.string&gt;):
+  if onset is FHIR.dateTime then Interval[FHIRHelpers.ToDateTime ( onset as FHIR.dateTime ), FHIRHelpers.ToDateTime ( onset as FHIR.dateTime )]
+    else if onset is FHIR.Period then Interval[onset.start.value, onset.
+  end.value]
+    else if onset is FHIR.string then Message(null as Interval&lt;DateTime&gt;, true, &#x27;1&#x27;, &#x27;Error&#x27;, &#x27;Cannot compute an interval from a String value&#x27;)
+    else if onset is FHIR.Age then Interval[FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( onset as FHIR.Age ), FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( onset as FHIR.Age ) + 1 year ) 
+    else if onset is FHIR.Range then Interval[FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( ( onset as FHIR.Range ).low ), FHIRHelpers.ToDate ( Patient.birthDate ) + FHIRHelpers.ToQuantity ( ( onset as FHIR.Range ).high ) + 1 year ) 
+    else null</pre></li><li><h4>NCQA_FHIRBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Prevalence Period<!-- -->&quot;</h4><pre>define function &quot;Prevalence Period&quot;(condition Condition):
+  Interval[start of &quot;Normalize Onset&quot;(condition.onset), 
+  end of &quot;Normalize Abatement&quot;(condition.abatement)]</pre></li><li><h4>NCQA_FHIRBase<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->VS Cast Function<!-- -->&quot;</h4><pre>define function &quot;VS Cast Function&quot;(VSet List&lt;System.Code&gt;):
+  ( ( cast { &quot;VSet&quot;, 1 }[0]as Tuple {
+      codes List&lt;System.Code&gt;,
+      oid System.String,
+      version System.String
+    }
+  ).codes ) VSetCodes
+    return System.Code { code: VSetCodes.code, system: VSetCodes.system }</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->All Coverage Info<!-- -->&quot;</h4><pre>define function &quot;All Coverage Info&quot;(Coverage List&lt;FHIR.Coverage&gt;, participationPeriod Interval&lt;Date&gt;):
+  Coverage C
+    let IntervalInfo: &quot;CoverageIntervals&quot;(Coverage, participationPeriod),
+    Collapsed: &quot;Collapsed Coverage Intervals&quot;(IntervalInfo),
+    Adjacent: &quot;Collapsed Coverage Adjacent Intervals&quot;(Collapsed),
+    CollapsedFinal: &quot;Collapsed Final Coverage Intervals&quot;(Collapsed, Adjacent)
+    return Tuple {
+      IntervalInfo: IntervalInfo,
+      Collapsed: Collapsed,
+      Adjacent: Adjacent,
+      CollapsedFinal: CollapsedFinal
+    }</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Anchor Date Criteria<!-- -->&quot;</h4><pre>define function &quot;Anchor Date Criteria&quot;(Coverage List&lt;FHIR.Coverage&gt;, AnchorDate Date, participationPeriod Interval&lt;Date&gt;):
+  if AnchorDate in participationPeriod then exists ( ( &quot;All Coverage Info&quot;(Coverage, participationPeriod).CollapsedFinal ) FinalInterval
+      where AnchorDate in FinalInterval
+  ) 
+    else if not ( AnchorDate in participationPeriod ) then exists ( Coverage.period Cperiod
+      where AnchorDate in Interval[date from start of FHIRBase.&quot;Normalize Interval&quot; ( Cperiod ), date from 
+      end of FHIRBase.&quot;Normalize Interval&quot; ( Cperiod )]
+  ) 
+    else if AnchorDate is null then true 
+    else false</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Collapsed Coverage Adjacent Intervals<!-- -->&quot;</h4><pre>define function &quot;Collapsed Coverage Adjacent Intervals&quot;(Intervals List&lt;Interval&lt;Date&gt;&gt;):
+  from
+    Intervals Coverage1,
+    Intervals Coverage2
+    where 
+    end of Coverage1 within 1 day of start of Coverage2
+    return Interval[start of Coverage1, 
+    end of Coverage2]</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Collapsed Coverage Intervals<!-- -->&quot;</h4><pre>define function &quot;Collapsed Coverage Intervals&quot;(Intervals List&lt;Interval&lt;Date&gt;&gt;):
+  CQLBase.&quot;Collapse Date Interval Workaround&quot; ( Intervals )</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Collapsed Final Coverage Intervals<!-- -->&quot;</h4><pre>define function &quot;Collapsed Final Coverage Intervals&quot;(collapsedI List&lt;Interval&lt;Date&gt;&gt;, adjacentI List&lt;Interval&lt;Date&gt;&gt;):
+  CQLBase.&quot;Collapse Date Interval Workaround&quot; ( &quot;Collapsed Coverage Intervals&quot;(collapsedI)
+    union &quot;Collapsed Coverage Adjacent Intervals&quot;(adjacentI))</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->CoverageIntervals<!-- -->&quot;</h4><pre>define function &quot;CoverageIntervals&quot;(Coverage List&lt;FHIR.Coverage&gt;, participationPeriod Interval&lt;Date&gt;):
+  Coverage C
+    return Interval[date from start of FHIRBase.&quot;Normalize Interval&quot; ( C.period ), date from 
+    end of FHIRBase.&quot;Normalize Interval&quot; ( C.period )]
+      intersect Interval[start of participationPeriod, 
+      end of participationPeriod]</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Health Plan Coverage Resources<!-- -->&quot;</h4><pre>define function &quot;Health Plan Coverage Resources&quot;(Coverage List&lt;FHIR.Coverage&gt;):
+  ( Coverage C
+    where exists C.type.coding cTypeCoding
+      where ( FHIRHelpers.ToCode ( cTypeCoding ) ~ Terminology.&quot;managed care policy&quot;
+          or FHIRHelpers.ToCode ( cTypeCoding ) ~ Terminology.&quot;retiree health program&quot;
+          or FHIRHelpers.ToCode ( cTypeCoding ) ~ Terminology.&quot;subsidized health program&quot;
+      ) ) HPCoverageResource
+    where HPCoverageResource is not null</pre></li><li><h4>NCQA_HealthPlanEnrollment<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Health Plan Enrollment Criteria<!-- -->&quot;</h4><pre>define function &quot;Health Plan Enrollment Criteria&quot;(Coverage List&lt;FHIR.Coverage&gt;, AnchorDate Date, participationPeriod Interval&lt;Date&gt;, AllowedGapDays Integer):
+  ( CQLBase.&quot;Date Interval Gaps Relative to Base Interval Stats&quot; ( participationPeriod, &quot;All Coverage Info&quot;(&quot;Health Plan Coverage Resources&quot;(Coverage), participationPeriod).CollapsedFinal ) ) GapsInEnrollment
+    return ( GapsInEnrollment.&quot;Interval Count&quot; &lt;= 1
+        and GapsInEnrollment.&quot;Total Days In Longest Interval&quot; &lt;= AllowedGapDays
+        and &quot;Anchor Date Criteria&quot;(Coverage, AnchorDate, participationPeriod)
+    )</pre></li><li><h4>NCQA_PalliativeCare<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Palliative Care Overlapping Period<!-- -->&quot;</h4><pre>define function &quot;Palliative Care Overlapping Period&quot;(Period Interval&lt;DateTime&gt;):
+  exists ( [Observation: &quot;Palliative Care Assessment&quot;] PalliativeAssessment
+      where Interval[date from start of FHIRBase.&quot;Normalize Interval&quot; ( PalliativeAssessment.effective ), date from 
+      end of FHIRBase.&quot;Normalize Interval&quot; ( PalliativeAssessment.effective )]overlaps Interval[date from start of Period, date from 
+      end of Period]
+  )
+    or exists ( ( Status.&quot;Finished Encounter&quot; ( [Encounter: &quot;Palliative Care Encounter&quot;] ) ) PalliativeEncounter
+        where Interval[date from start of FHIRBase.&quot;Normalize Interval&quot; ( PalliativeEncounter.period ), date from 
+        end of FHIRBase.&quot;Normalize Interval&quot; ( PalliativeEncounter.period )]overlaps Interval[date from start of Period, date from 
+        end of Period]
+    )
+    or exists ( ( Status.&quot;Completed or Ongoing Procedure&quot; ( [Procedure: &quot;Palliative Care Intervention&quot;] ) ) PalliativeIntervention
+        where Interval[date from start of FHIRBase.&quot;Normalize Interval&quot; ( PalliativeIntervention.performed ), date from 
+        end of FHIRBase.&quot;Normalize Interval&quot; ( PalliativeIntervention.performed )]overlaps Interval[date from start of Period, date from 
+        end of Period]
+    )
+    or exists ( ( Status.&quot;Active Condition&quot; ( [Condition: &quot;Encounter for palliative care&quot;] ) ) PalliativeDiagnosis
+        where Interval[date from start of FHIRBase.&quot;Prevalence Period&quot; ( PalliativeDiagnosis ), date from 
+        end of FHIRBase.&quot;Prevalence Period&quot; ( PalliativeDiagnosis )]overlaps Interval[date from start of Period, date from 
+        end of Period]
+    )</pre></li><li><h4>NCQA_Status<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Active Condition<!-- -->&quot;</h4><pre>define function &quot;Active Condition&quot;(Condition List&lt;FHIR.Condition&gt;):
+   Condition C
+       where C.clinicalStatus = Terminology.&quot;active&quot;</pre></li><li><h4>NCQA_Status<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Completed or Ongoing Procedure<!-- -->&quot;</h4><pre>define function &quot;Completed or Ongoing Procedure&quot;(Proc List&lt;FHIR.Procedure&gt;):
+    Proc P
+        where P.status in {&#x27;completed&#x27;, &#x27;in-progress&#x27;}</pre></li><li><h4>NCQA_Status<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Completed Procedure<!-- -->&quot;</h4><pre>define function &quot;Completed Procedure&quot;(Proc List&lt;FHIR.Procedure&gt;):
+    Proc P
+        where P.status = &#x27;completed&#x27;</pre></li><li><h4>NCQA_Status<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Dispensed Medication<!-- -->&quot;</h4><pre>define function &quot;Dispensed Medication&quot;(Med List&lt;FHIR.MedicationDispense&gt;):
+    Med M
+        where M.status = &#x27;completed&#x27;</pre></li><li><h4>NCQA_Status<!-- -->-<!-- -->1.0.0<!-- -->.&quot;<!-- -->Finished Encounter<!-- -->&quot;</h4><pre>define function &quot;Finished Encounter&quot;(Enc List&lt;FHIR.Encounter&gt;):
+    Enc E
+        where E.status = &#x27;finished&#x27;</pre></li></ul></div></div></body></html>

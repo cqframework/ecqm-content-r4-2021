@@ -1,0 +1,3095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,EnableResultTypes" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="NCQA_HealthPlanEnrollment" version="1.0.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1"/>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:51" localIdentifier="CQLBase" path="NCQA_CQLBase" version="1.0.0"/>
+      <def localId="3" locator="6:1-6:54" localIdentifier="FHIRHelpers" path="FHIRHelpers" version="4.0.1"/>
+      <def localId="4" locator="7:1-7:59" localIdentifier="Terminology" path="NCQA_Terminology" version="1.0.0"/>
+      <def localId="5" locator="8:1-8:53" localIdentifier="FHIRBase" path="NCQA_FHIRBase" version="1.0.0"/>
+   </includes>
+   <statements>
+      <def localId="33" locator="10:1-15:33" name="CoverageIntervals" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="33">
+               <a:s>define function &quot;CoverageIntervals&quot;(Coverage </a:s>
+               <a:s r="7">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="6">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, participationPeriod </a:s>
+               <a:s r="9">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="8">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="32">
+                  <a:s r="32">
+                     <a:s>
+                        <a:s r="11">
+                           <a:s r="10">
+                              <a:s>
+                                 <a:s>Coverage</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> C</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="31">
+                        <a:s>return </a:s>
+                        <a:s r="30">
+                           <a:s r="24">
+                              <a:s>Interval[</a:s>
+                              <a:s r="17">
+                                 <a:s>date from </a:s>
+                                 <a:s r="16">
+                                    <a:s>start of </a:s>
+                                    <a:s r="15">
+                                       <a:s r="12">
+                                          <a:s>FHIRBase</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="15">
+                                          <a:s>&quot;Normalize Interval&quot; ( </a:s>
+                                          <a:s r="14">
+                                             <a:s r="13">
+                                                <a:s>C</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="14">
+                                                <a:s>period</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>, </a:s>
+                              <a:s r="23">
+                                 <a:s>date from &#xd;
+    </a:s>
+                                 <a:s r="22">
+                                    <a:s>end of </a:s>
+                                    <a:s r="21">
+                                       <a:s r="18">
+                                          <a:s>FHIRBase</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="21">
+                                          <a:s>&quot;Normalize Interval&quot; ( </a:s>
+                                          <a:s r="20">
+                                             <a:s r="19">
+                                                <a:s>C</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="20">
+                                                <a:s>period</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                           <a:s>&#xd;
+      intersect </a:s>
+                           <a:s r="29">
+                              <a:s>Interval[</a:s>
+                              <a:s r="26">
+                                 <a:s>start of </a:s>
+                                 <a:s r="25">
+                                    <a:s>participationPeriod</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>, &#xd;
+      </a:s>
+                              <a:s r="28">
+                                 <a:s>end of </a:s>
+                                 <a:s r="27">
+                                    <a:s>participationPeriod</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType xsi:type="IntervalTypeSpecifier">
+               <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </elementType>
+         </resultTypeSpecifier>
+         <expression localId="32" locator="11:3-15:33" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </resultTypeSpecifier>
+            <source localId="11" locator="11:3-11:12" alias="C">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="10" locator="11:3-11:10" name="Coverage" xsi:type="OperandRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+               </expression>
+            </source>
+            <return localId="31" locator="12:5-15:33">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="30" locator="12:12-15:33" xsi:type="Intersect">
+                  <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <operand localId="24" locator="12:12-13:54" lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <low localId="17" locator="12:21-12:81" resultTypeName="t:Date" xsi:type="DateFrom">
+                        <operand localId="16" locator="12:31-12:81" resultTypeName="t:DateTime" xsi:type="Start">
+                           <operand localId="15" locator="12:40-12:81" name="Normalize Interval" libraryName="FHIRBase" xsi:type="FunctionRef">
+                              <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                 <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                              <operand xsi:type="As">
+                                 <operand localId="14" locator="12:72-12:79" resultTypeName="fhir:Period" path="period" scope="C" xsi:type="Property"/>
+                                 <asTypeSpecifier xsi:type="ChoiceTypeSpecifier">
+                                    <choice name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Timing" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Age" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+                                 </asTypeSpecifier>
+                              </operand>
+                           </operand>
+                        </operand>
+                     </low>
+                     <high localId="23" locator="12:84-13:53" resultTypeName="t:Date" xsi:type="DateFrom">
+                        <operand localId="22" locator="13:5-13:53" resultTypeName="t:DateTime" xsi:type="End">
+                           <operand localId="21" locator="13:12-13:53" name="Normalize Interval" libraryName="FHIRBase" xsi:type="FunctionRef">
+                              <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                 <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                              <operand xsi:type="As">
+                                 <operand localId="20" locator="13:44-13:51" resultTypeName="fhir:Period" path="period" scope="C" xsi:type="Property"/>
+                                 <asTypeSpecifier xsi:type="ChoiceTypeSpecifier">
+                                    <choice name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Timing" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Age" xsi:type="NamedTypeSpecifier"/>
+                                    <choice name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+                                 </asTypeSpecifier>
+                              </operand>
+                           </operand>
+                        </operand>
+                     </high>
+                  </operand>
+                  <operand localId="29" locator="14:17-15:33" lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <low localId="26" locator="14:26-14:53" resultTypeName="t:Date" xsi:type="Start">
+                        <operand localId="25" locator="14:35-14:53" name="participationPeriod" xsi:type="OperandRef">
+                           <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                        </operand>
+                     </low>
+                     <high localId="28" locator="15:7-15:32" resultTypeName="t:Date" xsi:type="End">
+                        <operand localId="27" locator="15:14-15:32" name="participationPeriod" xsi:type="OperandRef">
+                           <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                        </operand>
+                     </high>
+                  </operand>
+               </expression>
+            </return>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="7" locator="10:46-10:64" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="6" locator="10:51-10:63" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="participationPeriod">
+            <operandTypeSpecifier localId="9" locator="10:87-10:100" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="8" locator="10:96-10:99" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="40" locator="17:1-18:59" name="Collapsed Coverage Intervals" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="40">
+               <a:s>define function &quot;Collapsed Coverage Intervals&quot;(Intervals </a:s>
+               <a:s r="36">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="35">
+                     <a:s>Interval&lt;</a:s>
+                     <a:s r="34">
+                        <a:s>Date</a:s>
+                     </a:s>
+                     <a:s>></a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="39">
+                  <a:s r="39">
+                     <a:s r="37">
+                        <a:s>CQLBase</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="39">
+                        <a:s>&quot;Collapse Date Interval Workaround&quot; ( </a:s>
+                        <a:s r="38">
+                           <a:s>Intervals</a:s>
+                        </a:s>
+                        <a:s> )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType xsi:type="IntervalTypeSpecifier">
+               <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </elementType>
+         </resultTypeSpecifier>
+         <expression localId="39" locator="18:3-18:59" name="Collapse Date Interval Workaround" libraryName="CQLBase" xsi:type="FunctionRef">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </resultTypeSpecifier>
+            <operand localId="38" locator="18:49-18:57" name="Intervals" xsi:type="OperandRef">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+            </operand>
+         </expression>
+         <operand name="Intervals">
+            <operandTypeSpecifier localId="36" locator="17:58-17:77" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <elementType localId="35" locator="17:63-17:76" xsi:type="IntervalTypeSpecifier">
+                  <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <pointType localId="34" locator="17:72-17:75" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="61" locator="20:1-27:21" name="Collapsed Coverage Adjacent Intervals" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="61">
+               <a:s>define function &quot;Collapsed Coverage Adjacent Intervals&quot;(Intervals </a:s>
+               <a:s r="43">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="42">
+                     <a:s>Interval&lt;</a:s>
+                     <a:s r="41">
+                        <a:s>Date</a:s>
+                     </a:s>
+                     <a:s>></a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="60">
+                  <a:s r="60">
+                     <a:s>
+                        <a:s>from&#xd;
+    </a:s>
+                        <a:s r="45">
+                           <a:s r="44">
+                              <a:s>
+                                 <a:s>Intervals</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> Coverage1</a:s>
+                        </a:s>
+                        <a:s>,&#xd;
+    </a:s>
+                        <a:s r="47">
+                           <a:s r="46">
+                              <a:s>
+                                 <a:s>Intervals</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> Coverage2</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="53">
+                        <a:s>where &#xd;
+    </a:s>
+                        <a:s r="53">
+                           <a:s r="49">
+                              <a:s>end of </a:s>
+                              <a:s r="48">
+                                 <a:s>Coverage1</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="53">
+                              <a:s>within </a:s>
+                              <a:s r="52">
+                                 <a:s>1 day</a:s>
+                              </a:s>
+                              <a:s> of</a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="51">
+                              <a:s>start of </a:s>
+                              <a:s r="50">
+                                 <a:s>Coverage2</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="59">
+                        <a:s>return </a:s>
+                        <a:s r="58">
+                           <a:s>Interval[</a:s>
+                           <a:s r="55">
+                              <a:s>start of </a:s>
+                              <a:s r="54">
+                                 <a:s>Coverage1</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>, &#xd;
+    </a:s>
+                           <a:s r="57">
+                              <a:s>end of </a:s>
+                              <a:s r="56">
+                                 <a:s>Coverage2</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>]</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType xsi:type="IntervalTypeSpecifier">
+               <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </elementType>
+         </resultTypeSpecifier>
+         <expression localId="60" locator="21:3-27:21" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </resultTypeSpecifier>
+            <source localId="45" locator="22:5-22:23" alias="Coverage1">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="44" locator="22:5-22:13" name="Intervals" xsi:type="OperandRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+               </expression>
+            </source>
+            <source localId="47" locator="23:5-23:23" alias="Coverage2">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="46" locator="23:5-23:13" name="Intervals" xsi:type="OperandRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+               </expression>
+            </source>
+            <where localId="53" locator="24:5-25:55" resultTypeName="t:Boolean" xsi:type="And">
+               <operand xsi:type="In">
+                  <operand localId="49" locator="25:5-25:20" resultTypeName="t:Date" xsi:type="End">
+                     <operand localId="48" locator="25:12-25:20" name="Coverage1" xsi:type="AliasRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </operand>
+                  <operand locator="25:29-25:33" lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <low locator="25:29-25:33" xsi:type="Subtract">
+                        <operand localId="51" locator="25:38-25:55" resultTypeName="t:Date" xsi:type="Start">
+                           <operand localId="50" locator="25:47-25:55" name="Coverage2" xsi:type="AliasRef">
+                              <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                 <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                           </operand>
+                        </operand>
+                        <operand localId="52" locator="25:29-25:33" resultTypeName="t:Quantity" value="1" unit="day" xsi:type="Quantity"/>
+                     </low>
+                     <high locator="25:29-25:33" xsi:type="Add">
+                        <operand localId="51" locator="25:38-25:55" resultTypeName="t:Date" xsi:type="Start">
+                           <operand localId="50" locator="25:47-25:55" name="Coverage2" xsi:type="AliasRef">
+                              <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                 <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                           </operand>
+                        </operand>
+                        <operand localId="52" locator="25:29-25:33" resultTypeName="t:Quantity" value="1" unit="day" xsi:type="Quantity"/>
+                     </high>
+                  </operand>
+               </operand>
+               <operand locator="25:29-25:33" xsi:type="Not">
+                  <operand locator="25:29-25:33" xsi:type="IsNull">
+                     <operand localId="51" locator="25:38-25:55" resultTypeName="t:Date" xsi:type="Start">
+                        <operand localId="50" locator="25:47-25:55" name="Coverage2" xsi:type="AliasRef">
+                           <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                        </operand>
+                     </operand>
+                  </operand>
+               </operand>
+            </where>
+            <return localId="59" locator="26:5-27:21">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="58" locator="26:12-27:21" lowClosed="true" highClosed="true" xsi:type="Interval">
+                  <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <low localId="55" locator="26:21-26:38" resultTypeName="t:Date" xsi:type="Start">
+                     <operand localId="54" locator="26:30-26:38" name="Coverage1" xsi:type="AliasRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </low>
+                  <high localId="57" locator="27:5-27:20" resultTypeName="t:Date" xsi:type="End">
+                     <operand localId="56" locator="27:12-27:20" name="Coverage2" xsi:type="AliasRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </high>
+               </expression>
+            </return>
+         </expression>
+         <operand name="Intervals">
+            <operandTypeSpecifier localId="43" locator="20:67-20:86" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <elementType localId="42" locator="20:72-20:85" xsi:type="IntervalTypeSpecifier">
+                  <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <pointType localId="41" locator="20:81-20:84" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="75" locator="29:1-31:61" name="Collapsed Final Coverage Intervals" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="75">
+               <a:s>define function &quot;Collapsed Final Coverage Intervals&quot;(collapsedI </a:s>
+               <a:s r="64">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="63">
+                     <a:s>Interval&lt;</a:s>
+                     <a:s r="62">
+                        <a:s>Date</a:s>
+                     </a:s>
+                     <a:s>></a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, adjacentI </a:s>
+               <a:s r="67">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="66">
+                     <a:s>Interval&lt;</a:s>
+                     <a:s r="65">
+                        <a:s>Date</a:s>
+                     </a:s>
+                     <a:s>></a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="74">
+                  <a:s r="74">
+                     <a:s r="68">
+                        <a:s>CQLBase</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="74">
+                        <a:s>&quot;Collapse Date Interval Workaround&quot; ( </a:s>
+                        <a:s r="73">
+                           <a:s r="70">
+                              <a:s>&quot;Collapsed Coverage Intervals&quot;(</a:s>
+                              <a:s r="69">
+                                 <a:s>collapsedI</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                           <a:s>&#xd;
+    union </a:s>
+                           <a:s r="72">
+                              <a:s>&quot;Collapsed Coverage Adjacent Intervals&quot;(</a:s>
+                              <a:s r="71">
+                                 <a:s>adjacentI</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType xsi:type="IntervalTypeSpecifier">
+               <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </elementType>
+         </resultTypeSpecifier>
+         <expression localId="74" locator="30:3-31:61" name="Collapse Date Interval Workaround" libraryName="CQLBase" xsi:type="FunctionRef">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </resultTypeSpecifier>
+            <operand localId="73" locator="30:49-31:60" xsi:type="Union">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <operand localId="70" locator="30:49-30:90" name="Collapsed Coverage Intervals" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <operand localId="69" locator="30:80-30:89" name="collapsedI" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                  </operand>
+               </operand>
+               <operand localId="72" locator="31:11-31:60" name="Collapsed Coverage Adjacent Intervals" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <operand localId="71" locator="31:51-31:59" name="adjacentI" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+         <operand name="collapsedI">
+            <operandTypeSpecifier localId="64" locator="29:65-29:84" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <elementType localId="63" locator="29:70-29:83" xsi:type="IntervalTypeSpecifier">
+                  <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <pointType localId="62" locator="29:79-29:82" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="adjacentI">
+            <operandTypeSpecifier localId="67" locator="29:97-29:116" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <elementType localId="66" locator="29:102-29:115" xsi:type="IntervalTypeSpecifier">
+                  <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <pointType localId="65" locator="29:111-29:114" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </elementType>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="103" locator="33:1-44:5" name="All Coverage Info" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="103">
+               <a:s>define function &quot;All Coverage Info&quot;(Coverage </a:s>
+               <a:s r="77">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="76">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, participationPeriod </a:s>
+               <a:s r="79">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="78">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="102">
+                  <a:s r="102">
+                     <a:s>
+                        <a:s r="81">
+                           <a:s r="80">
+                              <a:s>
+                                 <a:s>Coverage</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> C</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s>
+                        <a:s>let </a:s>
+                        <a:s r="85">
+                           <a:s>IntervalInfo: </a:s>
+                           <a:s r="84">
+                              <a:s>&quot;CoverageIntervals&quot;(</a:s>
+                              <a:s r="82">
+                                 <a:s>Coverage</a:s>
+                              </a:s>
+                              <a:s>, </a:s>
+                              <a:s r="83">
+                                 <a:s>participationPeriod</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,&#xd;
+    </a:s>
+                        <a:s r="88">
+                           <a:s>Collapsed: </a:s>
+                           <a:s r="87">
+                              <a:s>&quot;Collapsed Coverage Intervals&quot;(</a:s>
+                              <a:s r="86">
+                                 <a:s>IntervalInfo</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,&#xd;
+    </a:s>
+                        <a:s r="91">
+                           <a:s>Adjacent: </a:s>
+                           <a:s r="90">
+                              <a:s>&quot;Collapsed Coverage Adjacent Intervals&quot;(</a:s>
+                              <a:s r="89">
+                                 <a:s>Collapsed</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>,&#xd;
+    </a:s>
+                        <a:s r="95">
+                           <a:s>CollapsedFinal: </a:s>
+                           <a:s r="94">
+                              <a:s>&quot;Collapsed Final Coverage Intervals&quot;(</a:s>
+                              <a:s r="92">
+                                 <a:s>Collapsed</a:s>
+                              </a:s>
+                              <a:s>, </a:s>
+                              <a:s r="93">
+                                 <a:s>Adjacent</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="101">
+                        <a:s>return </a:s>
+                        <a:s r="100">
+                           <a:s>Tuple {&#xd;
+      </a:s>
+                           <a:s>
+                              <a:s>IntervalInfo: </a:s>
+                              <a:s r="96">
+                                 <a:s>IntervalInfo</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,&#xd;
+      </a:s>
+                           <a:s>
+                              <a:s>Collapsed: </a:s>
+                              <a:s r="97">
+                                 <a:s>Collapsed</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,&#xd;
+      </a:s>
+                           <a:s>
+                              <a:s>Adjacent: </a:s>
+                              <a:s r="98">
+                                 <a:s>Adjacent</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>,&#xd;
+      </a:s>
+                           <a:s>
+                              <a:s>CollapsedFinal: </a:s>
+                              <a:s r="99">
+                                 <a:s>CollapsedFinal</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>&#xd;
+    }</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType xsi:type="TupleTypeSpecifier">
+               <element name="IntervalInfo">
+                  <type xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </type>
+               </element>
+               <element name="Collapsed">
+                  <type xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </type>
+               </element>
+               <element name="Adjacent">
+                  <type xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </type>
+               </element>
+               <element name="CollapsedFinal">
+                  <type xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </type>
+               </element>
+            </elementType>
+         </resultTypeSpecifier>
+         <expression localId="102" locator="34:3-44:5" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType xsi:type="TupleTypeSpecifier">
+                  <element name="IntervalInfo">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+                  <element name="Collapsed">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+                  <element name="Adjacent">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+                  <element name="CollapsedFinal">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+               </elementType>
+            </resultTypeSpecifier>
+            <source localId="81" locator="34:3-34:12" alias="C">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="80" locator="34:3-34:10" name="Coverage" xsi:type="OperandRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+               </expression>
+            </source>
+            <let localId="85" locator="35:9-35:72" identifier="IntervalInfo">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="84" locator="35:23-35:72" name="CoverageIntervals" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <operand localId="82" locator="35:43-35:50" name="Coverage" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+                  <operand localId="83" locator="35:53-35:71" name="participationPeriod" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </let>
+            <let localId="88" locator="36:5-36:59" identifier="Collapsed">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="87" locator="36:16-36:59" name="Collapsed Coverage Intervals" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <operand localId="86" locator="36:47-36:58" name="IntervalInfo" xsi:type="QueryLetRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </let>
+            <let localId="91" locator="37:5-37:64" identifier="Adjacent">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="90" locator="37:15-37:64" name="Collapsed Coverage Adjacent Intervals" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <operand localId="89" locator="37:55-37:63" name="Collapsed" xsi:type="QueryLetRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </let>
+            <let localId="95" locator="38:5-38:77" identifier="CollapsedFinal">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="94" locator="38:21-38:77" name="Collapsed Final Coverage Intervals" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <operand localId="92" locator="38:58-38:66" name="Collapsed" xsi:type="QueryLetRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                  </operand>
+                  <operand localId="93" locator="38:69-38:76" name="Adjacent" xsi:type="QueryLetRef">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                  </operand>
+               </expression>
+            </let>
+            <return localId="101" locator="39:5-44:5">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType xsi:type="TupleTypeSpecifier">
+                     <element name="IntervalInfo">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Collapsed">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Adjacent">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="CollapsedFinal">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                  </elementType>
+               </resultTypeSpecifier>
+               <expression localId="100" locator="39:12-44:5" xsi:type="Tuple">
+                  <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                     <element name="IntervalInfo">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Collapsed">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Adjacent">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="CollapsedFinal">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                  </resultTypeSpecifier>
+                  <element name="IntervalInfo">
+                     <value localId="96" locator="40:21-40:32" name="IntervalInfo" xsi:type="QueryLetRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </resultTypeSpecifier>
+                     </value>
+                  </element>
+                  <element name="Collapsed">
+                     <value localId="97" locator="41:18-41:26" name="Collapsed" xsi:type="QueryLetRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </resultTypeSpecifier>
+                     </value>
+                  </element>
+                  <element name="Adjacent">
+                     <value localId="98" locator="42:17-42:24" name="Adjacent" xsi:type="QueryLetRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </resultTypeSpecifier>
+                     </value>
+                  </element>
+                  <element name="CollapsedFinal">
+                     <value localId="99" locator="43:23-43:36" name="CollapsedFinal" xsi:type="QueryLetRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </resultTypeSpecifier>
+                     </value>
+                  </element>
+               </expression>
+            </return>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="77" locator="33:46-33:64" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="76" locator="33:51-33:63" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="participationPeriod">
+            <operandTypeSpecifier localId="79" locator="33:87-33:100" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="78" locator="33:96-33:99" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="146" locator="53:1-60:40" name="Health Plan Coverage Resources" context="Unfiltered" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="146">
+               <a:s>define function &quot;Health Plan Coverage Resources&quot;(Coverage </a:s>
+               <a:s r="114">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="113">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="145">
+                  <a:s r="145">
+                     <a:s>
+                        <a:s r="142">
+                           <a:s r="141">
+                              <a:s>( </a:s>
+                              <a:s r="141">
+                                 <a:s>
+                                    <a:s r="116">
+                                       <a:s r="115">
+                                          <a:s>
+                                             <a:s>Coverage</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> C</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+    </a:s>
+                                 <a:s r="140">
+                                    <a:s>where </a:s>
+                                    <a:s r="140">
+                                       <a:s>exists </a:s>
+                                       <a:s r="139">
+                                          <a:s>
+                                             <a:s r="118">
+                                                <a:s r="117">
+                                                   <a:s>
+                                                      <a:s>C.type.coding</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> cTypeCoding</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>&#xd;
+      </a:s>
+                                          <a:s r="138">
+                                             <a:s>where </a:s>
+                                             <a:s r="138">
+                                                <a:s>( </a:s>
+                                                <a:s r="138">
+                                                   <a:s r="131">
+                                                      <a:s r="124">
+                                                         <a:s r="121">
+                                                            <a:s r="119">
+                                                               <a:s>FHIRHelpers</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="121">
+                                                               <a:s>ToCode ( </a:s>
+                                                               <a:s r="120">
+                                                                  <a:s>cTypeCoding</a:s>
+                                                               </a:s>
+                                                               <a:s> )</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s> ~ </a:s>
+                                                         <a:s r="123">
+                                                            <a:s r="122">
+                                                               <a:s>Terminology</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="123">
+                                                               <a:s>&quot;managed care policy&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s>&#xd;
+          or </a:s>
+                                                      <a:s r="130">
+                                                         <a:s r="127">
+                                                            <a:s r="125">
+                                                               <a:s>FHIRHelpers</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="127">
+                                                               <a:s>ToCode ( </a:s>
+                                                               <a:s r="126">
+                                                                  <a:s>cTypeCoding</a:s>
+                                                               </a:s>
+                                                               <a:s> )</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s> ~ </a:s>
+                                                         <a:s r="129">
+                                                            <a:s r="128">
+                                                               <a:s>Terminology</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="129">
+                                                               <a:s>&quot;retiree health program&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s>&#xd;
+          or </a:s>
+                                                   <a:s r="137">
+                                                      <a:s r="134">
+                                                         <a:s r="132">
+                                                            <a:s>FHIRHelpers</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="134">
+                                                            <a:s>ToCode ( </a:s>
+                                                            <a:s r="133">
+                                                               <a:s>cTypeCoding</a:s>
+                                                            </a:s>
+                                                            <a:s> )</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s> ~ </a:s>
+                                                      <a:s r="136">
+                                                         <a:s r="135">
+                                                            <a:s>Terminology</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="136">
+                                                            <a:s>&quot;subsidized health program&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>&#xd;
+      )</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> HPCoverageResource</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="144">
+                        <a:s>where </a:s>
+                        <a:s r="144">
+                           <a:s r="143">
+                              <a:s>HPCoverageResource</a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="145" locator="54:3-60:40" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <source localId="142" locator="54:3-59:28" alias="HPCoverageResource">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="141" locator="54:3-59:9" xsi:type="Query">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <source localId="116" locator="54:5-54:14" alias="C">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <expression localId="115" locator="54:5-54:12" name="Coverage" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </expression>
+                  </source>
+                  <where localId="140" locator="55:5-59:7" resultTypeName="t:Boolean" xsi:type="Exists">
+                     <operand localId="139" locator="55:18-59:7" xsi:type="Query">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <source localId="118" locator="55:18-55:42" alias="cTypeCoding">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <expression localId="117" locator="55:18-55:30" path="coding" xsi:type="Property">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                              <source path="type" scope="C" xsi:type="Property"/>
+                           </expression>
+                        </source>
+                        <where localId="138" locator="56:7-59:7" resultTypeName="t:Boolean" xsi:type="Or">
+                           <operand localId="131" locator="56:15-57:86" resultTypeName="t:Boolean" xsi:type="Or">
+                              <operand localId="124" locator="56:15-56:84" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                                 <operand localId="121" locator="56:15-56:48" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="120" locator="56:36-56:46" resultTypeName="fhir:Coding" name="cTypeCoding" xsi:type="AliasRef"/>
+                                 </operand>
+                                 <operand localId="123" locator="56:52-56:84" resultTypeName="t:Code" name="managed care policy" libraryName="Terminology" xsi:type="CodeRef"/>
+                              </operand>
+                              <operand localId="130" locator="57:14-57:86" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                                 <operand localId="127" locator="57:14-57:47" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="126" locator="57:35-57:45" resultTypeName="fhir:Coding" name="cTypeCoding" xsi:type="AliasRef"/>
+                                 </operand>
+                                 <operand localId="129" locator="57:51-57:86" resultTypeName="t:Code" name="retiree health program" libraryName="Terminology" xsi:type="CodeRef"/>
+                              </operand>
+                           </operand>
+                           <operand localId="137" locator="58:14-58:89" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                              <operand localId="134" locator="58:14-58:47" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="133" locator="58:35-58:45" resultTypeName="fhir:Coding" name="cTypeCoding" xsi:type="AliasRef"/>
+                              </operand>
+                              <operand localId="136" locator="58:51-58:89" resultTypeName="t:Code" name="subsidized health program" libraryName="Terminology" xsi:type="CodeRef"/>
+                           </operand>
+                        </where>
+                     </operand>
+                  </where>
+               </expression>
+            </source>
+            <where localId="144" locator="60:5-60:40" resultTypeName="t:Boolean" xsi:type="Not">
+               <operand locator="60:11-60:40" resultTypeName="t:Boolean" xsi:type="IsNull">
+                  <operand localId="143" locator="60:11-60:28" resultTypeName="fhir:Coverage" name="HPCoverageResource" xsi:type="AliasRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="114" locator="53:59-53:77" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="113" locator="53:64-53:76" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="211" locator="90:1-99:14" resultTypeName="t:Boolean" name="Anchor Date Criteria" context="Unfiltered" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="211">
+               <a:s>define function &quot;Anchor Date Criteria&quot;(Coverage </a:s>
+               <a:s r="166">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="165">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AnchorDate </a:s>
+               <a:s r="167">
+                  <a:s>Date</a:s>
+               </a:s>
+               <a:s>, participationPeriod </a:s>
+               <a:s r="169">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="168">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="210">
+                  <a:s r="210">
+                     <a:s>if </a:s>
+                     <a:s r="172">
+                        <a:s r="170">
+                           <a:s>AnchorDate</a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="171">
+                           <a:s>participationPeriod</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> then </a:s>
+                     <a:s r="182">
+                        <a:s>exists </a:s>
+                        <a:s r="181">
+                           <a:s>( </a:s>
+                           <a:s r="181">
+                              <a:s>
+                                 <a:s r="177">
+                                    <a:s r="176">
+                                       <a:s>( </a:s>
+                                       <a:s r="176">
+                                          <a:s r="175">
+                                             <a:s>&quot;All Coverage Info&quot;(</a:s>
+                                             <a:s r="173">
+                                                <a:s>Coverage</a:s>
+                                             </a:s>
+                                             <a:s>, </a:s>
+                                             <a:s r="174">
+                                                <a:s>participationPeriod</a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="176">
+                                             <a:s>CollapsedFinal</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> )</a:s>
+                                    </a:s>
+                                    <a:s> FinalInterval</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+      </a:s>
+                              <a:s r="180">
+                                 <a:s>where </a:s>
+                                 <a:s r="180">
+                                    <a:s r="178">
+                                       <a:s>AnchorDate</a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="179">
+                                       <a:s>FinalInterval</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>&#xd;
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> &#xd;
+    else </a:s>
+                     <a:s r="209">
+                        <a:s>if </a:s>
+                        <a:s r="186">
+                           <a:s>not </a:s>
+                           <a:s r="185">
+                              <a:s>( </a:s>
+                              <a:s r="185">
+                                 <a:s r="183">
+                                    <a:s>AnchorDate</a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="184">
+                                    <a:s>participationPeriod</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> then </a:s>
+                        <a:s r="203">
+                           <a:s>exists </a:s>
+                           <a:s r="202">
+                              <a:s>( </a:s>
+                              <a:s r="202">
+                                 <a:s>
+                                    <a:s r="188">
+                                       <a:s r="187">
+                                          <a:s>
+                                             <a:s>Coverage.period</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> Cperiod</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+      </a:s>
+                                 <a:s r="201">
+                                    <a:s>where </a:s>
+                                    <a:s r="201">
+                                       <a:s r="189">
+                                          <a:s>AnchorDate</a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="200">
+                                          <a:s>Interval[</a:s>
+                                          <a:s r="194">
+                                             <a:s>date from </a:s>
+                                             <a:s r="193">
+                                                <a:s>start of </a:s>
+                                                <a:s r="192">
+                                                   <a:s r="190">
+                                                      <a:s>FHIRBase</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="192">
+                                                      <a:s>&quot;Normalize Interval&quot; ( </a:s>
+                                                      <a:s r="191">
+                                                         <a:s>Cperiod</a:s>
+                                                      </a:s>
+                                                      <a:s> )</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="199">
+                                             <a:s>date from &#xd;
+      </a:s>
+                                             <a:s r="198">
+                                                <a:s>end of </a:s>
+                                                <a:s r="197">
+                                                   <a:s r="195">
+                                                      <a:s>FHIRBase</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="197">
+                                                      <a:s>&quot;Normalize Interval&quot; ( </a:s>
+                                                      <a:s r="196">
+                                                         <a:s>Cperiod</a:s>
+                                                      </a:s>
+                                                      <a:s> )</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>]</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+  )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> &#xd;
+    else </a:s>
+                        <a:s r="208">
+                           <a:s>if </a:s>
+                           <a:s r="205">
+                              <a:s r="204">
+                                 <a:s>AnchorDate</a:s>
+                              </a:s>
+                              <a:s> is null</a:s>
+                           </a:s>
+                           <a:s r="206"> then true &#xd;
+    else false</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="210" locator="91:3-99:14" resultTypeName="t:Boolean" xsi:type="If">
+            <condition asType="t:Boolean" xsi:type="As">
+               <operand localId="172" locator="91:6-91:38" resultTypeName="t:Boolean" xsi:type="In">
+                  <operand localId="170" locator="91:6-91:15" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                  <operand localId="171" locator="91:20-91:38" name="participationPeriod" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+               </operand>
+            </condition>
+            <then localId="182" locator="91:45-93:3" resultTypeName="t:Boolean" xsi:type="Exists">
+               <operand localId="181" locator="91:52-93:3" xsi:type="Query">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </elementType>
+                  </resultTypeSpecifier>
+                  <source localId="177" locator="91:54-91:136" alias="FinalInterval">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                     <expression localId="176" locator="91:54-91:122" xsi:type="Flatten">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </resultTypeSpecifier>
+                        <operand xsi:type="Query">
+                           <source alias="$this">
+                              <expression localId="175" locator="91:56-91:105" name="All Coverage Info" xsi:type="FunctionRef">
+                                 <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                    <elementType xsi:type="TupleTypeSpecifier">
+                                       <element name="IntervalInfo">
+                                          <type xsi:type="ListTypeSpecifier">
+                                             <elementType xsi:type="IntervalTypeSpecifier">
+                                                <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                             </elementType>
+                                          </type>
+                                       </element>
+                                       <element name="Collapsed">
+                                          <type xsi:type="ListTypeSpecifier">
+                                             <elementType xsi:type="IntervalTypeSpecifier">
+                                                <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                             </elementType>
+                                          </type>
+                                       </element>
+                                       <element name="Adjacent">
+                                          <type xsi:type="ListTypeSpecifier">
+                                             <elementType xsi:type="IntervalTypeSpecifier">
+                                                <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                             </elementType>
+                                          </type>
+                                       </element>
+                                       <element name="CollapsedFinal">
+                                          <type xsi:type="ListTypeSpecifier">
+                                             <elementType xsi:type="IntervalTypeSpecifier">
+                                                <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                             </elementType>
+                                          </type>
+                                       </element>
+                                    </elementType>
+                                 </resultTypeSpecifier>
+                                 <operand localId="173" locator="91:76-91:83" name="Coverage" xsi:type="OperandRef">
+                                    <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                       <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                 </operand>
+                                 <operand localId="174" locator="91:86-91:104" name="participationPeriod" xsi:type="OperandRef">
+                                    <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                       <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                 </operand>
+                              </expression>
+                           </source>
+                           <where xsi:type="Not">
+                              <operand xsi:type="IsNull">
+                                 <operand path="CollapsedFinal" xsi:type="Property">
+                                    <source name="$this" xsi:type="AliasRef"/>
+                                 </operand>
+                              </operand>
+                           </where>
+                           <return>
+                              <expression path="CollapsedFinal" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </operand>
+                     </expression>
+                  </source>
+                  <where localId="180" locator="92:7-92:39" resultTypeName="t:Boolean" xsi:type="In">
+                     <operand localId="178" locator="92:13-92:22" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                     <operand localId="179" locator="92:27-92:39" name="FinalInterval" xsi:type="AliasRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </where>
+               </operand>
+            </then>
+            <else localId="209" locator="94:10-99:14" resultTypeName="t:Boolean" xsi:type="If">
+               <condition asType="t:Boolean" xsi:type="As">
+                  <operand localId="186" locator="94:13-94:53" resultTypeName="t:Boolean" xsi:type="Not">
+                     <operand localId="185" locator="94:17-94:53" resultTypeName="t:Boolean" xsi:type="In">
+                        <operand localId="183" locator="94:19-94:28" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                        <operand localId="184" locator="94:33-94:51" name="participationPeriod" xsi:type="OperandRef">
+                           <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                        </operand>
+                     </operand>
+                  </operand>
+               </condition>
+               <then localId="203" locator="94:60-97:3" resultTypeName="t:Boolean" xsi:type="Exists">
+                  <operand localId="202" locator="94:67-97:3" xsi:type="Query">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <source localId="188" locator="94:69-94:91" alias="Cperiod">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <expression localId="187" locator="94:69-94:83" xsi:type="Query">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <source alias="$this">
+                              <expression name="Coverage" xsi:type="OperandRef"/>
+                           </source>
+                           <where xsi:type="Not">
+                              <operand xsi:type="IsNull">
+                                 <operand path="period" xsi:type="Property">
+                                    <source name="$this" xsi:type="AliasRef"/>
+                                 </operand>
+                              </operand>
+                           </where>
+                           <return>
+                              <expression path="period" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </expression>
+                     </source>
+                     <where localId="201" locator="95:7-96:55" resultTypeName="t:Boolean" xsi:type="In">
+                        <operand localId="189" locator="95:13-95:22" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                        <operand localId="200" locator="95:27-96:55" lowClosed="true" highClosed="true" xsi:type="Interval">
+                           <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <low localId="194" locator="95:36-95:95" resultTypeName="t:Date" xsi:type="DateFrom">
+                              <operand localId="193" locator="95:46-95:95" resultTypeName="t:DateTime" xsi:type="Start">
+                                 <operand localId="192" locator="95:55-95:95" name="Normalize Interval" libraryName="FHIRBase" xsi:type="FunctionRef">
+                                    <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                       <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                    <operand xsi:type="As">
+                                       <operand localId="191" locator="95:87-95:93" resultTypeName="fhir:Period" name="Cperiod" xsi:type="AliasRef"/>
+                                       <asTypeSpecifier xsi:type="ChoiceTypeSpecifier">
+                                          <choice name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Timing" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Age" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+                                       </asTypeSpecifier>
+                                    </operand>
+                                 </operand>
+                              </operand>
+                           </low>
+                           <high localId="199" locator="95:98-96:54" resultTypeName="t:Date" xsi:type="DateFrom">
+                              <operand localId="198" locator="96:7-96:54" resultTypeName="t:DateTime" xsi:type="End">
+                                 <operand localId="197" locator="96:14-96:54" name="Normalize Interval" libraryName="FHIRBase" xsi:type="FunctionRef">
+                                    <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                       <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                    <operand xsi:type="As">
+                                       <operand localId="196" locator="96:46-96:52" resultTypeName="fhir:Period" name="Cperiod" xsi:type="AliasRef"/>
+                                       <asTypeSpecifier xsi:type="ChoiceTypeSpecifier">
+                                          <choice name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Timing" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Age" xsi:type="NamedTypeSpecifier"/>
+                                          <choice name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+                                       </asTypeSpecifier>
+                                    </operand>
+                                 </operand>
+                              </operand>
+                           </high>
+                        </operand>
+                     </where>
+                  </operand>
+               </then>
+               <else localId="208" locator="98:10-99:14" resultTypeName="t:Boolean" xsi:type="If">
+                  <condition asType="t:Boolean" xsi:type="As">
+                     <operand localId="205" locator="98:13-98:30" resultTypeName="t:Boolean" xsi:type="IsNull">
+                        <operand localId="204" locator="98:13-98:22" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                     </operand>
+                  </condition>
+                  <then localId="206" locator="98:37-98:40" resultTypeName="t:Boolean" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+                  <else localId="207" locator="99:10-99:14" resultTypeName="t:Boolean" valueType="t:Boolean" value="false" xsi:type="Literal"/>
+               </else>
+            </else>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="166" locator="90:49-90:67" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="165" locator="90:54-90:66" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AnchorDate">
+            <operandTypeSpecifier localId="167" locator="90:81-90:84" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="participationPeriod">
+            <operandTypeSpecifier localId="169" locator="90:107-90:120" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="168" locator="90:116-90:119" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="216" locator="46:1-51:5" resultTypeName="t:Boolean" name="Health Plan Enrollment Criteria" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="216">
+               <a:s>define function &quot;Health Plan Enrollment Criteria&quot;(Coverage </a:s>
+               <a:s r="105">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="104">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AnchorDate </a:s>
+               <a:s r="106">
+                  <a:s>Date</a:s>
+               </a:s>
+               <a:s>, participationPeriod </a:s>
+               <a:s r="108">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="107">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AllowedGapDays </a:s>
+               <a:s r="109">
+                  <a:s>Integer</a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="215">
+                  <a:s r="215">
+                     <a:s>
+                        <a:s r="152">
+                           <a:s r="151">
+                              <a:s>( </a:s>
+                              <a:s r="151">
+                                 <a:s r="110">
+                                    <a:s>CQLBase</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="151">
+                                    <a:s>&quot;Date Interval Gaps Relative to Base Interval Stats&quot; ( </a:s>
+                                    <a:s r="111">
+                                       <a:s>participationPeriod</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="150">
+                                       <a:s r="149">
+                                          <a:s>&quot;All Coverage Info&quot;(</a:s>
+                                          <a:s r="147">
+                                             <a:s>&quot;Health Plan Coverage Resources&quot;(</a:s>
+                                             <a:s r="112">
+                                                <a:s>Coverage</a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="148">
+                                             <a:s>participationPeriod</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="150">
+                                          <a:s>CollapsedFinal</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> GapsInEnrollment</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="214">
+                        <a:s>return </a:s>
+                        <a:s r="213">
+                           <a:s>( </a:s>
+                           <a:s r="213">
+                              <a:s r="161">
+                                 <a:s r="156">
+                                    <a:s r="154">
+                                       <a:s r="153">
+                                          <a:s>GapsInEnrollment</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="154">
+                                          <a:s>&quot;Interval Count&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s r="155"> &lt;= 1</a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+        and </a:s>
+                                 <a:s r="160">
+                                    <a:s r="158">
+                                       <a:s r="157">
+                                          <a:s>GapsInEnrollment</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="158">
+                                          <a:s>&quot;Total Days In Longest Interval&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> &lt;= </a:s>
+                                    <a:s r="159">
+                                       <a:s>AllowedGapDays</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+        and </a:s>
+                              <a:s r="212">
+                                 <a:s>&quot;Anchor Date Criteria&quot;(</a:s>
+                                 <a:s r="162">
+                                    <a:s>Coverage</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="163">
+                                    <a:s>AnchorDate</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="164">
+                                    <a:s>participationPeriod</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>&#xd;
+    )</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="215" locator="47:3-51:5" resultTypeName="t:Boolean" xsi:type="Query">
+            <source localId="152" locator="47:3-47:208" alias="GapsInEnrollment">
+               <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                  <element name="Intervals">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+                  <element name="Interval Count">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Total Days In Intervals">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Longest Interval">
+                     <type xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </type>
+                  </element>
+                  <element name="Total Days In Longest Interval">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </resultTypeSpecifier>
+               <expression localId="151" locator="47:3-47:191" name="Date Interval Gaps Relative to Base Interval Stats" libraryName="CQLBase" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                     <element name="Intervals">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Interval Count">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                     <element name="Total Days In Intervals">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                     <element name="Longest Interval">
+                        <type xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </type>
+                     </element>
+                     <element name="Total Days In Longest Interval">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                  </resultTypeSpecifier>
+                  <operand localId="111" locator="47:68-47:86" name="participationPeriod" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+                  <operand localId="150" locator="47:89-47:187" xsi:type="Flatten">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                     <operand xsi:type="Query">
+                        <source alias="$this">
+                           <expression localId="149" locator="47:89-47:172" name="All Coverage Info" xsi:type="FunctionRef">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType xsi:type="TupleTypeSpecifier">
+                                    <element name="IntervalInfo">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="Collapsed">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="Adjacent">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="CollapsedFinal">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                 </elementType>
+                              </resultTypeSpecifier>
+                              <operand localId="147" locator="47:109-47:150" name="Health Plan Coverage Resources" xsi:type="FunctionRef">
+                                 <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                    <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                 </resultTypeSpecifier>
+                                 <operand localId="112" locator="47:142-47:149" name="Coverage" xsi:type="OperandRef">
+                                    <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                       <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                 </operand>
+                              </operand>
+                              <operand localId="148" locator="47:153-47:171" name="participationPeriod" xsi:type="OperandRef">
+                                 <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                    <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                 </resultTypeSpecifier>
+                              </operand>
+                           </expression>
+                        </source>
+                        <where xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand path="CollapsedFinal" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                        <return>
+                           <expression path="CollapsedFinal" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </operand>
+                  </operand>
+               </expression>
+            </source>
+            <return localId="214" locator="48:5-51:5" resultTypeName="t:Boolean">
+               <expression localId="213" locator="48:12-51:5" resultTypeName="t:Boolean" xsi:type="And">
+                  <operand localId="161" locator="48:14-49:79" resultTypeName="t:Boolean" xsi:type="And">
+                     <operand localId="156" locator="48:14-48:51" resultTypeName="t:Boolean" xsi:type="LessOrEqual">
+                        <operand localId="154" locator="48:14-48:46" resultTypeName="t:Integer" path="Interval Count" scope="GapsInEnrollment" xsi:type="Property"/>
+                        <operand localId="155" locator="48:51" resultTypeName="t:Integer" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="160" locator="49:13-49:79" resultTypeName="t:Boolean" xsi:type="LessOrEqual">
+                        <operand localId="158" locator="49:13-49:61" resultTypeName="t:Integer" path="Total Days In Longest Interval" scope="GapsInEnrollment" xsi:type="Property"/>
+                        <operand localId="159" locator="49:66-49:79" resultTypeName="t:Integer" name="AllowedGapDays" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="212" locator="50:13-50:77" resultTypeName="t:Boolean" name="Anchor Date Criteria" xsi:type="FunctionRef">
+                     <operand localId="162" locator="50:36-50:43" name="Coverage" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                     <operand localId="163" locator="50:46-50:55" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                     <operand localId="164" locator="50:58-50:76" name="participationPeriod" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </operand>
+               </expression>
+            </return>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="105" locator="46:60-46:78" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="104" locator="46:65-46:77" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AnchorDate">
+            <operandTypeSpecifier localId="106" locator="46:92-46:95" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="participationPeriod">
+            <operandTypeSpecifier localId="108" locator="46:118-46:131" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="107" locator="46:127-46:130" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AllowedGapDays">
+            <operandTypeSpecifier localId="109" locator="46:149-46:155" resultTypeName="t:Integer" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="248" locator="69:1-74:46" name="Pharmacy Benefit Coverage Resources" context="Unfiltered" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="248">
+               <a:s>define function &quot;Pharmacy Benefit Coverage Resources&quot;(Coverage </a:s>
+               <a:s r="230">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="229">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="247">
+                  <a:s r="247">
+                     <a:s>
+                        <a:s r="244">
+                           <a:s r="243">
+                              <a:s>( </a:s>
+                              <a:s r="243">
+                                 <a:s>
+                                    <a:s r="232">
+                                       <a:s r="231">
+                                          <a:s>
+                                             <a:s>Coverage</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> C</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+    </a:s>
+                                 <a:s r="242">
+                                    <a:s>where </a:s>
+                                    <a:s r="242">
+                                       <a:s>exists </a:s>
+                                       <a:s r="241">
+                                          <a:s>( </a:s>
+                                          <a:s r="241">
+                                             <a:s>
+                                                <a:s r="234">
+                                                   <a:s r="233">
+                                                      <a:s>
+                                                         <a:s>C.type.coding</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> cTypeCoding</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>&#xd;
+        </a:s>
+                                             <a:s r="240">
+                                                <a:s>where </a:s>
+                                                <a:s r="240">
+                                                   <a:s r="237">
+                                                      <a:s r="235">
+                                                         <a:s>FHIRHelpers</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="237">
+                                                         <a:s>ToCode ( </a:s>
+                                                         <a:s r="236">
+                                                            <a:s>cTypeCoding</a:s>
+                                                         </a:s>
+                                                         <a:s> )</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> ~ </a:s>
+                                                   <a:s r="239">
+                                                      <a:s r="238">
+                                                         <a:s>Terminology</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="239">
+                                                         <a:s>&quot;drug policy&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>&#xd;
+    )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> pharmacyCoverageResource</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="246">
+                        <a:s>where </a:s>
+                        <a:s r="246">
+                           <a:s r="245">
+                              <a:s>pharmacyCoverageResource</a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="247" locator="70:3-74:46" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <source localId="244" locator="70:3-73:32" alias="pharmacyCoverageResource">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="243" locator="70:3-73:7" xsi:type="Query">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <source localId="232" locator="70:5-70:14" alias="C">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <expression localId="231" locator="70:5-70:12" name="Coverage" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </expression>
+                  </source>
+                  <where localId="242" locator="71:5-73:5" resultTypeName="t:Boolean" xsi:type="Exists">
+                     <operand localId="241" locator="71:18-73:5" xsi:type="Query">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <source localId="234" locator="71:20-71:44" alias="cTypeCoding">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <expression localId="233" locator="71:20-71:32" path="coding" xsi:type="Property">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                              <source path="type" scope="C" xsi:type="Property"/>
+                           </expression>
+                        </source>
+                        <where localId="240" locator="72:9-72:76" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                           <operand localId="237" locator="72:15-72:48" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="236" locator="72:36-72:46" resultTypeName="fhir:Coding" name="cTypeCoding" xsi:type="AliasRef"/>
+                           </operand>
+                           <operand localId="239" locator="72:52-72:76" resultTypeName="t:Code" name="drug policy" libraryName="Terminology" xsi:type="CodeRef"/>
+                        </where>
+                     </operand>
+                  </where>
+               </expression>
+            </source>
+            <where localId="246" locator="74:5-74:46" resultTypeName="t:Boolean" xsi:type="Not">
+               <operand locator="74:11-74:46" resultTypeName="t:Boolean" xsi:type="IsNull">
+                  <operand localId="245" locator="74:11-74:34" resultTypeName="fhir:Coverage" name="pharmacyCoverageResource" xsi:type="AliasRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="230" locator="69:64-69:82" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="229" locator="69:69-69:81" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="271" locator="62:1-67:5" resultTypeName="t:Boolean" name="Pharmacy Benefit Enrollment Criteria" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="271">
+               <a:s>define function &quot;Pharmacy Benefit Enrollment Criteria&quot;(PharmCoverage </a:s>
+               <a:s r="221">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="220">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AnchorDate </a:s>
+               <a:s r="222">
+                  <a:s>Date</a:s>
+               </a:s>
+               <a:s>, participationPeriod </a:s>
+               <a:s r="224">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="223">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AllowedGapDays </a:s>
+               <a:s r="225">
+                  <a:s>Integer</a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="270">
+                  <a:s r="270">
+                     <a:s>
+                        <a:s r="254">
+                           <a:s r="253">
+                              <a:s>( </a:s>
+                              <a:s r="253">
+                                 <a:s r="226">
+                                    <a:s>CQLBase</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="253">
+                                    <a:s>&quot;Date Interval Gaps Relative to Base Interval Stats&quot; ( </a:s>
+                                    <a:s r="227">
+                                       <a:s>participationPeriod</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="252">
+                                       <a:s r="251">
+                                          <a:s>&quot;All Coverage Info&quot;(</a:s>
+                                          <a:s r="249">
+                                             <a:s>&quot;Pharmacy Benefit Coverage Resources&quot;(</a:s>
+                                             <a:s r="228">
+                                                <a:s>PharmCoverage</a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="250">
+                                             <a:s>participationPeriod</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="252">
+                                          <a:s>CollapsedFinal</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> GapsInEnrollment</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="269">
+                        <a:s>return </a:s>
+                        <a:s r="268">
+                           <a:s>( </a:s>
+                           <a:s r="268">
+                              <a:s r="263">
+                                 <a:s r="258">
+                                    <a:s r="256">
+                                       <a:s r="255">
+                                          <a:s>GapsInEnrollment</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="256">
+                                          <a:s>&quot;Interval Count&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s r="257"> &lt;= 1</a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+        and </a:s>
+                                 <a:s r="262">
+                                    <a:s r="260">
+                                       <a:s r="259">
+                                          <a:s>GapsInEnrollment</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="260">
+                                          <a:s>&quot;Total Days In Longest Interval&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> &lt;= </a:s>
+                                    <a:s r="261">
+                                       <a:s>AllowedGapDays</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+        and </a:s>
+                              <a:s r="267">
+                                 <a:s>&quot;Anchor Date Criteria&quot;(</a:s>
+                                 <a:s r="264">
+                                    <a:s>PharmCoverage</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="265">
+                                    <a:s>AnchorDate</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="266">
+                                    <a:s>participationPeriod</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>&#xd;
+    )</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="270" locator="63:3-67:5" resultTypeName="t:Boolean" xsi:type="Query">
+            <source localId="254" locator="63:3-63:218" alias="GapsInEnrollment">
+               <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                  <element name="Intervals">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+                  <element name="Interval Count">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Total Days In Intervals">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Longest Interval">
+                     <type xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </type>
+                  </element>
+                  <element name="Total Days In Longest Interval">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </resultTypeSpecifier>
+               <expression localId="253" locator="63:3-63:201" name="Date Interval Gaps Relative to Base Interval Stats" libraryName="CQLBase" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                     <element name="Intervals">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Interval Count">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                     <element name="Total Days In Intervals">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                     <element name="Longest Interval">
+                        <type xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </type>
+                     </element>
+                     <element name="Total Days In Longest Interval">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                  </resultTypeSpecifier>
+                  <operand localId="227" locator="63:68-63:86" name="participationPeriod" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+                  <operand localId="252" locator="63:89-63:197" xsi:type="Flatten">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                     <operand xsi:type="Query">
+                        <source alias="$this">
+                           <expression localId="251" locator="63:89-63:182" name="All Coverage Info" xsi:type="FunctionRef">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType xsi:type="TupleTypeSpecifier">
+                                    <element name="IntervalInfo">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="Collapsed">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="Adjacent">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="CollapsedFinal">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                 </elementType>
+                              </resultTypeSpecifier>
+                              <operand localId="249" locator="63:109-63:160" name="Pharmacy Benefit Coverage Resources" xsi:type="FunctionRef">
+                                 <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                    <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                 </resultTypeSpecifier>
+                                 <operand localId="228" locator="63:147-63:159" name="PharmCoverage" xsi:type="OperandRef">
+                                    <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                       <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                 </operand>
+                              </operand>
+                              <operand localId="250" locator="63:163-63:181" name="participationPeriod" xsi:type="OperandRef">
+                                 <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                    <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                 </resultTypeSpecifier>
+                              </operand>
+                           </expression>
+                        </source>
+                        <where xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand path="CollapsedFinal" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                        <return>
+                           <expression path="CollapsedFinal" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </operand>
+                  </operand>
+               </expression>
+            </source>
+            <return localId="269" locator="64:5-67:5" resultTypeName="t:Boolean">
+               <expression localId="268" locator="64:12-67:5" resultTypeName="t:Boolean" xsi:type="And">
+                  <operand localId="263" locator="64:14-65:79" resultTypeName="t:Boolean" xsi:type="And">
+                     <operand localId="258" locator="64:14-64:51" resultTypeName="t:Boolean" xsi:type="LessOrEqual">
+                        <operand localId="256" locator="64:14-64:46" resultTypeName="t:Integer" path="Interval Count" scope="GapsInEnrollment" xsi:type="Property"/>
+                        <operand localId="257" locator="64:51" resultTypeName="t:Integer" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="262" locator="65:13-65:79" resultTypeName="t:Boolean" xsi:type="LessOrEqual">
+                        <operand localId="260" locator="65:13-65:61" resultTypeName="t:Integer" path="Total Days In Longest Interval" scope="GapsInEnrollment" xsi:type="Property"/>
+                        <operand localId="261" locator="65:66-65:79" resultTypeName="t:Integer" name="AllowedGapDays" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="267" locator="66:13-66:82" resultTypeName="t:Boolean" name="Anchor Date Criteria" xsi:type="FunctionRef">
+                     <operand localId="264" locator="66:36-66:48" name="PharmCoverage" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                     <operand localId="265" locator="66:51-66:60" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                     <operand localId="266" locator="66:63-66:81" name="participationPeriod" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </operand>
+               </expression>
+            </return>
+         </expression>
+         <operand name="PharmCoverage">
+            <operandTypeSpecifier localId="221" locator="62:70-62:88" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="220" locator="62:75-62:87" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AnchorDate">
+            <operandTypeSpecifier localId="222" locator="62:102-62:105" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="participationPeriod">
+            <operandTypeSpecifier localId="224" locator="62:128-62:141" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="223" locator="62:137-62:140" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AllowedGapDays">
+            <operandTypeSpecifier localId="225" locator="62:159-62:165" resultTypeName="t:Integer" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="303" locator="83:1-88:50" name="Mental Health Benefit Coverage Resources" context="Unfiltered" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="303">
+               <a:s>define function &quot;Mental Health Benefit Coverage Resources&quot;(Coverage </a:s>
+               <a:s r="285">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="284">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="302">
+                  <a:s r="302">
+                     <a:s>
+                        <a:s r="299">
+                           <a:s r="298">
+                              <a:s>( </a:s>
+                              <a:s r="298">
+                                 <a:s>
+                                    <a:s r="287">
+                                       <a:s r="286">
+                                          <a:s>
+                                             <a:s>Coverage</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> C</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+    </a:s>
+                                 <a:s r="297">
+                                    <a:s>where </a:s>
+                                    <a:s r="297">
+                                       <a:s>exists </a:s>
+                                       <a:s r="296">
+                                          <a:s>( </a:s>
+                                          <a:s r="296">
+                                             <a:s>
+                                                <a:s r="289">
+                                                   <a:s r="288">
+                                                      <a:s>
+                                                         <a:s>C.type.coding</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> cTypeCoding</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>&#xd;
+        </a:s>
+                                             <a:s r="295">
+                                                <a:s>where </a:s>
+                                                <a:s r="295">
+                                                   <a:s r="292">
+                                                      <a:s r="290">
+                                                         <a:s>FHIRHelpers</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="292">
+                                                         <a:s>ToCode ( </a:s>
+                                                         <a:s r="291">
+                                                            <a:s>cTypeCoding</a:s>
+                                                         </a:s>
+                                                         <a:s> )</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> ~ </a:s>
+                                                   <a:s r="294">
+                                                      <a:s r="293">
+                                                         <a:s>Terminology</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="294">
+                                                         <a:s>&quot;mental health policy&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>&#xd;
+    )</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> mentalHealthCoverageResource</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="301">
+                        <a:s>where </a:s>
+                        <a:s r="301">
+                           <a:s r="300">
+                              <a:s>mentalHealthCoverageResource</a:s>
+                           </a:s>
+                           <a:s> is not null</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="302" locator="84:3-88:50" xsi:type="Query">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <source localId="299" locator="84:3-87:36" alias="mentalHealthCoverageResource">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <expression localId="298" locator="84:3-87:7" xsi:type="Query">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <source localId="287" locator="84:5-84:14" alias="C">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <expression localId="286" locator="84:5-84:12" name="Coverage" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </expression>
+                  </source>
+                  <where localId="297" locator="85:5-87:5" resultTypeName="t:Boolean" xsi:type="Exists">
+                     <operand localId="296" locator="85:18-87:5" xsi:type="Query">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <source localId="289" locator="85:20-85:44" alias="cTypeCoding">
+                           <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                              <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                           </resultTypeSpecifier>
+                           <expression localId="288" locator="85:20-85:32" path="coding" xsi:type="Property">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                              </resultTypeSpecifier>
+                              <source path="type" scope="C" xsi:type="Property"/>
+                           </expression>
+                        </source>
+                        <where localId="295" locator="86:9-86:85" resultTypeName="t:Boolean" xsi:type="Equivalent">
+                           <operand localId="292" locator="86:15-86:48" resultTypeName="t:Code" name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="291" locator="86:36-86:46" resultTypeName="fhir:Coding" name="cTypeCoding" xsi:type="AliasRef"/>
+                           </operand>
+                           <operand localId="294" locator="86:52-86:85" resultTypeName="t:Code" name="mental health policy" libraryName="Terminology" xsi:type="CodeRef"/>
+                        </where>
+                     </operand>
+                  </where>
+               </expression>
+            </source>
+            <where localId="301" locator="88:5-88:50" resultTypeName="t:Boolean" xsi:type="Not">
+               <operand locator="88:11-88:50" resultTypeName="t:Boolean" xsi:type="IsNull">
+                  <operand localId="300" locator="88:11-88:38" resultTypeName="fhir:Coverage" name="mentalHealthCoverageResource" xsi:type="AliasRef"/>
+               </operand>
+            </where>
+         </expression>
+         <operand name="Coverage">
+            <operandTypeSpecifier localId="285" locator="83:69-83:87" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="284" locator="83:74-83:86" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+      </def>
+      <def localId="326" locator="76:1-81:5" resultTypeName="t:Boolean" name="Mental Health Benefit Enrollment Criteria" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="326">
+               <a:s>define function &quot;Mental Health Benefit Enrollment Criteria&quot;(MHCoverage </a:s>
+               <a:s r="276">
+                  <a:s>List&lt;</a:s>
+                  <a:s r="275">
+                     <a:s>FHIR.Coverage</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AnchorDate </a:s>
+               <a:s r="277">
+                  <a:s>Date</a:s>
+               </a:s>
+               <a:s>, participationPeriod </a:s>
+               <a:s r="279">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="278">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s>, AllowedGapDays </a:s>
+               <a:s r="280">
+                  <a:s>Integer</a:s>
+               </a:s>
+               <a:s>):&#xd;
+  </a:s>
+               <a:s r="325">
+                  <a:s r="325">
+                     <a:s>
+                        <a:s r="309">
+                           <a:s r="308">
+                              <a:s>( </a:s>
+                              <a:s r="308">
+                                 <a:s r="281">
+                                    <a:s>CQLBase</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="308">
+                                    <a:s>&quot;Date Interval Gaps Relative to Base Interval Stats&quot; ( </a:s>
+                                    <a:s r="282">
+                                       <a:s>participationPeriod</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="307">
+                                       <a:s r="306">
+                                          <a:s>&quot;All Coverage Info&quot;(</a:s>
+                                          <a:s r="304">
+                                             <a:s>&quot;Mental Health Benefit Coverage Resources&quot;(</a:s>
+                                             <a:s r="283">
+                                                <a:s>MHCoverage</a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="305">
+                                             <a:s>participationPeriod</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="307">
+                                          <a:s>CollapsedFinal</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> )</a:s>
+                           </a:s>
+                           <a:s> GapsInEnrollment</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>&#xd;
+    </a:s>
+                     <a:s r="324">
+                        <a:s>return </a:s>
+                        <a:s r="323">
+                           <a:s>( </a:s>
+                           <a:s r="323">
+                              <a:s r="318">
+                                 <a:s r="313">
+                                    <a:s r="311">
+                                       <a:s r="310">
+                                          <a:s>GapsInEnrollment</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="311">
+                                          <a:s>&quot;Interval Count&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s r="312"> &lt;= 1</a:s>
+                                 </a:s>
+                                 <a:s>&#xd;
+        and </a:s>
+                                 <a:s r="317">
+                                    <a:s r="315">
+                                       <a:s r="314">
+                                          <a:s>GapsInEnrollment</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="315">
+                                          <a:s>&quot;Total Days In Longest Interval&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> &lt;= </a:s>
+                                    <a:s r="316">
+                                       <a:s>AllowedGapDays</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>&#xd;
+        and </a:s>
+                              <a:s r="322">
+                                 <a:s>&quot;Anchor Date Criteria&quot;(</a:s>
+                                 <a:s r="319">
+                                    <a:s>MHCoverage</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="320">
+                                    <a:s>AnchorDate</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="321">
+                                    <a:s>participationPeriod</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>&#xd;
+    )</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="325" locator="77:3-81:5" resultTypeName="t:Boolean" xsi:type="Query">
+            <source localId="309" locator="77:3-77:220" alias="GapsInEnrollment">
+               <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                  <element name="Intervals">
+                     <type xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </type>
+                  </element>
+                  <element name="Interval Count">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Total Days In Intervals">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+                  <element name="Longest Interval">
+                     <type xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </type>
+                  </element>
+                  <element name="Total Days In Longest Interval">
+                     <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                  </element>
+               </resultTypeSpecifier>
+               <expression localId="308" locator="77:3-77:203" name="Date Interval Gaps Relative to Base Interval Stats" libraryName="CQLBase" xsi:type="FunctionRef">
+                  <resultTypeSpecifier xsi:type="TupleTypeSpecifier">
+                     <element name="Intervals">
+                        <type xsi:type="ListTypeSpecifier">
+                           <elementType xsi:type="IntervalTypeSpecifier">
+                              <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           </elementType>
+                        </type>
+                     </element>
+                     <element name="Interval Count">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                     <element name="Total Days In Intervals">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                     <element name="Longest Interval">
+                        <type xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </type>
+                     </element>
+                     <element name="Total Days In Longest Interval">
+                        <type name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+                     </element>
+                  </resultTypeSpecifier>
+                  <operand localId="282" locator="77:68-77:86" name="participationPeriod" xsi:type="OperandRef">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </operand>
+                  <operand localId="307" locator="77:89-77:199" xsi:type="Flatten">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </elementType>
+                     </resultTypeSpecifier>
+                     <operand xsi:type="Query">
+                        <source alias="$this">
+                           <expression localId="306" locator="77:89-77:184" name="All Coverage Info" xsi:type="FunctionRef">
+                              <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                 <elementType xsi:type="TupleTypeSpecifier">
+                                    <element name="IntervalInfo">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="Collapsed">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="Adjacent">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                    <element name="CollapsedFinal">
+                                       <type xsi:type="ListTypeSpecifier">
+                                          <elementType xsi:type="IntervalTypeSpecifier">
+                                             <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                          </elementType>
+                                       </type>
+                                    </element>
+                                 </elementType>
+                              </resultTypeSpecifier>
+                              <operand localId="304" locator="77:109-77:162" name="Mental Health Benefit Coverage Resources" xsi:type="FunctionRef">
+                                 <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                    <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                 </resultTypeSpecifier>
+                                 <operand localId="283" locator="77:152-77:161" name="MHCoverage" xsi:type="OperandRef">
+                                    <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                                       <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                                    </resultTypeSpecifier>
+                                 </operand>
+                              </operand>
+                              <operand localId="305" locator="77:165-77:183" name="participationPeriod" xsi:type="OperandRef">
+                                 <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                                    <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                                 </resultTypeSpecifier>
+                              </operand>
+                           </expression>
+                        </source>
+                        <where xsi:type="Not">
+                           <operand xsi:type="IsNull">
+                              <operand path="CollapsedFinal" xsi:type="Property">
+                                 <source name="$this" xsi:type="AliasRef"/>
+                              </operand>
+                           </operand>
+                        </where>
+                        <return>
+                           <expression path="CollapsedFinal" xsi:type="Property">
+                              <source name="$this" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </operand>
+                  </operand>
+               </expression>
+            </source>
+            <return localId="324" locator="78:5-81:5" resultTypeName="t:Boolean">
+               <expression localId="323" locator="78:12-81:5" resultTypeName="t:Boolean" xsi:type="And">
+                  <operand localId="318" locator="78:14-79:79" resultTypeName="t:Boolean" xsi:type="And">
+                     <operand localId="313" locator="78:14-78:51" resultTypeName="t:Boolean" xsi:type="LessOrEqual">
+                        <operand localId="311" locator="78:14-78:46" resultTypeName="t:Integer" path="Interval Count" scope="GapsInEnrollment" xsi:type="Property"/>
+                        <operand localId="312" locator="78:51" resultTypeName="t:Integer" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                     </operand>
+                     <operand localId="317" locator="79:13-79:79" resultTypeName="t:Boolean" xsi:type="LessOrEqual">
+                        <operand localId="315" locator="79:13-79:61" resultTypeName="t:Integer" path="Total Days In Longest Interval" scope="GapsInEnrollment" xsi:type="Property"/>
+                        <operand localId="316" locator="79:66-79:79" resultTypeName="t:Integer" name="AllowedGapDays" xsi:type="OperandRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="322" locator="80:13-80:79" resultTypeName="t:Boolean" name="Anchor Date Criteria" xsi:type="FunctionRef">
+                     <operand localId="319" locator="80:36-80:45" name="MHCoverage" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                     <operand localId="320" locator="80:48-80:57" resultTypeName="t:Date" name="AnchorDate" xsi:type="OperandRef"/>
+                     <operand localId="321" locator="80:60-80:78" name="participationPeriod" xsi:type="OperandRef">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </operand>
+                  </operand>
+               </expression>
+            </return>
+         </expression>
+         <operand name="MHCoverage">
+            <operandTypeSpecifier localId="276" locator="76:72-76:90" xsi:type="ListTypeSpecifier">
+               <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <elementType localId="275" locator="76:77-76:89" resultTypeName="fhir:Coverage" name="fhir:Coverage" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AnchorDate">
+            <operandTypeSpecifier localId="277" locator="76:104-76:107" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="participationPeriod">
+            <operandTypeSpecifier localId="279" locator="76:130-76:143" xsi:type="IntervalTypeSpecifier">
+               <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:Date" xsi:type="NamedTypeSpecifier"/>
+               </resultTypeSpecifier>
+               <pointType localId="278" locator="76:139-76:142" resultTypeName="t:Date" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            </operandTypeSpecifier>
+         </operand>
+         <operand name="AllowedGapDays">
+            <operandTypeSpecifier localId="280" locator="76:161-76:167" resultTypeName="t:Integer" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+   </statements>
+</library>
+
+

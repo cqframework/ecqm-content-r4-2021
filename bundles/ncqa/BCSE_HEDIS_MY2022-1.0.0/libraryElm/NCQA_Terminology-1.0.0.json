@@ -1,0 +1,1177 @@
+{
+   "library" : {
+      "annotation" : [ {
+         "translatorOptions" : "EnableAnnotations,EnableLocators,EnableResultTypes",
+         "type" : "CqlToElmInfo"
+      } ],
+      "identifier" : {
+         "id" : "NCQA_Terminology",
+         "version" : "1.0.0"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "1",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1"
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "2",
+            "locator" : "5:1-5:54",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "FHIRHelpers",
+            "version" : "4.0.1"
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "3",
+            "locator" : "7:1-7:38",
+            "name" : "LOINC",
+            "id" : "http://loinc.org",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "4",
+            "locator" : "8:1-8:47",
+            "name" : "SNOMEDCT",
+            "id" : "http://snomed.info/sct",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "5",
+            "locator" : "9:1-9:56",
+            "name" : "RoleCode",
+            "id" : "http://hl7.org/fhir/v3/RoleCode",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "6",
+            "locator" : "10:1-10:83",
+            "name" : "Diagnosis Role",
+            "id" : "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "7",
+            "locator" : "11:1-11:82",
+            "name" : "RequestIntent",
+            "id" : "http://terminology.hl7.org/CodeSystem/request-intent",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "8",
+            "locator" : "12:1-12:106",
+            "name" : "MedicationRequestCategory",
+            "id" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "9",
+            "locator" : "13:1-13:101",
+            "name" : "ConditionClinicalStatusCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "10",
+            "locator" : "14:1-14:109",
+            "name" : "ConditionVerificationStatusCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-verification",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "11",
+            "locator" : "15:1-15:119",
+            "name" : "AllergyIntoleranceClinicalStatusCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "12",
+            "locator" : "16:1-16:127",
+            "name" : "AllergyIntoleranceVerificationStatusCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "13",
+            "locator" : "17:1-17:83",
+            "name" : "AllergyIntoleranceType",
+            "id" : "http://hl7.org/fhir/allergy-intolerance-type",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "14",
+            "locator" : "18:1-18:91",
+            "name" : "AllergyIntoleranceCategory",
+            "id" : "http://hl7.org/fhir/allergy-intolerance-category",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "15",
+            "locator" : "19:1-19:95",
+            "name" : "ConditionCategoryCodes",
+            "id" : "http://terminology.hl7.org/CodeSystem/condition-category",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "16",
+            "locator" : "20:1-20:75",
+            "name" : "claim-type",
+            "id" : "http://terminology.hl7.org/CodeSystem/claim-type",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "17",
+            "locator" : "21:1-21:89",
+            "name" : "ActEncounterCodes",
+            "id" : "http://terminology.hl7.org/ValueSet/v3-ActEncounterCode",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "18",
+            "locator" : "22:1-22:88",
+            "name" : "coverage-type",
+            "id" : "http://terminology.hl7.org/ValueSet/v3-ActCoverageTypeCode",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         }, {
+            "localId" : "19",
+            "locator" : "23:1-23:76",
+            "name" : "IdentifierType",
+            "id" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "accessLevel" : "Public",
+            "resultTypeSpecifier" : {
+               "type" : "ListTypeSpecifier",
+               "elementType" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "21",
+            "locator" : "27:1-27:75",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "problem-list-item",
+            "id" : "problem-list-item",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "20",
+               "locator" : "27:52-27:75",
+               "name" : "ConditionCategoryCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "23",
+            "locator" : "28:1-28:79",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "encounter-diagnosis",
+            "id" : "encounter-diagnosis",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "22",
+               "locator" : "28:56-28:79",
+               "name" : "ConditionCategoryCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "25",
+            "locator" : "31:1-31:59",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "active",
+            "id" : "active",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "24",
+               "locator" : "31:30-31:59",
+               "name" : "ConditionClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "27",
+            "locator" : "32:1-32:67",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "recurrence",
+            "id" : "recurrence",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "26",
+               "locator" : "32:38-32:67",
+               "name" : "ConditionClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "29",
+            "locator" : "33:1-33:61",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "relapse",
+            "id" : "relapse",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "28",
+               "locator" : "33:32-33:61",
+               "name" : "ConditionClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "31",
+            "locator" : "34:1-34:63",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "inactive",
+            "id" : "inactive",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "30",
+               "locator" : "34:34-34:63",
+               "name" : "ConditionClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "33",
+            "locator" : "35:1-35:65",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "remission",
+            "id" : "remission",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "32",
+               "locator" : "35:36-35:65",
+               "name" : "ConditionClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "35",
+            "locator" : "36:1-36:63",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "resolved",
+            "id" : "resolved",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "34",
+               "locator" : "36:34-36:63",
+               "name" : "ConditionClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "37",
+            "locator" : "39:1-39:73",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "unconfirmed",
+            "id" : "unconfirmed",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "36",
+               "locator" : "39:40-39:73",
+               "name" : "ConditionVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "39",
+            "locator" : "40:1-40:73",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "provisional",
+            "id" : "provisional",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "38",
+               "locator" : "40:40-40:73",
+               "name" : "ConditionVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "41",
+            "locator" : "41:1-41:75",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "differential",
+            "id" : "differential",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "40",
+               "locator" : "41:42-41:75",
+               "name" : "ConditionVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "43",
+            "locator" : "42:1-42:69",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "confirmed",
+            "id" : "confirmed",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "42",
+               "locator" : "42:36-42:69",
+               "name" : "ConditionVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "45",
+            "locator" : "43:1-43:65",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "refuted",
+            "id" : "refuted",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "44",
+               "locator" : "43:32-43:65",
+               "name" : "ConditionVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "47",
+            "locator" : "44:1-44:83",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "entered-in-error",
+            "id" : "entered-in-error",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "46",
+               "locator" : "44:50-44:83",
+               "name" : "ConditionVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "49",
+            "locator" : "47:1-47:76",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "allergy-active",
+            "id" : "active",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "48",
+               "locator" : "47:38-47:76",
+               "name" : "AllergyIntoleranceClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "51",
+            "locator" : "48:1-48:80",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "allergy-inactive",
+            "id" : "inactive",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "50",
+               "locator" : "48:42-48:80",
+               "name" : "AllergyIntoleranceClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "53",
+            "locator" : "49:1-49:80",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "allergy-resolved",
+            "id" : "resolved",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "52",
+               "locator" : "49:42-49:80",
+               "name" : "AllergyIntoleranceClinicalStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "55",
+            "locator" : "52:1-52:90",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "allergy-unconfirmed",
+            "id" : "unconfirmed",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "54",
+               "locator" : "52:48-52:90",
+               "name" : "AllergyIntoleranceVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "57",
+            "locator" : "53:1-53:86",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "allergy-confirmed",
+            "id" : "confirmed",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "56",
+               "locator" : "53:44-53:86",
+               "name" : "AllergyIntoleranceVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "59",
+            "locator" : "54:1-54:82",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "allergy-refuted",
+            "id" : "refuted",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "58",
+               "locator" : "54:40-54:82",
+               "name" : "AllergyIntoleranceVerificationStatusCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "61",
+            "locator" : "57:1-57:53",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "food",
+            "id" : "food",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "60",
+               "locator" : "57:26-57:53",
+               "name" : "AllergyIntoleranceCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "63",
+            "locator" : "58:1-58:65",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "medication",
+            "id" : "medication",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "62",
+               "locator" : "58:38-58:65",
+               "name" : "AllergyIntoleranceCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "65",
+            "locator" : "59:1-59:67",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "environment",
+            "id" : "environment",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "64",
+               "locator" : "59:40-59:67",
+               "name" : "AllergyIntoleranceCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "67",
+            "locator" : "60:1-60:61",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "biologic",
+            "id" : "biologic",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "66",
+               "locator" : "60:34-60:61",
+               "name" : "AllergyIntoleranceCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "69",
+            "locator" : "63:1-63:55",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Allergy",
+            "id" : "allergy",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "68",
+               "locator" : "63:32-63:55",
+               "name" : "AllergyIntoleranceType",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "71",
+            "locator" : "64:1-64:63",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Intolerance",
+            "id" : "intolerance",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "70",
+               "locator" : "64:40-64:63",
+               "name" : "AllergyIntoleranceType",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "73",
+            "locator" : "67:1-67:62",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Inpatient",
+            "id" : "inpatient",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "72",
+               "locator" : "67:36-67:62",
+               "name" : "MedicationRequestCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "75",
+            "locator" : "68:1-68:64",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Outpatient",
+            "id" : "outpatient",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "74",
+               "locator" : "68:38-68:64",
+               "name" : "MedicationRequestCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "77",
+            "locator" : "69:1-69:62",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Community",
+            "id" : "community",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "76",
+               "locator" : "69:36-69:62",
+               "name" : "MedicationRequestCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "79",
+            "locator" : "70:1-70:62",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Discharge",
+            "id" : "discharge",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "78",
+               "locator" : "70:36-70:62",
+               "name" : "MedicationRequestCategory",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "81",
+            "locator" : "73:1-73:45",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Pharmacy",
+            "id" : "pharmacy",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "80",
+               "locator" : "73:34-73:45",
+               "name" : "claim-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "83",
+            "locator" : "74:1-74:55",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Institutional",
+            "id" : "institutional",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "82",
+               "locator" : "74:44-74:55",
+               "name" : "claim-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "85",
+            "locator" : "75:1-75:53",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Professional",
+            "id" : "professional",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "84",
+               "locator" : "75:42-75:53",
+               "name" : "claim-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "87",
+            "locator" : "76:1-76:37",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Oral",
+            "id" : "oral",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "86",
+               "locator" : "76:26-76:37",
+               "name" : "claim-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "89",
+            "locator" : "77:1-77:41",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Vision",
+            "id" : "vision",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "88",
+               "locator" : "77:30-77:41",
+               "name" : "claim-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "91",
+            "locator" : "80:1-80:45",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "virtual",
+            "id" : "VR",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "90",
+               "locator" : "80:27-80:45",
+               "name" : "ActEncounterCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "93",
+            "locator" : "81:1-81:49",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "ambulatory",
+            "id" : "AMB",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "92",
+               "locator" : "81:31-81:49",
+               "name" : "ActEncounterCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "95",
+            "locator" : "82:1-82:49",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "home health",
+            "id" : "HH",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "94",
+               "locator" : "82:31-82:49",
+               "name" : "ActEncounterCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "97",
+            "locator" : "83:1-83:60",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "inpatient non-acute",
+            "id" : "NONAC",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "96",
+               "locator" : "83:42-83:60",
+               "name" : "ActEncounterCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "99",
+            "locator" : "84:1-84:49",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "emergency",
+            "id" : "EMER",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "98",
+               "locator" : "84:31-84:49",
+               "name" : "ActEncounterCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "101",
+            "locator" : "85:1-85:56",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "inpatient acute",
+            "id" : "ACUTE",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "100",
+               "locator" : "85:38-85:56",
+               "name" : "ActEncounterCodes",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "103",
+            "locator" : "88:1-88:50",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "drug policy",
+            "id" : "DRUGPOL",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "102",
+               "locator" : "88:36-88:50",
+               "name" : "coverage-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "105",
+            "locator" : "89:1-89:59",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "mental health policy",
+            "id" : "MENTPOL",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "104",
+               "locator" : "89:45-89:59",
+               "name" : "coverage-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "107",
+            "locator" : "90:1-90:56",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "managed care policy",
+            "id" : "MCPOL",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "106",
+               "locator" : "90:42-90:56",
+               "name" : "coverage-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "109",
+            "locator" : "91:1-91:65",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "subsidized health program",
+            "id" : "SUBSIDIZ",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "108",
+               "locator" : "91:51-91:65",
+               "name" : "coverage-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "111",
+            "locator" : "92:1-92:60",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "retiree health program",
+            "id" : "RETIRE",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "110",
+               "locator" : "92:46-92:60",
+               "name" : "coverage-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "113",
+            "locator" : "93:1-93:58",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "substance use policy",
+            "id" : "SUBPOL",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "112",
+               "locator" : "93:44-93:58",
+               "name" : "coverage-type",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         }, {
+            "localId" : "115",
+            "locator" : "96:1-96:51",
+            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
+            "name" : "Provider number",
+            "id" : "PRN",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "localId" : "114",
+               "locator" : "96:36-96:51",
+               "name" : "IdentifierType",
+               "resultTypeSpecifier" : {
+                  "type" : "ListTypeSpecifier",
+                  "elementType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}Code",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            }
+         } ]
+      }
+   }
+}
+
