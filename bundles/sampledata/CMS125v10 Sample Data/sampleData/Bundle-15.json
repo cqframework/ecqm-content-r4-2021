@@ -1,0 +1,72 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-15",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-15",
+        "name": [
+          {
+            "given": [
+              "EstablishedOfficeVisitDuringMP"
+            ],
+            "family": "IPPass"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-15-92",
+        "subject": {
+          "reference": "Patient/Patient-15"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-15-93",
+        "subject": {
+          "reference": "Patient/Patient-15"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "99395",
+                "system": "http://www.ama-assn.org/go/cpt",
+                "version": "2018.2.20AB"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

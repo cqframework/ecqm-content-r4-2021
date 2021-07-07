@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33651",
+  "meta": {
+    "lastUpdated": "2021-05-06T21:53:00.648-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.526.3.1240"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Annual_Wellness_Visit_eCQM",
+  "title": "Annual Wellness Visit eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:55:05-04:00",
+    "total": 4,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "444971000124105",
+        "display": "Annual wellness visit"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo/index.html",
+        "version": "2021.1.20AB",
+        "code": "G0439",
+        "display": "Annual wellness visit, includes a personalized prevention plan of service (pps), subsequent visit"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo/index.html",
+        "version": "2021.1.20AB",
+        "code": "G0438",
+        "display": "Annual wellness visit; includes a personalized prevention plan of service (pps), initial visit"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "456201000124103",
+        "display": "Medicare Annual Wellness Visit"
+      }
+    ]
+  }
+}

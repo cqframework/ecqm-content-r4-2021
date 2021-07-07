@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-32",
+  "name": [
+    {
+      "given": [
+        "LeftMastectomyProcedureStatusIsStopped"
+      ],
+      "family": "DenexFail"
+    }
+  ],
+  "birthDate": "1967-01-01",
+  "gender": "female"
+}

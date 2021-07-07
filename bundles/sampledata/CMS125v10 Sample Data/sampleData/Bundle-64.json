@@ -1,0 +1,95 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-64",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-64",
+        "name": [
+          {
+            "given": [
+              "LongTermCareOverlapping90Days"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1953-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-64-92",
+        "subject": {
+          "reference": "Patient/Patient-64"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-64-93",
+        "subject": {
+          "reference": "Patient/Patient-64"
+        },
+        "period": {
+          "start": "2019-02-13T00:00:00.000Z",
+          "end": "2019-03-13T00:00:00.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "210098006",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-64-94",
+        "subject": {
+          "reference": "Patient/Patient-64"
+        },
+        "period": {
+          "start": "2019-03-13T00:00:00.000Z",
+          "end": "2019-05-14T00:00:00.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "210098006",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

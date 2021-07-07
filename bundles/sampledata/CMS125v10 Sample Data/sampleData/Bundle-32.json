@@ -1,0 +1,87 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-32",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-32",
+        "name": [
+          {
+            "given": [
+              "LeftMastectomyProcedureStatusIsStopped"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-32-92",
+        "subject": {
+          "reference": "Patient/Patient-32"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-32-93",
+        "subject": {
+          "reference": "Patient/Patient-32"
+        },
+        "performedDateTime": "2017-10-01T00:00:00.000Z",
+        "status": "stopped",
+        "code": {
+          "coding": [
+            {
+              "code": "428571003",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-32-94",
+        "subject": {
+          "reference": "Patient/Patient-32"
+        },
+        "performedDateTime": "2017-10-01T00:00:00.000Z",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "code": "429400009",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

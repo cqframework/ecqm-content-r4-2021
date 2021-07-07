@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33656",
+  "meta": {
+    "lastUpdated": "2021-05-06T21:59:52.631-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.666.5.307"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Encounter_Inpatient_eCQM",
+  "title": "Encounter Inpatient eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:56:11-04:00",
+    "total": 3,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "183452005",
+        "display": "Emergency hospital admission"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "32485007",
+        "display": "Hospital admission"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "8715000",
+        "display": "Hospital admission, elective"
+      }
+    ]
+  }
+}

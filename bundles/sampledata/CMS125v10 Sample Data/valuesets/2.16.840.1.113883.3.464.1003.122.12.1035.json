@@ -1,0 +1,30 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33686",
+  "meta": {
+    "lastUpdated": "2021-05-07T16:48:42.598-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.122.12.1035",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1003.122.12.1035"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Right_eCQM",
+  "title": "Right eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:13-04:00",
+    "total": 1,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "24028007",
+        "display": "Right"
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-55",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-55",
+        "name": [
+          {
+            "given": [
+              "AcuteInpatientEncounterNoStatusDuringMP"
+            ],
+            "family": "DenexPass"
+          }
+        ],
+        "birthDate": "1953-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-55-92",
+        "subject": {
+          "reference": "Patient/Patient-55"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-55-93",
+        "subject": {
+          "reference": "Patient/Patient-55"
+        },
+        "effectiveDateTime": "2019-01-01T00:00:00.000Z",
+        "code": {
+          "coding": [
+            {
+              "code": "469860004",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-55-94",
+        "subject": {
+          "reference": "Patient/Patient-55"
+        },
+        "period": {
+          "start": "2018-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/1178987"
+            }
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "304566005",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "1178987",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-55"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "783771003",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

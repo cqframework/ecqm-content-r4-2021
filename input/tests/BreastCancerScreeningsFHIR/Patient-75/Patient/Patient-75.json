@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-75",
+  "name": [
+    {
+      "given": [
+        "PalliativeCareStatusInProgress"
+      ],
+      "family": "DenexPass"
+    }
+  ],
+  "birthDate": "1967-01-01",
+  "gender": "female"
+}

@@ -1,0 +1,18 @@
+{
+  "resourceType": "Procedure",
+  "id": "Procedure-32-94",
+  "subject": {
+    "reference": "Patient/Patient-32"
+  },
+  "performedDateTime": "2017-10-01T00:00:00.000Z",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "429400009",
+        "system": "http://snomed.info/sct",
+        "version": "2017.09.20AA"
+      }
+    ]
+  }
+}

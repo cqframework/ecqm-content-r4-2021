@@ -1,0 +1,1330 @@
+Running tests.
+Data path: C:\ecqm-content-r4-2021\input\tests\BreastCancerScreeningsFHIR
+Terminology path: C:\ecqm-content-r4-2021\input\vocabulary\valueset
+Patient=Patient(id=Patient-10)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-11)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-12)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-13)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=true
+Denominator=true
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-14)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-15)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-16)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-17)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-18)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-19)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-20)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-21)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-22)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-23)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-24)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-25)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-26)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[Condition(id=Condition-26-93)]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[Condition(id=Condition-26-94)]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-27)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[Condition(id=Condition-27-93)]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[Condition(id=Condition-27-94)]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-28)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[Condition(id=Condition-28-94)]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-29)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[Condition(id=Condition-29-93)]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[Condition(id=Condition-29-94)]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-30)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[Condition(id=Condition-30-93), Condition(id=Condition-30-94)]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-31)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[Procedure(id=Procedure-31-94)]
+Left Mastectomy Procedure=[Procedure(id=Procedure-31-93)]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-32)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[Procedure(id=Procedure-32-94)]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-33)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[Condition(id=Condition-33-93)]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-34)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[Condition(id=Condition-34-93)]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-35)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-36)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[Procedure(id=Procedure-36-93)]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-37)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[Procedure(id=Procedure-37-93)]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-38)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-39)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-40)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-41)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-42)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-43)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-44)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-45)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-46)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-47)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-48)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-49)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-5)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-50)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-51)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-52)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-53)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-54)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-55)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-56)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-57)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-58)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-59)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-6)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=null
+
+Patient=Patient(id=Patient-60)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-61)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-62)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-63)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-64)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-65)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-66)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-67)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-68)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-69)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-7)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-70)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-71)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-72)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-73)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-74)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=true
+
+Patient=Patient(id=Patient-75)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-76)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-77)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-78)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-79)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=true
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-8)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: M, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Male }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-80)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-81)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=true
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-82)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=Code { code: F, system: http://hl7.org/fhir/v3/AdministrativeGender, version: null, display: Female }
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+Patient=Patient(id=Patient-9)
+SDE Ethnicity=null
+SDE Payer=[]
+SDE Race=null
+SDE Sex=null
+Telehealth Services=false
+Initial Population=false
+Denominator=false
+Right Mastectomy Diagnosis=[]
+Right Mastectomy Procedure=[]
+Left Mastectomy Procedure=[]
+Numerator=false
+Bilateral Mastectomy Procedure=[]
+Bilateral Mastectomy Diagnosis=[]
+Left Mastectomy Diagnosis=[]
+Denominator Exclusions=false
+
+elapsed: 27.572 seconds

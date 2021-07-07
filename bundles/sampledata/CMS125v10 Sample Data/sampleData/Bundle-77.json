@@ -1,0 +1,67 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-77",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-77",
+        "name": [
+          {
+            "given": [
+              "MammographyDiagnosticReportB4StartOfPeriod"
+            ],
+            "family": "NumFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-77-92",
+        "subject": {
+          "reference": "Patient/Patient-77"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "DiagnosticReport-77-93",
+        "subject": {
+          "reference": "Patient/Patient-77"
+        },
+        "effectiveDateTime": "2017-09-30T23:59:59.000Z",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "code": "72139-9",
+              "system": "http://loinc.org",
+              "version": "2.69.20AB"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-44",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-44",
+        "name": [
+          {
+            "given": [
+              "FrailtyDiagnosisB4MPNoStatus"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1953-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-44-92",
+        "subject": {
+          "reference": "Patient/Patient-44"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-44-93",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-44"
+        },
+        "onsetDateTime": "2017-01-01T00:00:00.000Z",
+        "abatementDateTime": "2018-12-31T23:59:59.000Z",
+        "code": {
+          "coding": [
+            {
+              "code": "217082002",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "id": "MedicationDispense-44-94",
+        "subject": {
+          "reference": "Patient/Patient-44"
+        },
+        "whenHandedOver": "2018-01-01T00:00:00.000Z",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "1599805",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

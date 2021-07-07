@@ -1,0 +1,78 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33684",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:44:52.872-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1003.198.12.1134"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Unilateral_Mastectomy_Right_eCQM",
+  "title": "Unilateral Mastectomy Right eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:15-04:00",
+    "total": 9,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "429400009",
+        "display": "Mastectomy of right breast"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "726436000",
+        "display": "Modified radical mastectomy of right breast"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "12275171000119105",
+        "display": "Postmastectomy lymphedema syndrome of right upper limb"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "451201000124106",
+        "display": "Prophylactic mastectomy of right breast"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "726430006",
+        "display": "Radical mastectomy of right breast"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "741010006",
+        "display": "Simple mastectomy of right breast"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "726434002",
+        "display": "Subcutaneous mastectomy of right breast"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "741019007",
+        "display": "Subcutaneous mastectomy of right breast with prosthetic implant"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/ICD10/index.html",
+        "version": "2021.1.20AA",
+        "code": "0HTT0ZZ",
+        "display": "Resection of Right Breast, Open Approach"
+      }
+    ]
+  }
+}

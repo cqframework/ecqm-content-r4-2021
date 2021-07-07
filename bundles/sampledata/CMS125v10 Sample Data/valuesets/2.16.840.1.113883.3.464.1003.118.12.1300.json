@@ -1,0 +1,768 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33659",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:04:02.042-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1003.118.12.1300"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Frailty_Device_eCQM",
+  "title": "Frailty Device eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:55:56-04:00",
+    "total": 124,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "469860004",
+        "display": "All-plastic conventional wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "183248007",
+        "display": "Attendant powered wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705426008",
+        "display": "Attendant-controlled electric-motor-driven wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705425007",
+        "display": "Attendant/occupant-controlled electric-motor-driven wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466786004",
+        "display": "Basic electric hospital bed"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466317003",
+        "display": "Basic walker, foldable"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466464004",
+        "display": "Basic walker, non-foldable"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "714700001",
+        "display": "Bilevel positive airway pressure unit hand held"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "87405001",
+        "display": "Cane"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "360008003",
+        "display": "Commode"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "37874008",
+        "display": "Continuing positive airway pressure unit"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "66435007",
+        "display": "Electric bed"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705423000",
+        "display": "Electric-motor-driven wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "781471009",
+        "display": "Gait rehabilitation electronic walker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "470174002",
+        "display": "Heat/moisture exchanger insertable filter"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "469361005",
+        "display": "Heat/moisture exchanger, reusable"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "470119002",
+        "display": "Heat/moisture exchanger, single-use"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "700593005",
+        "display": "Heated respiratory humidifier"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "702173003",
+        "display": "Home BPAP unit"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "702172008",
+        "display": "Home CPAP unit"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "71545009",
+        "display": "Humidifier"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "23562009",
+        "display": "Household ventilator, device"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "360299009",
+        "display": "Long cane"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "228869008",
+        "display": "Manual wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705428009",
+        "display": "Manual-driven wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "23366006",
+        "display": "Motorized wheelchair device"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "464405003",
+        "display": "Multi-terrain sports wheelchair, attendant/occupant-driven"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "464571009",
+        "display": "Multi-terrain sports wheelchair, electric-motor-driven"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "464752005",
+        "display": "Multi-terrain sports wheelchair, occupant-driven"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "464157006",
+        "display": "Multiple-base walking stick"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "700705005",
+        "display": "Non-heated respiratory humidifier"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "401953003",
+        "display": "Oxygen composite cylinder with integral headset 1360 liters"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "401954009",
+        "display": "Oxygen cylinder 1360 liters"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "401955005",
+        "display": "Oxygen cylinder 300 liters"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391881007",
+        "display": "Oxygen gas cylinder AF"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391685000",
+        "display": "Oxygen gas cylinder DD"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391688003",
+        "display": "Oxygen gas cylinder DF"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391880008",
+        "display": "Oxygen gas cylinder F"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391686004",
+        "display": "Oxygen gas cylinder HD"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391689006",
+        "display": "Oxygen gas cylinder HX"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "391687008",
+        "display": "Oxygen gas cylinder RD"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "426160001",
+        "display": "Oxygen ventilator"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "462987000",
+        "display": "Patient/medical device walker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "463093001",
+        "display": "Patient/medical device walker, home-use"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "183241001",
+        "display": "Pedal powered wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "261323006",
+        "display": "Portable oxygen cylinder"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "464002006",
+        "display": "Portable ventilator, electric"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705427004",
+        "display": "Power-assisted wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705422005",
+        "display": "Power-driven wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "371786002",
+        "display": "Pressure support ventilator"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "706180003",
+        "display": "Respiratory humidifier"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466538008",
+        "display": "Room humidifier"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "183240000",
+        "display": "Self-propelled wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "465556004",
+        "display": "Single-base walking stick"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705419008",
+        "display": "Special-function wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705421003",
+        "display": "Sports wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "465159000",
+        "display": "Stair-climbing wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "464443000",
+        "display": "Stand-up wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "262177002",
+        "display": "Static oxygen cylinder"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "465565006",
+        "display": "Transport wheelchair, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "700910000",
+        "display": "Ultrasonic respiratory humidifier"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "465921009",
+        "display": "Ventilation rocking bed"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705406009",
+        "display": "Walker"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "705404007",
+        "display": "Walker/Walking frame"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466351004",
+        "display": "Walking chair, foldable"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467155007",
+        "display": "Walking chair, non-foldable"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "360006004",
+        "display": "Walking stick"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466407009",
+        "display": "Walking stick/seat"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466986006",
+        "display": "Walking table"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "58938008",
+        "display": "Wheelchair"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466524001",
+        "display": "Wheelchair, attendant-driven, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466381007",
+        "display": "Wheelchair, attendant-driven, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466809001",
+        "display": "Wheelchair, attendant/occupant-driven, bimanual-chain-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466619005",
+        "display": "Wheelchair, attendant/occupant-driven, bimanual-chain-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466284002",
+        "display": "Wheelchair, attendant/occupant-driven, bimanual-lever-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466486003",
+        "display": "Wheelchair, attendant/occupant-driven, bimanual-lever-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466533004",
+        "display": "Wheelchair, attendant/occupant-driven, foot-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466337004",
+        "display": "Wheelchair, attendant/occupant-driven, foot-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466851008",
+        "display": "Wheelchair, attendant/occupant-driven, front-wheels-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466989004",
+        "display": "Wheelchair, attendant/occupant-driven, front-wheels-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466364003",
+        "display": "Wheelchair, attendant/occupant-driven, rear-wheels-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466550002",
+        "display": "Wheelchair, attendant/occupant-driven, rear-wheels-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466695000",
+        "display": "Wheelchair, attendant/occupant-driven, single-front-wheel-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466889003",
+        "display": "Wheelchair, attendant/occupant-driven, single-front-wheel-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466607002",
+        "display": "Wheelchair, attendant/occupant-driven, single-lever-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466366001",
+        "display": "Wheelchair, attendant/occupant-driven, single-lever-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466616003",
+        "display": "Wheelchair, attendant/occupant-driven, single-rear-wheel-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466331003",
+        "display": "Wheelchair, attendant/occupant-driven, single-rear-wheel-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466671002",
+        "display": "Wheelchair, combustion-engine-driven, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466316007",
+        "display": "Wheelchair, combustion-engine-driven, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466473007",
+        "display": "Wheelchair, electric-motor-driven, attendant-controlled, manual-steering, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466758007",
+        "display": "Wheelchair, electric-motor-driven, attendant-controlled, manual-steering, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466999009",
+        "display": "Wheelchair, electric-motor-driven, attendant-controlled, powered-steering, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466813008",
+        "display": "Wheelchair, electric-motor-driven, attendant-controlled, powered-steering, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466365002",
+        "display": "Wheelchair, electric-motor-driven, attendant/occupant-controlled, manual-steering, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467077009",
+        "display": "Wheelchair, electric-motor-driven, attendant/occupant-controlled, manual-steering, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466927004",
+        "display": "Wheelchair, electric-motor-driven, attendant/occupant-controlled, powered-steering, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466871004",
+        "display": "Wheelchair, electric-motor-driven, attendant/occupant-controlled, powered-steering, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466213002",
+        "display": "Wheelchair, electric-motor-driven, occupant-controlled, manual-steering, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466477008",
+        "display": "Wheelchair, electric-motor-driven, occupant-controlled, manual-steering, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466378002",
+        "display": "Wheelchair, electric-motor-driven, occupant-controlled, powered-steering, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466344008",
+        "display": "Wheelchair, electric-motor-driven, occupant-controlled, powered-steering, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466576002",
+        "display": "Wheelchair, occupant-driven, bimanual-chain-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466644002",
+        "display": "Wheelchair, occupant-driven, bimanual-chain-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466340004",
+        "display": "Wheelchair, occupant-driven, bimanual-lever-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466229005",
+        "display": "Wheelchair, occupant-driven, bimanual-lever-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466466002",
+        "display": "Wheelchair, occupant-driven, foot-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466966007",
+        "display": "Wheelchair, occupant-driven, foot-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466739003",
+        "display": "Wheelchair, occupant-driven, front-wheels-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466182009",
+        "display": "Wheelchair, occupant-driven, front-wheels-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466926008",
+        "display": "Wheelchair, occupant-driven, rear-wheels-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466947007",
+        "display": "Wheelchair, occupant-driven, rear-wheels-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467065004",
+        "display": "Wheelchair, occupant-driven, single-front-wheel-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467163008",
+        "display": "Wheelchair, occupant-driven, single-front-wheel-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466553000",
+        "display": "Wheelchair, occupant-driven, single-lever-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467018005",
+        "display": "Wheelchair, occupant-driven, single-lever-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466938004",
+        "display": "Wheelchair, occupant-driven, single-rear-wheel-operated, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467137003",
+        "display": "Wheelchair, occupant-driven, single-rear-wheel-operated, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466494005",
+        "display": "Wheelchair, power-assisted, attendant-controlled, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466721007",
+        "display": "Wheelchair, power-assisted, attendant-controlled, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466699006",
+        "display": "Wheelchair, power-assisted, attendant/occupant-controlled, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466322003",
+        "display": "Wheelchair, power-assisted, attendant/occupant-controlled, non-collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "467095007",
+        "display": "Wheelchair, power-assisted, occupant-controlled, collapsible"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "466193006",
+        "display": "Wheelchair, power-assisted, occupant-controlled, non-collapsible"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33678",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:37:26.394-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1003.101.12.1023"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Preventive_Care_Services_Initial_Office_Visit_18_and_Up_eCQM",
+  "title": "Preventive Care Services-Initial Office Visit, 18 and Up eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:55:08-04:00",
+    "total": 3,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "version": "2021.2.20AB",
+        "code": "99385",
+        "display": "Initial comprehensive preventive medicine evaluation and management of an individual including an age and gender appropriate history, examination, counseling/anticipatory guidance/risk factor reduction interventions, and the ordering of laboratory/diagnostic procedures, new patient; 18-39 years"
+      },
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "version": "2021.2.20AB",
+        "code": "99386",
+        "display": "Initial comprehensive preventive medicine evaluation and management of an individual including an age and gender appropriate history, examination, counseling/anticipatory guidance/risk factor reduction interventions, and the ordering of laboratory/diagnostic procedures, new patient; 40-64 years"
+      },
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "version": "2021.2.20AB",
+        "code": "99387",
+        "display": "Initial comprehensive preventive medicine evaluation and management of an individual including an age and gender appropriate history, examination, counseling/anticipatory guidance/risk factor reduction interventions, and the ordering of laboratory/diagnostic procedures, new patient; 65 years and older"
+      }
+    ]
+  }
+}

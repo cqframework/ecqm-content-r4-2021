@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-47",
+  "name": [
+    {
+      "given": [
+        "FrailtySymptomOvelapsB4MP"
+      ],
+      "family": "DenexPass"
+    }
+  ],
+  "birthDate": "1953-01-01",
+  "gender": "female"
+}

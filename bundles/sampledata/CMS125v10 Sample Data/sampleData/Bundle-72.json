@@ -1,0 +1,71 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-72",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-72",
+        "name": [
+          {
+            "given": [
+              "PalliativeCareEncounterStatusMissing"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-72-92",
+        "subject": {
+          "reference": "Patient/Patient-72"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-72-93",
+        "subject": {
+          "reference": "Patient/Patient-72"
+        },
+        "period": {
+          "start": "2018-12-31T23:59:59.000Z",
+          "end": "2019-01-01T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "305284002",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

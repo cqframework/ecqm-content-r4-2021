@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33665",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:14:49.813-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113762.1.4.1108.15"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Hospice_care_ambulatory_eCQM",
+  "title": "Hospice care ambulatory eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:16-04:00",
+    "total": 2,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "385763009",
+        "display": "Hospice care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "385765002",
+        "display": "Hospice care management"
+      }
+    ]
+  }
+}
