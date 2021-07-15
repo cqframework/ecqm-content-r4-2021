@@ -2,7 +2,7 @@ library NCQA_Hospice version '1.0.0'
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.1' called FHIRHelpers
+include FHIRHelpers version '4.0.001' called FHIRHelpers
 include NCQA_FHIRBase version '1.0.0' called NCQAFHIRBase
 include NCQA_Status version '1.0.0' called Status
 

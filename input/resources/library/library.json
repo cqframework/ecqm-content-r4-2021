@@ -1,0 +1,13 @@
+{
+  "resourceType": "Library",
+  "id": "library-NCQA_CQLBase",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "cqf-tooling"
+    }
+  } ],
+  "url": "http://ecqi.healthit.gov/ecqms/Library/NCQA_CQLBase",
+  "version": "1.0.0",
+  "name": "NCQA_CQLBase"
+}

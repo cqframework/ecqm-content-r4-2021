@@ -3,23 +3,23 @@ library AdvancedIllnessandFrailtyExclusionECQMFHIR4 version '5.13.000'
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.001' called FHIRHelpers
-include MATGlobalCommonFunctionsFHIR4 version '5.0.000' called Global
+include MATGlobalCommonFunctionsFHIR4 version '6.0.000' called Global
 
-codesystem "LOINC": 'http://loinc.org' 
+codesystem "LOINC": 'http://loinc.org'
 
-valueset "Acute Inpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1083' 
-valueset "Advanced Illness": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1082' 
-valueset "Care Services in Long-Term Residential Facility": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014' 
-valueset "Dementia Medications": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1510' 
-valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010' 
-valueset "Frailty Device": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300' 
-valueset "Frailty Diagnosis": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074' 
-valueset "Frailty Encounter": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1088' 
-valueset "Frailty Symptom": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1075' 
-valueset "Nonacute Inpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1084' 
-valueset "Nursing Facility Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012' 
-valueset "Observation": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1086' 
-valueset "Outpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1087' 
+valueset "Acute Inpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1083'
+valueset "Advanced Illness": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1082'
+valueset "Care Services in Long-Term Residential Facility": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014'
+valueset "Dementia Medications": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1510'
+valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010'
+valueset "Frailty Device": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300'
+valueset "Frailty Diagnosis": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074'
+valueset "Frailty Encounter": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1088'
+valueset "Frailty Symptom": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1075'
+valueset "Nonacute Inpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1084'
+valueset "Nursing Facility Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012'
+valueset "Observation": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1086'
+valueset "Outpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1087'
 
 code "Birth date": '21112-8' from "LOINC" display 'Birth date'
 
@@ -63,39 +63,39 @@ define "Two Outpatient Encounters with Advanced Illness on Different Dates of Se
   from
         "Outpatient Encounters with Advanced Illness" OutpatientEncounter1,
         "Outpatient Encounters with Advanced Illness" OutpatientEncounter2
-        where OutpatientEncounter2.period ends 1 day or more after day of 
+        where OutpatientEncounter2.period ends 1 day or more after day of
         end of OutpatientEncounter1.period
         return OutpatientEncounter1
 
 define "Advanced Illness and Frailty Exclusion Including Over Age 80":
   //If the measure includes populations age 80 and older, then use this logic:
-          	(
-                  Global."CalendarAgeInYearsAt"(FHIRHelpers.ToDate(Patient.birthDate), start of "Measurement Period")in Interval[65, 79]
-                      and "Has Criteria Indicating Frailty"
+    	(
+          AgeInYearsAt(start of "Measurement Period") between 65 and 79
+            and "Has Criteria Indicating Frailty"
             and ( exists "Two Outpatient Encounters with Advanced Illness on Different Dates of Service"
                 or exists ( "Inpatient Encounter with Advanced Illness" )
                 or exists "Dementia Medications In Year Before or During Measurement Period"
             )
       )
-          		or (
-                      Global."CalendarAgeInYearsAt"(FHIRHelpers.ToDate(Patient.birthDate), start of "Measurement Period")>= 80
-          			    and "Has Criteria Indicating Frailty"
-          		)
+  		or (
+        AgeInYearsAt(start of "Measurement Period") >= 80
+  			    and "Has Criteria Indicating Frailty"
+  		)
 
 define "Advanced Illness and Frailty Exclusion Not Including Over Age 80":
   //If the measure does NOT include populations age 80 and older, then use this logic:
-          	Global."CalendarAgeInYearsAt"(FHIRHelpers.ToDate(Patient.birthDate), start of "Measurement Period")>= 65
-                  and "Has Criteria Indicating Frailty"
-            and ( exists "Two Outpatient Encounters with Advanced Illness on Different Dates of Service"
-                or exists ( "Inpatient Encounter with Advanced Illness" )
-                or exists "Dementia Medications In Year Before or During Measurement Period"
-            )
+  AgeInYearsAt(start of "Measurement Period") >= 65
+    and "Has Criteria Indicating Frailty"
+    and ( exists "Two Outpatient Encounters with Advanced Illness on Different Dates of Service"
+        or exists ( "Inpatient Encounter with Advanced Illness" )
+        or exists "Dementia Medications In Year Before or During Measurement Period"
+    )
 
 define "Long Term Care Overlapping Periods":
   collapse("Long Term Care Periods During Measurement Period")
 
 define "Long Term Care Adjacent Periods":
-  from 
+  from
       "Long Term Care Overlapping Periods" LTCPeriod1,
       "Long Term Care Overlapping Periods" LTCPeriod2
       where end of LTCPeriod1 within 1 day of start of LTCPeriod2
@@ -133,4 +133,3 @@ define "Outpatient Encounters with Advanced Illness":
       )
       and OutpatientEncounter.period starts 2 years or less on or before
       end of "Measurement Period"
-

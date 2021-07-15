@@ -2,7 +2,7 @@ library BCSE_HEDIS_MY2022 version '1.0.0'
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.1' called FHIRHelpers
+include FHIRHelpers version '4.0.001' called FHIRHelpers
 include NCQA_HealthPlanEnrollment version '1.0.0' called Enrollment
 include NCQA_Status version '1.0.0' called Status
 include NCQA_FHIRBase version '1.0.0' called FHIRBase
