@@ -3,7 +3,7 @@ library NCQA_HealthPlanEnrollment version '1.0.0'
 using FHIR version '4.0.1'
 
 include NCQA_CQLBase version '1.0.0' called CQLBase
-include FHIRHelpers version '4.0.1' called FHIRHelpers
+include FHIRHelpers version '4.0.001' called FHIRHelpers
 include NCQA_Terminology version '1.0.0' called Terminology
 include NCQA_FHIRBase version '1.0.0' called FHIRBase
 
