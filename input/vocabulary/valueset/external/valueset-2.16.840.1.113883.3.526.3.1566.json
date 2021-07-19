@@ -13,7 +13,8 @@
   "experimental": false,
   "publisher": "NLM",
   "expansion": {
-    "timestamp": "2021-05-11T15:44:04-04:00",
+    "identifier": "20210506",
+    "timestamp": "2021-07-19T17:22:05-06:00",
     "contains": [ {
       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
       "version": "2021-01",

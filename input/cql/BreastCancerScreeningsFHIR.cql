@@ -8,7 +8,8 @@ include MATGlobalCommonFunctionsFHIR4 version '6.0.000' called Global
 include AdultOutpatientEncountersFHIR4 version '2.0.000' called AdultOutpatientEncounters
 include HospiceFHIR4 version '2.0.000' called Hospice
 include AdvancedIllnessandFrailtyExclusionECQMFHIR4 version '5.13.000' called Frailty
-include PalliativeCareFHIR version '0.2.000' called PalliativeCare
+// Do not have these value sets
+//include PalliativeCareFHIR version '0.2.000' called PalliativeCare
 
 valueset "Bilateral Mastectomy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005'
 valueset "Ethnicity": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.837'
@@ -29,6 +30,7 @@ valueset "Unilateral Mastectomy Right": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.
 valueset "Unilateral Mastectomy, Unspecified Laterality": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1071'
 
 parameter "Measurement Period" Interval<DateTime>
+  default Interval[@2019-01-01T00:00:00.0, @2020-01-01T00:00:00.0)
 
 context Patient
 
@@ -118,4 +120,4 @@ define "Denominator Exclusions":
     or Frailty."Advanced Illness and Frailty Exclusion Not Including Over Age 80"
     or (AgeInYearsAt(start of "Measurement Period") >= 65
       and Frailty."Has Long Term Care Periods Longer Than 90 Consecutive Days")
-    or PalliativeCare."Palliative Care in the Measurement Period"
+    //or PalliativeCare."Palliative Care in the Measurement Period"
