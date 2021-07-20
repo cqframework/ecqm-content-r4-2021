@@ -1,0 +1,834 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33676",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:31:06.961-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591",
+  "identifier": [
+    {
+      "value": "2.16.840.1.114222.4.11.3591"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Payer_eCQM",
+  "title": "Payer eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:11-04:00",
+    "total": 162,
+    "offset": 0,
+    "contains": [
+      {
+        "version": "10.0",
+        "code": "1",
+        "display": "MEDICARE"
+      },
+      {
+        "version": "10.0",
+        "code": "11",
+        "display": "Medicare Managed Care (Includes Medicare Advantage Plans)"
+      },
+      {
+        "version": "10.0",
+        "code": "111",
+        "display": "Medicare HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "112",
+        "display": "Medicare PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "113",
+        "display": "Medicare POS"
+      },
+      {
+        "version": "10.0",
+        "code": "119",
+        "display": "Medicare Managed Care Other"
+      },
+      {
+        "version": "10.0",
+        "code": "12",
+        "display": "Medicare (Non-managed Care)"
+      },
+      {
+        "version": "10.0",
+        "code": "121",
+        "display": "Medicare FFS"
+      },
+      {
+        "version": "10.0",
+        "code": "122",
+        "display": "Medicare Drug Benefit"
+      },
+      {
+        "version": "10.0",
+        "code": "123",
+        "display": "Medicare Medical Savings Account (MSA)"
+      },
+      {
+        "version": "10.0",
+        "code": "129",
+        "display": "Medicare Non-managed Care Other"
+      },
+      {
+        "version": "10.0",
+        "code": "13",
+        "display": "Medicare Hospice"
+      },
+      {
+        "version": "10.0",
+        "code": "14",
+        "display": "Dual Eligibility Medicare/Medicaid Organization"
+      },
+      {
+        "version": "10.0",
+        "code": "19",
+        "display": "Medicare Other"
+      },
+      {
+        "version": "10.0",
+        "code": "191",
+        "display": "Medicare Pharmacy Benefit Manager"
+      },
+      {
+        "version": "10.0",
+        "code": "2",
+        "display": "MEDICAID"
+      },
+      {
+        "version": "10.0",
+        "code": "21",
+        "display": "Medicaid (Managed Care)"
+      },
+      {
+        "version": "10.0",
+        "code": "211",
+        "display": "Medicaid HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "212",
+        "display": "Medicaid PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "213",
+        "display": "Medicaid PCCM (Primary Care Case Management)"
+      },
+      {
+        "version": "10.0",
+        "code": "219",
+        "display": "Medicaid Managed Care Other"
+      },
+      {
+        "version": "10.0",
+        "code": "22",
+        "display": "Medicaid (Non-managed Care Plan)"
+      },
+      {
+        "version": "10.0",
+        "code": "23",
+        "display": "Medicaid/SCHIP"
+      },
+      {
+        "version": "10.0",
+        "code": "25",
+        "display": "Medicaid - Out of State"
+      },
+      {
+        "version": "10.0",
+        "code": "26",
+        "display": "Medicaid – Long Term Care"
+      },
+      {
+        "version": "10.0",
+        "code": "29",
+        "display": "Medicaid Other"
+      },
+      {
+        "version": "10.0",
+        "code": "291",
+        "display": "Medicaid Pharmacy Benefit Manager"
+      },
+      {
+        "version": "10.0",
+        "code": "299",
+        "display": "Medicaid - Dental"
+      },
+      {
+        "version": "10.0",
+        "code": "3",
+        "display": "OTHER GOVERNMENT (Federal/State/Local) (excluding Department of Corrections)"
+      },
+      {
+        "version": "10.0",
+        "code": "31",
+        "display": "Department of Defense"
+      },
+      {
+        "version": "10.0",
+        "code": "311",
+        "display": "TRICARE (CHAMPUS)"
+      },
+      {
+        "version": "10.0",
+        "code": "3111",
+        "display": "TRICARE Prime--HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "3112",
+        "display": "TRICARE Extra--PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "3113",
+        "display": "TRICARE Standard - Fee For Service"
+      },
+      {
+        "version": "10.0",
+        "code": "3114",
+        "display": "TRICARE For Life--Medicare Supplement"
+      },
+      {
+        "version": "10.0",
+        "code": "3115",
+        "display": "TRICARE Reserve Select"
+      },
+      {
+        "version": "10.0",
+        "code": "3116",
+        "display": "Uniformed Services Family Health Plan (USFHP) -- HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "3119",
+        "display": "Department of Defense - (other)"
+      },
+      {
+        "version": "10.0",
+        "code": "312",
+        "display": "Military Treatment Facility"
+      },
+      {
+        "version": "10.0",
+        "code": "3121",
+        "display": "Enrolled Prime--HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "3122",
+        "display": "Non-enrolled Space Available"
+      },
+      {
+        "version": "10.0",
+        "code": "3123",
+        "display": "TRICARE For Life (TFL)"
+      },
+      {
+        "version": "10.0",
+        "code": "313",
+        "display": "Dental --Stand Alone"
+      },
+      {
+        "version": "10.0",
+        "code": "32",
+        "display": "Department of Veterans Affairs"
+      },
+      {
+        "version": "10.0",
+        "code": "321",
+        "display": "Veteran care--Care provided to Veterans"
+      },
+      {
+        "version": "10.0",
+        "code": "3211",
+        "display": "Direct Care--Care provided in VA facilities"
+      },
+      {
+        "version": "10.0",
+        "code": "3212",
+        "display": "Indirect Care--Care provided outside VA facilities"
+      },
+      {
+        "version": "10.0",
+        "code": "32121",
+        "display": "Fee Basis"
+      },
+      {
+        "version": "10.0",
+        "code": "32122",
+        "display": "Foreign Fee/Foreign Medical Program(FMP)"
+      },
+      {
+        "version": "10.0",
+        "code": "32123",
+        "display": "Contract Nursing Home/Community Nursing Home"
+      },
+      {
+        "version": "10.0",
+        "code": "32124",
+        "display": "State Veterans Home"
+      },
+      {
+        "version": "10.0",
+        "code": "32125",
+        "display": "Sharing Agreements"
+      },
+      {
+        "version": "10.0",
+        "code": "32126",
+        "display": "Other Federal Agency"
+      },
+      {
+        "version": "10.0",
+        "code": "32127",
+        "display": "Dental Care"
+      },
+      {
+        "version": "10.0",
+        "code": "32128",
+        "display": "Vision Care"
+      },
+      {
+        "version": "10.0",
+        "code": "322",
+        "display": "Non-veteran care"
+      },
+      {
+        "version": "10.0",
+        "code": "3221",
+        "display": "Civilian Health and Medical Program for the VA (CHAMPVA)"
+      },
+      {
+        "version": "10.0",
+        "code": "3222",
+        "display": "Spina Bifida Health Care Program (SB)"
+      },
+      {
+        "version": "10.0",
+        "code": "3223",
+        "display": "Children of Women Vietnam Veterans (CWVV)"
+      },
+      {
+        "version": "10.0",
+        "code": "3229",
+        "display": "Other non-veteran care"
+      },
+      {
+        "version": "10.0",
+        "code": "33",
+        "display": "Indian Health Service or Tribe"
+      },
+      {
+        "version": "10.0",
+        "code": "331",
+        "display": "Indian Health Service - Regular"
+      },
+      {
+        "version": "10.0",
+        "code": "332",
+        "display": "Indian Health Service - Contract"
+      },
+      {
+        "version": "10.0",
+        "code": "333",
+        "display": "Indian Health Service - Managed Care"
+      },
+      {
+        "version": "10.0",
+        "code": "334",
+        "display": "Indian Tribe - Sponsored Coverage"
+      },
+      {
+        "version": "10.0",
+        "code": "34",
+        "display": "HRSA Program"
+      },
+      {
+        "version": "10.0",
+        "code": "341",
+        "display": "Title V (MCH Block Grant)"
+      },
+      {
+        "version": "10.0",
+        "code": "342",
+        "display": "Migrant Health Program"
+      },
+      {
+        "version": "10.0",
+        "code": "343",
+        "display": "Ryan White Act"
+      },
+      {
+        "version": "10.0",
+        "code": "349",
+        "display": "Other"
+      },
+      {
+        "version": "10.0",
+        "code": "35",
+        "display": "Black Lung"
+      },
+      {
+        "version": "10.0",
+        "code": "36",
+        "display": "State Government"
+      },
+      {
+        "version": "10.0",
+        "code": "361",
+        "display": "State SCHIP program (codes for individual states)"
+      },
+      {
+        "version": "10.0",
+        "code": "362",
+        "display": "Specific state programs (list/ local code)"
+      },
+      {
+        "version": "10.0",
+        "code": "369",
+        "display": "State, not otherwise specified (other state)"
+      },
+      {
+        "version": "10.0",
+        "code": "37",
+        "display": "Local Government"
+      },
+      {
+        "version": "10.0",
+        "code": "371",
+        "display": "Local - Managed care"
+      },
+      {
+        "version": "10.0",
+        "code": "3711",
+        "display": "HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "3712",
+        "display": "PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "3713",
+        "display": "POS"
+      },
+      {
+        "version": "10.0",
+        "code": "372",
+        "display": "FFS/Indemnity"
+      },
+      {
+        "version": "10.0",
+        "code": "379",
+        "display": "Local, not otherwise specified (other local, county)"
+      },
+      {
+        "version": "10.0",
+        "code": "38",
+        "display": "Other Government (Federal, State, Local not specified)"
+      },
+      {
+        "version": "10.0",
+        "code": "381",
+        "display": "Federal, State, Local not specified managed care"
+      },
+      {
+        "version": "10.0",
+        "code": "3811",
+        "display": "Federal, State, Local not specified - HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "3812",
+        "display": "Federal, State, Local not specified - PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "3813",
+        "display": "Federal, State, Local not specified - POS"
+      },
+      {
+        "version": "10.0",
+        "code": "3819",
+        "display": "Federal, State, Local not specified - not specified managed care"
+      },
+      {
+        "version": "10.0",
+        "code": "382",
+        "display": "Federal, State, Local not specified - FFS"
+      },
+      {
+        "version": "10.0",
+        "code": "389",
+        "display": "Federal, State, Local not specified - Other"
+      },
+      {
+        "version": "10.0",
+        "code": "39",
+        "display": "Other Federal"
+      },
+      {
+        "version": "10.0",
+        "code": "391",
+        "display": "Federal Employee Health Plan - Use when known"
+      },
+      {
+        "version": "10.0",
+        "code": "4",
+        "display": "DEPARTMENTS OF CORRECTIONS"
+      },
+      {
+        "version": "10.0",
+        "code": "41",
+        "display": "Corrections Federal"
+      },
+      {
+        "version": "10.0",
+        "code": "42",
+        "display": "Corrections State"
+      },
+      {
+        "version": "10.0",
+        "code": "43",
+        "display": "Corrections Local"
+      },
+      {
+        "version": "10.0",
+        "code": "44",
+        "display": "Corrections Unknown Level"
+      },
+      {
+        "version": "10.0",
+        "code": "5",
+        "display": "PRIVATE HEALTH INSURANCE"
+      },
+      {
+        "version": "10.0",
+        "code": "51",
+        "display": "Managed Care (Private)"
+      },
+      {
+        "version": "10.0",
+        "code": "511",
+        "display": "Commercial Managed Care - HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "512",
+        "display": "Commercial Managed Care - PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "513",
+        "display": "Commercial Managed Care - POS"
+      },
+      {
+        "version": "10.0",
+        "code": "514",
+        "display": "Exclusive Provider Organization"
+      },
+      {
+        "version": "10.0",
+        "code": "515",
+        "display": "Gatekeeper PPO (GPPO)"
+      },
+      {
+        "version": "10.0",
+        "code": "516",
+        "display": "Commercial Managed Care - Pharmacy Benefit Manager"
+      },
+      {
+        "version": "10.0",
+        "code": "517",
+        "display": "Commercial Managed Care - Dental"
+      },
+      {
+        "version": "10.0",
+        "code": "519",
+        "display": "Managed Care, Other (non HMO)"
+      },
+      {
+        "version": "10.0",
+        "code": "52",
+        "display": "Private Health Insurance - Indemnity"
+      },
+      {
+        "version": "10.0",
+        "code": "521",
+        "display": "Commercial Indemnity"
+      },
+      {
+        "version": "10.0",
+        "code": "522",
+        "display": "Self-insured (ERISA) Administrative Services Only (ASO) plan"
+      },
+      {
+        "version": "10.0",
+        "code": "523",
+        "display": "Medicare supplemental policy (as second payer)"
+      },
+      {
+        "version": "10.0",
+        "code": "524",
+        "display": "Indemnity Insurance - Dental"
+      },
+      {
+        "version": "10.0",
+        "code": "529",
+        "display": "Private health insurance-other commercial Indemnity"
+      },
+      {
+        "version": "10.0",
+        "code": "53",
+        "display": "Managed Care (private) or private health insurance (indemnity), not otherwise specified"
+      },
+      {
+        "version": "10.0",
+        "code": "54",
+        "display": "Organized Delivery System"
+      },
+      {
+        "version": "10.0",
+        "code": "55",
+        "display": "Small Employer Purchasing Group"
+      },
+      {
+        "version": "10.0",
+        "code": "56",
+        "display": "Specialized Stand Alone Plan"
+      },
+      {
+        "version": "10.0",
+        "code": "561",
+        "display": "Dental"
+      },
+      {
+        "version": "10.0",
+        "code": "562",
+        "display": "Vision"
+      },
+      {
+        "version": "10.0",
+        "code": "59",
+        "display": "Other Private Insurance"
+      },
+      {
+        "version": "10.0",
+        "code": "6",
+        "display": "BLUE CROSS/BLUE SHIELD"
+      },
+      {
+        "version": "10.0",
+        "code": "61",
+        "display": "BC Managed Care"
+      },
+      {
+        "version": "10.0",
+        "code": "611",
+        "display": "BC Managed Care - HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "612",
+        "display": "BC Managed Care - PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "613",
+        "display": "BC Managed Care - POS"
+      },
+      {
+        "version": "10.0",
+        "code": "614",
+        "display": "BC Managed Care - Dental"
+      },
+      {
+        "version": "10.0",
+        "code": "619",
+        "display": "BC Managed Care - Other"
+      },
+      {
+        "version": "10.0",
+        "code": "62",
+        "display": "BC Insurance Indemnity"
+      },
+      {
+        "version": "10.0",
+        "code": "621",
+        "display": "BC Indemnity"
+      },
+      {
+        "version": "10.0",
+        "code": "622",
+        "display": "BC Self-insured (ERISA) Administrative Services Only (ASO) Plan"
+      },
+      {
+        "version": "10.0",
+        "code": "623",
+        "display": "BC Medicare Supplemental Plan"
+      },
+      {
+        "version": "10.0",
+        "code": "629",
+        "display": "BC Indemnity - Dental"
+      },
+      {
+        "version": "10.0",
+        "code": "7",
+        "display": "MANAGED CARE, UNSPECIFIED (to be used only if one can't distinguish public from private)"
+      },
+      {
+        "version": "10.0",
+        "code": "71",
+        "display": "HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "72",
+        "display": "PPO"
+      },
+      {
+        "version": "10.0",
+        "code": "73",
+        "display": "POS"
+      },
+      {
+        "version": "10.0",
+        "code": "79",
+        "display": "Other Managed Care, Unknown if public or private"
+      },
+      {
+        "version": "10.0",
+        "code": "8",
+        "display": "NO PAYMENT from an Organization/Agency/Program/Private Payer Listed"
+      },
+      {
+        "version": "10.0",
+        "code": "81",
+        "display": "Self-pay (Includes applicants for insurance and Medicaid applicants)"
+      },
+      {
+        "version": "10.0",
+        "code": "82",
+        "display": "No Charge"
+      },
+      {
+        "version": "10.0",
+        "code": "821",
+        "display": "Charity"
+      },
+      {
+        "version": "10.0",
+        "code": "822",
+        "display": "Professional Courtesy"
+      },
+      {
+        "version": "10.0",
+        "code": "823",
+        "display": "Research/Clinical Trial"
+      },
+      {
+        "version": "10.0",
+        "code": "83",
+        "display": "Refusal to Pay/Bad Debt"
+      },
+      {
+        "version": "10.0",
+        "code": "84",
+        "display": "Hill Burton Free Care"
+      },
+      {
+        "version": "10.0",
+        "code": "85",
+        "display": "Research/Donor"
+      },
+      {
+        "version": "10.0",
+        "code": "89",
+        "display": "No Payment, Other"
+      },
+      {
+        "version": "10.0",
+        "code": "9",
+        "display": "MISCELLANEOUS/OTHER"
+      },
+      {
+        "version": "10.0",
+        "code": "91",
+        "display": "Foreign National"
+      },
+      {
+        "version": "10.0",
+        "code": "92",
+        "display": "Other (Non-government)"
+      },
+      {
+        "version": "10.0",
+        "code": "93",
+        "display": "Disability Insurance"
+      },
+      {
+        "version": "10.0",
+        "code": "94",
+        "display": "Long-term Care Insurance"
+      },
+      {
+        "version": "10.0",
+        "code": "95",
+        "display": "Worker's Compensation"
+      },
+      {
+        "version": "10.0",
+        "code": "951",
+        "display": "Worker's Comp HMO"
+      },
+      {
+        "version": "10.0",
+        "code": "953",
+        "display": "Worker's Comp Fee-for-Service"
+      },
+      {
+        "version": "10.0",
+        "code": "954",
+        "display": "Worker's Comp Other Managed Care"
+      },
+      {
+        "version": "10.0",
+        "code": "959",
+        "display": "Worker's Comp, Other unspecified"
+      },
+      {
+        "version": "10.0",
+        "code": "96",
+        "display": "Auto Insurance (includes no fault)"
+      },
+      {
+        "version": "10.0",
+        "code": "97",
+        "display": "Legal Liability / Liability Insurance"
+      },
+      {
+        "version": "10.0",
+        "code": "98",
+        "display": "Other specified but not otherwise classifiable (includes Hospice - Unspecified plan)"
+      },
+      {
+        "version": "10.0",
+        "code": "99",
+        "display": "No Typology Code available for payment source"
+      },
+      {
+        "version": "10.0",
+        "code": "9999",
+        "display": "Unavailable /No Payer Specified / Blank"
+      }
+    ]
+  }
+}

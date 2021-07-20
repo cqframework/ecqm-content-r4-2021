@@ -1,0 +1,22 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter-45-93",
+  "subject": {
+    "reference": "Patient/Patient-45"
+  },
+  "period": {
+    "start": "2019-01-01T00:00:00.000Z",
+    "end": "2019-01-01T23:59:59.000Z"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "99509",
+          "system": "http://www.ama-assn.org/go/cpt",
+          "version": "2018.2.20AB"
+        }
+      ]
+    }
+  ]
+}

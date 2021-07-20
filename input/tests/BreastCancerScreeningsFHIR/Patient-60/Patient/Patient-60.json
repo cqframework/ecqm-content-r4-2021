@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-60",
+  "name": [
+    {
+      "given": [
+        "LongTermCare90DaysDuringMP"
+      ],
+      "family": "DenexFail"
+    }
+  ],
+  "birthDate": "1953-01-01",
+  "gender": "female"
+}

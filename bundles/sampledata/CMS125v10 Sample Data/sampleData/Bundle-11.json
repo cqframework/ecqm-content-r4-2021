@@ -1,0 +1,46 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-11",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-11",
+        "name": [
+          {
+            "given": [
+              "OfficeVisitNoEndDate"
+            ],
+            "family": "IPFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-11-92",
+        "subject": {
+          "reference": "Patient/Patient-11"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

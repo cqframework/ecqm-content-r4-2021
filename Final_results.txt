@@ -1,0 +1,550 @@
+
+
+Final Results
+
+Patient-10
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                    Met
+=============================================================================
+
+Patient-11
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                    Met
+=============================================================================
+
+Patient-12
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                    Met
+=============================================================================
+
+Patient-13
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                   true        true     false                  false
+Expectation              false       false     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-14
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                    Met
+=============================================================================
+
+Patient-15
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-16
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-17
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-18
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-19
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-20
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-21
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-22
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-23
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-24
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-25
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-26
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-27
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-28
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-29
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-30
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-31
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-32
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-33
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-34
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-35
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-36
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-37
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-38
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-39
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-40
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-41
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-42
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-43
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-44
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-45
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-46
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-47
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-48
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-49
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-5
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-50
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-51
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-52
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-53
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-54
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-55
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-56
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-57
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-58
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-59
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-6
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   null
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                Not Met
+=============================================================================
+
+Patient-60
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-61
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-62
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-63
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-64
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-65
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-66
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-67
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-68
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-69
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-7
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-70
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-71
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-72
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-73
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-74
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                   true
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-75
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                   true
+Final                  Not Met     Not Met       Met                Not Met
+=============================================================================
+
+Patient-76
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true      true                  false
+Final                  Not Met     Not Met   Not Met                    Met
+=============================================================================
+
+Patient-77
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-78
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true      true                  false
+Final                  Not Met     Not Met   Not Met                    Met
+=============================================================================
+
+Patient-79
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false      true                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met   Not Met                    Met
+=============================================================================
+
+Patient-8
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                    Met
+=============================================================================
+
+Patient-80
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-81
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false      true                  false
+Expectation               true        true      true                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-82
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation               true        true     false                  false
+Final                  Not Met     Not Met       Met                    Met
+=============================================================================
+
+Patient-9
+            Initial Population Denominator Numerator Denominator Exclusions
+Results                  false       false     false                  false
+Expectation              false       false     false                  false
+Final                      Met         Met       Met                    Met
+=============================================================================
+

@@ -1,0 +1,11 @@
+{
+  "id": "Expectation-69",
+  "patientId": "Patient-69",
+  "measureDeck": "BCSE",
+  "expectations": {
+    "Initial Population": true,
+    "Denominator": true,
+    "Denominator Exclusions": false,
+    "Numerator": false
+  }
+}

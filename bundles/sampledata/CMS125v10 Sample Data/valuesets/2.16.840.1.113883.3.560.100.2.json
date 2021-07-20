@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33658",
+  "meta": {
+    "lastUpdated": "2021-05-06T23:50:29.200-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.560.100.2",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.560.100.2"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Female_eCQM",
+  "title": "Female eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:09-04:00",
+    "total": 1,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/administrative-gender",
+        "code": "female",
+        "display": "Female"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-23",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-23",
+        "name": [
+          {
+            "given": [
+              "HospiceEncounterInpatientEndsAfterMP"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-23-92",
+        "subject": {
+          "reference": "Patient/Patient-23"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-23-93",
+        "subject": {
+          "reference": "Patient/Patient-23"
+        },
+        "period": {
+          "start": "2019-12-31T23:59:59.000Z",
+          "end": "2020-01-01T00:00:00.000Z"
+        },
+        "status": "finished",
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428371000124100"
+              }
+            ]
+          }
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "32485007",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

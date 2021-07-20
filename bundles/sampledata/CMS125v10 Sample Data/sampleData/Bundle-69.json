@@ -1,0 +1,66 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-69",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-69",
+        "name": [
+          {
+            "given": [
+              "FACITPalStatusUnkonwn"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-69-92",
+        "subject": {
+          "reference": "Patient/Patient-69"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-69-93",
+        "subject": {
+          "reference": "Patient/Patient-69"
+        },
+        "effectiveDateTime": "2019-01-01T00:00:00.000Z",
+        "status": "unknown",
+        "code": {
+          "coding": [
+            {
+              "code": "71007-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

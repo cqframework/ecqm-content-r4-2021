@@ -1,0 +1,54 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33679",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:38:45.300-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.836",
+  "identifier": [
+    {
+      "value": "2.16.840.1.114222.4.11.836"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Race_eCQM",
+  "title": "Race eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:13-04:00",
+    "total": 6,
+    "offset": 0,
+    "contains": [
+      {
+        "version": "1.1",
+        "code": "1002-5",
+        "display": "American Indian or Alaska Native"
+      },
+      {
+        "version": "1.1",
+        "code": "2028-9",
+        "display": "Asian"
+      },
+      {
+        "version": "1.1",
+        "code": "2054-5",
+        "display": "Black or African American"
+      },
+      {
+        "version": "1.1",
+        "code": "2076-8",
+        "display": "Native Hawaiian or Other Pacific Islander"
+      },
+      {
+        "version": "1.1",
+        "code": "2131-1",
+        "display": "Other Race"
+      },
+      {
+        "version": "1.1",
+        "code": "2106-3",
+        "display": "White"
+      }
+    ]
+  }
+}

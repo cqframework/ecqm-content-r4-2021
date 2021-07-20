@@ -1,0 +1,22 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter-62-93",
+  "subject": {
+    "reference": "Patient/Patient-62"
+  },
+  "period": {
+    "start": "2019-02-13T00:00:00.000Z",
+    "end": "2019-05-14T00:00:00.000Z"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "210098006",
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33663",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:11:45.456-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1068",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1003.198.12.1068"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "History_of_bilateral_mastectomy_eCQM",
+  "title": "History of bilateral mastectomy eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:09-04:00",
+    "total": 3,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "428529004",
+        "display": "History of bilateral mastectomy"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2020.09.20AA",
+        "code": "136071000119101",
+        "display": "History of bilateral prophylactic mastectomy"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "version": "2021.2.20AB",
+        "code": "Z90.13",
+        "display": "Acquired absence of bilateral breasts and nipples"
+      }
+    ]
+  }
+}

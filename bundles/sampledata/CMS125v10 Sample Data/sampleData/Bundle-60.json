@@ -1,0 +1,71 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-60",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-60",
+        "name": [
+          {
+            "given": [
+              "LongTermCare90DaysDuringMP"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1953-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-60-92",
+        "subject": {
+          "reference": "Patient/Patient-60"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-60-93",
+        "subject": {
+          "reference": "Patient/Patient-60"
+        },
+        "period": {
+          "start": "2017-10-01T00:00:00.000Z",
+          "end": "2019-04-01T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "210098006",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

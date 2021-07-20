@@ -1,0 +1,70 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-37",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-37",
+        "name": [
+          {
+            "given": [
+              "BilateralMastectomyProcedureEndsAfterEndOfMP"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-37-92",
+        "subject": {
+          "reference": "Patient/Patient-37"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-37-93",
+        "subject": {
+          "reference": "Patient/Patient-37"
+        },
+        "performedPeriod": {
+          "start": "2019-12-31T00:00:00.000Z",
+          "end": "2020-01-01T00:00:00.000Z"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "code": "456903003",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

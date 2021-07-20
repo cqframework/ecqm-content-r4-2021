@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33669",
+  "meta": {
+    "lastUpdated": "2021-05-06T23:50:07.881-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113762.1.4.1"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "ONC_Administrative_Sex_eCQM",
+  "title": "ONC Administrative Sex eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:58:11-04:00",
+    "total": 2,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://hl7.org/fhir/administrative-gender",
+        "code": "female",
+        "display": "Female"
+      },
+      {
+        "system": "http://hl7.org/fhir/administrative-gender",
+        "code": "male",
+        "display": "Male"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "resourceType": "MedicationDispense",
+  "id": "MedicationDispense-43-94",
+  "subject": {
+    "reference": "Patient/Patient-43"
+  },
+  "whenHandedOver": "2018-01-01T00:00:00.000Z",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "1599805",
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+      }
+    ]
+  }
+}

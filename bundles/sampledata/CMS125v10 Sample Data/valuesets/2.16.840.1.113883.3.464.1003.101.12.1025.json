@@ -1,0 +1,42 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33677",
+  "meta": {
+    "lastUpdated": "2021-05-06T22:36:02.282-04:00"
+  },
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1003.101.12.1025"
+    }
+  ],
+  "version": "eCQM Update 2021-05-06",
+  "name": "Preventive_Care_Services_Established_Office_Visit_18_and_Up_eCQM",
+  "title": "Preventive Care Services - Established Office Visit, 18 and Up eCQM",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-05-07T20:55:08-04:00",
+    "total": 3,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "version": "2021.2.20AB",
+        "code": "99395",
+        "display": "Periodic comprehensive preventive medicine reevaluation and management of an individual including an age and gender appropriate history, examination, counseling/anticipatory guidance/risk factor reduction interventions, and the ordering of laboratory/diagnostic procedures, established patient; 18-39 years"
+      },
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "version": "2021.2.20AB",
+        "code": "99396",
+        "display": "Periodic comprehensive preventive medicine reevaluation and management of an individual including an age and gender appropriate history, examination, counseling/anticipatory guidance/risk factor reduction interventions, and the ordering of laboratory/diagnostic procedures, established patient; 40-64 years"
+      },
+      {
+        "system": "http://www.ama-assn.org/go/cpt",
+        "version": "2021.2.20AB",
+        "code": "99397",
+        "display": "Periodic comprehensive preventive medicine reevaluation and management of an individual including an age and gender appropriate history, examination, counseling/anticipatory guidance/risk factor reduction interventions, and the ordering of laboratory/diagnostic procedures, established patient; 65 years and older"
+      }
+    ]
+  }
+}

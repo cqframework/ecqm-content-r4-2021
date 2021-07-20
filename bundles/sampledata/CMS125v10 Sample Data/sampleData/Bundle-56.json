@@ -1,0 +1,90 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-56",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-56",
+        "name": [
+          {
+            "given": [
+              "AucteInpatientEncounterNoAdvancedIllnessDiagnosis"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1953-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-56-92",
+        "subject": {
+          "reference": "Patient/Patient-56"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-56-93",
+        "subject": {
+          "reference": "Patient/Patient-56"
+        },
+        "effectiveDateTime": "2019-01-01T00:00:00.000Z",
+        "code": {
+          "coding": [
+            {
+              "code": "469860004",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-56-94",
+        "subject": {
+          "reference": "Patient/Patient-56"
+        },
+        "period": {
+          "start": "2018-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "304566005",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

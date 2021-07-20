@@ -1,0 +1,70 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-74",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-74",
+        "name": [
+          {
+            "given": [
+              "PalliativeCareAfterMP"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-74-92",
+        "subject": {
+          "reference": "Patient/Patient-74"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-74-93",
+        "subject": {
+          "reference": "Patient/Patient-74"
+        },
+        "performedPeriod": {
+          "start": "2020-01-01T00:00:00.000Z",
+          "end": "2020-01-02T00:00:00.000Z"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "code": "443761007",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

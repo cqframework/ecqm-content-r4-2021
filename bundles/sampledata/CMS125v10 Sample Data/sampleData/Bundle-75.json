@@ -1,0 +1,70 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-75",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-75",
+        "name": [
+          {
+            "given": [
+              "PalliativeCareStatusInProgress"
+            ],
+            "family": "DenexPass"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-75-92",
+        "subject": {
+          "reference": "Patient/Patient-75"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-75-93",
+        "subject": {
+          "reference": "Patient/Patient-75"
+        },
+        "performedPeriod": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-01-01T00:00:00.000Z"
+        },
+        "status": "in-progress",
+        "code": {
+          "coding": [
+            {
+              "code": "443761007",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

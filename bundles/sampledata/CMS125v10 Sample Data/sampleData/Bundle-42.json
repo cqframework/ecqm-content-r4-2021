@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-42",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-42",
+        "name": [
+          {
+            "given": [
+              "FrailtyDeviceB4MP"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1953-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-42-92",
+        "subject": {
+          "reference": "Patient/Patient-42"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-42-93",
+        "subject": {
+          "reference": "Patient/Patient-42"
+        },
+        "effectiveDateTime": "2018-12-31T23:59:59.000Z",
+        "code": {
+          "coding": [
+            {
+              "code": "469860004",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "id": "MedicationDispense-42-94",
+        "subject": {
+          "reference": "Patient/Patient-42"
+        },
+        "whenHandedOver": "2018-01-01T00:00:00.000Z",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "1599805",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

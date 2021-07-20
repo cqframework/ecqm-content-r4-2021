@@ -1,0 +1,67 @@
+{
+  "resourceType": "Bundle",
+  "id": "Bundle-21",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-21",
+        "name": [
+          {
+            "given": [
+              "HospiceServiceRequestAfterMP"
+            ],
+            "family": "DenexFail"
+          }
+        ],
+        "birthDate": "1967-01-01",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-21-92",
+        "subject": {
+          "reference": "Patient/Patient-21"
+        },
+        "period": {
+          "start": "2019-01-01T00:00:00.000Z",
+          "end": "2019-12-31T23:59:59.000Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "30346009",
+                "system": "http://snomed.info/sct",
+                "version": "2017.09.20AA"
+              }
+            ]
+          }
+        ],
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "ServiceRequest-21-93",
+        "subject": {
+          "reference": "Patient/Patient-21"
+        },
+        "authoredOn": "2020-01-01T00:00:00.000Z",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "code": "385763009",
+              "system": "http://snomed.info/sct",
+              "version": "2017.09.20AA"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
