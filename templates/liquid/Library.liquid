@@ -56,7 +56,7 @@
         {% if Library.description.exists() %}
         <tr>
             <th scope="row"><b>Description: </b></th>
-            <td style="padding-left: 25px;">{{Library.description}}</td>
+            <td style="padding-left: 25px;">{{Library.description.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.status.exists() %}
@@ -209,13 +209,13 @@
         {% if Library.purpose.exists() %}
         <tr>
             <th scope="row"><b>Purpose: </b></th>
-            <td style="padding-left: 25px;">{{Library.purpose}}</td>
+            <td style="padding-left: 25px;">{{Library.purpose.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.usage.exists() %}
         <tr>
             <th scope="row"><b>Usage: </b></th>
-            <td style="padding-left: 25px;">{{Library.usage}}</td>
+            <td style="padding-left: 25px;">{{Library.usage.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.topic.exists() %}
