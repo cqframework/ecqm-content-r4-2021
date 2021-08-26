@@ -1,3 +1,4 @@
+
 https://cqm-sandbox.alphora.com/cqf-ruler-r4/fhir/Patient/5d6545691c76ba7ea32d9df9/$everything?_format=json
 https://cqm-sandbox.alphora.com/cqf-ruler-r4/fhir/Patient/5d6545691c76ba7ea62d9e23/$everything?_format=json
 https://cqm-sandbox.alphora.com/cqf-ruler-r4/fhir/Patient/5d6545691c76ba7ea32d9e05/$everything?_format=json
