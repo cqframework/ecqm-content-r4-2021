@@ -12,11 +12,6 @@
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
     "valueCode": "Encounter"
   }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
-  }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
       "name": "Measurement Period",
@@ -142,6 +137,11 @@
       "code": "confirmed",
       "display": "confirmed"
     }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR",
   "identifier": [ {
@@ -158,7 +158,7 @@
   "title": "Hospital Harm - Severe HyperglycemiaFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-09-10T10:15:04-04:00",
+  "date": "2021-09-10T14:05:19-04:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
