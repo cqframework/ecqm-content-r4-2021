@@ -1,0 +1,21 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-48",
+      "name": [ {
+        "family": "DenexFail",
+        "given": [ "FrailtySymptomB4MP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1953-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-48"
+    }
+  } ]
+}

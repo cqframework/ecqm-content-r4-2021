@@ -1,0 +1,21 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-68",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "FACITPalPeriodDuringMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-68"
+    }
+  } ]
+}
