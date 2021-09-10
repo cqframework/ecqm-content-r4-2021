@@ -3,7 +3,7 @@
   "id": "TJCOverallFHIR",
   "meta": {
     "versionId": "2",
-    "lastUpdated": "2021-08-18T13:21:24.000-06:00",
+    "lastUpdated": "2021-08-18T15:21:24.000-04:00",
     "source": "#nqSdMCgv69RrJ49h",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },
@@ -11,7 +11,7 @@
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
-      "reference": "cqf-tooling"
+      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Library/TJCOverallFHIR",

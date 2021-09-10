@@ -1,0 +1,25 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-MedicationDispense-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "MedicationDispense",
+      "id": "MedicationDispense-40-94",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "1599805"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-40"
+      },
+      "whenHandedOver": "2018-01-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "MedicationDispense/MedicationDispense-40-94"
+    }
+  } ]
+}

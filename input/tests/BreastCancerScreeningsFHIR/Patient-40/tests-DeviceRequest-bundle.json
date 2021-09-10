@@ -1,0 +1,26 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-DeviceRequest-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "DeviceRequest",
+      "id": "DeviceRequest-40-93",
+      "codeCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "469860004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-40"
+      },
+      "authoredOn": "2018-12-31T23:59:59.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "DeviceRequest/DeviceRequest-40-93"
+    }
+  } ]
+}

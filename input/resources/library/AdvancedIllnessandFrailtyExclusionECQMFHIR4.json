@@ -3,7 +3,7 @@
   "id": "AdvancedIllnessandFrailtyExclusionECQMFHIR4",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2021-04-21T08:37:07.000-06:00",
+    "lastUpdated": "2021-04-21T10:37:07.000-04:00",
     "source": "#Hp8yRxvKaHjGjenw",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },
@@ -11,7 +11,7 @@
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
-      "reference": "cqf-tooling"
+      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Library/AdvancedIllnessandFrailtyExclusionECQMFHIR4",

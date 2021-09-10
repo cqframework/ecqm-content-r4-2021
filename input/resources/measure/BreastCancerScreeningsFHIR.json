@@ -3,7 +3,7 @@
   "id": "BreastCancerScreeningsFHIR",
   "meta": {
     "versionId": "2",
-    "lastUpdated": "2021-04-26T11:24:08.000-06:00",
+    "lastUpdated": "2021-04-26T13:24:08.000-04:00",
     "source": "#cn7WFg8wl2QWx7cU",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -14,7 +14,7 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
-      "reference": "cqf-tooling"
+      "reference": "Device/cqf-tooling"
     }
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",

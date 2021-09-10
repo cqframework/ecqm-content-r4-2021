@@ -1,0 +1,378 @@
+{
+  "resourceType": "Measure",
+  "id": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR",
+  "meta": {
+    "versionId": "12",
+    "lastUpdated": "2021-08-11T11:24:12.000-04:00",
+    "source": "#1oe1tBjP3kY9OK97",
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/ratio-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode": "Encounter"
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Any"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "SDE Ethnicity",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "SDE Race",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "value", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "value", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+    "valueCoding": {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "code": "confirmed",
+      "display": "confirmed"
+    }
+  } ],
+  "url": "http://ecqi.healthit.gov/ecqms/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid",
+    "value": "c44ca609-d795-4715-a8fc-1b0b30e46048"
+  }, {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms",
+    "value": "871FHIR"
+  } ],
+  "version": "0.0.006",
+  "name": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR",
+  "title": "Hospital Harm - Severe HyperglycemiaFHIR",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-09-10T10:15:04-04:00",
+  "publisher": "Centers for Medicare & Medicaid Services (CMS)",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "https://cms.gov"
+    } ]
+  } ],
+  "description": "This measure assesses the number of inpatient hospital days with a hyperglycemic event (harm) per the total qualifying inpatient hospital days for patients 18 years of age or older at admission.",
+  "purpose": "Unknown",
+  "copyright": "Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. IMPAQ disclaims all liability for use or accuracy of any third party codes contained in the specifications.\n\nLOINC(R) copyright 2004-2020 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. ICD-10 copyright 2020 World Health Organization. All Rights Reserved.",
+  "effectivePeriod": {
+    "start": "2022-01-01",
+    "end": "2022-12-31"
+  },
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "Library SDE",
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4|2.0.000"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
+  }, {
+    "type": "depends-on",
+    "display": "Library Global",
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
+  }, {
+    "type": "depends-on",
+    "display": "Code system ConditionVerificationStatusCodes",
+    "resource": "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Encounter Inpatient",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Observation Services",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Emergency Department Visit",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Diabetes",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Hypoglycemics Treatment Medications",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.394"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Glucose lab test",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Payer",
+    "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+  } ],
+  "library": [ "http://ecqi.healthit.gov/ecqms/Library/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR" ],
+  "disclaimer": "This measure and specifications are subject to further revisions. This performance measure is not a clinical guideline and does not establish a standard of medical care, and has not been tested for all potential applications.\n\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+  "scoring": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code": "ratio",
+      "display": "Ratio"
+    } ]
+  },
+  "type": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+      "code": "outcome"
+    } ]
+  } ],
+  "rationale": "Hyperglycemia, i.e., elevated blood glucose level, is common among hospitalized patients, especially those with preexisting diabetes (Swanson, et al., 2011; Umpierrez et al., 2012). Hyperglycemia can also affect individuals with no prior history of diabetes and may be induced by medications such as steroids, or parenteral (intravenous) or enteral (tube) feeding.\n\nSevere hyperglycemia, i.e., extremely elevated blood glucose level, is significantly associated with a range of harms, including increased in-hospital mortality, infection rates, and hospital length of stay (Pasquel, et al., 2010; Rady, et al., 2005; Umpierrez, et al., 2002; Falciglia et al., 2009; Lee et al., 2012; King et al., 2011; Jackson et al., 2012; Umpierrez et al., 2012; Krinsley 2003). Lower rates of inpatient severe hyperglycemia may not only improve care for patients, but also reduce costs for healthcare payers (Krinsley 2003; Newton et al., 2006; Krinsley et al., 2016). The rate of hyperglycemia varies across hospitals, suggesting opportunities for improvement in inpatient glycemic management (Swanson et al., 2011; Cook et al., 2009; Matheny et al., 2008). The rate of inpatient hyperglycemia can be considered a marker for quality of hospital care, since inpatient hyperglycemia is largely avoidable with proper glycemic management. The use of evidence-based standardized protocols and insulin management protocols have been shown to improve glycemic control and safety (Maynard et al., 2015; Donihi et al., 2006).",
+  "clinicalRecommendationStatement": "It should be noted that this measure does not aim to measure overall glucose control in hospitalized patients; rather, our goal is to assess the occurrence and extent of severe hyperglycemia. This measure is also intended to be used in combination with its companion measure of hypoglycemia (Hospital Harm – Hypoglycemia) to reduce unintended consequences of measurement. \n\nMultiple guidelines address recommended levels of glycemic control, though these do not define severe hyperglycemia:\nClinical Recommendation Statement From Section 14, Diabetes Care in the Hospital, in the Standards of Medical Care in Diabetes by the American Diabetes Association, (American Diabetes Association, 2017): \n\nInsulin therapy should be initiated for treatment of persistent hyperglycemia starting at a threshold >=180 mg/dL (10.0 mmol/L). Once insulin therapy is started, a target glucose range of 140–180 mg/dL (7.8–10.0 mmol/L) is recommended for the majority of critically ill patients and noncritically ill patients. More stringent goals, such as <140 mg/dL (<7.8 mmol/L), may be appropriate for selected patients, as long as this can be achieved without significant hypoglycemia. \n\nFrom the Endocrine Society clinical practice guideline on the Management of Hyperglycemia in Hospitalized Patients in Non-critical Care Setting (Umpierrez et al., 2012):\n3.1. We recommend a pre-meal glucose target of less than 140 mg/dL (7.8 mmol/liter) and a random [blood glucose] of less than 180 mg/dL (10.0 mmol/liter) for the majority of hospitalized patients with non-critical illness.\n\nThere is no clinically accepted cutoff for severe hyperglycemia. Studies have used thresholds of >180 , >300, and >350 mg/dL, among other values (Jamesen et al., 2015; Cook et al., 2009; Donihi et al., 2011; Weinberg et al, 2010; Mendez et al, 2015). Glycemic goals may also differ among hospitalized patients. For example, in an older patient with a prior history of severe hypoglycemia, some degree of hyperglycemia may be tolerated to maximize safety.",
+  "improvementNotation": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code": "increase"
+    } ]
+  },
+  "guidance": "Note the measure is currently confined to using mg/dL as the unit of measurement for glucose results.\n\nTo calculate a hospital-level measure result, total the number of hyperglycemic days (numerator events) across the total number of eligible days (denominator) which match the initial population/denominator criteria.\n\nTo create the Measure Observation associated with the numerator, include all hyperglycemic days meeting the follow criteria:\n\n1)\t All 24-hour periods with a blood glucose level >300 mg/dL (except those occurring in the first 24-hour period after admission to the hospital (including the emergency department and observation)), \nOr,\n2)\t All days where a blood glucose was not measured, and it was preceded by two consecutive days where at least one glucose value during each of the two days is >=200 mg/dL.\n\nDo not count the first 24-hour period after inpatient admission to the hospital (including the emergency department and observation) for >300 mg/dL events in order to exclude hyperglycemic events potentially due to poor glucose control outside of the hospital setting or that preceded the start of hospital care.\n\nRemove the last time period before discharge, if it was less than 24-hours, to avoid counting a period of time that was less than 24-hours, on the day of discharge, as a full day.\n\nBlood glucose levels are determined by laboratory or point-of-care (POC) tests, including capillary/glucometer blood glucose tests.\n\nThis eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS871v1.0",
+  "group": [ {
+    "population": [ {
+      "id": "D53FB775-9BD2-4C05-A036-D63EE9B56399",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Initial Population"
+      }
+    }, {
+      "id": "76C37014-951C-472C-A3DE-EFD036178D93",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator",
+          "display": "Denominator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "D7736481-5F3D-4D7E-99A3-E97091BDE4BD",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator",
+          "display": "Numerator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Numerator"
+      }
+    }, {
+      "id": "CBCF0466-99D5-4B77-B8C3-E23006A0232C",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod",
+        "valueCode": "sum"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "measure-observation",
+          "display": "Measure Observation"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator Observations"
+      }
+    }, {
+      "id": "09DB8A87-15B3-4754-A9A4-0E32E4536E62",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod",
+        "valueCode": "count"
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "measure-observation",
+          "display": "Measure Observation"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Numerator Observations"
+      }
+    } ]
+  } ],
+  "supplementalData": [ {
+    "id": "43fd9282-a7e6-3335-be5c-e4dbf22a263a",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Ethnicity"
+    }
+  }, {
+    "id": "f3090b84-cb46-34ba-9426-75ca19e7b09e",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Payer"
+    }
+  }, {
+    "id": "4a656589-417f-370f-8ff5-b8a94e5cf2d8",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Race"
+    }
+  }, {
+    "id": "644667d0-9231-3f98-a741-b4549b67a659",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Sex"
+    }
+  } ]
+}

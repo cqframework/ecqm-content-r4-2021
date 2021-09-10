@@ -1,0 +1,30 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Procedure-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "Procedure-38-93",
+      "status": "in-progress",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "456903003"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-38"
+      },
+      "performedPeriod": {
+        "start": "2019-12-31T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/Procedure-38-93"
+    }
+  } ]
+}

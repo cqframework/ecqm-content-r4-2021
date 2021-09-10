@@ -3,7 +3,7 @@
   "id": "HospiceFHIR4",
   "meta": {
     "versionId": "2",
-    "lastUpdated": "2021-01-28T16:14:26.000-07:00",
+    "lastUpdated": "2021-01-28T18:14:26.000-05:00",
     "source": "#ZZgqRX0SMAoS7YB2",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },
@@ -11,7 +11,7 @@
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
-      "reference": "cqf-tooling"
+      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Library/HospiceFHIR4",
