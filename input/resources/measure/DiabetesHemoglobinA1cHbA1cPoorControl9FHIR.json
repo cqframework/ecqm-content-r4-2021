@@ -3,7 +3,7 @@
   "id": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR",
   "meta": {
     "versionId": "27",
-    "lastUpdated": "2021-08-16T18:34:08.000-04:00",
+    "lastUpdated": "2021-08-16T16:34:08.000-06:00",
     "source": "#wGMjxSLpzscuAYax",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -164,24 +164,6 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "extension", "value", "url" ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
       "mustSupport": [ "period", "hospitalization", "hospitalization.dischargeDisposition", "type", "status" ],
@@ -193,78 +175,12 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
-      "type": "ServiceRequest",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-      "mustSupport": [ "code", "authoredOn", "intent", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-      "mustSupport": [ "code", "performed", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "DeviceRequest",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/DeviceRequest" ],
-      "mustSupport": [ "code", "authoredOn", "intent", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
       "mustSupport": [ "period", "type", "status" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1088"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1075"
       } ]
     }
   }, {
@@ -347,27 +263,63 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code", "category", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "code": [ {
-          "system": "http://loinc.org",
-          "code": "71007-9",
-          "display": "Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)"
-        } ]
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
       "mustSupport": [ "period", "type", "status" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "ServiceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+      "mustSupport": [ "code", "authoredOn", "intent", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
       } ]
     }
   }, {
@@ -384,9 +336,50 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "extension", "value", "url" ]
+      "type": "DeviceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/DeviceRequest" ],
+      "mustSupport": [ "code", "authoredOn", "intent", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1075"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "category", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "code": [ {
+          "system": "http://loinc.org",
+          "code": "71007-9",
+          "display": "Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)"
+        } ]
+      } ]
     }
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
@@ -906,7 +899,7 @@
   "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)FHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-09-13T10:00:38-04:00",
+  "date": "2021-09-13T12:48:44-04:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {
@@ -931,36 +924,16 @@
     "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-  }, {
-    "type": "depends-on",
     "display": "Library Global",
     "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
   }, {
     "type": "depends-on",
     "display": "Library AdultOutpatientEncounters",
     "resource": "http://ecqi.healthit.gov/ecqms/Library/AdultOutpatientEncountersFHIR4|2.2.000"
   }, {
     "type": "depends-on",
-    "display": "Library Global",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
-  }, {
-    "type": "depends-on",
     "display": "Library Hospice",
     "resource": "http://ecqi.healthit.gov/ecqms/Library/HospiceFHIR4|2.3.000"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-  }, {
-    "type": "depends-on",
-    "display": "Library Global",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
   }, {
     "type": "depends-on",
     "display": "Library FrailtyLTI",

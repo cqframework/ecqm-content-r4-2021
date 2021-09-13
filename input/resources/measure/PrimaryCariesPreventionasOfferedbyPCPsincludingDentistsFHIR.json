@@ -3,7 +3,7 @@
   "id": "PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR",
   "meta": {
     "versionId": "12",
-    "lastUpdated": "2021-08-24T20:04:47.000-04:00",
+    "lastUpdated": "2021-08-24T18:04:47.000-06:00",
     "source": "#69NAqDiQnGvgoWTr",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -11,6 +11,11 @@
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
     "valueCode": "boolean"
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
@@ -133,6 +138,17 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
       "mustSupport": [ "type" ],
@@ -221,13 +237,6 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "extension", "value", "url" ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
       "mustSupport": [ "period", "hospitalization", "hospitalization.dischargeDisposition", "type", "status" ],
@@ -239,6 +248,13 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
     "valueDataRequirement": {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
       "type": "ServiceRequest",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
       "mustSupport": [ "code", "authoredOn", "intent", "status" ],
@@ -246,24 +262,6 @@
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
       } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-      "mustSupport": [ "code", "performed", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "extension", "value", "url" ]
     }
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
@@ -536,11 +534,6 @@
       "url": "displaySequence",
       "valueInteger": 16
     } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Measure/PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR",
   "identifier": [ {
@@ -557,7 +550,7 @@
   "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including DentistsFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-09-13T10:00:38-04:00",
+  "date": "2021-09-13T12:48:45-04:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
@@ -586,24 +579,8 @@
     "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-  }, {
-    "type": "depends-on",
     "display": "Library Hospice",
     "resource": "http://ecqi.healthit.gov/ecqms/Library/HospiceFHIR4|2.3.000"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-  }, {
-    "type": "depends-on",
-    "display": "Library Global",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
   }, {
     "type": "depends-on",
     "display": "Code system SNOMEDCT:2017-09",
