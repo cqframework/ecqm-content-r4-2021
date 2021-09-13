@@ -1,0 +1,210 @@
+{
+  "resourceType": "Measure",
+  "id": "PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR",
+  "meta": {
+    "versionId": "12",
+    "lastUpdated": "2021-08-25T00:04:47.000+00:00",
+    "source": "#69NAqDiQnGvgoWTr",
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode": "boolean"
+  } ],
+  "url": "http://ecqi.healthit.gov/ecqms/Measure/PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid",
+    "value": "ad166f03-3e61-47a6-836c-4b6c5d591b60"
+  }, {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms",
+    "value": "74FHIR"
+  } ],
+  "version": "0.0.008",
+  "name": "PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR",
+  "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including DentistsFHIR",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Centers for Medicare & Medicaid Services (CMS)",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "https://cms.gov"
+    } ]
+  } ],
+  "description": "Percentage of children, 6 months - 20 years of age, who received a fluoride varnish application during the measurement period",
+  "purpose": "Unknown",
+  "copyright": "This Physician Performance Measure (Measure) and related data specifications are owned and stewarded by the Centers for Medicare & Medicaid Services (CMS). CMS contracted (Contract HHSP23320095627WC; HHSP23337008T) with the National Committee for Quality Assurance (NCQA) to develop this electronic measure. NCQA is not responsible for any use of the Measure. NCQA makes no representations, warranties, or endorsement about the quality of any organization or physician that uses or reports performance measures and NCQA has no liability to anyone who relies on such measures or specifications. \n\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any third party codes contained in the specifications. \n\nCPT(R) contained in the Measure specifications is copyright 2004-2020 American Medical Association. LOINC(R) copyright 2004-2020 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. ICD-10 copyright 2020 World Health Organization. All Rights Reserved.",
+  "effectivePeriod": {
+    "start": "2022-01-01",
+    "end": "2022-12-31"
+  },
+  "relatedArtifact": [ {
+    "type": "citation",
+    "citation": "Weintraub, J. A., Ramos-Gomez, F., Jue, B., et al. (2006). Fluoride varnish efficacy in preventing early childhood caries. Journal of Dental Research, 85(2), 172-176."
+  }, {
+    "type": "citation",
+    "citation": "Weyant, R. J., Tracy, S. L., Anselmo, T. T., et al. (2013). Topical fluoride for caries prevention: Executive summary of the updated clinical recommendations and supporting systematic review. Journal of the American Dental Association, 144(11), 1279-1291. doi: 10.14219/jada.archive.2013.0057"
+  }, {
+    "type": "citation",
+    "citation": "Moyer, V.A. on behalf of the US Preventive Services Task Force. (2014). Prevention of dental caries in children from birth through age 5 years: US Preventive Services Task Force recommendation statement. Pediatrics, 133(6), 1102-1111."
+  } ],
+  "library": [ "http://ecqi.healthit.gov/ecqms/Library/PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR" ],
+  "disclaimer": "The performance Measure is not a clinical guideline and does not establish a standard of medical care, and has not been tested for all potential applications. THE MEASURE AND SPECIFICATIONS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND.\n \nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+  "scoring": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code": "proportion",
+      "display": "Proportion"
+    } ]
+  },
+  "type": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+      "code": "process"
+    } ]
+  } ],
+  "rationale": "The literature reflects that fluoride varnish, when applied to the teeth of high-risk children, reduces, in conjunction with anticipatory guidance provided to the caregiver, the risk of the child developing caries (Weintraub et al., 2006).",
+  "clinicalRecommendationStatement": "ADA clinical recommendations for use of professionally applied or prescription-strength, home-use topical fluorides for caries prevention in patients at elevated risk of developing caries: \n\n- Younger Than 6 Years - 2.26 percent fluoride varnish at least every three to six months \n\n- 6-18 Years - 2.26 percent fluoride varnish at least every three to six months OR 1.23 percent fluoride (APF*) gel for four minutes at least every three to six months \n\n- Older Than 18 Years - 2.26 percent fluoride varnish at least every three to six months OR 1.23 percent fluoride (APF) gel for four minutes at least every three to six months (Weyant et al., 2013) \n \nThe USPSTF [US Preventive Services Task Force] recommends that primary care clinicians apply fluoride varnish to the primary teeth of all infants and children starting at the age of primary tooth eruption. (B recommendation)",
+  "improvementNotation": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code": "increase"
+    } ]
+  },
+  "guidance": "This eCQM is a patient-based measure.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS74v11",
+  "group": [ {
+    "population": [ {
+      "id": "289CF939-EC1D-4261-B6C7-A09622011614",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Initial Population"
+      }
+    }, {
+      "id": "4BD5915B-6D74-4024-B20A-2CA6EEAF2941",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator",
+          "display": "Denominator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "2376AE4F-D63C-4E08-85EE-784E1704E798",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator-exclusion",
+          "display": "Denominator Exclusion"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator Exclusions"
+      }
+    }, {
+      "id": "53A4CAA0-4F43-4887-9F20-05F857A29C0B",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator",
+          "display": "Numerator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Numerator"
+      }
+    } ],
+    "stratifier": [ {
+      "id": "92B4344D-15D1-400A-A423-A28ACE3CA8E0",
+      "code": {
+        "text": "Stratum 3"
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Stratification 1"
+      }
+    }, {
+      "id": "634DE8E1-5412-43C3-A5F0-46C237E62785",
+      "code": {
+        "text": "Stratum 4"
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Stratification 2"
+      }
+    }, {
+      "id": "69952863-BF4A-4AEF-850D-26E448304FA4",
+      "code": {
+        "text": "Stratum 5"
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Stratification 3"
+      }
+    } ]
+  } ],
+  "supplementalData": [ {
+    "id": "B0E2BF30-75AD-4D68-9CA0-84AE32446478",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Ethnicity"
+    }
+  }, {
+    "id": "7CB5937B-FCC5-48B8-9B3E-22C4C22D25C0",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Payer"
+    }
+  }, {
+    "id": "9A369E69-C3D9-4ADB-BE83-BEA2AF10952E",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Race"
+    }
+  }, {
+    "id": "634D6DC3-A816-4F69-8EE3-B4B02C2760AE",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Sex"
+    }
+  } ]
+}
