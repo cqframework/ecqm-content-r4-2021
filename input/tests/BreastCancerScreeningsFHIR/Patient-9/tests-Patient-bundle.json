@@ -1,0 +1,21 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-9",
+      "name": [ {
+        "family": "IPFail",
+        "given": [ "GenderUnknown" ]
+      } ],
+      "gender": "unknown",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-9"
+    }
+  } ]
+}

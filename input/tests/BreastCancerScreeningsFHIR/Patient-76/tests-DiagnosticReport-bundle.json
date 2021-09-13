@@ -1,0 +1,27 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-DiagnosticReport-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "id": "DiagnosticReport-76-93",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "version": "2.69.20AB",
+          "code": "72139-9"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-76"
+      },
+      "effectiveDateTime": "2017-10-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "DiagnosticReport/DiagnosticReport-76-93"
+    }
+  } ]
+}

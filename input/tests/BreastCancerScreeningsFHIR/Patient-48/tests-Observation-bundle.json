@@ -1,0 +1,29 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Observation-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "Observation-48-93",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "162239000"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-48"
+      },
+      "effectivePeriod": {
+        "start": "2017-01-01T00:00:00.000Z",
+        "end": "2017-01-01T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/Observation-48-93"
+    }
+  } ]
+}

@@ -1,0 +1,21 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-59",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "LongTermCare91DaysDuringMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1953-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-59"
+    }
+  } ]
+}
