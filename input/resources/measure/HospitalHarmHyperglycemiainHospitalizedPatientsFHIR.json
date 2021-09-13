@@ -12,6 +12,11 @@
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
     "valueCode": "Encounter"
   }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
       "name": "Measurement Period",
@@ -138,10 +143,305 @@
       "display": "confirmed"
     }
   }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "SupplementalDataElementsFHIR4"
+    }, {
+      "url": "name",
+      "valueString": "SDE Sex"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Sex\":\n  case\n      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }\n      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }\n      else null\n    end"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 0
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "SDE Sex"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 1
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Inpatient Encounter During Measurement Period"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Inpatient Encounter During Measurement Period\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient\n                      \t\twhere EncounterInpatient.status = 'finished'\n                      \t\t       \t\t\tand EncounterInpatient.period ends during \"Measurement Period\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 2
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Qualifying Encounters"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Qualifying Encounters\":\n  \"Inpatient Encounter During Measurement Period\" InpatientEncounter \n        where AgeInYearsAt (start of Global.\"HospitalizationWithObservation\"(InpatientEncounter))>=18"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 3
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Qualifying Encounters With Hospitalization Period"
+    }, {
+      "url": "statement",
+      "valueString": "/**\n * Create paring of encounters to hospitalization period so this calculation can be inspected and the result \n * can be reused, making the logic faster.*/define \"Qualifying Encounters With Hospitalization Period\":\n  \"Qualifying Encounters\" QualifyingEncounter\n            return Tuple {\n              encounter: QualifyingEncounter,\n              hospitalizationPeriod: Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n            }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 4
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Qualifying Encounters With Existing Diabetes Diagnosis"
+    }, {
+      "url": "statement",
+      "valueString": "/**\n * Using the already calculated pairing of hospitalization periods with encounters, filter on ones with \n * diabetes and return the encounter.*/define \"Qualifying Encounters With Existing Diabetes Diagnosis\":\n  \"Qualifying Encounters With Hospitalization Period\" EncounterWithHospitalization\n        with [\"Condition\": \"Diabetes\"] DiabetesDiagnosis\n          such that DiabetesDiagnosis.verificationStatus ~ ToConcept(Global.\"confirmed\")\n          and (Global.\"Prevalence Period\"(DiabetesDiagnosis) starts before end of EncounterWithHospitalization.hospitalizationPeriod)\n        return EncounterWithHospitalization.encounter"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 5
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Qualifying Encounters With Hypoglycemic Medication"
+    }, {
+      "url": "statement",
+      "valueString": "/**\n * Using the already calculated pairing of hospitalization periods with encounters, filter on ones with \n * hypoglycemic medicatons and return the encounter.*/define \"Qualifying Encounters With Hypoglycemic Medication\":\n  from \"Qualifying Encounters With Hospitalization Period\" EncounterWithHospitalization,\n      [\"MedicationAdministration\": \"Hypoglycemics Treatment Medications\"] HypoglycemicMedication\n            where HypoglycemicMedication.status = 'completed'\n           and Global.\"Normalize Interval\" ( HypoglycemicMedication.effective )   during EncounterWithHospitalization.hospitalizationPeriod   \n            return EncounterWithHospitalization.encounter"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 6
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Qualifying Encounters With Elevated Blood Glucose Lab"
+    }, {
+      "url": "statement",
+      "valueString": "/**\n * Using the already calculated pairing of hospitalization periods with encounters, filter on ones with \n * any elevated (>= 200) blood glucose reading during the hospitalization*/define \"Qualifying Encounters With Elevated Blood Glucose Lab\":\n  \"Qualifying Encounters With Hospitalization Period\" EncounterWithHospitalization\n    with [\"Observation\": \"Glucose lab test\"] BloodGlucoseLab\n      such that BloodGlucoseLab.effective as dateTime during EncounterWithHospitalization.hospitalizationPeriod\n        and BloodGlucoseLab.status = 'final'\n        and BloodGlucoseLab.value >= 200 'mg/dL'\n    return EncounterWithHospitalization.encounter"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 7
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Initial Population"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Initial Population\":\n  \"Qualifying Encounters With Existing Diabetes Diagnosis\"\n            union \"Qualifying Encounters With Hypoglycemic Medication\"\n            union \"Qualifying Encounters With Elevated Blood Glucose Lab\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 8
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Pertinent Encounters With Days"
+    }, {
+      "url": "statement",
+      "valueString": "/***/define \"Pertinent Encounters With Days\":\n  \"Initial Population\" PertinentEncounter\n            let period: Global.\"HospitalizationWithObservation\" ( PertinentEncounter ),\n            relevantPeriod: \"Crop Interval to 10 Days\"(period)\n            return Tuple {\n              encounter: PertinentEncounter,\n              hospitalizationPeriod: period,\n              relevantPeriod: relevantPeriod,\n              relevantDays: \"Days In Period\"(relevantPeriod)\n            }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 9
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Pertinent Encounters With Glucose Result Days"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Pertinent Encounters With Glucose Result Days\":\n  \"Pertinent Encounters With Days\" PertinentEncounterDays\n    return Tuple {\n      encounter: PertinentEncounterDays.encounter,\n      relevantPeriod: PertinentEncounterDays.relevantPeriod,\n      relevantDays: ( PertinentEncounterDays.relevantDays EncounterDay\n          return Tuple {\n            dayIndex: EncounterDay.dayIndex,\n            dayPeriod: EncounterDay.dayPeriod,\n            hasSevereResult: exists ( [\"Observation\": \"Glucose lab test\"] BloodGlucoseLab1\n                where BloodGlucoseLab1.status = 'final'\n                  and BloodGlucoseLab1.value > 300 'mg/dL'\n                  and BloodGlucoseLab1.effective as dateTime during EncounterDay.dayPeriod\n            ),\n            hasElevatedResult: exists ( [\"Observation\": \"Glucose lab test\"] BloodGlucoseLab2\n                where BloodGlucoseLab2.status = 'final'\n                  and BloodGlucoseLab2.value >= 200 'mg/dL'\n                  and BloodGlucoseLab2.effective as dateTime during EncounterDay.dayPeriod\n            ),\n            hasNoResult: not exists ( [\"Observation\": \"Glucose lab test\"] BloodGlucoseLab3\n                where BloodGlucoseLab3.status = 'final'\n                  and BloodGlucoseLab3.effective as dateTime during EncounterDay.dayPeriod\n            )\n          }\n      )\n    }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 10
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Pertinent Encounters With Hyperglycemic Event Days"
+    }, {
+      "url": "statement",
+      "valueString": "/*# hyper days uses \"Relevant Encounters With Glucose Result Days\" to find if hyper event on each day. Skips 1st day in 'RelevantDays`. Returns boolean based on: Today high result OR Today no result AND Yesterday high result AND 2 days ago high result*/define \"Pertinent Encounters With Hyperglycemic Event Days\":\n  \"Pertinent Encounters With Glucose Result Days\" EncounterWithResultDays\n            let eligibleEventDays: EncounterWithResultDays.relevantDays EncounterDay\n              where EncounterDay.dayIndex > 1\n              return Tuple {\n                dayIndex: EncounterDay.dayIndex,\n                dayPeriod: EncounterDay.dayPeriod,\n                hasHyperglycemicEvent: ( EncounterDay.hasSevereResult\n                    or ( EncounterDay.hasNoResult\n                        and EncounterWithResultDays.relevantDays[EncounterDay.dayIndex - 2].hasElevatedResult\n                        and EncounterWithResultDays.relevantDays[EncounterDay.dayIndex - 3].hasElevatedResult\n                    )\n                )\n              }\n            return Tuple {\n              encounter: EncounterWithResultDays.encounter,\n              relevantPeriod: EncounterWithResultDays.relevantPeriod,\n              eligibleEventDays: eligibleEventDays\n            }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 11
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Numerator"
+    }, {
+      "url": "statement",
+      "valueString": "/***/define \"Numerator\":\n  \"Pertinent Encounters With Hyperglycemic Event Days\" EncounterWithEventDays\n            where exists ( EncounterWithEventDays.eligibleEventDays EligibleEventDay\n                where EligibleEventDay.hasHyperglycemicEvent\n            )\n            return EncounterWithEventDays.encounter"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 12
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "Denominator"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Denominator\":\n  \"Initial Population\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 13
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "SupplementalDataElementsFHIR4"
+    }, {
+      "url": "name",
+      "valueString": "SDE Payer"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer\"] Payer\n        return {\n          code: Payer.type,\n          period: Payer.period\n        }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 14
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "SDE Payer"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 15
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "SupplementalDataElementsFHIR4"
+    }, {
+      "url": "name",
+      "valueString": "SDE Ethnicity"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Ethnicity\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 16
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "SDE Ethnicity"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 17
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "SupplementalDataElementsFHIR4"
+    }, {
+      "url": "name",
+      "valueString": "SDE Race"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 18
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "HospitalHarmHyperglycemiainHospitalizedPatientsFHIR"
+    }, {
+      "url": "name",
+      "valueString": "SDE Race"
+    }, {
+      "url": "statement",
+      "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 19
+    } ]
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Measure/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR",
   "identifier": [ {
@@ -158,7 +458,7 @@
   "title": "Hospital Harm - Severe HyperglycemiaFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-09-10T14:05:19-04:00",
+  "date": "2021-09-12T14:41:21-04:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
