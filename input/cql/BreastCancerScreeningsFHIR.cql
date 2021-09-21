@@ -4,10 +4,10 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.001' called FHIRHelpers
 include SupplementalDataElementsFHIR4 version '2.0.000' called SDE
-include MATGlobalCommonFunctionsFHIR4 version '6.0.000' called Global
-include AdultOutpatientEncountersFHIR4 version '2.0.000' called AdultOutpatientEncounters
-include HospiceFHIR4 version '2.0.000' called Hospice
-include AdvancedIllnessandFrailtyExclusionECQMFHIR4 version '5.13.000' called Frailty
+include MATGlobalCommonFunctionsFHIR4 version '6.1.000' called Global
+include AdultOutpatientEncountersFHIR4 version '2.2.000' called AdultOutpatientEncounters
+include HospiceFHIR4 version '2.3.000' called Hospice
+include AdvancedIllnessandFrailtyExclusionECQMFHIR4 version '5.17.000' called Frailty
 // Do not have these value sets
 //include PalliativeCareFHIR version '0.2.000' called PalliativeCare
 

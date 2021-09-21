@@ -3,7 +3,7 @@
   "id": "SupplementalDataElementsFHIR4",
   "meta": {
     "versionId": "3",
-    "lastUpdated": "2021-08-18T15:20:47.000-04:00",
+    "lastUpdated": "2021-08-18T13:20:47.000-06:00",
     "source": "#sPEmCpPWkTMAcVWT",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },

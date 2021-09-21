@@ -3,7 +3,7 @@
   "id": "MATGlobalCommonFunctionsFHIR4",
   "meta": {
     "versionId": "2",
-    "lastUpdated": "2021-08-18T15:21:11.000-04:00",
+    "lastUpdated": "2021-08-18T13:21:11.000-06:00",
     "source": "#hmGLMuWb4cbPOFev",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },
