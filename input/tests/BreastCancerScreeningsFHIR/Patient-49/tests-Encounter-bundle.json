@@ -29,34 +29,6 @@
   }, {
     "resource": {
       "resourceType": "Encounter",
-      "id": "Encounter-49-94",
-      "type": [ {
-        "coding": [ {
-          "system": "http://snomed.info/sct",
-          "version": "2017.09.20AA",
-          "code": "444971000124105"
-        } ]
-      } ],
-      "subject": {
-        "reference": "Patient/Patient-49"
-      },
-      "period": {
-        "start": "2018-01-01T00:00:00.000Z",
-        "end": "2018-01-01T23:59:59.000Z"
-      },
-      "diagnosis": [ {
-        "condition": {
-          "reference": "Condition/1178987"
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Encounter/Encounter-49-94"
-    }
-  }, {
-    "resource": {
-      "resourceType": "Encounter",
       "id": "Encounter-49-95",
       "type": [ {
         "coding": [ {
@@ -81,6 +53,34 @@
     "request": {
       "method": "PUT",
       "url": "Encounter/Encounter-49-95"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-49-94",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "444971000124105"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-49"
+      },
+      "period": {
+        "start": "2018-01-01T00:00:00.000Z",
+        "end": "2018-01-01T23:59:59.000Z"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/1178987"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-49-94"
     }
   } ]
 }
