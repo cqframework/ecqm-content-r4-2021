@@ -5,7 +5,7 @@
 	"type": {
 		"coding": [
 			{
-				"system": "http://www.nlm.nih.gov/research/umls/sop",
+				"system": "urn:oid:2.16.840.1.113883.3.221.5",
 				"code": "1",
 				"display": "MEDICARE"
 			}
