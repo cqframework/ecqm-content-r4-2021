@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CMS125v10 Sample Data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bundles/sampledata/CMS125v10 Sample Data.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -5,6 +5,29 @@
   "entry": [ {
     "resource": {
       "resourceType": "Encounter",
+      "id": "Encounter-59-93",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "210098006"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-59"
+      },
+      "period": {
+        "start": "2017-10-01T00:00:00.000Z",
+        "end": "2019-04-02T00:00:00.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-59-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
       "id": "Encounter-59-92",
       "status": "finished",
       "type": [ {
@@ -25,29 +48,6 @@
     "request": {
       "method": "PUT",
       "url": "Encounter/Encounter-59-92"
-    }
-  }, {
-    "resource": {
-      "resourceType": "Encounter",
-      "id": "Encounter-59-93",
-      "type": [ {
-        "coding": [ {
-          "system": "http://snomed.info/sct",
-          "version": "2017.09.20AA",
-          "code": "210098006"
-        } ]
-      } ],
-      "subject": {
-        "reference": "Patient/Patient-59"
-      },
-      "period": {
-        "start": "2017-10-01T00:00:00.000Z",
-        "end": "2019-04-02T00:00:00.000Z"
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Encounter/Encounter-59-93"
     }
   } ]
 }
