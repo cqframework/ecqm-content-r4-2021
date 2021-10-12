@@ -2,9 +2,9 @@
   "resourceType": "Library",
   "id": "SupplementalDataElementsFHIR4",
   "meta": {
-    "versionId": "3",
-    "lastUpdated": "2021-08-18T15:20:47.000-04:00",
-    "source": "#sPEmCpPWkTMAcVWT",
+    "versionId": "2",
+    "lastUpdated": "2021-01-28T18:14:25.000-05:00",
+    "source": "#UhjjoJ6F6I9IyV6V",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },
   "language": "en",
@@ -25,7 +25,7 @@
       "code": "logic-library"
     } ]
   },
-  "date": "2021-08-18T19:20:46+00:00",
+  "date": "2021-01-28T23:14:24+00:00",
   "publisher": "Mathematica",
   "description": "SupplementalDataElementsFHIR4",
   "relatedArtifact": [ {

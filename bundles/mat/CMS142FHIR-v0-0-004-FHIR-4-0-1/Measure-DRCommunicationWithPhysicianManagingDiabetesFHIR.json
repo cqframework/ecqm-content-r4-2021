@@ -1,0 +1,185 @@
+{
+  "resourceType": "Measure",
+  "id": "DRCommunicationWithPhysicianManagingDiabetesFHIR",
+  "meta": {
+    "versionId": "8",
+    "lastUpdated": "2021-08-18T18:04:12.000+00:00",
+    "source": "#NOquenQWYMhvGUtA",
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode": "boolean"
+  } ],
+  "url": "http://ecqi.healthit.gov/ecqms/Measure/DRCommunicationWithPhysicianManagingDiabetesFHIR",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid",
+    "value": "aa4da3ec-085c-47bd-aa03-43ff42405b66"
+  }, {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms",
+    "value": "142FHIR"
+  } ],
+  "version": "0.0.004",
+  "name": "DRCommunicationWithPhysicianManagingDiabetesFHIR",
+  "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes CareFHIR",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "American Academy of Ophthalmology",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "https://cms.gov"
+    } ]
+  } ],
+  "description": "Percentage of patients aged 18 years and older with a diagnosis of diabetic retinopathy who had a dilated macular or fundus exam performed with documented communication to the physician who manages the ongoing care of the patient with diabetes mellitus regarding the findings of the macular or fundus exam at least once within 12 months",
+  "purpose": "Unknown",
+  "copyright": "Copyright 2021 American Academy of Ophthalmology. All Rights Reserved.",
+  "effectivePeriod": {
+    "start": "2022-01-01",
+    "end": "2022-12-31"
+  },
+  "relatedArtifact": [ {
+    "type": "citation",
+    "citation": "Aiello, L. P., & DCCT/EDIC Research Group (2014). Diabetic retinopathy and other ocular findings in the diabetes control and complications trial/epidemiology of diabetes interventions and complications study. Diabetes care, 37(1), 17–23. doi:10.2337/dc13-2251"
+  }, {
+    "type": "citation",
+    "citation": "American Academy of Ophthalmology. (2017). Diabetic retinopathy Preferred Practice Pattern. San Francisco, CA: American Academy of Ophthalmology."
+  }, {
+    "type": "citation",
+    "citation": "Storey, P. P., Murchison, A. P., Pizzi, L. T., Hark, L. A., Dai, Y., Leiby, B. E., & Haller, J. A. Impact of physician communication on diabetic eye examination adherence: Results from a Retrospective Cohort Analysis. Retina. 2016 Jan;36(1):20-7. doi:10.1097/IAE.0000000000000652"
+  }, {
+    "type": "citation",
+    "citation": "Zhang, X., Saaddine, J. B., Chou, C. F., Cotch, M. F., Cheng, Y. J., Geiss, L. S., … Klein, R. (2010). Prevalence of diabetic retinopathy in the United States, 2005-2008. JAMA, 304(6), 649–656. doi:10.1001/jama.2010.1111"
+  } ],
+  "library": [ "http://ecqi.healthit.gov/ecqms/Library/DRCommunicationWithPhysicianManagingDiabetesFHIR" ],
+  "disclaimer": "The Measure is not a clinical guideline, does not establish a standard of medical care, and has not been tested for all potential applications. \nThe Measure, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measure for commercial gain, or incorporation of the Measure into a product or service that is sold, licensed or distributed for commercial gain. \nCommercial uses of the Measure require a license agreement between the user and the American Academy of Ophthalmology (Academy). Neither the Academy, its members, AMA, nor the former AMA-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI), nor PCPI, nor their members shall be responsible for any use of the Measure.\nThe PCPI’s and AMA’s significant past efforts and contributions to the development and updating of the Measures are acknowledged. The National Committee for Quality Assurance's significant past efforts and contributions to the development and updating of the Measure is acknowledged. \nTHE MEASURE AND SPECIFICATIONS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND.\nLimited proprietary coding is contained in the Measure specifications for convenience. A license agreement must be entered prior to a third party’s use of Current Procedural Terminology (CPT[R]) or other proprietary code set contained in the Measures. Any other use of CPT or other coding by the third party is strictly prohibited. The Academy, the AMA, and former members of the PCPI disclaim all liability for use or accuracy of any CPT or other coding contained in the specifications. \n\nCPT(R) contained in the Measure specifications is copyright 2004-2020 American Medical Association. LOINC(R) is copyright 2004-2020 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. ICD-10 is copyright 2020 World Health Organization. All Rights Reserved.\nDue to technical limitations, registered trademarks are indicated by (R) or [R].",
+  "scoring": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code": "proportion",
+      "display": "Proportion"
+    } ]
+  },
+  "type": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+      "code": "process"
+    } ]
+  } ],
+  "rationale": "Diabetic retinopathy is a prevalent complication of diabetes, estimated to affect 28.5% of diabetic patients in the US (Zhang et al., 2010). Diabetic Retinopathy is a key indicator of systemic complications of diabetes (Zhang, 2010). Coordination of care between the eye care specialist and the physician managing a patient’s ongoing diabetes care is essential in stemming the progression of vision loss. Communication from the eye care specialist to a primary care physician facilitates the exchange of information about the severity and progression of a patient’s diabetic retinopathy, adherence to recommended ocular care, need for follow-up visits, and treatment plans (Storey, Murchison, Pizzi, Hark, Dai, Leiby & Haller, 2016). Data from the Diabetes Control and Complications Trial showed that diabetic treatment and maintenance of glucose control delays the onset and slows the progression of diabetic retinopathy (Aiello & DCCT/EDIC Research Group, 2014).",
+  "clinicalRecommendationStatement": "The ophthalmologist should refer patients with diabetes to a primary care physician for appropriate management of their systemic condition and should communicate examination results to the physician managing the patient's ongoing diabetes care (III; Good Quality; Strong Recommendation) (American Academy of Ophthalmology, 2017).\n\nOphthalmologists should communicate the ophthalmologic findings and level of retinopathy with the primary care physician as well as the need for optimizing metabolic control (III; Good Quality; Strong Recommendation) (American Academy of Ophthalmology, 2017). \n\nClose partnership with the primary care physician is important to make sure that the care of the patient is optimized (III; Good Quality; Strong Recommendation) (American Academy of Ophthalmology, 2017).",
+  "improvementNotation": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code": "increase"
+    } ]
+  },
+  "guidance": "The measure, as written, does not specifically require documentation of laterality. Coding limitations in particular clinical terminologies do not currently allow for that level of specificity (ICD-10-CM includes laterality, but SNOMED-CT does not uniformly include this distinction). Therefore, at this time, it is not a requirement of this measure to indicate laterality of the diagnoses, findings or procedures. Available coding to capture the data elements specified in this measure has been provided. It is assumed that the eligible professional or eligible clinician will record laterality in the patient medical record, as quality care and clinical documentation should include laterality.\n\nThe communication of results to the primary care physician providing ongoing care of a patient's diabetes should be completed soon after the dilated exam is performed. Eligible professionals or eligible clinicians reporting on this measure should note that all data for the reporting year is to be submitted by the deadline established by CMS. Therefore, eligible professionals or eligible clinicians who see patients towards the end of the reporting period (i.e., December in particular), should communicate the results of the dilated macular exam as soon as possible in order for those patients to be counted in the measure numerator. Communicating the results as soon as possible after the date of the exam will ensure the data are included in the submission to CMS.\n\nThis eCQM is a patient-based measure.\n\nTelehealth encounters are not eligible for this measure because the measure requires a clinical action that cannot be conducted via telehealth.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS142v10.",
+  "group": [ {
+    "population": [ {
+      "id": "CB5BEBF6-60F2-4CEA-8176-23D4B8E71F28",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Initial Population"
+      }
+    }, {
+      "id": "CD3F48F0-8C0F-4776-8A4F-D7E60787BCC5",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator",
+          "display": "Denominator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "1FC4599A-FE3E-43F7-A797-41C74AF5EACD",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator-exception",
+          "display": "Denominator Exception"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator Exceptions"
+      }
+    }, {
+      "id": "B17A6E3E-3B96-433E-992F-DFBEB4ECD63A",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator",
+          "display": "Numerator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Numerator"
+      }
+    } ]
+  } ],
+  "supplementalData": [ {
+    "id": "4E5C3F23-F327-42E7-9EB0-94649803D0A4",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Ethnicity"
+    }
+  }, {
+    "id": "C887D4F3-AEE8-45A1-8D5B-9542C395E543",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Payer"
+    }
+  }, {
+    "id": "65E48190-956B-4C8A-89D7-117182892353",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Race"
+    }
+  }, {
+    "id": "4BE2ECB3-5449-4F3C-84A8-1C4F02B56FD6",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Sex"
+    }
+  } ]
+}
