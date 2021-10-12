@@ -1,6 +1,6 @@
 {
   "resourceType": "Encounter",
-  "id": "numer-EXM871-InPatient-Encounter",
+  "id": "neg-ip-EXM871-InPatient-Encounter",
   "text": {
     "status": "generated"
   },
@@ -20,7 +20,7 @@
     "text": "Inpatient Admission"
   } ],
   "subject": {
-    "reference": "Patient/numer-EXM871-Patient"
+    "reference": "Patient/neg-ip-EXM871-Patient"
   },
   "period": {
     "start": "2019-01-16T08:30:00",
