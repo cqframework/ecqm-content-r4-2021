@@ -3,7 +3,7 @@
   "id": "PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR",
   "meta": {
     "versionId": "12",
-    "lastUpdated": "2021-08-24T18:04:47.000-06:00",
+    "lastUpdated": "2021-08-24T20:04:47.000-04:00",
     "source": "#69NAqDiQnGvgoWTr",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -550,7 +550,7 @@
   "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including DentistsFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-10-11T15:31:13-04:00",
+  "date": "2021-10-12T15:28:51-04:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

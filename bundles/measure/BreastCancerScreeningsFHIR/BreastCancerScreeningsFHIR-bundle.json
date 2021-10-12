@@ -8833,7 +8833,7 @@
       "id": "BreastCancerScreeningsFHIR",
       "meta": {
         "versionId": "2",
-        "lastUpdated": "2021-04-26T11:24:08.000-06:00",
+        "lastUpdated": "2021-04-26T13:24:08.000-04:00",
         "source": "#cn7WFg8wl2QWx7cU",
         "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
       },
@@ -9814,7 +9814,7 @@
       "title": "Breast Cancer ScreeningFHIR",
       "status": "draft",
       "experimental": false,
-      "date": "2021-10-11T12:03:57-06:00",
+      "date": "2021-10-12T12:47:02-06:00",
       "publisher": "National Committee for Quality Assurance",
       "contact": [ {
         "telecom": [ {

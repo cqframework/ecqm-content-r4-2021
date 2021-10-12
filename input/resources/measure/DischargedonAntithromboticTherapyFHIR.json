@@ -3,7 +3,7 @@
   "id": "DischargedonAntithromboticTherapyFHIR",
   "meta": {
     "versionId": "24",
-    "lastUpdated": "2021-08-24T13:12:30.000-06:00",
+    "lastUpdated": "2021-08-24T15:12:30.000-04:00",
     "source": "#q1Mp1RX4PUIGipJl",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -388,7 +388,7 @@
   "title": "Discharged on Antithrombotic Therapy FHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-10-11T13:31:13-06:00",
+  "date": "2021-10-12T13:28:51-06:00",
   "publisher": "The Joint Commission",
   "contact": [ {
     "telecom": [ {
