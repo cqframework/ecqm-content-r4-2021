@@ -5,30 +5,6 @@
   "entry": [ {
     "resource": {
       "resourceType": "Encounter",
-      "id": "Encounter-22-92",
-      "status": "finished",
-      "type": [ {
-        "coding": [ {
-          "system": "http://snomed.info/sct",
-          "version": "2017.09.20AA",
-          "code": "30346009"
-        } ]
-      } ],
-      "subject": {
-        "reference": "Patient/Patient-22"
-      },
-      "period": {
-        "start": "2019-01-01T00:00:00.000Z",
-        "end": "2019-12-31T23:59:59.000Z"
-      }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Encounter/Encounter-22-92"
-    }
-  }, {
-    "resource": {
-      "resourceType": "Encounter",
       "id": "Encounter-22-93",
       "status": "finished",
       "type": [ {
@@ -57,6 +33,30 @@
     "request": {
       "method": "PUT",
       "url": "Encounter/Encounter-22-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-22-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-22"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-22-92"
     }
   } ]
 }

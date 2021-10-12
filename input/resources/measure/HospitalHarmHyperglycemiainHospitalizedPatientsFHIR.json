@@ -19,15 +19,6 @@
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
-      "name": "Measurement Period",
-      "use": "in",
-      "min": 0,
-      "max": "1",
-      "type": "Period"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
       "name": "SDE Sex",
       "use": "out",
       "min": 0,
@@ -153,7 +144,7 @@
       "valueString": "Inpatient Encounter During Measurement Period"
     }, {
       "url": "statement",
-      "valueString": "define \"Inpatient Encounter During Measurement Period\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient\n                      \t\twhere EncounterInpatient.status = 'finished'\n                      \t\t       \t\t\tand EncounterInpatient.period ends during \"Measurement Period\""
+      "valueString": "define \"Inpatient Encounter During Measurement Period\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient"
     }, {
       "url": "displaySequence",
       "valueInteger": 2
@@ -303,7 +294,7 @@
       "valueString": "Numerator"
     }, {
       "url": "statement",
-      "valueString": "/***/define \"Numerator\":\n  \"Pertinent Encounters With Hyperglycemic Event Days\" EncounterWithEventDays\n            where exists ( EncounterWithEventDays.eligibleEventDays EligibleEventDay\n                where EligibleEventDay.hasHyperglycemicEvent\n            )\n            return EncounterWithEventDays.encounter"
+      "valueString": "/*\n                      \t\twhere EncounterInpatient.status = 'finished'\n                      \t\t       \t\t\tand EncounterInpatient.period ends during \"Measurement Period\"\n*/\n/***/define \"Numerator\":\n  \"Pertinent Encounters With Hyperglycemic Event Days\" EncounterWithEventDays\n            where exists ( EncounterWithEventDays.eligibleEventDays EligibleEventDay\n                where EligibleEventDay.hasHyperglycemicEvent\n            )\n            return EncounterWithEventDays.encounter"
     }, {
       "url": "displaySequence",
       "valueInteger": 12
@@ -429,7 +420,7 @@
   "title": "Hospital Harm - Severe HyperglycemiaFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-09-13T12:48:44-04:00",
+  "date": "2021-10-11T15:31:13-04:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

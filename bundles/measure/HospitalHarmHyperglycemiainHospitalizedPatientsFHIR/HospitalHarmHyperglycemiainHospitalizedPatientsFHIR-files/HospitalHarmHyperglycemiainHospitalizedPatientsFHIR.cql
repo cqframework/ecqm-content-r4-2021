@@ -42,9 +42,10 @@ define "Initial Population":
 
 define "Inpatient Encounter During Measurement Period":
   [Encounter: "Encounter Inpatient"] EncounterInpatient
+/*
                       		where EncounterInpatient.status = 'finished'
                       		       			and EncounterInpatient.period ends during "Measurement Period"
-
+*/
 /***/
 define "Numerator":
   "Pertinent Encounters With Hyperglycemic Event Days" EncounterWithEventDays
