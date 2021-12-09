@@ -38,5 +38,6 @@
   "subject": {
     "reference": "Patient/denex1-EXM506"
   },
-  "onsetDateTime": "2019-01-17T11:00:00"
+  "onsetDateTime": "2019-01-17T11:00:00",
+  "abatementDateTime": "2020-01-18T11:00:00"
 }
