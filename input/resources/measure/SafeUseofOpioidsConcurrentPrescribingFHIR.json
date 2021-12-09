@@ -1,0 +1,231 @@
+{
+  "resourceType": "Measure",
+  "id": "SafeUseofOpioidsConcurrentPrescribingFHIR",
+  "meta": {
+    "versionId": "14",
+    "lastUpdated": "2021-08-24T18:46:58.000+00:00",
+    "source": "#KGSxm0sO9TQeKT5m",
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm" ]
+  },
+  "language": "en",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+    "valueCode": "Encounter"
+  } ],
+  "url": "http://ecqi.healthit.gov/ecqms/Measure/SafeUseofOpioidsConcurrentPrescribingFHIR",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid",
+    "value": "25bf933d-60b1-4a30-b401-43ba7d3bfaa1"
+  }, {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms",
+    "value": "506FHIR"
+  }, {
+    "use": "official",
+    "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/nqf",
+    "value": "3316e"
+  } ],
+  "version": "0.0.012",
+  "name": "SafeUseofOpioidsConcurrentPrescribingFHIR",
+  "title": "Safe Use of Opioids - Concurrent PrescribingFHIR",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Centers for Medicare & Medicaid Services (CMS)",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": "https://cms.gov"
+    } ]
+  } ],
+  "description": "Proportion of inpatient hospitalizations for patients 18 years of age and older prescribed, or continued on, two or more opioids or an opioid and benzodiazepine concurrently at discharge",
+  "purpose": "Unknown",
+  "copyright": "Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. Mathematica disclaims all liability for use or accuracy of any third party codes contained in the specifications.\n\nCPT(R) contained in the measure specifications is copyright 2004-2020 American Medical Association. LOINC(R) copyright 2004-2020 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. ICD-10 copyright 2020 World Health Organization. All Rights Reserved.",
+  "effectivePeriod": {
+    "start": "2022-01-01",
+    "end": "2022-12-31"
+  },
+  "relatedArtifact": [ {
+    "type": "citation",
+    "citation": "American Academy of Emergency Medicine (AAEM). (2013). Emergency department opioid-prescribing guidelines for the treatment of non-cancer-related pain. Retrieved from https://www.aaem.org/UserFiles/file/Emergency-Department-Opoid-Prescribing-Guidelines.pdf"
+  }, {
+    "type": "citation",
+    "citation": "American Society of Interventional Pain Physicians (ASIPP). (2012). Guidelines for responsible opioid prescribing in chronic noncancer pain. Retrieved from https://pubmed.ncbi.nlm.nih.gov/22786449/"
+  }, {
+    "type": "citation",
+    "citation": "Dasgupta, N., Jonsson Funk, M., Proescholdbell, S., et al. (2015, September). Cohort study of the impact of high-dose opioid analgesics on overdose mortality. Pain Medicine. Retrieved from http://onlinelibrary.wiley.com/doi/10.1111/pme.12907/abstract  "
+  }, {
+    "type": "citation",
+    "citation": "Dowell, D., Haegerich, T., & Chou, R. (2016). CDC guideline for prescribing opioids for chronic pain—United States, 2016. MMWR Recommendations and Reports, 65. Retrieved from http://www.cdc.gov/media/dpk/2016/dpk-opioid-prescription-guidelines.html"
+  }, {
+    "type": "citation",
+    "citation": "Geller, A. I., Dowell, D., Lovegrove, M. C., Mcaninch, J. K., Goring, S. K., Rose, K. O., … Budnitz, D. S. (2019). U.S. Emergency Department Visits Resulting From Nonmedical Use of Pharmaceuticals, 2016. American Journal of Preventive Medicine, 56(5), 639–647. https://doi.org/10.1016/j.amepre.2018.12.009"
+  }, {
+    "type": "citation",
+    "citation": "Herzig, S., Rothberg, M., Cheung, M., et al. (2014). Opioid utilization and opioid-related adverse events in nonsurgical patients in U.S. hospitals. Journal of Hospital Medicine, 9(2), 73-81."
+  }, {
+    "type": "citation",
+    "citation": "Jena, A., Goldman, D., Schaeffer, L. D., et al. (2014). Opioid prescribing by multiple providers in Medicare: Retrospective observational study of insurance claims. BMJ, 348, g1393. DOI: 10.1136/bmj.g1393"
+  }, {
+    "type": "citation",
+    "citation": "Lin, L. A., Bohnert, A. S., Kerns, R. D., et al. (2017). Impact of the opioid safety initiative on opioid-related prescribing in veterans. Pain, 158(5), 833–839. Retrieved from https://www.ncbi.nlm.nih.gov/pubmed/28240996"
+  }, {
+    "type": "citation",
+    "citation": "Liu, Y., Logan, J., Paulozzi, L., et al. (2013). Potential misuse and inappropriate prescription practices involving opioid analgesics. American Journal of Managed Care, 19(8), 648–665. Retrieved from http://www.ajmc.com/journals/issue/2013/2013-1-vol19-n8/Potential-Misuse-and-Inappropriate-Prescription-Practices-Involving-Opioid-Analgesics/"
+  }, {
+    "type": "citation",
+    "citation": "Mack, K., Zhang, K., Paulozzi, L., et al. (2015, February). Prescription practices involving opioid analgesics among Americans with Medicaid, 2010. Journal of Health Care for the Poor and Underserved, 26(1), 182–198. Retrieved from http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4365785"
+  }, {
+    "type": "citation",
+    "citation": "National Institute on Drug Abuse. (2011). Analysis of opioid prescription practices finds areas of concern. Retrieved from https://www.drugabuse.gov/news-events/news-releases/2011/04/analysis-opioid-prescription-practices-finds-areas-concern"
+  }, {
+    "type": "citation",
+    "citation": "New York City (NYC) Department of Health and Mental Hygiene (NYC DOHMH). (2013). NYC emergency department discharge opioid-prescribing guidelines. Retrieved from https://www1.nyc.gov/site/doh/providers/health-topics/opioid-prescribing-resources-for-emergency-departments.page"
+  }, {
+    "type": "citation",
+    "citation": "Park, T., Saitz, R., Ganoczy, D., et al. (2015). Benzodiazepine-prescribing patterns and deaths from drug overdose among U.S. veterans receiving opioid analgesics: Case-cohort study. BMJ, 350, h2698. Retrieved from http://www.bmj.com/content/350/bmj.h2698"
+  }, {
+    "type": "citation",
+    "citation": "Rudd, R., Aleshire, N., Zibbell, J., et al. (2016, January). Increases in drug and opioid overdose deaths—United States, 2000–2014. Morbidity and Mortality Weekly Report, 64(50), 1378–1382. Retrieved from http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6450a3.htm"
+  }, {
+    "type": "citation",
+    "citation": "Sun, E., Dixit, A., Humphreys, K., et al. (2017). Association between concurrent use of prescription opioids and benzodiazepines and overdose: Retrospective analysis. BMJ, 356, j760. Retrieved from\nhttp://www.bmj.com/content/356/bmj.j760"
+  }, {
+    "type": "citation",
+    "citation": "U.S. Department of Veterans Affairs. (2014). Opioid safety initiative toolkit. Retrieved from https://www.va.gov/PAINMANAGEMENT/Opioid_Safety_Initiative_OSI.asp"
+  }, {
+    "type": "citation",
+    "citation": "U.S. Department of Veterans Affairs. (2016). Opioid safety initiative: Opioids (including tramadol) used in combination with benzodiazepine derivative sedatives/hypnotics. Unpublished manuscript."
+  }, {
+    "type": "citation",
+    "citation": "Washington Agency Medical Directors’ Group (WAMDG). (2015). Interagency guideline on prescribing opioids for pain, Part II: Prescribing opioids in the acute and subacute phase. Retrieved from http://www.agencymeddirectors.wa.gov/Files/2015AMDGOpioidGuideline.pdf"
+  } ],
+  "library": [ "http://ecqi.healthit.gov/ecqms/Library/SafeUseofOpioidsConcurrentPrescribingFHIR" ],
+  "disclaimer": "These performance measures are not clinical guidelines, do not establish a standard of medical care, and have not been tested for all potential applications. \n\nTHE MEASURES AND SPECIFICATION ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+  "scoring": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code": "proportion",
+      "display": "Proportion"
+    } ]
+  },
+  "type": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+      "code": "process"
+    } ]
+  } ],
+  "rationale": "Unintentional opioid overdose fatalities have become a major public health concern in the United States (Rudd et al., 2016). Reducing the number of unintentional overdoses has become a priority for numerous federal organizations including, but not limited to, the Centers for Disease Control and Prevention (CDC), the Federal Interagency Workgroup for Opioid Adverse Drug Events, and the Substance Abuse and Mental Health Services Administration. \n\nConcurrent prescriptions of opioids or opioids and benzodiazepines places patients at a greater risk of unintentional overdose due to the increased risk of respiratory depression (Dowell, Haegerich, & Chou, 2016). An analysis of national prescribing patterns shows that more than half of patients who received an opioid prescription in 2009 had filled another opioid prescription within the previous 30 days (National Institute on Drug Abuse, 2011). Studies of multiple claims and prescription databases have shown that between 5%-15% of patients receive concurrent opioid prescriptions and 5%-20% of patients receive concurrent opioid and benzodiazepine prescriptions across various settings (Liu et al., 2013; Mack et al., 2015, Park et al., 2015). Patients who have multiple opioid prescriptions have an increased risk for overdose (Jena et al., 2014). Rates of fatal overdose are ten times higher in patients who are co-dispensed opioid analgesics and benzodiazepines than opioids alone (Dasgupta et al., 2015). The number of opioid overdose deaths involving benzodiazepines increased 14% on average each year from 2006 to 2011, while the number of opioid analgesic overdose deaths not involving benzodiazepines did not change significantly (Jones & McAninch, 2015). Furthermore, concurrent use of benzodiazepines with opioids was prevalent in 31%-51% of fatal overdoses (Dowell, Haegerich, & Chou, 2016). One study found that eliminating concurrent use of opioids and benzodiazepines could reduce the risk of opioid overdose-related ED and inpatient visits by 15% and potentially could have prevented an estimated 2,630 deaths related to opioid painkiller overdoses in 2015 (Sun et al., 2017). \n\nA study on The Opioid Safety Initiative in the Veterans Health Administration (VHA), which includes an opioid and benzodiazepine concurrent prescribing measure that this measure is based on, was associated with a decrease of 20.67% overall and 0.86% patients per month (781 patients per month) receiving concurrent benzodiazepine with an opioid among all adult VHA patients who filled outpatient opioid prescriptions from October 2012 to September 2014 (Lin et al., 2017).\n\nAdopting a measure that calculates the proportion of patients with two or more opioids or opioids and benzodiazepines concurrently has the potential to reduce preventable mortality and reduce the costs associated with adverse events related to opioid use by (1) encouraging providers to identify patients with concurrent prescriptions of opioids or opioids and benzodiazepines and (2) discouraging providers from prescribing two or more opioids or opioids and benzodiazepines concurrently.",
+  "clinicalRecommendationStatement": "The 2016 CDC Guideline for Prescribing Opioids for Chronic Pain also recommends that:\n-  \"Clinicians should avoid prescribing opioids and benzodiazepines concurrently whenever possible. Clinicians should communicate with others managing the patient to discuss the patient's needs, prioritize patient goals, weigh risks of concurrent benzodiazepine and opioid exposure, and coordinate care.\"\n-  \"Clinicians should check the PDMP for concurrent controlled medications prescribed by other clinicians and should consider involving pharmacists and pain specialists as part of the management team when opioids are co-prescribed with other central nervous system depressants.\"\n-  \"Experts emphasized that clinicians should communicate with mental health professionals managing the patient to discuss the patient's needs, prioritize patient goals, weigh risks of concurrent benzodiazepine and opioid exposure, and coordinate care.\"\n\nIn addition to the 2016 CDC Guideline for Prescribing Opioids for Chronic Pain, opioid prescribing guidelines issued by various state agencies and professional societies for various settings agree with the recommendation to avoid concurrently prescribing opioids (AAEM, WAMDG) and opioids and benzodiazepines (WAMDG, ASIPP, NYC DOHMH) whenever possible as the combination of these medications may potentiate opioid-induced respiratory depression.\n\nThe CDC Guideline for Prescribing Opioids for Chronic Pain (Dowell, 2016) also recommends that for patients found to have multiple opioid prescriptions clinicians should:\n-  \"Discuss information from the PDMP with their patient and confirm that the patient is aware of the additional prescriptions.\"\n-  \"Discuss safety concerns, including increased risk for respiratory depression and overdose, with patients found to be receiving opioids from more than one prescriber or receiving medications that increase risk when combined with opioids and consider offering naloxone.\"\n-  \"Discuss safety concerns with other clinicians who are prescribing controlled substances for their patient. Ideally clinicians should first discuss concerns with their patient and inform him or her that they plan to coordinate care with the patient's other prescribers to improve the patient's safety.\"",
+  "improvementNotation": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code": "increase"
+    } ]
+  },
+  "guidance": "Clinician judgement, clinical appropriateness, or both may indicate concurrent prescribing of two unique opioids or an opioid and benzodiazepine is medically necessary, thus the measure is not expected to have a zero rate. \n\nInpatient hospitalizations with discharge medications of a new or continuing opioid or a new or continuing benzodiazepine prescription should be included in the initial population. \n\nInpatient hospitalizations with discharge medications of two or more new or continuing opioids or new or continuing opioid and benzodiazepine resulting in concurrent therapy at discharge should be included in the numerator. Each benzodiazepine and opioid included on the medication discharge list is considered a unique prescription.\n\nThis eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS506v4",
+  "group": [ {
+    "population": [ {
+      "id": "C9F8E7A2-F655-4E1B-AB93-3F6E31365B94",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Initial Population"
+      }
+    }, {
+      "id": "848AB773-F370-448C-9696-4EA157BD5BC7",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator",
+          "display": "Denominator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "C839FCA5-7EE0-4CA8-BBA0-22E0DF69A428",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator-exclusion",
+          "display": "Denominator Exclusion"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Denominator Exclusion"
+      }
+    }, {
+      "id": "65399178-8207-47E4-A84F-88880EC73257",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator",
+          "display": "Numerator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql.identifier",
+        "expression": "Numerator"
+      }
+    } ]
+  } ],
+  "supplementalData": [ {
+    "id": "C9B4D981-3A73-41FB-807E-033E5D1DB2F1",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Ethnicity"
+    }
+  }, {
+    "id": "B4DC9811-5A52-4E5F-8888-4D0CDE78E931",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Payer"
+    }
+  }, {
+    "id": "19174E7F-3788-4596-AA73-A14143ABD2C6",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Race"
+    }
+  }, {
+    "id": "EE051572-7EF0-4DFA-86E1-696D712FB556",
+    "usage": [ {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+        "code": "supplemental-data"
+      } ]
+    } ],
+    "criteria": {
+      "language": "text/cql.identifier",
+      "expression": "SDE Sex"
+    }
+  } ]
+}
