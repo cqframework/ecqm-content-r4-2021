@@ -1,11 +1,6 @@
 {
-  "resourceType": "Bundle",
-  "id": "tests-Condition-bundle",
-  "type": "transaction",
-  "entry": [ {
-    "resource": {
       "resourceType": "Condition",
-      "id": "denex-EXM104-1",
+      "id": "Condition-denex-EXM104",
       "meta": {
         "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition" ]
       },
@@ -31,12 +26,6 @@
         } ]
       },
       "subject": {
-        "reference": "Patient/denex-EXM104"
+        "reference": "Patient/Patient-denex-EXM104"
       }
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Condition/denex-EXM104-1"
     }
-  } ]
-}
