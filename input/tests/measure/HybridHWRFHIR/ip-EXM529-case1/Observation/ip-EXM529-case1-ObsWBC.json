@@ -1,0 +1,26 @@
+{
+  "resourceType": "Observation",
+  "id": "ip-EXM529-case1-ObsWBC",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/observation" ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "26464-8",
+      "display": "Leukocytes [#/volume] in Blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/ip-EXM529-case1"
+  },
+  "effectiveDateTime": "2019-06-21T10:00:00",
+  "issued": "2019-06-21T10:00:00",
+  "valueQuantity": {
+    "value": 4.3,
+    "unit": "/L",
+    "system": "http://unitsofmeasure.org",
+    "code": "/L"
+  }
+}
