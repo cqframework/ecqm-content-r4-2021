@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Core Clinical Data Elements for the Hybrid Hospital-Wide Readmission (HWR) Measure with Claims and Electronic Health Record Data FHIR 1.3.004</title>
+        <title>Core Clinical Data Elements for the Hybrid Hospital-Wide Readmission (HWR) Measure with Claims and Electronic Health Record Data FHIR 1.3.005</title>
 <style type="text/css">
     body {
         color: rgb(0,0,0);
@@ -628,7 +628,7 @@
             <td style="width:30%">1022FHIR</td>
 
             <th scope="row" class="row-header"><span class="td_label">eCQM Version Number</span></th>
-            <td style="width:30%">1.3.004</td>
+            <td style="width:30%">1.3.005</td>
         </tr>
         <tr>
             <th scope="row" class="row-header"><span class="td_label">NQF Number</span></th>
@@ -787,7 +787,7 @@ Sex,
 Inpatient Admission Date, and
 Discharge Date.
 
-This FHIR-based measure has been derived from the QDM-based measure: CMS529v5.5</pre>
+This FHIR-based measure has been derived from the QDM-based measure: CMS529v2</pre>
                 </div>
             </td>
         </tr>
@@ -809,14 +809,6 @@ NOTE: All Medicare Fee-For-Service encounters meeting the above criteria should 
                 </div>
             </td>
         </tr>
-            <tr>
-                <th scope="row" class="row-header"><span class="td_label">Measure Observations</span></th>
-                <td style="width:80%" colspan="3">
-                    <div style="width:660px;">
-                        <pre></pre>
-                    </div>
-                </td>
-            </tr>
         <tr>
             <th scope="row" class="row-header"><span class="td_label">Supplemental Data Elements</span></th>
             <td style="width:80%" colspan="3">
@@ -868,8 +860,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 <li class="list-unstyled" style="list-style:none;padding-left:0px;">
     <div class="treeview hover p-l-10">
         <ul class="list-unstyled">
-            <li class="list-unstyled"><input type="checkbox" id="Initial_Population_320720161"/>
-                <label for="Initial_Population_320720161" class="list-header"><strong>Initial Population</strong></label>
+            <li class="list-unstyled"><input type="checkbox" id="Initial_Population_659729098"/>
+                <label for="Initial_Population_659729098" class="list-header"><strong>Initial Population</strong></label>
                 <ul class="code">
                     <li class="list-unstyled">
                         <div class="treeview hover p-l-10">
@@ -891,8 +883,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 <li class="list-unstyled" style="list-style:none;padding-left:0px;">
     <div class="treeview hover p-l-10">
         <ul class="list-unstyled">
-            <li class="list-unstyled"><input type="checkbox" id="Stratification_620166582"/>
-                <label for="Stratification_620166582" class="list-header"><strong>Stratification</strong></label>
+            <li class="list-unstyled"><input type="checkbox" id="Stratification_972870990"/>
+                <label for="Stratification_972870990" class="list-header"><strong>Stratification</strong></label>
                 <ul class="code">
                     <li class="list-unstyled">
                         <div class="treeview hover p-l-10">
@@ -918,8 +910,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
                 <ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="Initial_Population379365401" />
-            <label for="Initial_Population379365401" class="list-header"><strong>Initial Population</strong></label>
+            <input type="checkbox" id="Initial_Population471266908" />
+            <label for="Initial_Population471266908" class="list-header"><strong>Initial Population</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -938,8 +930,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="Inpatient_Encounters43853977" />
-            <label for="Inpatient_Encounters43853977" class="list-header"><strong>Inpatient Encounters</strong></label>
+            <input type="checkbox" id="Inpatient_Encounters1974120729" />
+            <label for="Inpatient_Encounters1974120729" class="list-header"><strong>Inpatient Encounters</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -947,13 +939,13 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
                             <li style="padding-left: 0px;" class="list-unstyled">
                                 <div>
                                     <pre class="cql-definition-body">from
-                                              [&quot;Encounter&quot;: &quot;Encounter Inpatient&quot;] InpatientEncounter,
-                                              [&quot;Coverage&quot;: &quot;Medicare payer&quot;] Payer
-                                                  where InpatientEncounter.status= &#39;finished&#39;
-                                                  and &quot;LengthInDays&quot; (&quot;HospitalizationWithObservation&quot; (InpatientEncounter)) &lt; 365
-                                                  and InpatientEncounter.period ends during day of &quot;Measurement Period&quot;
-                                                  and &quot;AgeInYearsAt&quot; ( start of InpatientEncounter.period ) &gt;= 65
-                                                  return InpatientEncounter</pre>
+                  [&quot;Encounter&quot;: &quot;Encounter Inpatient&quot;] InpatientEncounter,
+                      [&quot;Coverage&quot;: &quot;Medicare payer&quot;] Payer
+                  where InpatientEncounter.status= &#39;finished&#39;
+                  and &quot;LengthInDays&quot; (&quot;HospitalizationWithObservation&quot; (InpatientEncounter)) &lt; 365
+                  and InpatientEncounter.period ends during day of &quot;Measurement Period&quot;
+                  and &quot;AgeInYearsAt&quot; ( date from start of InpatientEncounter.period ) &gt;= 65
+                  return InpatientEncounter</pre>
                                 </div>
                             </li>
                         </ul>&nbsp;
@@ -965,8 +957,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="Results1319177805" />
-            <label for="Results1319177805" class="list-header"><strong>Results</strong></label>
+            <input type="checkbox" id="Results199028204" />
+            <label for="Results199028204" class="list-header"><strong>Results</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -974,25 +966,25 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
                             <li style="padding-left: 0px;" class="list-unstyled">
                                 <div>
                                     <pre class="cql-definition-body">flatten{
-                                          // First physical exams (vital signs)
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Heart rate&quot;], &#39;FirstHeartRate&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Systolic blood pressure&quot;], &#39;FirstSystolicBP&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Respiratory rate&quot;], &#39;FirstRespRate&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Body temperature&quot;], &#39;FirstTemperature&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Oxygen saturation in Arterial blood by Pulse oximetry&quot;], &#39;FirstO2Saturation&#39;),
-                                                                          
-                                          // First weight using lab test timing
-                                          &quot;FirstPhysicalExamWithEncounterIdUsingLabTiming&quot;([Observation: &quot;Body weight&quot;], &#39;FirstWeight&#39;), 
-                                          //First lab tests
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Hematocrit lab test&quot;], &#39;FirstHematocrit&#39;),
-                                           &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;White blood cells count lab test&quot;], &#39;FirstWhiteBloodCell&#39;),
-                                      &quot;FirstLabTestWithEncounterId&quot;
-    ([Observation: &quot;Potassium lab test&quot;], &#39;FirstPotassium&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Sodium lab test&quot;], &#39;FirstSodium&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Bicarbonate lab test&quot;], &#39;FirstBicarbonate&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Creatinine lab test&quot;], &#39;FirstCreatinine&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Glucose lab test&quot;], &#39;FirstGlucose&#39;)
-                                                    }</pre>
+                                                        // First physical exams (vital signs)
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Heart rate&quot;], &#39;FirstHeartRate&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Systolic blood pressure&quot;], &#39;FirstSystolicBP&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Respiratory rate&quot;], &#39;FirstRespRate&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Body temperature&quot;], &#39;FirstTemperature&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Oxygen saturation in Arterial blood by Pulse oximetry&quot;], &#39;FirstO2Saturation&#39;),
+                                                                                        
+                                                        // First weight using lab test timing
+                                                        &quot;FirstPhysicalExamWithEncounterIdUsingLabTiming&quot;([Observation: &quot;Body weight&quot;], &#39;FirstWeight&#39;), 
+                                                        //First lab tests
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Hematocrit lab test&quot;], &#39;FirstHematocrit&#39;),
+                                                         &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;White blood cells count lab test&quot;], &#39;FirstWhiteBloodCell&#39;),
+                                                    &quot;FirstLabTestWithEncounterId&quot;
+                  ([Observation: &quot;Potassium lab test&quot;], &#39;FirstPotassium&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Sodium lab test&quot;], &#39;FirstSodium&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Bicarbonate lab test&quot;], &#39;FirstBicarbonate&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Creatinine lab test&quot;], &#39;FirstCreatinine&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Glucose lab test&quot;], &#39;FirstGlucose&#39;)
+                                                                  }</pre>
                                 </div>
                             </li>
                         </ul>&nbsp;
@@ -1004,8 +996,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_Ethnicity27043196" />
-            <label for="SDE_Ethnicity27043196" class="list-header"><strong>SDE Ethnicity</strong></label>
+            <input type="checkbox" id="SDE_Ethnicity731780900" />
+            <label for="SDE_Ethnicity731780900" class="list-header"><strong>SDE Ethnicity</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1024,8 +1016,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_Payer764297570" />
-            <label for="SDE_Payer764297570" class="list-header"><strong>SDE Payer</strong></label>
+            <input type="checkbox" id="SDE_Payer1272591911" />
+            <label for="SDE_Payer1272591911" class="list-header"><strong>SDE Payer</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1044,8 +1036,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_Race2135454337" />
-            <label for="SDE_Race2135454337" class="list-header"><strong>SDE Race</strong></label>
+            <input type="checkbox" id="SDE_Race246139036" />
+            <label for="SDE_Race246139036" class="list-header"><strong>SDE Race</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1064,8 +1056,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_Sex946600412" />
-            <label for="SDE_Sex946600412" class="list-header"><strong>SDE Sex</strong></label>
+            <input type="checkbox" id="SDE_Sex307609789" />
+            <label for="SDE_Sex307609789" class="list-header"><strong>SDE Sex</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1084,8 +1076,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_SDE_Ethnicity2066310519" />
-            <label for="SDE_SDE_Ethnicity2066310519" class="list-header"><strong>SDE.SDE Ethnicity</strong></label>
+            <input type="checkbox" id="SDE_SDE_Ethnicity601054409" />
+            <label for="SDE_SDE_Ethnicity601054409" class="list-header"><strong>SDE.SDE Ethnicity</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1111,8 +1103,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_SDE_Payer1711512730" />
-            <label for="SDE_SDE_Payer1711512730" class="list-header"><strong>SDE.SDE Payer</strong></label>
+            <input type="checkbox" id="SDE_SDE_Payer1195005022" />
+            <label for="SDE_SDE_Payer1195005022" class="list-header"><strong>SDE.SDE Payer</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1135,8 +1127,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_SDE_Race611365832" />
-            <label for="SDE_SDE_Race611365832" class="list-header"><strong>SDE.SDE Race</strong></label>
+            <input type="checkbox" id="SDE_SDE_Race1194550326" />
+            <label for="SDE_SDE_Race1194550326" class="list-header"><strong>SDE.SDE Race</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1162,8 +1154,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="SDE_SDE_Sex1572746816" />
-            <label for="SDE_SDE_Sex1572746816" class="list-header"><strong>SDE.SDE Sex</strong></label>
+            <input type="checkbox" id="SDE_SDE_Sex990930063" />
+            <label for="SDE_SDE_Sex990930063" class="list-header"><strong>SDE.SDE Sex</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1194,8 +1186,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
                 <ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FHIRHelpers_ToDate_value_FHIR_Datatype_165136209" />
-            <label for="FHIRHelpers_ToDate_value_FHIR_Datatype_165136209" class="list-header"><strong>FHIRHelpers.ToDate(value FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FHIRHelpers_ToDate_value_FHIR_Datatype_1039836955" />
+            <label for="FHIRHelpers_ToDate_value_FHIR_Datatype_1039836955" class="list-header"><strong>FHIRHelpers.ToDate(value FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1214,8 +1206,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FHIRHelpers_ToDateTime_value_FHIR_Datatype_893996869" />
-            <label for="FHIRHelpers_ToDateTime_value_FHIR_Datatype_893996869" class="list-header"><strong>FHIRHelpers.ToDateTime(value FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FHIRHelpers_ToDateTime_value_FHIR_Datatype_566566409" />
+            <label for="FHIRHelpers_ToDateTime_value_FHIR_Datatype_566566409" class="list-header"><strong>FHIRHelpers.ToDateTime(value FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1234,8 +1226,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FHIRHelpers_ToInterval_period_FHIR_Datatype_1294217636" />
-            <label for="FHIRHelpers_ToInterval_period_FHIR_Datatype_1294217636" class="list-header"><strong>FHIRHelpers.ToInterval(period FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FHIRHelpers_ToInterval_period_FHIR_Datatype_1445846179" />
+            <label for="FHIRHelpers_ToInterval_period_FHIR_Datatype_1445846179" class="list-header"><strong>FHIRHelpers.ToInterval(period FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1257,8 +1249,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FHIRHelpers_ToQuantity_quantity_FHIR_Datatype_495579093" />
-            <label for="FHIRHelpers_ToQuantity_quantity_FHIR_Datatype_495579093" class="list-header"><strong>FHIRHelpers.ToQuantity(quantity FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FHIRHelpers_ToQuantity_quantity_FHIR_Datatype_1783347208" />
+            <label for="FHIRHelpers_ToQuantity_quantity_FHIR_Datatype_1783347208" class="list-header"><strong>FHIRHelpers.ToQuantity(quantity FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1280,8 +1272,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FirstLabTestWithEncounterId_LabList_FHIR_Datatype__CCDE_FHIR_Datatype_2109000775" />
-            <label for="FirstLabTestWithEncounterId_LabList_FHIR_Datatype__CCDE_FHIR_Datatype_2109000775" class="list-header"><strong>FirstLabTestWithEncounterId(LabList FHIR Datatype, CCDE FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FirstLabTestWithEncounterId_LabList_FHIR_Datatype__CCDE_FHIR_Datatype_44813293" />
+            <label for="FirstLabTestWithEncounterId_LabList_FHIR_Datatype__CCDE_FHIR_Datatype_44813293" class="list-header"><strong>FirstLabTestWithEncounterId(LabList FHIR Datatype, CCDE FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1290,9 +1282,8 @@ For every patient in the Initial Population, also identify payer, race, ethnicit
                                 <div>
                                     <pre class="cql-definition-body">&quot;Inpatient Encounters&quot; Encounter
 let firstlab: First(LabList Lab
- where Lab.issued is not null and Lab.issued during Interval[start of Encounter.period - 1440 minutes, start of Encounter.period + 1440 minutes]
-and Lab.status in {&#39;final&#39;, &#39;amended&#39;, &#39;preliminary&#39;} and Lab.value is not null
-  sort by issued )
+ where Lab.issued is not null and Lab.issued during Interval[start of Encounter.period - 1440 minutes, start of Encounter.period + 1440 minutes]   and Lab.status in {&#39;final&#39;, &#39;amended&#39;, &#39;preliminary&#39;} and Lab.value is not null 
+     sort by issued )
 return &#39;\r\n&#39; &amp; CCDE &amp; &#39;,&#39; &amp; Encounter.id &amp; &#39;,&#39; &amp; (ToString(firstlab.value as FHIR.Quantity)) &amp; &#39;,&#39; &amp; ToString(firstlab.issued)</pre>
                                 </div>
                             </li>
@@ -1305,8 +1296,8 @@ return &#39;\r\n&#39; &amp; CCDE &amp; &#39;,&#39; &amp; Encounter.id &amp; &#39
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FirstPhysicalExamWithEncounterId_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1921525545" />
-            <label for="FirstPhysicalExamWithEncounterId_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1921525545" class="list-header"><strong>FirstPhysicalExamWithEncounterId(ExamList FHIR Datatype, CCDE FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FirstPhysicalExamWithEncounterId_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1665829859" />
+            <label for="FirstPhysicalExamWithEncounterId_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1665829859" class="list-header"><strong>FirstPhysicalExamWithEncounterId(ExamList FHIR Datatype, CCDE FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1331,8 +1322,8 @@ return &#39;\r\n&#39; &amp; CCDE &amp; &#39;,&#39; &amp; Encounter.id &amp; &#39
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="FirstPhysicalExamWithEncounterIdUsingLabTiming_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1601145489" />
-            <label for="FirstPhysicalExamWithEncounterIdUsingLabTiming_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1601145489" class="list-header"><strong>FirstPhysicalExamWithEncounterIdUsingLabTiming(ExamList FHIR Datatype, CCDE FHIR Datatype)</strong></label>
+            <input type="checkbox" id="FirstPhysicalExamWithEncounterIdUsingLabTiming_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1946423208" />
+            <label for="FirstPhysicalExamWithEncounterIdUsingLabTiming_ExamList_FHIR_Datatype__CCDE_FHIR_Datatype_1946423208" class="list-header"><strong>FirstPhysicalExamWithEncounterIdUsingLabTiming(ExamList FHIR Datatype, CCDE FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1357,8 +1348,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="HospitalizationWithObservation_TheEncounter_FHIR_Datatype_796877636" />
-            <label for="HospitalizationWithObservation_TheEncounter_FHIR_Datatype_796877636" class="list-header"><strong>HospitalizationWithObservation(TheEncounter FHIR Datatype)</strong></label>
+            <input type="checkbox" id="HospitalizationWithObservation_TheEncounter_FHIR_Datatype_209304978" />
+            <label for="HospitalizationWithObservation_TheEncounter_FHIR_Datatype_209304978" class="list-header"><strong>HospitalizationWithObservation(TheEncounter FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1387,8 +1378,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="LengthInDays_Value_FHIR_Datatype_59564058" />
-            <label for="LengthInDays_Value_FHIR_Datatype_59564058" class="list-header"><strong>LengthInDays(Value FHIR Datatype)</strong></label>
+            <input type="checkbox" id="LengthInDays_Value_FHIR_Datatype_35805267" />
+            <label for="LengthInDays_Value_FHIR_Datatype_35805267" class="list-header"><strong>LengthInDays(Value FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1407,8 +1398,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
 </ul><ul class="list-unstyled" style="list-style:none;padding-left:0;">
     <li class="list-unstyled">
         <div class="treeview hover p-l-10">
-            <input type="checkbox" id="Global_Normalize_Interval_choice_FHIR_Datatype_117077469" />
-            <label for="Global_Normalize_Interval_choice_FHIR_Datatype_117077469" class="list-header"><strong>Global.Normalize Interval(choice FHIR Datatype)</strong></label>
+            <input type="checkbox" id="Global_Normalize_Interval_choice_FHIR_Datatype_11265394" />
+            <label for="Global_Normalize_Interval_choice_FHIR_Datatype_11265394" class="list-header"><strong>Global.Normalize Interval(choice FHIR Datatype)</strong></label>
             <ul class="code" style="margin-right: 20%; opacity: 1;">
                 <li class="list-unstyled">
                     <div>
@@ -1528,51 +1519,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
 <ul style="list-style:none;padding-left: 25px;">
 	<li class="list-unstyled">
     <div class="treeview hover p-l-10">
-        <input type="checkbox" id="Initial_Population746324473" />
-        <label for="Initial_Population746324473" class="list-header"><strong>Initial Population</strong></label>
-        <ul class="code" style="margin-right: 20%; opacity: 1;">
-            <li class="list-unstyled">
-                <div>
-                    <ul style="padding-left: 0px;">
-                        <li style="padding-left: 0px;" class="list-unstyled">
-                            <div>
-                                <pre class="cql-definition-body">&quot;Inpatient Encounters&quot;</pre>
-                            </div>
-                        </li>
-                    </ul>&nbsp;
-                </div>
-            </li>
-        </ul>
-    </div>
-</li><li class="list-unstyled">
-    <div class="treeview hover p-l-10">
-        <input type="checkbox" id="Inpatient_Encounters160820751" />
-        <label for="Inpatient_Encounters160820751" class="list-header"><strong>Inpatient Encounters</strong></label>
-        <ul class="code" style="margin-right: 20%; opacity: 1;">
-            <li class="list-unstyled">
-                <div>
-                    <ul style="padding-left: 0px;">
-                        <li style="padding-left: 0px;" class="list-unstyled">
-                            <div>
-                                <pre class="cql-definition-body">from
-                                              [&quot;Encounter&quot;: &quot;Encounter Inpatient&quot;] InpatientEncounter,
-                                              [&quot;Coverage&quot;: &quot;Medicare payer&quot;] Payer
-                                                  where InpatientEncounter.status= &#39;finished&#39;
-                                                  and &quot;LengthInDays&quot; (&quot;HospitalizationWithObservation&quot; (InpatientEncounter)) &lt; 365
-                                                  and InpatientEncounter.period ends during day of &quot;Measurement Period&quot;
-                                                  and &quot;AgeInYearsAt&quot; ( start of InpatientEncounter.period ) &gt;= 65
-                                                  return InpatientEncounter</pre>
-                            </div>
-                        </li>
-                    </ul>&nbsp;
-                </div>
-            </li>
-        </ul>
-    </div>
-</li><li class="list-unstyled">
-    <div class="treeview hover p-l-10">
-        <input type="checkbox" id="Results2075312388" />
-        <label for="Results2075312388" class="list-header"><strong>Results</strong></label>
+        <input type="checkbox" id="Results1958071020" />
+        <label for="Results1958071020" class="list-header"><strong>Results</strong></label>
         <ul class="code" style="margin-right: 20%; opacity: 1;">
             <li class="list-unstyled">
                 <div>
@@ -1580,25 +1528,25 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
                         <li style="padding-left: 0px;" class="list-unstyled">
                             <div>
                                 <pre class="cql-definition-body">flatten{
-                                          // First physical exams (vital signs)
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Heart rate&quot;], &#39;FirstHeartRate&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Systolic blood pressure&quot;], &#39;FirstSystolicBP&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Respiratory rate&quot;], &#39;FirstRespRate&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Body temperature&quot;], &#39;FirstTemperature&#39;),
-                                          &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Oxygen saturation in Arterial blood by Pulse oximetry&quot;], &#39;FirstO2Saturation&#39;),
-                                                                          
-                                          // First weight using lab test timing
-                                          &quot;FirstPhysicalExamWithEncounterIdUsingLabTiming&quot;([Observation: &quot;Body weight&quot;], &#39;FirstWeight&#39;), 
-                                          //First lab tests
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Hematocrit lab test&quot;], &#39;FirstHematocrit&#39;),
-                                           &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;White blood cells count lab test&quot;], &#39;FirstWhiteBloodCell&#39;),
-                                      &quot;FirstLabTestWithEncounterId&quot;
-    ([Observation: &quot;Potassium lab test&quot;], &#39;FirstPotassium&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Sodium lab test&quot;], &#39;FirstSodium&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Bicarbonate lab test&quot;], &#39;FirstBicarbonate&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Creatinine lab test&quot;], &#39;FirstCreatinine&#39;),
-                                          &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Glucose lab test&quot;], &#39;FirstGlucose&#39;)
-                                                    }</pre>
+                                                        // First physical exams (vital signs)
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Heart rate&quot;], &#39;FirstHeartRate&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Systolic blood pressure&quot;], &#39;FirstSystolicBP&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Respiratory rate&quot;], &#39;FirstRespRate&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Body temperature&quot;], &#39;FirstTemperature&#39;),
+                                                        &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Oxygen saturation in Arterial blood by Pulse oximetry&quot;], &#39;FirstO2Saturation&#39;),
+                                                                                        
+                                                        // First weight using lab test timing
+                                                        &quot;FirstPhysicalExamWithEncounterIdUsingLabTiming&quot;([Observation: &quot;Body weight&quot;], &#39;FirstWeight&#39;), 
+                                                        //First lab tests
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Hematocrit lab test&quot;], &#39;FirstHematocrit&#39;),
+                                                         &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;White blood cells count lab test&quot;], &#39;FirstWhiteBloodCell&#39;),
+                                                    &quot;FirstLabTestWithEncounterId&quot;
+                  ([Observation: &quot;Potassium lab test&quot;], &#39;FirstPotassium&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Sodium lab test&quot;], &#39;FirstSodium&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Bicarbonate lab test&quot;], &#39;FirstBicarbonate&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Creatinine lab test&quot;], &#39;FirstCreatinine&#39;),
+                                                        &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Glucose lab test&quot;], &#39;FirstGlucose&#39;)
+                                                                  }</pre>
                             </div>
                         </li>
                     </ul>&nbsp;
@@ -1608,8 +1556,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
     </div>
 </li><li class="list-unstyled">
     <div class="treeview hover p-l-10">
-        <input type="checkbox" id="SDE_Ethnicity844360339" />
-        <label for="SDE_Ethnicity844360339" class="list-header"><strong>SDE Ethnicity</strong></label>
+        <input type="checkbox" id="SDE_Ethnicity1016980237" />
+        <label for="SDE_Ethnicity1016980237" class="list-header"><strong>SDE Ethnicity</strong></label>
         <ul class="code" style="margin-right: 20%; opacity: 1;">
             <li class="list-unstyled">
                 <div>
@@ -1626,8 +1574,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
     </div>
 </li><li class="list-unstyled">
     <div class="treeview hover p-l-10">
-        <input type="checkbox" id="SDE_Payer566287675" />
-        <label for="SDE_Payer566287675" class="list-header"><strong>SDE Payer</strong></label>
+        <input type="checkbox" id="SDE_Payer1343120073" />
+        <label for="SDE_Payer1343120073" class="list-header"><strong>SDE Payer</strong></label>
         <ul class="code" style="margin-right: 20%; opacity: 1;">
             <li class="list-unstyled">
                 <div>
@@ -1644,8 +1592,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
     </div>
 </li><li class="list-unstyled">
     <div class="treeview hover p-l-10">
-        <input type="checkbox" id="SDE_Race1182317907" />
-        <label for="SDE_Race1182317907" class="list-header"><strong>SDE Race</strong></label>
+        <input type="checkbox" id="SDE_Race564449708" />
+        <label for="SDE_Race564449708" class="list-header"><strong>SDE Race</strong></label>
         <ul class="code" style="margin-right: 20%; opacity: 1;">
             <li class="list-unstyled">
                 <div>
@@ -1662,8 +1610,8 @@ sort by start of Global.&quot;Normalize Interval&quot;(effective) )
     </div>
 </li><li class="list-unstyled">
     <div class="treeview hover p-l-10">
-        <input type="checkbox" id="SDE_Sex43252563" />
-        <label for="SDE_Sex43252563" class="list-header"><strong>SDE Sex</strong></label>
+        <input type="checkbox" id="SDE_Sex184618304" />
+        <label for="SDE_Sex184618304" class="list-header"><strong>SDE Sex</strong></label>
         <ul class="code" style="margin-right: 20%; opacity: 1;">
             <li class="list-unstyled">
                 <div>
