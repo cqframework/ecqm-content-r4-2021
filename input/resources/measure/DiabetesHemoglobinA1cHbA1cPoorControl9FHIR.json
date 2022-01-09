@@ -3,11 +3,974 @@
   "id": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR",
   "meta": {
     "versionId": "27",
-    "lastUpdated": "2021-08-16T18:34:08.000-04:00",
+    "lastUpdated": "2021-08-16T16:34:08.000-06:00",
     "source": "#wGMjxSLpzscuAYax",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
   "language": "en",
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/version/201709",
+        "code": "428361000124107",
+        "display": "Discharge to home for hospice care (procedure)"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://snomed.info/sct",
+        "version": "http://snomed.info/sct/version/201709",
+        "code": "428371000124100",
+        "display": "Discharge to healthcare facility for hospice care (procedure)"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://loinc.org",
+        "code": "71007-9",
+        "display": "Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "survey",
+        "display": "survey"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Sex"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Sex\":\n  case\n      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }\n      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }\n      else null\n    end"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 0
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Sex"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Most Recent HbA1c"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Most Recent HbA1c\":\n  Last([Observation: \"HbA1c Laboratory Test\"] RecentHbA1c\n                                        where RecentHbA1c.status in {'final', 'amended', 'corrected'} \n                                          and Global.\"Latest\"(RecentHbA1c.effective) during \"Measurement Period\"\n                                          sort by start of Global.\"Normalize Interval\"(effective)\n                              )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has Most Recent HbA1c Without Result"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Most Recent HbA1c Without Result\":\n  \"Most Recent HbA1c\" is not null\n                                and \"Most Recent HbA1c\".value is null"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 3
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has Most Recent Elevated HbA1c"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Most Recent Elevated HbA1c\":\n  (\"Most Recent HbA1c\".value as Quantity) > 9 '%'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has No Record Of HbA1c"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has No Record Of HbA1c\":\n  not exists ( [Observation: \"HbA1c Laboratory Test\"] NoHbA1c\n                                        where ( NoHbA1c.status in {'final', 'amended', 'corrected'}\n                                          and Global.\"Latest\"(NoHbA1c.effective) during \"Measurement Period\")\n                                  )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Numerator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Numerator\":\n  \"Has Most Recent HbA1c Without Result\"\n                                    or \"Has Most Recent Elevated HbA1c\"\n                                    or \"Has No Record Of HbA1c\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdultOutpatientEncountersFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Qualifying Encounters"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Qualifying Encounters\":\n  (\n                    [Encounter: \"Office Visit\"]\n                  \t\tunion [Encounter: \"Annual Wellness Visit\"]\n                  \t\tunion [Encounter: \"Preventive Care Services - Established Office Visit, 18 and Up\"]\n                  \t\tunion [Encounter: \"Preventive Care Services-Initial Office Visit, 18 and Up\"]\n                  \t\tunion [Encounter: \"Home Healthcare Services\"]\n                  ) ValidEncounter\n                \t\twhere ValidEncounter.status  = 'finished'\n                \t\tand Global.\"Normalize Interval\"(ValidEncounter.period) during \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 7
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Telehealth Services"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Telehealth Services\":\n  [Encounter: \"Telephone Visits\"] TelehealthEncounter\n                                    where TelehealthEncounter.status = 'finished'\n                                        and Global.\"Normalize Interval\"(TelehealthEncounter.period) during \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 8
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  AgeInYearsAt(date from start of \"Measurement Period\" ) in Interval[18, 75)\n                              and exists (AdultOutpatientEncounters.\"Qualifying Encounters\"\n                                  union \"Telehealth Services\")\n                              and exists ( [Condition: \"Diabetes\"] Diabetes\n                                  where Global.\"Prevalence Period\"(Diabetes) overlaps \"Measurement Period\"\n                                        )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 9
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Denominator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 10
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer\"] Payer\n        return {\n          code: Payer.type,\n          period: Payer.period\n        }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 11
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 12
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 13
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 14
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospiceFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Has Hospice"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Hospice\":\n  exists (\n                [Encounter: \"Encounter Inpatient\"] DischargeHospice\n            \t\t\twhere DischargeHospice.status = 'finished'\n            \t\t    and (\n            \t        DischargeHospice.hospitalization.dischargeDisposition ~ \"Discharge to home for hospice care (procedure)\"\n            \t\t\t\t    or DischargeHospice.hospitalization.dischargeDisposition ~ \"Discharge to healthcare facility for hospice care (procedure)\"\n            \t    \t)\n            \t\t\t\tand Global.\"Normalize Interval\"(DischargeHospice.period) ends during \"Measurement Period\"\n            \t)\n                or exists (\n                  [ServiceRequest: \"Hospice care ambulatory\"] HospiceOrder\n                    where HospiceOrder.status in {'active', 'completed'} \n                    and HospiceOrder.intent = 'order'\n                        and Global.\"Normalize Interval\"(HospiceOrder.authoredOn) during \"Measurement Period\"\n                )\n                or exists (\n                  [Procedure: \"Hospice care ambulatory\"] HospicePerformed\n                    where HospicePerformed.status = 'completed'\n                      and Global.\"Normalize Interval\"(HospicePerformed.performed) overlaps \"Measurement Period\"\n                )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 15
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Has Criteria Indicating Frailty"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Criteria Indicating Frailty\":\n  exists ( [DeviceRequest: \"Frailty Device\"] FrailtyDeviceOrder\n                where FrailtyDeviceOrder.status in { 'active', 'on-hold', 'completed' }\n                  and FrailtyDeviceOrder.intent = 'order'\n                  and Global.\"Normalize Interval\" ( FrailtyDeviceOrder.authoredOn ) during \"Measurement Period\"\n            )\n              or exists ( [Observation: \"Frailty Device\"] FrailtyDeviceApplied\n                  where FrailtyDeviceApplied.status in { 'final', 'amended', 'corrected' }\n                    and Global.\"Normalize Interval\" ( FrailtyDeviceApplied.effective ) overlaps \"Measurement Period\"\n              )\n           or exists  ( [Condition: \"Frailty Diagnosis\"] FrailtyDiagnosis\n                where Global.\"Prevalence Period\" ( FrailtyDiagnosis ) overlaps \"Measurement Period\"\n            )\n              or exists ( [Encounter: \"Frailty Encounter\"] FrailtyEncounter\n                  where FrailtyEncounter.status = 'finished'\n                    and Global.\"Normalize Interval\" ( FrailtyEncounter.period ) overlaps \"Measurement Period\"\n              )\n              or exists ( [Observation: \"Frailty Symptom\"] FrailtySymptom\n                  where FrailtySymptom.status in { 'preliminary', 'final', 'amended', 'corrected' }\n                    and Global.\"Normalize Interval\" ( FrailtySymptom.effective ) overlaps \"Measurement Period\"\n              )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 16
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Outpatient Encounters with Advanced Illness"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Outpatient Encounters with Advanced Illness\":\n  ( ( [Encounter: \"Outpatient\"]\n                union [Encounter: \"Observation\"]\n                union [Encounter: \"Emergency Department Visit\"]\n                union [Encounter: \"Nonacute Inpatient\"] ) Outpatient\n                where Outpatient.status = 'finished' ) OutpatientEncounter\n                with [Condition: \"Advanced Illness\"] AdvancedIllnessDiagnosis\n                  such that AdvancedIllnessDiagnosis in Global.EncounterDiagnosis ( OutpatientEncounter )\n                    and Global.\"Normalize Interval\" ( OutpatientEncounter.period ) starts 2 years or less on or before \n                    end of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 17
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Two Outpatient Encounters with Advanced Illness on Different Dates of Service"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Two Outpatient Encounters with Advanced Illness on Different Dates of Service\":\n  from\n                \"Outpatient Encounters with Advanced Illness\" OutpatientEncounter1,\n                \"Outpatient Encounters with Advanced Illness\" OutpatientEncounter2\n                where OutpatientEncounter2.period ends 1 day or more after day of \n                end of OutpatientEncounter1.period\n                return OutpatientEncounter1"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 18
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Inpatient Encounter with Advanced Illness"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Inpatient Encounter with Advanced Illness\":\n  ( [Encounter: \"Acute Inpatient\"] AcuteInpatient\n                where AcuteInpatient.status = 'finished' ) InpatientEncounter\n                with [Condition: \"Advanced Illness\"] AdvancedIllnessDiagnosis\n                  such that AdvancedIllnessDiagnosis in Global.EncounterDiagnosis ( InpatientEncounter )\n                    and Global.\"Normalize Interval\" ( InpatientEncounter.period ) starts 2 years or less on or before \n                    end of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 19
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Dementia Medications In Year Before or During Measurement Period"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Dementia Medications In Year Before or During Measurement Period\":\n  [MedicationRequest: \"Dementia Medications\"] DementiaMed\n                where DementiaMed.status = 'active'\n                  and DementiaMed.intent = 'order'\n                  and CMD.\"MedicationPeriod\"(DementiaMed)overlaps Interval[( start of \"Measurement Period\" - 1 year ), \n                  end of \"Measurement Period\"]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 20
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Advanced Illness and Frailty Exclusion Not Including Over Age 80"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Advanced Illness and Frailty Exclusion Not Including Over Age 80\":\n  AgeInYearsAt(date from start of \"Measurement Period\")>= 65\n                and \"Has Criteria Indicating Frailty\"\n                and ( exists \"Two Outpatient Encounters with Advanced Illness on Different Dates of Service\"\n                    or exists ( \"Inpatient Encounter with Advanced Illness\" )\n                    or exists \"Dementia Medications In Year Before or During Measurement Period\"\n                )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 21
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Long Term Care Periods During Measurement Period"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Long Term Care Periods During Measurement Period\":\n  ( [Encounter: \"Care Services in Long-Term Residential Facility\"]\n                union [Encounter: \"Nursing Facility Visit\"] ) LongTermFacilityEncounter\n                where LongTermFacilityEncounter.status = 'finished'\n                  and Global.\"Normalize Interval\" ( LongTermFacilityEncounter.period ) overlaps \"Measurement Period\"\n                return Global.\"Normalize Interval\" ( LongTermFacilityEncounter.period )\n                  intersect \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 22
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Long Term Care Overlapping Periods"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Long Term Care Overlapping Periods\":\n  collapse ( \"Long Term Care Periods During Measurement Period\" )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 23
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Long Term Care Adjacent Periods"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Long Term Care Adjacent Periods\":\n  from\n                \"Long Term Care Overlapping Periods\" LTCPeriod1,\n                \"Long Term Care Overlapping Periods\" LTCPeriod2\n                where \n                end of LTCPeriod1 within 1 day of start of LTCPeriod2\n                return Interval[start of LTCPeriod1, \n                end of LTCPeriod2]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 24
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Max Long Term Care Period Length"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Max Long Term Care Period Length\":\n  Max((collapse(\"Long Term Care Overlapping Periods\"\n                    union \"Long Term Care Adjacent Periods\"\n                ))LTCPeriods\n                  return duration in days of LTCPeriods\n              )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 25
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Has Long Term Care Periods Longer Than 90 Consecutive Days"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Long Term Care Periods Longer Than 90 Consecutive Days\":\n  \"Max Long Term Care Period Length\" > 90"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 26
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "PalliativeCareFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Palliative Care in the Measurement Period"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Palliative Care in the Measurement Period\":\n  exists ( [Observation: \"Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)\"] PalliativeAssessment\n              where PalliativeAssessment.status in { 'final', 'amended', 'corrected' }\n                and exists ( PalliativeAssessment.category PalliativeAssessmentCategory\n                    where \"survey\" in FHIRHelpers.ToConcept ( PalliativeAssessmentCategory ).codes\n                )\n                and Global.\"Normalize Interval\" ( PalliativeAssessment.effective ) overlaps \"Measurement Period\"\n          )\n            or exists ( [Encounter: \"Palliative Care Encounter\"] PalliativeEncounter\n                where PalliativeEncounter.status = 'finished'\n                  and Global.\"Normalize Interval\" ( PalliativeEncounter.period ) overlaps \"Measurement Period\"\n            )\n            or exists ( [Procedure: \"Palliative Care Intervention\"] PalliativeIntervention\n                where PalliativeIntervention.status in { 'completed', 'in-progress' }\n                  and Global.\"Normalize Interval\" ( PalliativeIntervention.performed ) overlaps \"Measurement Period\"\n            )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 27
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "Denominator Exclusions"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Denominator Exclusions\":\n  Hospice.\"Has Hospice\"\n                              or (FrailtyLTI.\"Advanced Illness and Frailty Exclusion Not Including Over Age 80\")\n                              or (AgeInYearsAt( date from start of \"Measurement Period\" ) >= 65 \n                                  and FrailtyLTI.\"Has Long Term Care Periods Longer Than 90 Consecutive Days\")\n                              or (PalliativeCare.\"Palliative Care in the Measurement Period\")"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 28
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Race"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 29
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "DiabetesHemoglobinA1cHbA1cPoorControl9FHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Race"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 30
+      } ]
+    } ],
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    },
+    "date": "2021-12-23T11:20:24-07:00",
+    "relatedArtifact": [ {
+      "type": "depends-on",
+      "display": "Library SDE",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4|2.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
+    }, {
+      "type": "depends-on",
+      "display": "Library Global",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library AdultOutpatientEncounters",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/AdultOutpatientEncountersFHIR4|2.2.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library Hospice",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/HospiceFHIR4|2.3.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FrailtyLTI",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/AdvancedIllnessandFrailtyExclusionECQMFHIR4|5.17.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library CMD",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/CumulativeMedicationDurationFHIR4|1.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library PalliativeCare",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/PalliativeCareFHIR|0.6.000"
+    }, {
+      "type": "depends-on",
+      "display": "Code system SNOMEDCT:2017-09",
+      "resource": "http://snomed.info/sct|http://snomed.info/sct/version/201709"
+    }, {
+      "type": "depends-on",
+      "display": "Code system LOINC",
+      "resource": "http://loinc.org"
+    }, {
+      "type": "depends-on",
+      "display": "Code system ObservationCategoryCodes",
+      "resource": "http://terminology.hl7.org/CodeSystem/observation-category"
+    }, {
+      "type": "depends-on",
+      "display": "Value set HbA1c Laboratory Test",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1013"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Office Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Annual Wellness Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services - Established Office Visit, 18 and Up",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services-Initial Office Visit, 18 and Up",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Home Healthcare Services",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Telephone Visits",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Diabetes",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Payer",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Encounter Inpatient",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Hospice care ambulatory",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Frailty Device",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Frailty Diagnosis",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Frailty Encounter",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1088"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Frailty Symptom",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1075"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Outpatient",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1087"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Observation",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1086"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Emergency Department Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Nonacute Inpatient",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1084"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Advanced Illness",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1082"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Acute Inpatient",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1083"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Dementia Medications",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1510"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Care Services in Long-Term Residential Facility",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Nursing Facility Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Palliative Care Encounter",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Palliative Care Intervention",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135"
+    } ],
+    "parameter": [ {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }, {
+      "name": "ErrorLevel",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string"
+    }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Any"
+    }, {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "SDE Ethnicity",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    }, {
+      "name": "Denominator Exclusions",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "SDE Race",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    } ],
+    "dataRequirement": [ {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1075"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "category", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "code": [ {
+          "system": "http://loinc.org",
+          "code": "71007-9",
+          "display": "Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)"
+        } ]
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1013"
+      } ]
+    }, {
+      "type": "MedicationRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+      "mustSupport": [ "medication", "intent", "status" ],
+      "codeFilter": [ {
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1510"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1087"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1086"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1084"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1088"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1083"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "hospitalization", "hospitalization.dischargeDisposition", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
+      } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074"
+      } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001"
+      } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "id" ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1082"
+      } ]
+    }, {
+      "type": "DeviceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/DeviceRequest" ],
+      "mustSupport": [ "code", "authoredOn", "intent", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300"
+      } ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+      "mustSupport": [ "period", "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
+    }, {
+      "type": "ServiceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+      "mustSupport": [ "code", "authoredOn", "intent", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135"
+      } ]
+    } ]
+  } ],
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
     "valueCode": "boolean"
@@ -15,6 +978,12 @@
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
       "reference": "Device/cqf-tooling"
+    }
+  }, {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
     }
   }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
@@ -899,7 +1868,7 @@
   "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)FHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-10-12T15:42:45-04:00",
+  "date": "2022-01-07T18:18:32-04:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {

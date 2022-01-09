@@ -1,0 +1,20 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "ServiceRequest-denomexcl-EXM104-1",
+  "status": "active",
+  "intent": "order",
+  "code": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "133918004",
+      "display": "Comfort measures (regime/therapy)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/Patient-denomexcl-EXM104"
+  },
+  "encounter": {
+    "reference": "Encounter/Encounter-denomexcl-EXM104"
+  },
+  "authoredOn": "2019-08-21T00:00:00-06:00"
+}

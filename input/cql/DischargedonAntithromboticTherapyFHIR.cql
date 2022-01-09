@@ -1,4 +1,4 @@
-library DischargedonAntithromboticTherapyFHIR version '2.0.012'
+library DischargedonAntithromboticTherapyFHIR version '0.0.010'
 
 using FHIR version '4.0.1'
 
@@ -26,6 +26,35 @@ parameter "Measurement Period" Interval<DateTime>
 
 context Patient
 
+define "Denominator":
+  TJC."Ischemic Stroke Encounter"
+
+define "Denominator Exceptions":
+  "Encounter With No Antithrombotic At Discharge"
+                		union "Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge"
+
+define "Denominator Exclusions":
+  TJC."Ischemic Stroke Encounters with Discharge Disposition"
+                		union TJC."Encounter with Comfort Measures during Hospitalization"
+
+define "Encounter With No Antithrombotic At Discharge":
+  TJC."Ischemic Stroke Encounter" IschemicStrokeEncounter
+                	with "Antithrombotic Not Given at Discharge" NoDischargeAntithrombotic
+                	such that NoDischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period
+
+define "Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge":
+  TJC."Ischemic Stroke Encounter" IschemicStrokeEncounter
+                    with "Pharmacological Contraindications for Antithrombotic Therapy at Discharge" DischargePharmacological
+                      such that DischargePharmacological.authoredOn during IschemicStrokeEncounter.period
+
+define "Initial Population":
+  TJC."Encounter with Principal Diagnosis and Age"
+
+define "Numerator":
+  TJC."Ischemic Stroke Encounter" IschemicStrokeEncounter
+      with "Antithrombotic Therapy at Discharge" DischargeAntithrombotic
+        such that DischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period
+
 define "SDE Ethnicity":
   SDE."SDE Ethnicity"
 
@@ -38,54 +67,36 @@ define "SDE Race":
 define "SDE Sex":
   SDE."SDE Sex"
 
-define "Denominator":
-  TJC."Ischemic Stroke Encounter"
-
-define "Initial Population":
-  TJC."Encounter with Principal Diagnosis and Age"
-
-define "Denominator Exclusions":
-  TJC."Ischemic Stroke Encounters with Discharge Disposition"
-          		union TJC."Encounter with Comfort Measures during Hospitalization"
-
 define "Antithrombotic Therapy at Discharge":
   ["MedicationRequest": medication in "Antithrombotic Therapy"] Antithrombotic
-          	  where exists (Antithrombotic.category C where FHIRHelpers.ToConcept(C) ~ Global."Community" or FHIRHelpers.ToConcept(C) ~ Global."Discharge")
-                and (Antithrombotic.status = 'active' 
-                    or Antithrombotic.status = 'completed' )
-          	    and Antithrombotic.intent = 'order'
-
-define "Denominator Exceptions":
-  "Encounter With No Antithrombotic At Discharge"
-          		union "Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge"
+    where Antithrombotic.doNotPerform is not true
+      and exists ( Antithrombotic.category C
+          where FHIRHelpers.ToConcept ( C ) ~ Global."Community"
+            or FHIRHelpers.ToConcept ( C ) ~ Global."Discharge"
+      )
+      and Antithrombotic.status in { 'active', 'completed' }
+      and Antithrombotic.intent = 'order'
 
 define "Antithrombotic Not Given at Discharge":
   ["MedicationRequest": medication in "Antithrombotic Therapy"] NoAntithromboticDischarge
-              where NoAntithromboticDischarge.doNotPerform is true
-          			and (NoAntithromboticDischarge.reasonCode in "Medical Reason"
-          				or NoAntithromboticDischarge.reasonCode in "Patient Refusal")
-                and exists (NoAntithromboticDischarge.category C where FHIRHelpers.ToConcept(C) ~ Global."Community" or FHIRHelpers.ToConcept(C) ~ Global."Discharge")
-                and NoAntithromboticDischarge.status = 'completed'
-                and NoAntithromboticDischarge.intent = 'order'
+    where NoAntithromboticDischarge.doNotPerform is true
+      and ( NoAntithromboticDischarge.reasonCode in "Medical Reason"
+          or NoAntithromboticDischarge.reasonCode in "Patient Refusal"
+      )
+      and exists ( NoAntithromboticDischarge.category C
+          where FHIRHelpers.ToConcept ( C ) ~ Global."Community"
+            or FHIRHelpers.ToConcept ( C ) ~ Global."Discharge"
+      )
+      and NoAntithromboticDischarge.status in { 'completed', 'cancelled' }
+      and NoAntithromboticDischarge.intent = 'order'
 
 define "Pharmacological Contraindications for Antithrombotic Therapy at Discharge":
   ["MedicationRequest": medication in "Pharmacological Contraindications For Antithrombotic Therapy"] Pharmacological
-              where exists (Pharmacological.category C where FHIRHelpers.ToConcept(C) ~ Global."Community" or FHIRHelpers.ToConcept(C) ~ Global."Discharge")
-                and Pharmacological.status in { 'active', 'completed' }
-                and Pharmacological.intent = 'order'
-
-define "Encounter With No Antithrombotic At Discharge":
-  TJC."Ischemic Stroke Encounter" IschemicStrokeEncounter
-          	with "Antithrombotic Not Given at Discharge" NoDischargeAntithrombotic
-          	such that NoDischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period
-
-define "Encounter With Pharmacological Contraindications for Antithrombotic Therapy at Discharge":
-  TJC."Ischemic Stroke Encounter" IschemicStrokeEncounter
-              with "Pharmacological Contraindications for Antithrombotic Therapy at Discharge" DischargePharmacological
-                such that DischargePharmacological.authoredOn during IschemicStrokeEncounter.period
-
-define "Numerator":
-  TJC."Ischemic Stroke Encounter" IschemicStrokeEncounter
-          		with "Antithrombotic Therapy at Discharge" DischargeAntithrombotic
-          			such that DischargeAntithrombotic.authoredOn during IschemicStrokeEncounter.period
+    where Pharmacological.doNotPerform is not true
+      and exists ( Pharmacological.category C
+          where FHIRHelpers.ToConcept ( C ) ~ Global."Community"
+            or FHIRHelpers.ToConcept ( C ) ~ Global."Discharge"
+      )
+      and Pharmacological.status in { 'active', 'completed' }
+      and Pharmacological.intent = 'order'
 
