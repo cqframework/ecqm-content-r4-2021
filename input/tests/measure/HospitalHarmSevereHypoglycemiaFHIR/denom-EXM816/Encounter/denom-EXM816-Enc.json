@@ -1,0 +1,23 @@
+{
+  "resourceType": "Encounter",
+  "id": "denom-EXM816-Enc",
+  "text": {
+    "status": "generated"
+  },
+  "status": "finished",
+  "type": [ {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "32485007",
+      "display": "Emergency hospital admission (procedure)"
+    } ],
+    "text": "Emergency hospital admission (procedure)"
+  } ],
+  "subject": {
+    "reference": "Patient/denom-EXM816"
+  },
+  "period": {
+    "start": "2019-01-16T08:30:00",
+    "end": "2019-01-20T08:45:00"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "resourceType": "Observation",
+  "id": "denom-EXM816-Obs1",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/observation" ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "74774-1",
+      "display": "Glucose [Mass/volume] in Serum, Plasma or Blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/denom-EXM816"
+  },
+  "effectiveDateTime": "2019-01-17T06:00:00",
+  "valueQuantity": {
+    "value": 39,
+    "unit": "mg/dL",
+    "system": "http://unitsofmeasure.org",
+    "code": "mg/dL"
+  }
+}

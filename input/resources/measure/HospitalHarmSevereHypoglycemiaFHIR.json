@@ -2,12 +2,404 @@
   "resourceType": "Measure",
   "id": "HospitalHarmSevereHypoglycemiaFHIR",
   "meta": {
-    "versionId": "20",
-    "lastUpdated": "2021-08-24T08:27:31.000-04:00",
-    "source": "#z1FHf1CzKUjZlAPy",
+    "versionId": "24",
+    "lastUpdated": "2021-11-10T13:00:07.000-05:00",
+    "source": "#fKTxPT5mq7OLNtBu",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
   "language": "en",
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Sex"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Sex\":\n  case\n      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }\n      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }\n      else null\n    end"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 0
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Sex"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Inpatient Encounter During Measurement Period"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Inpatient Encounter During Measurement Period\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient\n                \t\twhere EncounterInpatient.status = 'finished'\n                \t\t       \t\t\tand EncounterInpatient.period ends during \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Qualifying Encounter"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Qualifying Encounter\":\n  \"Inpatient Encounter During Measurement Period\" InpatientEncounter\n  where AgeInYearsAt (start of Global.\"HospitalizationWithObservation\"(InpatientEncounter))>=18"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 3
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Hypoglycemic Medication Administration"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Hypoglycemic Medication Administration\":\n  [\"MedicationAdministration\": \"Hypoglycemics Severe Hypoglycemia\"] HypoMedication\n    where HypoMedication.status = 'completed'\n      and HypoMedication.status != 'not-done'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Qualifying Encounter with Hypoglycemic Medication Administration"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Qualifying Encounter with Hypoglycemic Medication Administration\":\n  \"Qualifying Encounter\" QualifyingEncounter\n                           with \"Hypoglycemic Medication Administration\" HypoglycemicMedication\n                             such that Global.\"Normalize Interval\"(HypoglycemicMedication.effective) starts during Global.HospitalizationWithObservation ( QualifyingEncounter)"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  \"Qualifying Encounter with Hypoglycemic Medication Administration\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Denominator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 7
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Severe Hypoglycemic Harm Event"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Severe Hypoglycemic Harm Event\":\n  \"Denominator\" QualifyingEncounter\n    where exists ( [\"Observation\": \"Glucose lab test\"] BloodGlucoseLab\n        with \"Hypoglycemic Medication Administration\" HypoglycemicMeds\n          such that Global.\"Normalize Interval\" ( HypoglycemicMeds.effective ) starts 24 hours or less on or before start of Global.\"Normalize Interval\" ( BloodGlucoseLab.effective )\n            and BloodGlucoseLab.status = 'final'\n            and BloodGlucoseLab.status != 'cancelled'\n            and Global.\"Normalize Interval\" ( HypoglycemicMeds.effective ) starts during Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n        without [\"Observation\": \"Glucose lab test\"] FollowupBloodGlucoseLab\n          such that Global.\"Normalize Interval\" ( FollowupBloodGlucoseLab.effective ) starts during Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n            and Global.\"Normalize Interval\" ( FollowupBloodGlucoseLab.effective ) starts 5 minutes or less after start of Global.\"Normalize Interval\" ( BloodGlucoseLab.effective )\n            and FollowupBloodGlucoseLab.status = 'final'\n            and FollowupBloodGlucoseLab.status != 'cancelled'\n            and FollowupBloodGlucoseLab.value > 80 'mg/dL'\n        where Global.\"Normalize Interval\" ( BloodGlucoseLab.effective ) starts during Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n          and BloodGlucoseLab.value < 40 'mg/dL'\n    )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 8
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Numerator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Numerator\":\n  \"Severe Hypoglycemic Harm Event\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 9
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer\"] Payer\n        return {\n          code: Payer.type,\n          period: Payer.period\n        }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 10
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 11
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 12
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 13
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Race"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 14
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Race"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 15
+      } ]
+    } ],
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    },
+    "date": "2022-01-10T13:47:12-05:00",
+    "relatedArtifact": [ {
+      "type": "depends-on",
+      "display": "Library SDE",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4|2.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
+    }, {
+      "type": "depends-on",
+      "display": "Library Global",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Encounter Inpatient",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Observation Services",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Emergency Department Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Hypoglycemics Severe Hypoglycemia",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Glucose lab test",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Payer",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+    } ],
+    "parameter": [ {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Any"
+    }, {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE Ethnicity",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    }, {
+      "name": "SDE Race",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    } ],
+    "dataRequirement": [ {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "value", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+      } ]
+    }, {
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
+      "mustSupport": [ "effective", "medication", "status" ],
+      "codeFilter": [ {
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+      "mustSupport": [ "period", "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
+    } ]
+  } ],
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
     "valueCode": "Encounter"
@@ -17,346 +409,11 @@
       "reference": "Device/cqf-tooling"
     }
   }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Measurement Period",
-      "use": "in",
-      "min": 0,
-      "max": "1",
-      "type": "Period"
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Sex",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Numerator",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Denominator",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Payer",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Any"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Initial Population",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Ethnicity",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Race",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code", "value", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "MedicationAdministration",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
-      "mustSupport": [ "effective", "medication", "status" ],
-      "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "extension", "value", "url" ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Sex"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Sex\":\n  case\n      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }\n      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }\n      else null\n    end"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 0
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Sex"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 1
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Inpatient Encounter During Measurement Period"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Inpatient Encounter During Measurement Period\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient\n                \t\twhere EncounterInpatient.status = 'finished'\n                \t\t       \t\t\tand EncounterInpatient.period ends during \"Measurement Period\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 2
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Qualifying Encounter"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Qualifying Encounter\":\n  \"Inpatient Encounter During Measurement Period\" InpatientEncounter \n  where AgeInYearsAt (start of Global.\"HospitalizationWithObservation\"(InpatientEncounter))>=18"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 3
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Hypoglycemic Medication Administration"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Hypoglycemic Medication Administration\":\n  [\"MedicationAdministration\": \"Hypoglycemics Severe Hypoglycemia\"] HypoMedication where HypoMedication.status= 'completed'"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 4
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Qualifying Encounter with Hypoglycemic Medication Administration"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Qualifying Encounter with Hypoglycemic Medication Administration\":\n  \"Qualifying Encounter\" QualifyingEncounter\n                           with \"Hypoglycemic Medication Administration\" HypoglycemicMedication\n                             such that Global.\"Normalize Interval\"(HypoglycemicMedication.effective) starts during Global.HospitalizationWithObservation ( QualifyingEncounter)"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 5
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Initial Population"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Initial Population\":\n  \"Qualifying Encounter with Hypoglycemic Medication Administration\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 6
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Denominator"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Denominator\":\n  \"Initial Population\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 7
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Severe Hypoglycemic Harm Event"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Severe Hypoglycemic Harm Event\":\n  \"Denominator\" QualifyingEncounter\n    where exists ( [\"Observation\": \"Glucose lab test\"] BloodGlucoseLab\n        with \"Hypoglycemic Medication Administration\" HypoglycemicMeds\n          such that Global.\"Normalize Interval\" ( HypoglycemicMeds.effective ) starts 24 hours or less on or before start of Global.\"Normalize Interval\" ( BloodGlucoseLab.effective )\n            and BloodGlucoseLab.status = 'final'\n            and Global.\"Normalize Interval\" ( HypoglycemicMeds.effective ) starts during Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n        without [\"Observation\": \"Glucose lab test\"] FollowupBloodGlucoseLab\n          such that Global.\"Normalize Interval\" ( FollowupBloodGlucoseLab.effective ) starts during Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n            and Global.\"Normalize Interval\" ( FollowupBloodGlucoseLab.effective ) starts 5 minutes or less after start of Global.\"Normalize Interval\" ( BloodGlucoseLab.effective )\n            and FollowupBloodGlucoseLab.status = 'final'\n            and FollowupBloodGlucoseLab.value > 80 'mg/dL'\n        where Global.\"Normalize Interval\" ( BloodGlucoseLab.effective ) starts during Global.\"HospitalizationWithObservation\" ( QualifyingEncounter )\n          and BloodGlucoseLab.value < 40 'mg/dL'\n    )"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 8
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Numerator"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Numerator\":\n  \"Severe Hypoglycemic Harm Event\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 9
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Payer"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer\"] Payer\n        return {\n          code: Payer.type,\n          period: Payer.period\n        }"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 10
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Payer"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 11
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Ethnicity"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Ethnicity\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 12
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Ethnicity"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 13
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Race"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 14
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "HospitalHarmSevereHypoglycemiaFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Race"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 15
-    } ]
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Measure/HospitalHarmSevereHypoglycemiaFHIR",
   "identifier": [ {
@@ -372,12 +429,12 @@
     "system": "http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/nqf",
     "value": "3503e"
   } ],
-  "version": "0.0.010",
+  "version": "0.0.012",
   "name": "HospitalHarmSevereHypoglycemiaFHIR",
   "title": "Hospital Harm - Severe HypoglycemiaFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2021-10-12T15:42:45-04:00",
+  "date": "2022-01-10T13:47:12-05:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
@@ -455,7 +512,7 @@
   "guidance": "Note the measure is currently confined to using mg/dL as the unit of measurement for glucose results.\n\nTo calculate the hospital-level measure result, divide the total numerator events by the total number of qualifying inpatient hospitalizations (denominator). \n\nQualifying inpatient hospitalizations (denominator) include all patients 18 years of age or older at the start of the encounter, who had at least one hypoglycemic medication administered during the encounter.\n\nTo create the numerator, for each encounter identify: \n1. Any instance of a test for blood glucose with a result less than 40 mg/dL during the encounter (severe hypoglycemic event), with a hypoglycemic medication administered within 24 hours preceding the event and during the encounter (including emergency department and observation stays contiguous with the admission).\nA severe hypoglycemic event is defined as a test (laboratory or point-of-care (POC)) for blood glucose with a result less than 40 mg/dL. The 24-hour timeframe extends from the end of the medication administration to the start of the blood glucose test.\n2. Do not include any severe hypoglycemic events (identified in Step 1) which were followed by a repeat test for blood glucose with a result greater than 80 mg/dL within five minutes of the start of the initial low blood glucose test. \nRationale: This is done to remove false positives that can occur in POC testing. The 5-minute timeframe extends from the start of the severe hypoglycemic test to the start of the repeat hypoglycemic test. \n\nOnly the first qualifying severe hypoglycemic event is counted in the numerator, and only one severe hypoglycemic event is counted per encounter.\n\nThis eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS816v1.0",
   "group": [ {
     "population": [ {
-      "id": "4D00ADDA-73C0-4CDF-A2CD-DF3FE7B86354",
+      "id": "A8112BBE-B5DD-4DC5-A30E-FADF61B68A36",
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -468,7 +525,7 @@
         "expression": "Initial Population"
       }
     }, {
-      "id": "5A040BF1-BEB9-4F00-85D5-335B17B40500",
+      "id": "5DBD675E-098F-470A-BD85-B9349CEF9879",
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
@@ -481,7 +538,7 @@
         "expression": "Denominator"
       }
     }, {
-      "id": "C7B90DDC-DB4F-4E3D-AD80-375A7E08F22A",
+      "id": "86E82608-38FA-4497-8993-1D3F7A31007A",
       "code": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/measure-population",
