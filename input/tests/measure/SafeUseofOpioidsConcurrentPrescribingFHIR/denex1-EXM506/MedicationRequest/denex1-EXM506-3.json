@@ -1,7 +1,7 @@
 {
     "resourceType": "MedicationRequest",
     "id": "denex1-EXM506-3",
-    "status": "completed",
+    "status": "active",
     "intent": "plan",
     "category": [
       {
