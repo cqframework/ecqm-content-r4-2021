@@ -1,0 +1,23 @@
+{
+  "resourceType": "Observation",
+  "id": "ip-EXM844-case2-ObsTemp",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/observation" ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "8310-5",
+      "display": "Body temperature"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/ip-EXM844-case2"
+  },
+  "effectiveDateTime": "2019-06-21T09:30:00",
+  "valueQuantity": {
+    "value": 38.5,
+    "unit": "Cel"
+  }
+}
