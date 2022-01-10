@@ -3,7 +3,7 @@
   "id": "CumulativeMedicationDurationFHIR4",
   "meta": {
     "versionId": "1",
-    "lastUpdated": "2021-06-25T14:28:27.000-06:00",
+    "lastUpdated": "2021-06-25T16:28:27.000-04:00",
     "source": "#WvkAD2m8mJWhJlcs",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-library-cqfm" ]
   },
