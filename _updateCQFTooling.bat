@@ -31,15 +31,14 @@ IF NOT EXIST "%input_cache_path%%tooling_jar%" (
 :create
 ECHO Will place refresh jar here: %input_cache_path%%tooling_jar%
 IF "%skipPrompts%"=="false" (
-    SET /p create="Ok? (Y/N)"
-    IF /I "%create%"=="Y" (
-        MKDIR "%input_cache_path%" 2> NUL
-        GOTO:download
-    )
-) ELSE (
-    MKDIR "%input_cache_path%" 2> NUL
-    GOTO:download
-)
+    SET /p create=Ok? [Y/N]
+    IF /I "%create%"=="Y" goto:mkdir
+) ELSE goto:mkdir
+
+:mkdir
+  MKDIR "%input_cache_path%" 2> NUL
+  GOTO:download
+
 
 GOTO:done
 
@@ -69,6 +68,7 @@ GOTO done
 
 :win10
 POWERSHELL -command "if ('System.Net.WebClient' -as [type]) {(new-object System.Net.WebClient).DownloadFile('%dlurl%','%jarlocation%') } else { Invoke-WebRequest -Uri '%dlurl%' -Outfile '%jarlocation%' }"
+ECHO POWERSHELL -command "if ('System.Net.WebClient' -as [type]) {(new-object System.Net.WebClient).DownloadFile('%dlurl%','%jarlocation%') } else { Invoke-WebRequest -Uri '%dlurl%' -Outfile '%jarlocation%' }"
 ECHO Download complete.
 GOTO done
 
