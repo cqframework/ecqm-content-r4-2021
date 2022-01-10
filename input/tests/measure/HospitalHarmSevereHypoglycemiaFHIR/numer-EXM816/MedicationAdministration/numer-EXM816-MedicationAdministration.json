@@ -1,0 +1,21 @@
+{
+  "resourceType": "MedicationAdministration",
+  "id": "numer-EXM816-MedAdmin",
+  "status": "completed",
+  "medicationCodeableConcept":{
+    "coding":[
+      {
+        "system":"http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code":310490,
+        "display": "glipizide 5 MG Oral Tablet"
+      }
+    ]
+  },
+  "subject":{
+    "reference":"Patient/numer-EXM816"
+  },
+  "effectivePeriod": {
+    "start": "2019-01-17T06:30:00",
+    "end": "2019-01-17T06:30:00"
+  }
+}
