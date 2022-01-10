@@ -139,19 +139,6 @@
                 <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
                     <valueBoolean value="false"/>
                 </extension>
-                <description value="Verify that the Group is as expected in the response"/>
-                <direction value="response"/>
-                <expression value="MeasureReport.group.id"/>
-                <operator value="equals"/>
-                <value value="group-1"/>
-                <warningOnly value="false"/>
-            </assert>
-        </action>
-        <action>
-            <assert>
-                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
-                    <valueBoolean value="false"/>
-                </extension>
                 <description value="Verify that the Measure Score is as expected in the response"/>
                 <direction value="response"/>
                 <operator value="equals"/>
