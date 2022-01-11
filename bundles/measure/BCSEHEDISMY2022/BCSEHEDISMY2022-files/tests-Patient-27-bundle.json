@@ -1,0 +1,105 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-27-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Condition",
+      "id": "Condition-27-93",
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "248802009"
+        } ]
+      },
+      "bodySite": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "24028007",
+          "display": "Right"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-27"
+      },
+      "onsetDateTime": "2017-10-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Condition/Condition-27-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Condition",
+      "id": "Condition-27-94",
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "429009003"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-27"
+      },
+      "onsetDateTime": "2017-10-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Condition/Condition-27-94"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-27-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-27"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-27-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-27",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "RightUnilateralMastectomyStatusPostLeftMastectomy" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-27"
+    }
+  } ]
+}

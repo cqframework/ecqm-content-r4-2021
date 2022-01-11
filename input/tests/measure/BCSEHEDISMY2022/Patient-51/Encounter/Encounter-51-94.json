@@ -1,0 +1,29 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter-51-94",
+  "subject": {
+    "reference": "Patient/Patient-51"
+  },
+  "period": {
+    "start": "2017-12-31T00:00:00.000Z",
+    "end": "2017-12-31T23:59:59.000Z"
+  },
+  "diagnosis": [
+    {
+      "condition": {
+        "reference": "Condition/1178987"
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "444971000124105",
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA"
+        }
+      ]
+    }
+  ]
+}

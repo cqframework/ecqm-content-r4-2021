@@ -3,7 +3,7 @@
   "id": "HybridHWMFHIR",
   "meta": {
     "versionId": "10",
-    "lastUpdated": "2021-12-04T21:05:18.000-05:00",
+    "lastUpdated": "2021-12-04T19:05:18.000-07:00",
     "source": "#GbZf7BqwGkd2i6D1",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cohort-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -208,7 +208,7 @@
         "code": "module-definition"
       } ]
     },
-    "date": "2022-01-10T13:47:12-05:00",
+    "date": "2022-01-10T22:31:17-07:00",
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
@@ -417,12 +417,20 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2363"
       } ]
     }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-      "mustSupport": [ "period", "type", "status" ],
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+      "mustSupport": [ "type" ],
       "codeFilter": [ {
         "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1104.10"
+      } ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+      "mustSupport": [ "period", "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
     }, {
       "type": "Encounter",
@@ -441,20 +449,12 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
       } ]
     }, {
-      "type": "Coverage",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-      "mustSupport": [ "type" ],
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
       "codeFilter": [ {
         "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1104.10"
-      } ]
-    }, {
-      "type": "Coverage",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-      "mustSupport": [ "period", "type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
       } ]
     } ]
   } ],
@@ -492,7 +492,7 @@
   "title": "Core Clinical Data Elements for the Hybrid Hospital-Wide (All-Condition, All-Procedure) Risk-Standardized Mortality Measure (HWM) FHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2022-01-10T13:47:12-05:00",
+  "date": "2022-01-11T00:31:17-05:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

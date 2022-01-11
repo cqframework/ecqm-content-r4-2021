@@ -1,0 +1,66 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-76-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "id": "DiagnosticReport-76-93",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "version": "2.69.20AB",
+          "code": "72139-9"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-76"
+      },
+      "effectiveDateTime": "2017-10-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "DiagnosticReport/DiagnosticReport-76-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-76-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-76"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-76-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-76",
+      "name": [ {
+        "family": "NumPass",
+        "given": [ "MammographyDiagnosticReportDuringPeriod" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-76"
+    }
+  } ]
+}

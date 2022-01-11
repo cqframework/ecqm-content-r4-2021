@@ -1,0 +1,21 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "DiagnosticReport-79-93",
+  "subject": {
+    "reference": "Patient/Patient-79"
+  },
+  "effectivePeriod": {
+    "start": "2020-01-01T00:00:00.000Z",
+    "end": "2020-01-01T00:00:00.000Z"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "72139-9",
+        "system": "http://loinc.org",
+        "version": "2.69.20AB"
+      }
+    ]
+  }
+}

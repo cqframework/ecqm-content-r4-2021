@@ -1,0 +1,88 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-56-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-56-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-56"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-56-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-56-94",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "304566005"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-56"
+      },
+      "period": {
+        "start": "2018-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-56-94"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "Observation-56-93",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "469860004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-56"
+      },
+      "effectiveDateTime": "2019-01-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/Observation-56-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-56",
+      "name": [ {
+        "family": "DenexFail",
+        "given": [ "AucteInpatientEncounterNoAdvancedIllnessDiagnosis" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1953-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-56"
+    }
+  } ]
+}

@@ -1,0 +1,20 @@
+{
+  "resourceType": "Observation",
+  "id": "Observation-68-93",
+  "subject": {
+    "reference": "Patient/Patient-68"
+  },
+  "effectivePeriod": {
+    "start": "2019-02-01T00:00:00.000Z",
+    "end": "2019-02-02T00:00:00.000Z"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "71007-9",
+        "system": "http://loinc.org"
+      }
+    ]
+  }
+}

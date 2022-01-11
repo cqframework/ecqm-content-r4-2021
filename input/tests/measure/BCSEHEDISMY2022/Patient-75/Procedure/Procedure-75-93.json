@@ -1,0 +1,21 @@
+{
+  "resourceType": "Procedure",
+  "id": "Procedure-75-93",
+  "subject": {
+    "reference": "Patient/Patient-75"
+  },
+  "performedPeriod": {
+    "start": "2019-01-01T00:00:00.000Z",
+    "end": "2019-01-01T00:00:00.000Z"
+  },
+  "status": "in-progress",
+  "code": {
+    "coding": [
+      {
+        "code": "443761007",
+        "system": "http://snomed.info/sct",
+        "version": "2017.09.20AA"
+      }
+    ]
+  }
+}

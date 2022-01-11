@@ -1,0 +1,118 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-55-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Condition",
+      "id": "1178987",
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active"
+        } ]
+      },
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "783771003"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-55"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Condition/1178987"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-55-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-55"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-55-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-55-94",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "304566005"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-55"
+      },
+      "period": {
+        "start": "2018-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/1178987"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-55-94"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "Observation-55-93",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "469860004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-55"
+      },
+      "effectiveDateTime": "2019-01-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/Observation-55-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-55",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "AcuteInpatientEncounterNoStatusDuringMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1953-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-55"
+    }
+  } ]
+}

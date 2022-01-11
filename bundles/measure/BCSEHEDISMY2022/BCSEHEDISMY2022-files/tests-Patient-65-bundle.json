@@ -1,0 +1,68 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-65-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-65-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-65"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-65-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-65-93",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "207195004"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-65"
+      },
+      "period": {
+        "start": "2017-10-01T00:00:00.000Z",
+        "end": "2019-04-02T00:00:00.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-65-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-65",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "NursingFacilityVisit91DaysDuringMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1953-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-65"
+    }
+  } ]
+}

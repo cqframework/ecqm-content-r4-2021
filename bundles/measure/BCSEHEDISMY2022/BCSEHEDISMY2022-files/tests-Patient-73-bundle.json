@@ -1,0 +1,69 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-73-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-73-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-73"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-73-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-73",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "PalliativeCareInterventionOverlapsAfterMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-73"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "Procedure-73-93",
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "443761007"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-73"
+      },
+      "performedPeriod": {
+        "start": "2019-12-31T00:00:00.000Z",
+        "end": "2020-01-01T00:00:00.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/Procedure-73-93"
+    }
+  } ]
+}

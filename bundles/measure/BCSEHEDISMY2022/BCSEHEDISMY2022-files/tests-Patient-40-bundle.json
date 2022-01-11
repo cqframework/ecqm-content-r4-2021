@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-40-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "DeviceRequest",
+      "id": "DeviceRequest-40-93",
+      "codeCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "469860004"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-40"
+      },
+      "authoredOn": "2018-12-31T23:59:59.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "DeviceRequest/DeviceRequest-40-93"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-40-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-40"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-40-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "MedicationDispense",
+      "id": "MedicationDispense-40-94",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "1599805"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-40"
+      },
+      "whenHandedOver": "2018-01-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "MedicationDispense/MedicationDispense-40-94"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-40",
+      "name": [ {
+        "family": "DenexFail",
+        "given": [ "FrailtyDeviceRequestB4MP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1953-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-40"
+    }
+  } ]
+}

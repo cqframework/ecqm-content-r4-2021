@@ -3,7 +3,7 @@
   "id": "HospitalHarmSevereHypoglycemiaFHIR",
   "meta": {
     "versionId": "24",
-    "lastUpdated": "2021-11-10T13:00:07.000-05:00",
+    "lastUpdated": "2021-11-10T11:00:07.000-07:00",
     "source": "#fKTxPT5mq7OLNtBu",
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
@@ -259,7 +259,7 @@
         "code": "module-definition"
       } ]
     },
-    "date": "2022-01-10T13:47:12-05:00",
+    "date": "2022-01-10T22:31:17-07:00",
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
@@ -369,14 +369,6 @@
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-      "mustSupport": [ "period", "type", "status" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
       "mustSupport": [ "period", "type" ],
       "codeFilter": [ {
         "path": "type",
@@ -389,6 +381,14 @@
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
       } ]
     }, {
       "type": "Coverage",
@@ -434,7 +434,7 @@
   "title": "Hospital Harm - Severe HypoglycemiaFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2022-01-10T13:47:12-05:00",
+  "date": "2022-01-11T00:31:17-05:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

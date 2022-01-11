@@ -1,0 +1,29 @@
+{
+  "resourceType": "Encounter",
+  "id": "Encounter-50-95",
+  "subject": {
+    "reference": "Patient/Patient-50"
+  },
+  "period": {
+    "start": "2018-01-01T00:00:00.000Z",
+    "end": "2018-01-01T23:59:59.000Z"
+  },
+  "diagnosis": [
+    {
+      "condition": {
+        "reference": "Condition/1178987"
+      }
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "99220",
+          "system": "http://www.ama-assn.org/go/cpt",
+          "version": "2017.09.20AA"
+        }
+      ]
+    }
+  ]
+}

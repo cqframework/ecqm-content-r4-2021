@@ -4,6 +4,36 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
+      "resourceType": "Coverage",
+      "id": "ip-EXM844-case0-Coverage",
+      "status": "active",
+      "type": {
+        "coding": [ {
+          "system": "urn:oid:2.16.840.1.113883.3.221.5",
+          "code": "1",
+          "display": "MEDICARE"
+        } ]
+      },
+      "policyHolder": {
+        "reference": "Patient/ip-EXM844-case0"
+      },
+      "beneficiary": {
+        "reference": "Patient/ip-EXM844-case0"
+      },
+      "period": {
+        "start": "2019-06-30T07:00:00",
+        "end": "2019-07-22T08:15:00"
+      },
+      "payor": [ {
+        "reference": "Patient/ip-EXM844-case0"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Coverage/ip-EXM844-case0-Coverage"
+    }
+  }, {
+    "resource": {
       "resourceType": "Encounter",
       "id": "ip-EXM844-case0-Encounter",
       "meta": {
@@ -84,36 +114,6 @@
     "request": {
       "method": "PUT",
       "url": "Patient/ip-EXM844-case0"
-    }
-  }, {
-    "resource": {
-      "resourceType": "Coverage",
-      "id": "ip-EXM844-case0-Coverage",
-      "status": "active",
-      "type": {
-        "coding": [ {
-          "system": "urn:oid:2.16.840.1.113883.3.221.5",
-          "code": "1",
-          "display": "MEDICARE"
-        } ]
-      },
-      "policyHolder": {
-        "reference": "Patient/ip-EXM844-case0"
-      },
-      "beneficiary": {
-        "reference": "Patient/ip-EXM844-case0"
-      },
-      "period": {
-        "start": "2019-06-30T07:00:00",
-        "end": "2019-07-22T08:15:00"
-      },
-      "payor": [ {
-        "reference": "Patient/ip-EXM844-case0"
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Coverage/ip-EXM844-case0-Coverage"
     }
   } ]
 }

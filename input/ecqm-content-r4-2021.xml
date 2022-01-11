@@ -23,7 +23,7 @@
     <dependsOn id="QMIG">
       <uri value="http://hl7.org/fhir/us/cqfmeasures/ImplementationGuide/hl7.fhir.us.cqfmeasures"/>
       <packageId value="hl7.fhir.us.cqfmeasures"/>
-      <version value="2.0.0"/>
+      <version value="current"/>
     </dependsOn>
     <definition>
         <page>

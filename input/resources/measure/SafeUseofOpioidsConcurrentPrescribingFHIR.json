@@ -8,6 +8,405 @@
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/proportion-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
   "language": "en",
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+        "code": "discharge",
+        "display": "Discharge"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Sex"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Sex\":\n  case\n      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }\n      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }\n      else null\n    end"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 0
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Sex"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "MATGlobalCommonFunctionsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "Inpatient Encounter"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Inpatient Encounter\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient\n      \t\twhere EncounterInpatient.status = 'finished'\n      \t\t    and \"LengthInDays\"(EncounterInpatient.period) <= 120\n      \t\t\tand EncounterInpatient.period ends during \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Inpatient Encounter with Age Greater than or Equal to 18"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Inpatient Encounter with Age Greater than or Equal to 18\":\n  Global.\"Inpatient Encounter\" EncounterInpatient\n                           where  (AgeInYearsAt(date from start of EncounterInpatient.period)) >=18\n                             and EncounterInpatient.status = 'finished'"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 3
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Numerator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Numerator\":\n  /*Encounters of patients prescribed two or more opioids or an opioid and benzodiazepine at discharge.\n                      */\n                    (  ( \"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                           where (Count([\"MedicationRequest\": medication in \"Schedule II & III Opioid Medications\"] Opioids\n                                  where Opioids.authoredOn during InpatientEncounter.period\n                                  return distinct Opioids.medication\n                            )>= 2\n                         ))\n                            union ( \"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                            with [\"MedicationRequest\": medication in \"Schedule II & III Opioid Medications\"] OpioidsDischarge\n                              such that OpioidsDischarge.authoredOn during InpatientEncounter.period\n                            with [\"MedicationRequest\": medication in \"Schedule IV Benzodiazepines\"] BenzodiazepinesDischarge\n                              such that BenzodiazepinesDischarge.authoredOn during InpatientEncounter.period\n                        ))"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  (\"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                          with ( [\"MedicationRequest\":  \"Schedule II & III Opioid Medications\"]\n                            union [\"MedicationRequest\":  \"Schedule IV Benzodiazepines\"] Medications\n             where exists Medications.category C where FHIRHelpers.\"ToConcept\"(C) ~ Global.\"Discharge\" )OpioidOrBenzodiazepineDischargeMedication\n                            such that OpioidOrBenzodiazepineDischargeMedication.authoredOn during InpatientEncounter.period\n                 and OpioidOrBenzodiazepineDischargeMedication.status = 'active'  and OpioidOrBenzodiazepineDischargeMedication.intent = 'plan')"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Denominator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer\"] Payer\n        return {\n          code: Payer.type,\n          period: Payer.period\n        }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 7
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 8
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 9
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 10
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Denominator Exclusion"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Denominator Exclusion\":\n  /*Excludes encounters of patients with cancer or who are receiving palliative or hospice care at the time of the encounter*/\n                       (\"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                          where exists ( [\"Condition\": \"All Primary and Secondary Cancer\"] Cancer\n                              where Global.\"Prevalence Period\" (Cancer) overlaps InpatientEncounter.period\n                          )\n\n                            or exists ( [\"ServiceRequest\": \"Palliative or Hospice Care\"] PalliativeOrHospiceCareOrder\n                                where PalliativeOrHospiceCareOrder.authoredOn during InpatientEncounter.period\n                                and PalliativeOrHospiceCareOrder.intent = 'order'\n                            )\n                            or exists ( [\"Procedure\": \"Palliative or Hospice Care\"] PalliativeOrHospiceCarePerformed\n                                where Global.\"Normalize Interval\" ( PalliativeOrHospiceCarePerformed.performed) overlaps InpatientEncounter.period\n                            )\n                            or exists ( \"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                                where InpatientEncounter.hospitalization.dischargeDisposition in \"Discharge To Acute Care Facility\"\n                                  or InpatientEncounter.hospitalization.dischargeDisposition in \"Hospice Care Referral or Admission\"\n                                  or InpatientEncounter.hospitalization.dischargeDisposition in \"Patient Expired\"\n                            ) return InpatientEncounter )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 11
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElementsFHIR4"
+      }, {
+        "url": "name",
+        "valueString": "SDE Race"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 12
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "SDE Race"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 13
+      } ]
+    } ],
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    },
+    "date": "2022-01-10T22:31:17-07:00",
+    "relatedArtifact": [ {
+      "type": "depends-on",
+      "display": "Library SDE",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4|2.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
+    }, {
+      "type": "depends-on",
+      "display": "Library Global",
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
+    }, {
+      "type": "depends-on",
+      "display": "Code system MedicationRequestCategory",
+      "resource": "http://terminology.hl7.org/CodeSystem/medicationrequest-category"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Encounter Inpatient",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Schedule II & III Opioid Medications",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.165"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Schedule IV Benzodiazepines",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1125.1"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Payer",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+    }, {
+      "type": "depends-on",
+      "display": "Value set All Primary and Secondary Cancer",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.161"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Palliative or Hospice Care",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1579"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Discharge To Acute Care Facility",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.87"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Hospice Care Referral or Admission",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1116.365"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Patient Expired",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.309"
+    } ],
+    "parameter": [ {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Any"
+    }, {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE Ethnicity",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    }, {
+      "name": "Denominator Exclusion",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Encounter"
+    }, {
+      "name": "SDE Race",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Coding"
+    } ],
+    "dataRequirement": [ {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+      "mustSupport": [ "period", "hospitalization", "hospitalization.dischargeDisposition", "type", "status" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "extension", "value", "url" ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+      "mustSupport": [ "period", "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
+    }, {
+      "type": "MedicationRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+      "mustSupport": [ "authoredOn", "medication" ],
+      "codeFilter": [ {
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.165"
+      } ]
+    }, {
+      "type": "MedicationRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+      "mustSupport": [ "authoredOn", "medication", "category" ],
+      "codeFilter": [ {
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1125.1"
+      } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.161"
+      } ]
+    }, {
+      "type": "ServiceRequest",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+      "mustSupport": [ "code", "authoredOn", "intent" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1579"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1579"
+      } ]
+    } ]
+  } ],
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
     "valueCode": "Encounter"
@@ -17,376 +416,11 @@
       "reference": "Device/cqf-tooling"
     }
   }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Measurement Period",
-      "use": "in",
-      "min": 0,
-      "max": "1",
-      "type": "Period"
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Sex",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Numerator",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Denominator",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Payer",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Any"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Initial Population",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Ethnicity",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Denominator Exclusion",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Encounter"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "SDE Race",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "MedicationRequest",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-      "mustSupport": [ "authoredOn", "medication" ],
-      "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.165"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "MedicationRequest",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-      "mustSupport": [ "authoredOn", "medication", "category" ],
-      "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1125.1"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-      "mustSupport": [ "period", "hospitalization", "hospitalization.dischargeDisposition", "type", "status" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "extension", "value", "url" ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.161"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "ServiceRequest",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-      "mustSupport": [ "code", "authoredOn", "intent" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1579"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-      "mustSupport": [ "code", "performed" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1.1579"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
-    "valueCoding": {
-      "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
-      "code": "discharge",
-      "display": "Discharge"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Sex"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Sex\":\n  case\n      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }\n      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }\n      else null\n    end"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 0
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Sex"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 1
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "MATGlobalCommonFunctionsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "Inpatient Encounter"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Inpatient Encounter\":\n  [Encounter: \"Encounter Inpatient\"] EncounterInpatient\n      \t\twhere EncounterInpatient.status = 'finished'\n      \t\t    and \"LengthInDays\"(EncounterInpatient.period) <= 120\n      \t\t\tand EncounterInpatient.period ends during \"Measurement Period\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 2
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Inpatient Encounter with Age Greater than or Equal to 18"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Inpatient Encounter with Age Greater than or Equal to 18\":\n  Global.\"Inpatient Encounter\" EncounterInpatient\n                           where  (AgeInYearsAt(date from start of EncounterInpatient.period)) >=18\n                             and EncounterInpatient.status = 'finished'"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 3
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Numerator"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Numerator\":\n  /*Encounters of patients prescribed two or more opioids or an opioid and benzodiazepine at discharge.\n                      */\n                    (  ( \"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                           where (Count([\"MedicationRequest\": medication in \"Schedule II & III Opioid Medications\"] Opioids\n                                  where Opioids.authoredOn during InpatientEncounter.period\n                                  return distinct Opioids.medication\n                            )>= 2\n                         ))\n                            union ( \"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                            with [\"MedicationRequest\": medication in \"Schedule II & III Opioid Medications\"] OpioidsDischarge\n                              such that OpioidsDischarge.authoredOn during InpatientEncounter.period\n                            with [\"MedicationRequest\": medication in \"Schedule IV Benzodiazepines\"] BenzodiazepinesDischarge\n                              such that BenzodiazepinesDischarge.authoredOn during InpatientEncounter.period\n                        ))"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 4
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Initial Population"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Initial Population\":\n  (\"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                          with ( [\"MedicationRequest\":  \"Schedule II & III Opioid Medications\"]\n                            union [\"MedicationRequest\":  \"Schedule IV Benzodiazepines\"] Medications\n             where exists Medications.category C where FHIRHelpers.\"ToConcept\"(C) ~ Global.\"Discharge\" )OpioidOrBenzodiazepineDischargeMedication\n                            such that OpioidOrBenzodiazepineDischargeMedication.authoredOn during InpatientEncounter.period\n                 and OpioidOrBenzodiazepineDischargeMedication.status = 'active'  and OpioidOrBenzodiazepineDischargeMedication.intent = 'plan')"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 5
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Denominator"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Denominator\":\n  \"Initial Population\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 6
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Payer"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer\"] Payer\n        return {\n          code: Payer.type,\n          period: Payer.period\n        }"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 7
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Payer"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 8
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Ethnicity"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Ethnicity\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 9
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Ethnicity"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 10
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "Denominator Exclusion"
-    }, {
-      "url": "statement",
-      "valueString": "define \"Denominator Exclusion\":\n  /*Excludes encounters of patients with cancer or who are receiving palliative or hospice care at the time of the encounter*/\n                       (\"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                          where exists ( [\"Condition\": \"All Primary and Secondary Cancer\"] Cancer\n                              where Global.\"Prevalence Period\" (Cancer) overlaps InpatientEncounter.period\n                          )\n\n                            or exists ( [\"ServiceRequest\": \"Palliative or Hospice Care\"] PalliativeOrHospiceCareOrder\n                                where PalliativeOrHospiceCareOrder.authoredOn during InpatientEncounter.period\n                                and PalliativeOrHospiceCareOrder.intent = 'order'\n                            )\n                            or exists ( [\"Procedure\": \"Palliative or Hospice Care\"] PalliativeOrHospiceCarePerformed\n                                where Global.\"Normalize Interval\" ( PalliativeOrHospiceCarePerformed.performed) overlaps InpatientEncounter.period\n                            )\n                            or exists ( \"Inpatient Encounter with Age Greater than or Equal to 18\" InpatientEncounter\n                                where InpatientEncounter.hospitalization.dischargeDisposition in \"Discharge To Acute Care Facility\"\n                                  or InpatientEncounter.hospitalization.dischargeDisposition in \"Hospice Care Referral or Admission\"\n                                  or InpatientEncounter.hospitalization.dischargeDisposition in \"Patient Expired\"\n                            ) return InpatientEncounter )"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 11
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SupplementalDataElementsFHIR4"
-    }, {
-      "url": "name",
-      "valueString": "SDE Race"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 12
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "SafeUseofOpioidsConcurrentPrescribingFHIR"
-    }, {
-      "url": "name",
-      "valueString": "SDE Race"
-    }, {
-      "url": "statement",
-      "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 13
-    } ]
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Measure/SafeUseofOpioidsConcurrentPrescribingFHIR",
   "identifier": [ {
@@ -407,7 +441,7 @@
   "title": "Safe Use of Opioids - Concurrent PrescribingFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2022-01-07T15:18:32-07:00",
+  "date": "2022-01-10T22:31:17-07:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
