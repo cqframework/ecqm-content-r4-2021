@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-71",
+  "name": [
+    {
+      "given": [
+        "PalliativeCareEncounterOverlapsB4MP"
+      ],
+      "family": "DenexPass"
+    }
+  ],
+  "birthDate": "1967-01-01",
+  "gender": "female"
+}

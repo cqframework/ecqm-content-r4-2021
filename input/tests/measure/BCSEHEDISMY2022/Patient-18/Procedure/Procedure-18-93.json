@@ -1,0 +1,21 @@
+{
+  "resourceType": "Procedure",
+  "id": "Procedure-18-93",
+  "subject": {
+    "reference": "Patient/Patient-18"
+  },
+  "performedPeriod": {
+    "start": "2019-12-31T23:59:59.000Z",
+    "end": "2020-01-01T01:00:00.000Z"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "385763009",
+        "system": "http://snomed.info/sct",
+        "version": "2017.09.20AA"
+      }
+    ]
+  }
+}

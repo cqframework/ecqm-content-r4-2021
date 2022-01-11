@@ -1,0 +1,17 @@
+{
+  "resourceType": "DeviceRequest",
+  "id": "DeviceRequest-40-93",
+  "subject": {
+    "reference": "Patient/Patient-40"
+  },
+  "authoredOn": "2018-12-31T23:59:59.000Z",
+  "codeCodeableConcept": {
+    "coding": [
+      {
+        "code": "469860004",
+        "system": "http://snomed.info/sct",
+        "version": "2017.09.20AA"
+      }
+    ]
+  }
+}

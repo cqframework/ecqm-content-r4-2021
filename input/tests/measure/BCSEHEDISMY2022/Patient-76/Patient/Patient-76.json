@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient-76",
+  "name": [
+    {
+      "given": [
+        "MammographyDiagnosticReportDuringPeriod"
+      ],
+      "family": "NumPass"
+    }
+  ],
+  "birthDate": "1967-01-01",
+  "gender": "female"
+}

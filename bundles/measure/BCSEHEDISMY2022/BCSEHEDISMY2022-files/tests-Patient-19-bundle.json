@@ -1,0 +1,65 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-19-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-19-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-19"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-19-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-19",
+      "name": [ {
+        "family": "DenexFail",
+        "given": [ "HospiceCareAmbulatoryStatusNull" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-19"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "Procedure-19-93",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "385763009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-19"
+      },
+      "performedDateTime": "2019-01-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/Procedure-19-93"
+    }
+  } ]
+}

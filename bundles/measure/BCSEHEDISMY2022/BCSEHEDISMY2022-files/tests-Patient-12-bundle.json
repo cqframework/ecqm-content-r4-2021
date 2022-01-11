@@ -1,0 +1,44 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-12-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-12-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-12"
+      },
+      "period": {
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-12-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-12",
+      "name": [ {
+        "family": "IPFail",
+        "given": [ "OfficeVisitNoStartDate" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-12"
+    }
+  } ]
+}

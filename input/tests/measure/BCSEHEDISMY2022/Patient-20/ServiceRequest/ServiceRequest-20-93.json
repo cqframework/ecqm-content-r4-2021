@@ -1,0 +1,18 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "ServiceRequest-20-93",
+  "subject": {
+    "reference": "Patient/Patient-20"
+  },
+  "authoredOn": "2019-01-01T00:00:00.000Z",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "code": "385763009",
+        "system": "http://snomed.info/sct",
+        "version": "2017.09.20AA"
+      }
+    ]
+  }
+}

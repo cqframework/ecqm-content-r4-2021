@@ -1,0 +1,25 @@
+{
+  "resourceType": "Condition",
+  "id": "Condition-27-94",
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/Patient-27"
+  },
+  "onsetDateTime": "2017-10-01T00:00:00.000Z",
+  "code": {
+    "coding": [
+      {
+        "code": "429009003",
+        "system": "http://snomed.info/sct",
+        "version": "2017.09.20AA"
+      }
+    ]
+  }
+}

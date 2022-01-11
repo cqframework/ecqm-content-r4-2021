@@ -1,0 +1,66 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-20-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Encounter-20-92",
+      "status": "finished",
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "30346009"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Patient-20"
+      },
+      "period": {
+        "start": "2019-01-01T00:00:00.000Z",
+        "end": "2019-12-31T23:59:59.000Z"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/Encounter-20-92"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "Patient-20",
+      "name": [ {
+        "family": "DenexPass",
+        "given": [ "HospiceServiceRequestDuringMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1967-01-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/Patient-20"
+    }
+  }, {
+    "resource": {
+      "resourceType": "ServiceRequest",
+      "id": "ServiceRequest-20-93",
+      "intent": "order",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2017.09.20AA",
+          "code": "385763009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Patient-20"
+      },
+      "authoredOn": "2019-01-01T00:00:00.000Z"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "ServiceRequest/ServiceRequest-20-93"
+    }
+  } ]
+}
