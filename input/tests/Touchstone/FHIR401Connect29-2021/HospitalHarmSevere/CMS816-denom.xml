@@ -60,7 +60,7 @@
                 <encodeRequestUrl value="true"/>
                 <method value="get"/>
                 <origin value="1"/>
-                <params value="/HospitalHarmHyperglycemiainHospitalizedPatientsFHIR/$evaluate-measure?patient=Patient/denom-EXM816&amp;periodStart=2019-01-01&amp;periodEnd=2019-12-31"/>
+                <params value="/HospitalHarmSevereHypoglycemiaFHIR/$evaluate-measure?patient=Patient/denom-EXM816&amp;periodStart=2019-01-01&amp;periodEnd=2019-12-31"/>
                 <responseId value="searchResponse"/>
             </operation>
         </action>
