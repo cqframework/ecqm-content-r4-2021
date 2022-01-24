@@ -11,3 +11,15 @@ This implementation guides contains electronic Clinical Quality Measure (eCQM) s
 as FHIR Measure and Library resources.
 
 For a complete listing of the Measures in this IG, refer to the [Measures](measures.html) page.
+
+### Program Libraries
+
+<table class="grid">
+    <thead>
+        <tr><th>Inpatient Quality Reporting</th><th>Outpatient Quality Reporting</th><th>Eligible Professionals and Eligible Clinicians</th></tr>
+    </thead>
+    <tbody>
+        <tr><td><a href="Library-EHQualityProgram.html">EH/CAH Quality Program</a></td><td><a href="Library-ECQualityProgram.html">EP/EC Quality Program</a></td><td></td></tr>
+        <tr><td><a href="Library-PreRulemaking.html">Pre-rulemaking Measures</a></td><td></td><td></td></tr>
+    </tbody>
+</table>
