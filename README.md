@@ -53,7 +53,7 @@ The following table provides an index to the currently available library content
 |[CMS74FHIR](input/resources/measure/PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR.json)|Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists (CMS74v11)|
 |[CMS104FHIR](input/resources/measure/DischargedonAntithromboticTherapyFHIR.json)|Discharged on Antithrombotic Therapy (CMS104v10)
 |[CMS108FHIR](input/resources/measure/IntensiveCareUnitVenousThromboembolismProphylaxisFHIR.json)|Intensive Care Unit Venous Thromboembolism Prophylaxis (CMS108v10)
-|[CMS122FHIR](input/resources/measure/DiabetesHemoglobinA1cHbA1cPoorControl9FHIR.json)|Cervical Cancer Screening (CMS122v10)|
+|[CMS122FHIR](input/resources/measure/DiabetesHemoglobinA1cHbA1cPoorControl9FHIR.json)|Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%) (CMS122v10)|
 |[CMS124FHIR](input/resources/measure/CervicalCancerScreeningFHIR.json)|Cervical Cancer Screening (CMS124v10)|
 |[CMS125FHIR](input/resources/measure/BreastCancerScreeningsFHIR.json)|Breast Cancer Screening (CMS125v10)|
 |[CMS130FHIR](input/resources/measure/ColorectalCancerScreeningsFHIR.json)|Colorectal Cancer Screening (CMS130v10)|
