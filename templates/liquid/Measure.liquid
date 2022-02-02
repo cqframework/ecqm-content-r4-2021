@@ -360,7 +360,7 @@
                                     <tr>
                                         {% for statementExtension in extension.extension.where(url = 'statement') %}
                                             <td></td>
-                                        <td><pre><code class="language-cql">{{statementExtension.value.escape('html')}}</code></pre></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql"  class="language-cql">{{statementExtension.value.escape('html')}}</code></pre></td>
                                         {% endfor %}
                                     </tr>
                                 {% endfor %}
@@ -451,7 +451,7 @@
                                     </tr>
                                 </table>
                                 {% for statementExtension in extension.extension.where(url = 'statement') %}
-                                    <pre><code class="language-cql">{{statementExtension.value.escape('html')}}</code></pre>
+                                    <pre class="highlight language-cql"><code data-lang="cql" class="language-cql">{{statementExtension.value.escape('html')}}</code></pre>
                                 {% endfor %}
                                 <br/><br/>
                             {% endfor %}
