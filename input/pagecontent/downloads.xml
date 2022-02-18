@@ -24,6 +24,9 @@
 					<a href="definitions.ttl.zip">Turtle</a>
 				</td>
 {% endunless %}
+				<td>
+					These files contain all of the rules about what makes the profiles for this IG valid in xml and json format.
+				</td>
 			</tr>
 			<tr>
 				<th>Examples</th>
@@ -42,6 +45,9 @@
 					<a href="examples.ttl.zip">Turtle</a>
 				</td>
 {% endunless %}
+				<td>
+					Examples in xml and json format of all the example libraries and measures used in this IG.
+				</td>
 			</tr>
 		</tbody>
 	</table>
