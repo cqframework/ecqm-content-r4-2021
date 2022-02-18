@@ -19,6 +19,15 @@
         <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures">Quality Measure IG <img src="external.png" style="text-align: baseline"/></a>
       </li>
       <li>
+        <a target="_blank" href="https://ecqi.healthit.gov/">eCQI RC<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="http://build.fhir.org/ig/HL7/fhir-qi-core/index.html">QI-Core<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
+        <a target="_blank" href="https://build.fhir.org/ig/HL7/davinci-deqm/index.html">DEQM<img src="external.png" style="text-align: baseline"/></a>
+      </li>
+      <li>
         <a href="downloads.html">Downloads</a>
       </li>
     </ul>
