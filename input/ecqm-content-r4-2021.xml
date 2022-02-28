@@ -12,7 +12,7 @@
     <contact>
       <telecom>
         <system value="url"/>
-        <value value="https://github.com/cqframework/ecqm-content-r4"/>
+        <value value="https://github.com/cqframework/ecqm-content-r4-2021"/>
       </telecom>
     </contact>
     <description value="Draft electronic Clinical Quality Measure (eCQM) Implementation Guide"/>

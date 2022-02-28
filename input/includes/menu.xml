@@ -10,22 +10,22 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR Spec <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="{{site.data.fhir.path}}index.html">FHIR Spec</a>
       </li>
       <li>
-        <a target="_blank" href="http://cql.hl7.org">CQL Spec <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="http://cql.hl7.org">CQL Spec</a>
       </li>
       <li>
-        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures">Quality Measure IG <img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="http://hl7.org/fhir/us/cqfmeasures">Quality Measure IG</a>
       </li>
       <li>
-        <a target="_blank" href="https://ecqi.healthit.gov/">eCQI RC<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="https://ecqi.healthit.gov/">eCQI RC</a>
       </li>
       <li>
-        <a target="_blank" href="http://build.fhir.org/ig/HL7/fhir-qi-core/index.html">QI-Core<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="http://build.fhir.org/ig/HL7/fhir-qi-core/index.html">QI-Core</a>
       </li>
       <li>
-        <a target="_blank" href="https://build.fhir.org/ig/HL7/davinci-deqm/index.html">DEQM<img src="external.png" style="text-align: baseline"/></a>
+        <a target="_blank" href="https://build.fhir.org/ig/HL7/davinci-deqm/index.html">DEQM</a>
       </li>
       <li>
         <a href="downloads.html">Downloads</a>
