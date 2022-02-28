@@ -12,8 +12,8 @@
       "id": "exp-params",
       "parameter": [
         {
-          "name" : "system-version",
-          "valueUri" : "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
+          "name": "system-version",
+          "valueUri": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
         }
       ]
     }
@@ -23,6 +23,12 @@
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-expansionParameters",
       "valueReference": {
         "reference": "#exp-params"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+      "valueReference": {
+        "reference": "Device/cqf-tooling"
       }
     }
   ],
@@ -59,15 +65,7 @@
       ]
     }
   ],
-  "jurisdiction": [{
-    "coding": [{
-      "system": "urn:iso:std:iso:3166",
-      "code": "US"
-    }]
-  }],
   "description": "This library is an example of a quality program specification",
-  "approvalDate": "2019-08-03",
-  "lastReviewDate": "2019-08-03",
   "useContext": [
     {
       "code": {
@@ -85,21 +83,33 @@
       }
     }
   ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "approvalDate": "2019-08-03",
+  "lastReviewDate": "2019-08-03",
   "relatedArtifact": [
     {
       "type": "composed-of",
-      "resource": "http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyFHIR|2.0.012",
-      "display": "Discharged on Antithrombotic Therapy"
+      "display": "Discharged on Antithrombotic Therapy",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyFHIR|2.0.012"
     },
     {
       "type": "composed-of",
-      "resource": "http://ecqi.healthit.gov/ecqms/Measure/IntensiveCareUnitVenousThromboembolismProphylaxisFHIR|0.0.012",
-      "display": "Intensive Care Unit Venous Thromboembolism Prophylaxis"
+      "display": "Intensive Care Unit Venous Thromboembolism Prophylaxis",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/IntensiveCareUnitVenousThromboembolismProphylaxisFHIR|0.0.012"
     },
     {
       "type": "composed-of",
-      "resource": "http://ecqi.healthit.gov/ecqms/Measure/SafeUseofOpioidsConcurrentPrescribingFHIR|0.0.012",
-      "display": "Safe Use of Opioids - Concurrent Prescribing"
+      "display": "Safe Use of Opioids - Concurrent Prescribing",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/SafeUseofOpioidsConcurrentPrescribingFHIR|0.0.012"
     }
   ]
 }

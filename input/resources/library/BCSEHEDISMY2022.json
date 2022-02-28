@@ -12,7 +12,7 @@
   "url": "http://ecqi.healthit.gov/ecqms/Library/BCSEHEDISMY2022",
   "version": "1.0.0",
   "name": "BCSEHEDISMY2022",
-  "title": "BCSEHEDISMY2022",,
+  "title": "Breast Cancer Screening HEDISMY2022",
   "relatedArtifact": [
     {
       "type": "depends-on",

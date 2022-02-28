@@ -2,101 +2,134 @@
   "resourceType": "Library",
   "id": "ECQualityProgram",
   "meta": {
-    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm" ]
+    "profile": [
+      "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm"
+    ]
   },
-  "contained": [ {
-    "resourceType": "Parameters",
-    "id": "exp-params",
-    "parameter": [ {
-      "name": "system-version",
-      "valueUri": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
-    } ]
-  } ],
-  "extension": [ {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-expansionParameters",
-    "valueReference": {
-      "reference": "#exp-params"
+  "contained": [
+    {
+      "resourceType": "Parameters",
+      "id": "exp-params",
+      "parameter": [
+        {
+          "name": "system-version",
+          "valueUri": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20190901"
+        }
+      ]
     }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-expansionParameters",
+      "valueReference": {
+        "reference": "#exp-params"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+      "valueReference": {
+        "reference": "Device/cqf-tooling"
+      }
     }
-  } ],
+  ],
   "url": "http://ecqi.healthit.gov/ecqms/Library/Library/ECQualityProgram",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
-    "value": "EC Quality Program"
-  } ],
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://example.org/fhir/cqi/ecqm/Library/Identifier",
+      "value": "EC Quality Program"
+    }
+  ],
   "version": "0.1.0",
   "name": "ECQualityProgram",
   "title": "EC Quality Program",
   "status": "active",
   "experimental": true,
   "type": {
-    "coding": [ {
-      "system": "http://terminology.hl7.org/CodeSystem/library-type",
-      "code": "asset-collection"
-    } ]
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "asset-collection"
+      }
+    ]
   },
   "date": "2019-09-03",
   "publisher": "Health Level 7 International - Clinical Quality Information Work Group",
-  "contact": [ {
-    "telecom": [ {
-      "system": "url",
-      "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
-    } ]
-  } ],
-  "description": "This library is an example of a quality program specification",
-  "useContext": [ {
-    "code": {
-      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-      "code": "program"
-    },
-    "valueCodeableConcept": {
-      "coding": [ {
-        "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs",
-        "code": "ep-ec",
-        "display": "EC"
-      } ]
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cqi/index.cfm"
+        }
+      ]
     }
-  } ],
-  "jurisdiction": [ {
-    "coding": [ {
-      "system": "urn:iso:std:iso:3166",
-      "code": "US"
-    } ]
-  } ],
+  ],
+  "description": "This library is an example of a quality program specification",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "program"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs",
+            "code": "ep-ec",
+            "display": "EC"
+          }
+        ]
+      }
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
   "approvalDate": "2019-08-03",
   "lastReviewDate": "2019-08-03",
-  "relatedArtifact": [ {
-    "type": "composed-of",
-    "display": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR|0.0.008"
-  }, {
-    "type": "composed-of",
-    "display": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)FHIR",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/DiabetesHemoglobinA1cHbA1cPoorControl9FHIR|0.0.015"
-  }, {
-    "type": "composed-of",
-    "display": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/DRCommunicationWithPhysicianManagingDiabetesFHIR|0.0.004"
-  }, {
-    "type": "composed-of",
-    "display": "Cervical Cancer Screening",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/CervicalCancerScreeningFHIR|0.0.005"
-  }, {
-    "type": "composed-of",
-    "display": "Breast Cancer Screening",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/BreastCancerScreeningsFHIR|0.0.002"
-  }, {
-    "type": "composed-of",
-    "display": "Colorectal Cancer Screening",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/ColorectalCancerScreeningsFHIR|0.0.003"
-  }, {
-    "type": "composed-of",
-    "display": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
-    "resource": "http://ecqi.healthit.gov/ecqms/Measure/FHIR347|0.1.021"
-  } ]
+  "relatedArtifact": [
+    {
+      "type": "composed-of",
+      "display": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/PrimaryCariesPreventionasOfferedbyPCPsincludingDentistsFHIR|0.0.008"
+    },
+    {
+      "type": "composed-of",
+      "display": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (> 9%)FHIR",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/DiabetesHemoglobinA1cHbA1cPoorControl9FHIR|0.0.015"
+    },
+    {
+      "type": "composed-of",
+      "display": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/DRCommunicationWithPhysicianManagingDiabetesFHIR|0.0.004"
+    },
+    {
+      "type": "composed-of",
+      "display": "Cervical Cancer Screening",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/CervicalCancerScreeningFHIR|0.0.005"
+    },
+    {
+      "type": "composed-of",
+      "display": "Breast Cancer Screening",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/BreastCancerScreeningsFHIR|0.0.002"
+    },
+    {
+      "type": "composed-of",
+      "display": "Colorectal Cancer Screening",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/ColorectalCancerScreeningsFHIR|0.0.003"
+    },
+    {
+      "type": "composed-of",
+      "display": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
+      "resource": "http://ecqi.healthit.gov/ecqms/Measure/FHIR347|0.1.021"
+    }
+  ]
 }
