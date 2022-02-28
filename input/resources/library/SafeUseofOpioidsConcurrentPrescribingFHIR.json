@@ -25,6 +25,7 @@
   "url": "http://ecqi.healthit.gov/ecqms/Library/SafeUseofOpioidsConcurrentPrescribingFHIR",
   "version": "0.0.012",
   "name": "SafeUseofOpioidsConcurrentPrescribingFHIR",
+  "title": "Safe Use of Opioids Concurrent Prescribing FHIR",
   "status": "active",
   "experimental": false,
   "type": {
