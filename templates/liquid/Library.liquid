@@ -159,7 +159,7 @@
         {% if Library.publisher.exists() %}
         <tr>
             <th scope="row"><b>Publisher: </b></th>
-            <td style="padding-left: 25px;">{{Library.publisher}}</td>
+            <td style="padding-left: 25px;">{{Library.publisher.replace(' &', ',')}}</td>
         </tr>
         {% endif %}
         {% if Library.contact.exists() %}
