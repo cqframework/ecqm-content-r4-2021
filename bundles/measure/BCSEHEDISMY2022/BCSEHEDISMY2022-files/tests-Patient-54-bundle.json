@@ -5,7 +5,7 @@
   "entry": [ {
     "resource": {
       "resourceType": "Condition",
-      "id": "1178987",
+      "id": "Condition-1178987",
       "clinicalStatus": {
         "coding": [ {
           "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
@@ -25,7 +25,7 @@
     },
     "request": {
       "method": "PUT",
-      "url": "Condition/1178987"
+      "url": "Condition/Condition-1178987"
     }
   }, {
     "resource": {
@@ -71,7 +71,7 @@
       },
       "diagnosis": [ {
         "condition": {
-          "reference": "Condition/1178987"
+          "reference": "Condition/Condition-1178987"
         }
       } ]
     },
@@ -99,7 +99,7 @@
       },
       "diagnosis": [ {
         "condition": {
-          "reference": "Condition/1178987"
+          "reference": "Condition/Condition-1178987"
         }
       } ]
     },
