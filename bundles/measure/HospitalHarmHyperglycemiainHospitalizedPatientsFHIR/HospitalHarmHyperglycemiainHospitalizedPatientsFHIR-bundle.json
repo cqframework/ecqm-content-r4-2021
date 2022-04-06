@@ -3807,10 +3807,10 @@
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
         "valueCode": "publishable"
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-inclusion",
         "valueString": "Includes concepts that represent insulin and non-insulin injectable antidiabetic medications."
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-exclusion",
         "valueString": "No exclusions."
       }, {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",

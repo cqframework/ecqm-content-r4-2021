@@ -861,10 +861,10 @@
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
         "valueCode": "publishable"
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-inclusion",
         "valueString": "Includes concepts that represent insulin, non-insulin injectable antidiabetics, and oral antidiabetic medications."
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-exclusion",
         "valueString": "Excludes concepts that represent antidiabetic medications that do not cause hypoglycemia."
       }, {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -5856,10 +5856,10 @@
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
         "valueCode": "publishable"
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-inclusion",
         "valueString": "Includes concepts that represent insulin, non-insulin injectable antidiabetics, and oral antidiabetic medication."
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-exclusion",
         "valueString": "Excludes concepts that represent medications used to treat diabetes mellitus but are not commonly associated with severe hypoglycemia."
       }, {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",

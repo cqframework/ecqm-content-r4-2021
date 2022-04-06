@@ -1054,10 +1054,10 @@
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
         "valueCode": "publishable"
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-inclusion",
         "valueString": "Includes concepts that represent a medication for ticagrelor therapy."
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-exclusion",
         "valueString": "No exclusions."
       }, {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -1428,10 +1428,10 @@
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
         "valueCode": "publishable"
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-inclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-inclusion",
         "valueString": "Includes concepts that represent a medication that is an antithrombotic medication, including oral, rectal, and injectable dose forms."
       }, {
-        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-valueset-exclusion",
+        "url": "http://fhir.org/guides/cdc/opioid-cds/StructureDefinition/cdc-ValueSet-exclusion",
         "valueString": "Excludes concepts that represent enoxaparin and heparin generally given for VTE prophylaxis."
       }, {
         "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
