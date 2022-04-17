@@ -9,7 +9,7 @@ usage () {
    Refreshes FHIR documents in place. Optionally loads resources to a FHIR server.
    -d  Use default Alphora FHIR sandbox
    -h  Print this help
-   -s  Use specificed fhir base url like http://localhost:8080/fhir
+   -s  Use specificed fhir base url like http://localhost:8080/fhir/
 HELP_USAGE
 	exit 0
 }
@@ -31,7 +31,7 @@ echo "server_url: ${server_url}"
 
 fsoption=""
 if [ ! -z "${server_url}" ]; then
-	fsoption="-fs ${server_url}/"
+	fsoption="-fs ${server_url}"
 fi
 
 echo "fsoption: $fsoption"
