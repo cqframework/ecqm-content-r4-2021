@@ -21,7 +21,7 @@ ig_resource_path=./input/ecqm-content-r4.xml
 while getopts dhs: flag
 do
     case "${flag}" in
-		d) server_url="https://cqm-sandbox.alphora.com/cqf-ruler-r4/fhir";; 
+		d) server_url="https://cloud.alphora.com/sandbox/r4/cqm/fhir/";; 
 		h) usage;;
         s) server_url=${OPTARG};;
     esac
