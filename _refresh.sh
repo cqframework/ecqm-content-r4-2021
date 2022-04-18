@@ -1,22 +1,42 @@
 #!/bin/bash
 #DO NOT EDIT WITH WINDOWS
+
+usage () {
+    cat <<HELP_USAGE
+
+    $0  [-d] [-s <fhir_base_url>]
+
+   Refreshes FHIR documents in place. Optionally loads resources to a FHIR server.
+   -d  Use default Alphora FHIR sandbox
+   -h  Print this help
+   -s  Use specificed fhir base url like http://localhost:8080/fhir/
+HELP_USAGE
+	exit 0
+}
+
 tooling_jar=tooling-1.4.1-SNAPSHOT-jar-with-dependencies.jar
 input_cache_path=./input-cache
 ig_resource_path=./input/ecqm-content-r4.xml
 
-set -e
-echo Checking internet connection...
-#wget -q --spider tx.fhir.org
+while getopts dhs: flag
+do
+    case "${flag}" in
+		d) server_url="https://cloud.alphora.com/sandbox/r4/cqm/fhir/";; 
+		h) usage;;
+        s) server_url=${OPTARG};;
+    esac
+done
 
-if [ $? -eq 0 ]; then
-	echo "Online"
-	fsoption="-fs https://cqm-sandbox.alphora.com/cqf-ruler-r4/fhir/"
-else
-	echo "Offline"
-	fsoption=""
+echo "server_url: ${server_url}"
+
+fsoption=""
+if [ ! -z "${server_url}" ]; then
+	fsoption="-fs ${server_url}"
 fi
 
-echo "$fsoption"
+echo "fsoption: $fsoption"
+
+set -e
 
 tooling=$input_cache_path/$tooling_jar
 if test -f "$tooling"; then
