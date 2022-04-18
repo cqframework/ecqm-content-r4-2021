@@ -84,7 +84,7 @@
         "diagnosis": [
           {
             "condition": {
-              "reference": "Condition/1178987"
+              "reference": "Condition/Condition-1178987"
             }
           }
         ],
@@ -148,7 +148,7 @@
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "1178987",
+        "id": "Condition-1178987",
         "clinicalStatus": {
           "coding": [
             {

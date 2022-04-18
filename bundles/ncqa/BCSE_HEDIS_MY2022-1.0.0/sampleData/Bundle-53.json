@@ -62,7 +62,7 @@
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "1178987",
+        "id": "Condition-1178987",
         "clinicalStatus": {
           "coding": [
             {
