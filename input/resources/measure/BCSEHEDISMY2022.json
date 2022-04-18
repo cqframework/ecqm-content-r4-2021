@@ -139,7 +139,6 @@
         "code": "module-definition"
       } ]
     },
-    "date": "2022-01-10T22:31:17-07:00",
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library FHIRBase",
@@ -195,16 +194,16 @@
       "type": "boolean"
     } ],
     "dataRequirement": [ {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
-    }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code" ],
+      "mustSupport": [ "code", "effective" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1168"
       } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
     }, {
       "type": "Coverage",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
@@ -237,7 +236,7 @@
   "title": "Breast Cancer Screening",
   "status": "draft",
   "experimental": false,
-  "date": "2022-01-10T23:31:17-06:00",
+  "date": "2022-04-17T13:42:35-06:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {
@@ -252,35 +251,6 @@
     "start": "2022-01-01",
     "end": "2022-12-31"
   },
-  "relatedArtifact": [ {
-    "type": "depends-on",
-    "display": "Library FHIRBase",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/NCQAFHIRBase|1.0.0"
-  }, {
-    "type": "depends-on",
-    "display": "Library Enrollment",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/NCQAHealthPlanEnrollment|1.0.0"
-  }, {
-    "type": "depends-on",
-    "display": "Library CQLBase",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/NCQACQLBase|1.0.0"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-  }, {
-    "type": "depends-on",
-    "display": "Library Terminology",
-    "resource": "http://ecqi.healthit.gov/ecqms/Library/NCQATerminology|1.0.0"
-  }, {
-    "type": "depends-on",
-    "display": "Code system coverage-type",
-    "resource": "http://terminology.hl7.org/ValueSet/v3-ActCoverageTypeCode"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Mammography",
-    "resource": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1168"
-  } ],
   "library": [ "http://ecqi.healthit.gov/ecqms/Library/BCSEHEDISMY2022" ],
   "scoring": {
     "coding": [ {

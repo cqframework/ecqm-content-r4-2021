@@ -10,6 +10,7 @@
   "url": "http://ecqi.healthit.gov/ecqms/Library/BCSEHEDISMY2022",
   "version": "1.0.0",
   "name": "BCSEHEDISMY2022",
+  "title": "Breast Cancer Screening HEDISMY2022",
   "relatedArtifact": [ {
     "type": "depends-on",
     "display": "FHIR model information",
@@ -287,76 +288,63 @@
     "type": "boolean"
   } ],
   "dataRequirement": [ {
-    "type": "Observation",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-    "mustSupport": [ "effective", "code" ],
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Coverage",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+    "mustSupport": [ "period" ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2225"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1330"
     } ]
   }, {
-    "type": "Observation",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-    "mustSupport": [ "effective", "code" ],
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1530"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1329"
     } ]
   }, {
-    "type": "Observation",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-    "mustSupport": [ "effective", "code" ],
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1533"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1331"
     } ]
   }, {
-    "type": "Observation",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-    "mustSupport": [ "effective", "code" ],
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1168"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1531"
     } ]
   }, {
-    "type": "Encounter",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-    "mustSupport": [ "period", "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1450"
-    } ]
-  }, {
-    "type": "Encounter",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-    "mustSupport": [ "period", "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1810"
-    } ]
-  }, {
-    "type": "Encounter",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-    "mustSupport": [ "period", "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1532"
-    } ]
-  }, {
-    "type": "Encounter",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-    "mustSupport": [ "period", "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1761"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "performed" ],
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2224"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1465"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code" ],
+    "codeFilter": [ {
+      "path": "code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "Z51.5",
+        "display": "Encounter for palliative care"
+      } ]
     } ]
   }, {
     "type": "Procedure",
@@ -385,7 +373,7 @@
   }, {
     "type": "Procedure",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "bodySite", "code" ],
+    "mustSupport": [ "code", "bodySite" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1256"
@@ -393,7 +381,7 @@
   }, {
     "type": "Procedure",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "bodySite", "code" ],
+    "mustSupport": [ "code", "bodySite" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1948"
@@ -407,68 +395,76 @@
       "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1762"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "performed" ],
     "codeFilter": [ {
       "path": "code",
-      "code": [ {
-        "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "Z51.5",
-        "display": "Encounter for palliative care"
-      } ]
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2224"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "type", "period" ],
     "codeFilter": [ {
-      "path": "code",
-      "code": [ {
-        "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "Z51.5",
-        "display": "Encounter for palliative care"
-      } ]
+      "path": "type",
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1761"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "type", "period" ],
     "codeFilter": [ {
-      "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1465"
+      "path": "type",
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1532"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "type", "period" ],
     "codeFilter": [ {
-      "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1531"
+      "path": "type",
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1810"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "type", "period" ],
     "codeFilter": [ {
-      "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1329"
+      "path": "type",
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1450"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "effective" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1330"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1530"
     } ]
   }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code" ],
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "effective" ],
     "codeFilter": [ {
       "path": "code",
-      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1331"
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1533"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "effective" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.2225"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "effective" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1168"
     } ]
   }, {
     "type": "Claim",
@@ -476,18 +472,11 @@
   }, {
     "type": "MedicationDispense",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationDispense" ],
-    "mustSupport": [ "whenHandedOver", "medication" ],
+    "mustSupport": [ "medication", "whenHandedOver" ],
     "codeFilter": [ {
       "path": "medication",
       "valueSet": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1729"
     } ]
-  }, {
-    "type": "Coverage",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-    "mustSupport": [ "period" ]
-  }, {
-    "type": "Patient",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
   } ],
   "content": [ {
     "contentType": "text/cql",

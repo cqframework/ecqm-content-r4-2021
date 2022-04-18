@@ -22,6 +22,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4",
       "version": "6.1.000",
       "name": "MATGlobalCommonFunctionsFHIR4",
+      "title": "MAT Global Common Functions FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -110,13 +111,12 @@
         "type": "Encounter"
       } ],
       "dataRequirement": [ {
-        "type": "Condition",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-        "mustSupport": [ "id" ]
+        "type": "Patient",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
@@ -124,7 +124,7 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -132,14 +132,19 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
         } ]
       }, {
-        "type": "Patient",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+        "type": "Condition",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+        "mustSupport": [ "id" ]
+      }, {
+        "type": "Location",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ],
+        "mustSupport": [ "id" ]
       }, {
         "type": "Provenance",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Provenance" ],
@@ -147,10 +152,6 @@
         "codeFilter": [ {
           "path": "target"
         } ]
-      }, {
-        "type": "Location",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ],
-        "mustSupport": [ "id" ]
       } ],
       "content": [ {
         "contentType": "text/cql",
@@ -187,6 +188,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4",
       "version": "2.0.000",
       "name": "SupplementalDataElementsFHIR4",
+      "title": "Supplemental Data Elements FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -257,11 +259,11 @@
       "dataRequirement": [ {
         "type": "Patient",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-        "mustSupport": [ "extension", "value", "url" ]
+        "mustSupport": [ "url", "extension", "value" ]
       }, {
         "type": "Coverage",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
@@ -302,6 +304,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/HospiceFHIR4",
       "version": "2.3.000",
       "name": "HospiceFHIR4",
+      "title": "Hospice FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -358,9 +361,12 @@
         "type": "boolean"
       } ],
       "dataRequirement": [ {
+        "type": "Patient",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+      }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "hospitalization", "hospitalization.dischargeDisposition", "type", "status" ],
+        "mustSupport": [ "type", "status", "hospitalization", "hospitalization.dischargeDisposition", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
@@ -368,7 +374,7 @@
       }, {
         "type": "ServiceRequest",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-        "mustSupport": [ "code", "authoredOn", "intent", "status" ],
+        "mustSupport": [ "code", "status", "intent", "authoredOn" ],
         "codeFilter": [ {
           "path": "code",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
@@ -376,14 +382,11 @@
       }, {
         "type": "Procedure",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-        "mustSupport": [ "code", "performed", "status" ],
+        "mustSupport": [ "code", "status", "performed" ],
         "codeFilter": [ {
           "path": "code",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.15"
         } ]
-      }, {
-        "type": "Patient",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
       } ],
       "content": [ {
         "contentType": "text/cql",
@@ -420,6 +423,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers",
       "version": "4.0.001",
       "name": "FHIRHelpers",
+      "title": "FHIRHelpers",
       "status": "active",
       "experimental": false,
       "type": {

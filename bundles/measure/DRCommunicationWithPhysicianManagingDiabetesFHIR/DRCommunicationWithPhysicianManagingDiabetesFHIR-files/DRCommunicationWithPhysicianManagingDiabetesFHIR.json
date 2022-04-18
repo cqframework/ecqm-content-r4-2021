@@ -17,6 +17,7 @@
   "url": "http://ecqi.healthit.gov/ecqms/Library/DRCommunicationWithPhysicianManagingDiabetesFHIR",
   "version": "0.0.004",
   "name": "DRCommunicationWithPhysicianManagingDiabetesFHIR",
+  "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes CareFHIR",
   "status": "active",
   "experimental": false,
   "type": {
@@ -227,44 +228,16 @@
     "type": "boolean"
   } ],
   "dataRequirement": [ {
-    "type": "Communication",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-    "mustSupport": [ "reasonCode", "sent", "status" ],
-    "codeFilter": [ {
-      "path": "reasonCode",
-      "code": [ {
-        "system": "http://snomed.info/sct",
-        "code": "428341000124108",
-        "display": "Macular edema absent (situation)"
-      } ]
-    } ]
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "url", "extension", "value" ]
   }, {
-    "type": "Communication",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-    "mustSupport": [ "statusReason", "reasonCode", "sent", "status" ],
+    "type": "Coverage",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+    "mustSupport": [ "type", "period" ],
     "codeFilter": [ {
-      "path": "reasonCode",
-      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
-    } ]
-  }, {
-    "type": "Communication",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-    "mustSupport": [ "statusReason", "reasonCode", "sent", "status" ],
-    "codeFilter": [ {
-      "path": "reasonCode",
-      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
-    } ]
-  }, {
-    "type": "Communication",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-    "mustSupport": [ "statusReason", "reasonCode", "status" ],
-    "codeFilter": [ {
-      "path": "reasonCode",
-      "code": [ {
-        "system": "http://snomed.info/sct",
-        "code": "428341000124108",
-        "display": "Macular edema absent (situation)"
-      } ]
+      "path": "type",
+      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
     } ]
   }, {
     "type": "Encounter",
@@ -307,32 +280,48 @@
       "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012"
     } ]
   }, {
-    "type": "Observation",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-    "mustSupport": [ "effective", "code", "value", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1251"
-    } ]
-  }, {
-    "type": "Patient",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-    "mustSupport": [ "extension", "value", "url" ]
-  }, {
-    "type": "Coverage",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-    "mustSupport": [ "period", "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
-    } ]
-  }, {
     "type": "Condition",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
     "mustSupport": [ "code", "clinicalStatus" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.327"
+    } ]
+  }, {
+    "type": "Communication",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+    "mustSupport": [ "reasonCode", "status", "statusReason", "sent" ],
+    "codeFilter": [ {
+      "path": "reasonCode",
+      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
+    } ]
+  }, {
+    "type": "Communication",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+    "mustSupport": [ "reasonCode", "status", "statusReason", "sent" ],
+    "codeFilter": [ {
+      "path": "reasonCode",
+      "code": [ {
+        "system": "http://snomed.info/sct",
+        "code": "428341000124108",
+        "display": "Macular edema absent (situation)"
+      } ]
+    } ]
+  }, {
+    "type": "Communication",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+    "mustSupport": [ "reasonCode", "status", "statusReason", "sent" ],
+    "codeFilter": [ {
+      "path": "reasonCode",
+      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "effective", "status", "value" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1251"
     } ]
   } ],
   "content": [ {

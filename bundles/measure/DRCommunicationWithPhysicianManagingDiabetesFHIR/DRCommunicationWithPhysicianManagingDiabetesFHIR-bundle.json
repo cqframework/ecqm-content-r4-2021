@@ -892,6 +892,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/DRCommunicationWithPhysicianManagingDiabetesFHIR",
       "version": "0.0.004",
       "name": "DRCommunicationWithPhysicianManagingDiabetesFHIR",
+      "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes CareFHIR",
       "status": "active",
       "experimental": false,
       "type": {
@@ -1102,44 +1103,16 @@
         "type": "boolean"
       } ],
       "dataRequirement": [ {
-        "type": "Communication",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-        "mustSupport": [ "reasonCode", "sent", "status" ],
-        "codeFilter": [ {
-          "path": "reasonCode",
-          "code": [ {
-            "system": "http://snomed.info/sct",
-            "code": "428341000124108",
-            "display": "Macular edema absent (situation)"
-          } ]
-        } ]
+        "type": "Patient",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+        "mustSupport": [ "url", "extension", "value" ]
       }, {
-        "type": "Communication",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-        "mustSupport": [ "statusReason", "reasonCode", "sent", "status" ],
+        "type": "Coverage",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
-          "path": "reasonCode",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
-        } ]
-      }, {
-        "type": "Communication",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-        "mustSupport": [ "statusReason", "reasonCode", "sent", "status" ],
-        "codeFilter": [ {
-          "path": "reasonCode",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
-        } ]
-      }, {
-        "type": "Communication",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-        "mustSupport": [ "statusReason", "reasonCode", "status" ],
-        "codeFilter": [ {
-          "path": "reasonCode",
-          "code": [ {
-            "system": "http://snomed.info/sct",
-            "code": "428341000124108",
-            "display": "Macular edema absent (situation)"
-          } ]
+          "path": "type",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
         } ]
       }, {
         "type": "Encounter",
@@ -1182,32 +1155,48 @@
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012"
         } ]
       }, {
-        "type": "Observation",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-        "mustSupport": [ "effective", "code", "value", "status" ],
-        "codeFilter": [ {
-          "path": "code",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1251"
-        } ]
-      }, {
-        "type": "Patient",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-        "mustSupport": [ "extension", "value", "url" ]
-      }, {
-        "type": "Coverage",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-        "mustSupport": [ "period", "type" ],
-        "codeFilter": [ {
-          "path": "type",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
-        } ]
-      }, {
         "type": "Condition",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
         "mustSupport": [ "code", "clinicalStatus" ],
         "codeFilter": [ {
           "path": "code",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.327"
+        } ]
+      }, {
+        "type": "Communication",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+        "mustSupport": [ "reasonCode", "status", "statusReason", "sent" ],
+        "codeFilter": [ {
+          "path": "reasonCode",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
+        } ]
+      }, {
+        "type": "Communication",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+        "mustSupport": [ "reasonCode", "status", "statusReason", "sent" ],
+        "codeFilter": [ {
+          "path": "reasonCode",
+          "code": [ {
+            "system": "http://snomed.info/sct",
+            "code": "428341000124108",
+            "display": "Macular edema absent (situation)"
+          } ]
+        } ]
+      }, {
+        "type": "Communication",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+        "mustSupport": [ "reasonCode", "status", "statusReason", "sent" ],
+        "codeFilter": [ {
+          "path": "reasonCode",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
+        } ]
+      }, {
+        "type": "Observation",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+        "mustSupport": [ "code", "effective", "status", "value" ],
+        "codeFilter": [ {
+          "path": "code",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1251"
         } ]
       } ],
       "content": [ {
@@ -1275,6 +1264,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4",
       "version": "6.1.000",
       "name": "MATGlobalCommonFunctionsFHIR4",
+      "title": "MAT Global Common Functions FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -1363,13 +1353,12 @@
         "type": "Encounter"
       } ],
       "dataRequirement": [ {
-        "type": "Condition",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-        "mustSupport": [ "id" ]
+        "type": "Patient",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
@@ -1377,7 +1366,7 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -1385,14 +1374,19 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
         } ]
       }, {
-        "type": "Patient",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+        "type": "Condition",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+        "mustSupport": [ "id" ]
+      }, {
+        "type": "Location",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ],
+        "mustSupport": [ "id" ]
       }, {
         "type": "Provenance",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Provenance" ],
@@ -1400,10 +1394,6 @@
         "codeFilter": [ {
           "path": "target"
         } ]
-      }, {
-        "type": "Location",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ],
-        "mustSupport": [ "id" ]
       } ],
       "content": [ {
         "contentType": "text/cql",
@@ -1525,6 +1515,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4",
       "version": "2.0.000",
       "name": "SupplementalDataElementsFHIR4",
+      "title": "Supplemental Data Elements FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -1595,11 +1586,11 @@
       "dataRequirement": [ {
         "type": "Patient",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-        "mustSupport": [ "extension", "value", "url" ]
+        "mustSupport": [ "url", "extension", "value" ]
       }, {
         "type": "Coverage",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
@@ -3201,7 +3192,6 @@
             "code": "module-definition"
           } ]
         },
-        "date": "2022-01-10T22:26:31-07:00",
         "relatedArtifact": [ {
           "type": "depends-on",
           "display": "Library SDE",
@@ -3327,6 +3317,10 @@
           "type": "boolean"
         } ],
         "dataRequirement": [ {
+          "type": "Patient",
+          "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+          "mustSupport": [ "url", "extension", "value" ]
+        }, {
           "type": "Encounter",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
           "mustSupport": [ "type" ],
@@ -3377,31 +3371,7 @@
         }, {
           "type": "Communication",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-          "mustSupport": [ "statusReason", "reasonCode", "status" ],
-          "codeFilter": [ {
-            "path": "reasonCode",
-            "code": [ {
-              "system": "http://snomed.info/sct",
-              "code": "428341000124108",
-              "display": "Macular edema absent (situation)"
-            } ]
-          } ]
-        }, {
-          "type": "Communication",
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-          "mustSupport": [ "reasonCode", "sent", "status" ],
-          "codeFilter": [ {
-            "path": "reasonCode",
-            "code": [ {
-              "system": "http://snomed.info/sct",
-              "code": "428341000124108",
-              "display": "Macular edema absent (situation)"
-            } ]
-          } ]
-        }, {
-          "type": "Communication",
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-          "mustSupport": [ "statusReason", "reasonCode", "sent", "status" ],
+          "mustSupport": [ "reasonCode", "sent", "status", "statusReason" ],
           "codeFilter": [ {
             "path": "reasonCode",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
@@ -3409,7 +3379,19 @@
         }, {
           "type": "Communication",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
-          "mustSupport": [ "statusReason", "reasonCode", "sent", "status" ],
+          "mustSupport": [ "reasonCode", "sent", "status", "statusReason" ],
+          "codeFilter": [ {
+            "path": "reasonCode",
+            "code": [ {
+              "system": "http://snomed.info/sct",
+              "code": "428341000124108",
+              "display": "Macular edema absent (situation)"
+            } ]
+          } ]
+        }, {
+          "type": "Communication",
+          "profile": [ "http://hl7.org/fhir/StructureDefinition/Communication" ],
+          "mustSupport": [ "reasonCode", "sent", "status", "statusReason" ],
           "codeFilter": [ {
             "path": "reasonCode",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
@@ -3417,19 +3399,15 @@
         }, {
           "type": "Observation",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-          "mustSupport": [ "effective", "code", "value", "status" ],
+          "mustSupport": [ "code", "effective", "status", "value" ],
           "codeFilter": [ {
             "path": "code",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1251"
           } ]
         }, {
-          "type": "Patient",
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-          "mustSupport": [ "extension", "value", "url" ]
-        }, {
           "type": "Coverage",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-          "mustSupport": [ "period", "type" ],
+          "mustSupport": [ "type", "period" ],
           "codeFilter": [ {
             "path": "type",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
@@ -3466,7 +3444,7 @@
       "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes CareFHIR",
       "status": "draft",
       "experimental": false,
-      "date": "2022-01-11T01:26:31-04:00",
+      "date": "2022-04-17T15:35:25-04:00",
       "publisher": "American Academy of Ophthalmology",
       "contact": [ {
         "telecom": [ {
@@ -3481,75 +3459,6 @@
         "start": "2022-01-01",
         "end": "2022-12-31"
       },
-      "relatedArtifact": [ {
-        "type": "depends-on",
-        "display": "Library SDE",
-        "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4|2.0.000"
-      }, {
-        "type": "depends-on",
-        "display": "Library FHIRHelpers",
-        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-      }, {
-        "type": "depends-on",
-        "display": "Library Global",
-        "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
-      }, {
-        "type": "depends-on",
-        "display": "Code system ConditionClinicalStatusCodes",
-        "resource": "http://terminology.hl7.org/CodeSystem/condition-clinical"
-      }, {
-        "type": "depends-on",
-        "display": "Code system SNOMEDCT",
-        "resource": "http://snomed.info/sct"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Level of Severity of Retinopathy Findings",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Office Visit",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Ophthalmological Services",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1285"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Outpatient Consultation",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Care Services in Long-Term Residential Facility",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Nursing Facility Visit",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Diabetic Retinopathy",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.327"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Macular Edema Findings Present",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Macular Exam",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1251"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Payer",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Medical Reason",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1007"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Patient Reason",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1008"
-      } ],
       "library": [ "http://ecqi.healthit.gov/ecqms/Library/DRCommunicationWithPhysicianManagingDiabetesFHIR" ],
       "disclaimer": "The Measure is not a clinical guideline, does not establish a standard of medical care, and has not been tested for all potential applications. \nThe Measure, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measure for commercial gain, or incorporation of the Measure into a product or service that is sold, licensed or distributed for commercial gain. \nCommercial uses of the Measure require a license agreement between the user and the American Academy of Ophthalmology (Academy). Neither the Academy, its members, AMA, nor the former AMA-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI), nor PCPI, nor their members shall be responsible for any use of the Measure.\nThe PCPI’s and AMA’s significant past efforts and contributions to the development and updating of the Measures are acknowledged. The National Committee for Quality Assurance's significant past efforts and contributions to the development and updating of the Measure is acknowledged. \nTHE MEASURE AND SPECIFICATIONS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND.\nLimited proprietary coding is contained in the Measure specifications for convenience. A license agreement must be entered prior to a third party’s use of Current Procedural Terminology (CPT[R]) or other proprietary code set contained in the Measures. Any other use of CPT or other coding by the third party is strictly prohibited. The Academy, the AMA, and former members of the PCPI disclaim all liability for use or accuracy of any CPT or other coding contained in the specifications. \n\nCPT(R) contained in the Measure specifications is copyright 2004-2020 American Medical Association. LOINC(R) is copyright 2004-2020 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2020 International Health Terminology Standards Development Organisation. ICD-10 is copyright 2020 World Health Organization. All Rights Reserved.\nDue to technical limitations, registered trademarks are indicated by (R) or [R].",
       "scoring": {
@@ -3703,6 +3612,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers",
       "version": "4.0.001",
       "name": "FHIRHelpers",
+      "title": "FHIRHelpers",
       "status": "active",
       "experimental": false,
       "type": {

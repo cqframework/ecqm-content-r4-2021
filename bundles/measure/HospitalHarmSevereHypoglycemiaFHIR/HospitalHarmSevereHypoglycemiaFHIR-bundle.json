@@ -52,6 +52,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4",
       "version": "6.1.000",
       "name": "MATGlobalCommonFunctionsFHIR4",
+      "title": "MAT Global Common Functions FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -140,13 +141,12 @@
         "type": "Encounter"
       } ],
       "dataRequirement": [ {
-        "type": "Condition",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-        "mustSupport": [ "id" ]
+        "type": "Patient",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
@@ -154,7 +154,7 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -162,14 +162,19 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
         } ]
       }, {
-        "type": "Patient",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+        "type": "Condition",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+        "mustSupport": [ "id" ]
+      }, {
+        "type": "Location",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ],
+        "mustSupport": [ "id" ]
       }, {
         "type": "Provenance",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Provenance" ],
@@ -177,10 +182,6 @@
         "codeFilter": [ {
           "path": "target"
         } ]
-      }, {
-        "type": "Location",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Location" ],
-        "mustSupport": [ "id" ]
       } ],
       "content": [ {
         "contentType": "text/cql",
@@ -425,6 +426,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4",
       "version": "2.0.000",
       "name": "SupplementalDataElementsFHIR4",
+      "title": "Supplemental Data Elements FHIR4",
       "status": "active",
       "experimental": false,
       "type": {
@@ -495,11 +497,11 @@
       "dataRequirement": [ {
         "type": "Patient",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-        "mustSupport": [ "extension", "value", "url" ]
+        "mustSupport": [ "url", "extension", "value" ]
       }, {
         "type": "Coverage",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
@@ -540,6 +542,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers",
       "version": "4.0.001",
       "name": "FHIRHelpers",
+      "title": "FHIRHelpers",
       "status": "active",
       "experimental": false,
       "type": {
@@ -7914,6 +7917,7 @@
       "url": "http://ecqi.healthit.gov/ecqms/Library/HospitalHarmSevereHypoglycemiaFHIR",
       "version": "0.0.012",
       "name": "HospitalHarmSevereHypoglycemiaFHIR",
+      "title": "Hospital Harm - Severe HypoglycemiaFHIR",
       "status": "active",
       "experimental": false,
       "type": {
@@ -8064,29 +8068,21 @@
         "type": "Coding"
       } ],
       "dataRequirement": [ {
-        "type": "Observation",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-        "mustSupport": [ "effective", "code", "value", "status" ],
-        "codeFilter": [ {
-          "path": "code",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
-        } ]
-      }, {
-        "type": "MedicationAdministration",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
-        "mustSupport": [ "effective", "medication", "status" ],
-        "codeFilter": [ {
-          "path": "medication",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
-        } ]
-      }, {
         "type": "Patient",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-        "mustSupport": [ "extension", "value", "url" ]
+        "mustSupport": [ "url", "extension", "value" ]
+      }, {
+        "type": "Coverage",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
+        "mustSupport": [ "type", "period" ],
+        "codeFilter": [ {
+          "path": "type",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+        } ]
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -8094,7 +8090,7 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type" ],
+        "mustSupport": [ "type", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
@@ -8102,18 +8098,26 @@
       }, {
         "type": "Encounter",
         "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-        "mustSupport": [ "period", "type", "status" ],
+        "mustSupport": [ "type", "status", "period" ],
         "codeFilter": [ {
           "path": "type",
           "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
         } ]
       }, {
-        "type": "Coverage",
-        "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-        "mustSupport": [ "period", "type" ],
+        "type": "MedicationAdministration",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
+        "mustSupport": [ "medication", "status", "effective" ],
         "codeFilter": [ {
-          "path": "type",
-          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+          "path": "medication",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
+        } ]
+      }, {
+        "type": "Observation",
+        "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+        "mustSupport": [ "code", "effective", "status", "value" ],
+        "codeFilter": [ {
+          "path": "code",
+          "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
         } ]
       } ],
       "content": [ {
@@ -8393,7 +8397,6 @@
             "code": "module-definition"
           } ]
         },
-        "date": "2022-01-10T22:26:31-07:00",
         "relatedArtifact": [ {
           "type": "depends-on",
           "display": "Library SDE",
@@ -8481,25 +8484,13 @@
           "type": "Coding"
         } ],
         "dataRequirement": [ {
-          "type": "MedicationAdministration",
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
-          "mustSupport": [ "effective", "medication", "status" ],
-          "codeFilter": [ {
-            "path": "medication",
-            "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
-          } ]
-        }, {
-          "type": "Observation",
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-          "mustSupport": [ "effective", "code", "value", "status" ],
-          "codeFilter": [ {
-            "path": "code",
-            "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
-          } ]
+          "type": "Patient",
+          "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+          "mustSupport": [ "url", "extension", "value" ]
         }, {
           "type": "Encounter",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-          "mustSupport": [ "period", "type" ],
+          "mustSupport": [ "type", "period" ],
           "codeFilter": [ {
             "path": "type",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -8507,7 +8498,7 @@
         }, {
           "type": "Encounter",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-          "mustSupport": [ "period", "type" ],
+          "mustSupport": [ "type", "period" ],
           "codeFilter": [ {
             "path": "type",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
@@ -8515,19 +8506,31 @@
         }, {
           "type": "Encounter",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-          "mustSupport": [ "period", "type", "status" ],
+          "mustSupport": [ "type", "status", "period" ],
           "codeFilter": [ {
             "path": "type",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
           } ]
         }, {
-          "type": "Patient",
-          "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-          "mustSupport": [ "extension", "value", "url" ]
+          "type": "MedicationAdministration",
+          "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationAdministration" ],
+          "mustSupport": [ "medication", "status", "effective" ],
+          "codeFilter": [ {
+            "path": "medication",
+            "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
+          } ]
+        }, {
+          "type": "Observation",
+          "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+          "mustSupport": [ "code", "effective", "status", "value" ],
+          "codeFilter": [ {
+            "path": "code",
+            "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
+          } ]
         }, {
           "type": "Coverage",
           "profile": [ "http://hl7.org/fhir/StructureDefinition/Coverage" ],
-          "mustSupport": [ "period", "type" ],
+          "mustSupport": [ "type", "period" ],
           "codeFilter": [ {
             "path": "type",
             "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
@@ -8568,7 +8571,7 @@
       "title": "Hospital Harm - Severe HypoglycemiaFHIR",
       "status": "draft",
       "experimental": false,
-      "date": "2022-01-11T00:26:31-05:00",
+      "date": "2022-04-17T14:35:25-05:00",
       "publisher": "Centers for Medicare & Medicaid Services (CMS)",
       "contact": [ {
         "telecom": [ {
@@ -8583,43 +8586,6 @@
         "start": "2022-01-01",
         "end": "2022-12-31"
       },
-      "relatedArtifact": [ {
-        "type": "depends-on",
-        "display": "Library SDE",
-        "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElementsFHIR4|2.0.000"
-      }, {
-        "type": "depends-on",
-        "display": "Library FHIRHelpers",
-        "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.0.001"
-      }, {
-        "type": "depends-on",
-        "display": "Library Global",
-        "resource": "http://ecqi.healthit.gov/ecqms/Library/MATGlobalCommonFunctionsFHIR4|6.1.000"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Encounter Inpatient",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Observation Services",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Emergency Department Visit",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Hypoglycemics Severe Hypoglycemia",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Glucose lab test",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134"
-      }, {
-        "type": "depends-on",
-        "display": "Value set Payer",
-        "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
-      } ],
       "library": [ "http://ecqi.healthit.gov/ecqms/Library/HospitalHarmSevereHypoglycemiaFHIR" ],
       "disclaimer": "This measure and specifications are subject to further revisions. \n\nThis performance measure is not a clinical guideline and does not establish a standard of medical care, and has not been tested for all potential applications.\n\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
       "scoring": {
