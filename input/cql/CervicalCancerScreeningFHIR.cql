@@ -98,3 +98,31 @@ define "HPV Test Within 5 Years for Women Age 30 and Older":
                 and Global."Latest" ( HPVTest.effective ) 5 years or less on or before
                 end of "Measurement Period"
                 and HPVTest.value is not null
+
+/* For Connectathon QICore Authoring Session */
+define "Cervical Cytology Within 3 Years (2)":
+  [Observation: "Pap Test"] CervicalCytology
+    where CervicalCytology.isComplete()
+      and CervicalCytology.isLaboratoryTest()
+      and CervicalCytology.effective.latest() 3 years or less on or before end of "Measurement Period"
+      and CervicalCytology.value is not null
+
+define "HPV Test Within 5 Years for Women Age 30 and Older (2)":
+  [Observation: "HPV Test"] HPVTest
+    where HPVTest.isComplete()
+      and HPVTest.isLaboratoryTest()
+      and AgeInYearsAt(date from start of HPVTest.effective.toInterval()) >= 30
+      and HPVTest.effective.latest() 5 years or less on or before end of "Measurement Period"
+      and HPVTest.value is not null
+
+define fluent function isComplete(observation Observation):
+  observation.status in { 'final', 'amended', 'corrected' }
+
+define fluent function isLaboratoryTest(observation Observation):
+  exists (observation.category category where "laboratory" in FHIRHelpers.ToConcept(category).codes)
+
+define fluent function latest(choice Choice<FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range> ):
+  Global.Latest(choice)
+
+define fluent function toInterval(choice Choice<FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range> ):
+  Global."Normalize Interval"(choice)
