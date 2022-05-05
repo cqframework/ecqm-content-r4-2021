@@ -80,24 +80,12 @@ define "Absence of Cervix":
 
 define "Cervical Cytology Within 3 Years":
   [Observation: "Pap Test"] CervicalCytology
-              where CervicalCytology.status in { 'final', 'amended', 'corrected' }
-                and exists ( CervicalCytology.category CervicalCytologyCategory
-                    where "laboratory" in FHIRHelpers.ToConcept ( CervicalCytologyCategory ).codes
-                )
-                and Global."Latest" ( CervicalCytology.effective ) 3 years or less on or before
-                end of "Measurement Period"
-                and CervicalCytology.value is not null
-
-define "HPV Test Within 5 Years for Women Age 30 and Older":
-  [Observation: "HPV Test"] HPVTest
-              where HPVTest.status in { 'final', 'amended', 'corrected' }
-                and exists ( HPVTest.category HPVTestCategory
-                    where "laboratory" in FHIRHelpers.ToConcept ( HPVTestCategory ).codes
-                )
-                and AgeInYearsAt(date from start of Global."Normalize Interval"(HPVTest.effective))>= 30
-                and Global."Latest" ( HPVTest.effective ) 5 years or less on or before
-                end of "Measurement Period"
-                and HPVTest.value is not null
+    where CervicalCytology.status in { 'final', 'amended', 'corrected' }
+      and exists ( CervicalCytology.category CervicalCytologyCategory
+          where "laboratory" in FHIRHelpers.ToConcept ( CervicalCytologyCategory ).codes
+      )
+      and Global."Latest" ( CervicalCytology.effective ) 3 years or less on or before end of "Measurement Period"
+      and CervicalCytology.value is not null
 
 /* For Connectathon QICore Authoring Session */
 define "Cervical Cytology Within 3 Years (2)":
@@ -106,6 +94,16 @@ define "Cervical Cytology Within 3 Years (2)":
       and CervicalCytology.isLaboratoryTest()
       and CervicalCytology.effective.latest() 3 years or less on or before end of "Measurement Period"
       and CervicalCytology.value is not null
+
+define "HPV Test Within 5 Years for Women Age 30 and Older":
+  [Observation: "HPV Test"] HPVTest
+    where HPVTest.status in { 'final', 'amended', 'corrected' }
+      and exists ( HPVTest.category HPVTestCategory
+          where "laboratory" in FHIRHelpers.ToConcept ( HPVTestCategory ).codes
+      )
+      and AgeInYearsAt(date from start of Global."Normalize Interval"(HPVTest.effective))>= 30
+      and Global."Latest" ( HPVTest.effective ) 5 years or less on or before end of "Measurement Period"
+      and HPVTest.value is not null
 
 define "HPV Test Within 5 Years for Women Age 30 and Older (2)":
   [Observation: "HPV Test"] HPVTest
