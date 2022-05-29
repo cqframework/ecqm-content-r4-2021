@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "1.3.6.1.4.1.33895.1.3.0.45",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,25 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "133918004",
+        "display": "Comfort measures (regime/therapy)"
+      }, {
+        "code": "182964004",
+        "display": "Terminal care (regime/therapy)"
+      }, {
+        "code": "385736008",
+        "display": "Dying care (regime/therapy)"
+      }, {
+        "code": "385763009",
+        "display": "Hospice care (regime/therapy)"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

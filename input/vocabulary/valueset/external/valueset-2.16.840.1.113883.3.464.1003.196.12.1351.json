@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.196.12.1351",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1351",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,67 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "1655058",
+        "display": "meperidine hydrochloride 150 MG Oral Tablet"
+      }, {
+        "code": "1655060",
+        "display": "meperidine hydrochloride 75 MG Oral Tablet"
+      }, {
+        "code": "1665685",
+        "display": "1 ML meperidine hydrochloride 100 MG/ML Injection"
+      }, {
+        "code": "1665690",
+        "display": "1.5 ML meperidine hydrochloride 50 MG/ML Injection"
+      }, {
+        "code": "1665697",
+        "display": "1 ML meperidine hydrochloride 50 MG/ML Injection"
+      }, {
+        "code": "1665699",
+        "display": "0.5 ML meperidine hydrochloride 50 MG/ML Injection"
+      }, {
+        "code": "1665701",
+        "display": "2 ML meperidine hydrochloride 50 MG/ML Injection"
+      }, {
+        "code": "860792",
+        "display": "1 ML meperidine hydrochloride 75 MG/ML Cartridge"
+      }, {
+        "code": "861447",
+        "display": "meperidine hydrochloride 10 MG/ML Injectable Solution"
+      }, {
+        "code": "861455",
+        "display": "meperidine hydrochloride 100 MG Oral Tablet"
+      }, {
+        "code": "861459",
+        "display": "meperidine hydrochloride 100 MG/ML Injectable Solution"
+      }, {
+        "code": "861463",
+        "display": "meperidine hydrochloride 50 MG/ML Injectable Solution"
+      }, {
+        "code": "861467",
+        "display": "meperidine hydrochloride 50 MG Oral Tablet"
+      }, {
+        "code": "861473",
+        "display": "1 ML meperidine hydrochloride 50 MG/ML Cartridge"
+      }, {
+        "code": "861476",
+        "display": "1 ML meperidine hydrochloride 25 MG/ML Injection"
+      }, {
+        "code": "861479",
+        "display": "meperidine hydrochloride 10 MG/ML Oral Solution"
+      }, {
+        "code": "861493",
+        "display": "1 ML meperidine hydrochloride 100 MG/ML Cartridge"
+      }, {
+        "code": "861494",
+        "display": "1 ML meperidine hydrochloride 25 MG/ML Cartridge"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

@@ -2,41 +2,66 @@
   "resourceType": "ValueSet",
   "id": "ValueSet-33022",
   "meta": {
-    "lastUpdated": "2019-06-09T16:53:10.736-04:00"
+    "lastUpdated": "2019-06-09T16:53:10.736-04:00",
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
   },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1330",
-  "identifier": [
-    {
-      "value": "2.16.840.1.113883.3.464.1004.1330"
-    }
-  ],
+  "identifier": [ {
+    "value": "2.16.840.1.113883.3.464.1004.1330"
+  } ],
   "version": "Working",
   "name": "Absence_of_Right_Breast",
   "title": "Absence of Right Breast",
   "status": "active",
+  "compose": {
+    "include": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021.2.20AB",
+      "concept": [ {
+        "code": "Z90.11",
+        "display": "Acquired absence of right breast and nipple"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020.09.20AA",
+      "concept": [ {
+        "code": "137681000119108",
+        "display": "History of prophylactic mastectomy of right breast"
+      }, {
+        "code": "429242008",
+        "display": "History of right mastectomy"
+      } ]
+    } ]
+  },
   "expansion": {
     "timestamp": "2021-04-05T14:51:04-04:00",
     "total": 3,
     "offset": 0,
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "2020.09.20AA",
-        "code": "137681000119108",
-        "display": "History of prophylactic mastectomy of right breast"
-      },
-      {
-        "system": "http://snomed.info/sct",
-        "version": "2020.09.20AA",
-        "code": "429242008",
-        "display": "History of right mastectomy"
-      },
-      {
-        "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "version": "2021.2.20AB",
-        "code": "Z90.11",
-        "display": "Acquired absence of right breast and nipple"
-      }
-    ]
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020.09.20AA",
+      "code": "137681000119108",
+      "display": "History of prophylactic mastectomy of right breast"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020.09.20AA",
+      "code": "429242008",
+      "display": "History of right mastectomy"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021.2.20AB",
+      "code": "Z90.11",
+      "display": "Acquired absence of right breast and nipple"
+    } ]
   }
 }

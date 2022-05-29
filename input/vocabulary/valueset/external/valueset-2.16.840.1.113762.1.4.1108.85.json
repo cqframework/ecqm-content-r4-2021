@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1108.85",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1108.85",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,48 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "16462851000119106",
+        "display": "Myalgia caused by statin (finding)"
+      }, {
+        "code": "240101000",
+        "display": "Drug-induced myopathy (disorder)"
+      }, {
+        "code": "288225004",
+        "display": "Myalgia/myositis - multiple (finding)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "G72.0",
+        "display": "Drug-induced myopathy"
+      }, {
+        "code": "G72.9",
+        "display": "Myopathy, unspecified"
+      }, {
+        "code": "M60.9",
+        "display": "Myositis, unspecified"
+      }, {
+        "code": "M79.10",
+        "display": "Myalgia, unspecified site"
+      } ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/icd9cm",
+      "version": "2013",
+      "concept": [ {
+        "code": "359.9",
+        "display": "Myopathy, unspecified"
+      }, {
+        "code": "729.1",
+        "display": "Myalgia and myositis, unspecified"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

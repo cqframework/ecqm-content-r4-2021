@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1226.1",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1226.1",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,119 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "231876002",
+        "display": "Non-pyogenic granulomatous scleritis (disorder)"
+      }, {
+        "code": "26664005",
+        "display": "Scleromalacia perforans (disorder)"
+      }, {
+        "code": "267660007",
+        "display": "Posterior scleritis (disorder)"
+      }, {
+        "code": "27886001",
+        "display": "Sclerosing keratitis (disorder)"
+      }, {
+        "code": "332981000119106",
+        "display": "Posterior scleritis of right eye (disorder)"
+      }, {
+        "code": "338591000119103",
+        "display": "Posterior scleritis of left eye (disorder)"
+      }, {
+        "code": "344361000119105",
+        "display": "Posterior scleritis of bilateral eyes (disorder)"
+      }, {
+        "code": "410578007",
+        "display": "Infective scleritis (disorder)"
+      }, {
+        "code": "416879000",
+        "display": "Scleritis due to granulomatosis with polyangiitis (disorder)"
+      }, {
+        "code": "417290008",
+        "display": "Sclerokeratitis (disorder)"
+      }, {
+        "code": "42574005",
+        "display": "Scleritis with corneal involvement (disorder)"
+      }, {
+        "code": "50675000",
+        "display": "Scleral abscess (disorder)"
+      }, {
+        "code": "59165007",
+        "display": "Rheumatoid scleritis (disorder)"
+      }, {
+        "code": "78370002",
+        "display": "Scleritis (disorder)"
+      }, {
+        "code": "91612009",
+        "display": "Brawny scleritis (disorder)"
+      }, {
+        "code": "95195003",
+        "display": "Nodular scleritis (disorder)"
+      }, {
+        "code": "95680001",
+        "display": "Sclerouveitis (disorder)"
+      }, {
+        "code": "95795006",
+        "display": "Superficial scleritis (disorder)"
+      }, {
+        "code": "95796007",
+        "display": "Deep scleritis (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "H15.021",
+        "display": "Brawny scleritis, right eye"
+      }, {
+        "code": "H15.022",
+        "display": "Brawny scleritis, left eye"
+      }, {
+        "code": "H15.023",
+        "display": "Brawny scleritis, bilateral"
+      }, {
+        "code": "H15.031",
+        "display": "Posterior scleritis, right eye"
+      }, {
+        "code": "H15.032",
+        "display": "Posterior scleritis, left eye"
+      }, {
+        "code": "H15.033",
+        "display": "Posterior scleritis, bilateral"
+      }, {
+        "code": "H15.041",
+        "display": "Scleritis with corneal involvement, right eye"
+      }, {
+        "code": "H15.042",
+        "display": "Scleritis with corneal involvement, left eye"
+      }, {
+        "code": "H15.043",
+        "display": "Scleritis with corneal involvement, bilateral"
+      }, {
+        "code": "H15.051",
+        "display": "Scleromalacia perforans, right eye"
+      }, {
+        "code": "H15.052",
+        "display": "Scleromalacia perforans, left eye"
+      }, {
+        "code": "H15.053",
+        "display": "Scleromalacia perforans, bilateral"
+      }, {
+        "code": "H15.091",
+        "display": "Other scleritis, right eye"
+      }, {
+        "code": "H15.092",
+        "display": "Other scleritis, left eye"
+      }, {
+        "code": "H15.093",
+        "display": "Other scleritis, bilateral"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

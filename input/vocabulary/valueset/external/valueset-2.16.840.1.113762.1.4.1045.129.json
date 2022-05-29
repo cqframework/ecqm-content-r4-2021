@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1045.129",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.129",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,28 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "concept": [ {
+        "code": "26464-8",
+        "display": "Leukocytes [#/volume] in Blood"
+      }, {
+        "code": "33256-9",
+        "display": "Leukocytes [#/volume] corrected for nucleated erythrocytes in Blood by Automated count"
+      }, {
+        "code": "49498-9",
+        "display": "Leukocytes [#/volume] in Blood by Estimate"
+      }, {
+        "code": "6690-2",
+        "display": "Leukocytes [#/volume] in Blood by Automated count"
+      }, {
+        "code": "804-5",
+        "display": "Leukocytes [#/volume] in Blood by Manual count"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

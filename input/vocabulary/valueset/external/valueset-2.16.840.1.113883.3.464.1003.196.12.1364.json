@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.196.12.1364",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1364",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,49 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "1665459",
+        "display": "2 ML ketorolac tromethamine 30 MG/ML Injection"
+      }, {
+        "code": "1665461",
+        "display": "1 ML ketorolac tromethamine 30 MG/ML Injection"
+      }, {
+        "code": "1665675",
+        "display": "1 ML ketorolac tromethamine 15 MG/ML Cartridge"
+      }, {
+        "code": "1665679",
+        "display": "1 ML ketorolac tromethamine 30 MG/ML Cartridge"
+      }, {
+        "code": "1665682",
+        "display": "2 ML ketorolac tromethamine 30 MG/ML Cartridge"
+      }, {
+        "code": "1797855",
+        "display": "ketorolac tromethamine 15.8 MG/ACTUAT Metered Dose Nasal Spray"
+      }, {
+        "code": "834022",
+        "display": "ketorolac tromethamine 10 MG Oral Tablet"
+      }, {
+        "code": "860092",
+        "display": "1 ML ketorolac tromethamine 15 MG/ML Injection"
+      }, {
+        "code": "860096",
+        "display": "ketorolac tromethamine 30 MG/ML Injectable Solution"
+      }, {
+        "code": "860113",
+        "display": "1 ML ketorolac tromethamine 15 MG/ML Prefilled Syringe"
+      }, {
+        "code": "860114",
+        "display": "1 ML ketorolac tromethamine 30 MG/ML Prefilled Syringe"
+      }, {
+        "code": "860115",
+        "display": "2 ML ketorolac tromethamine 30 MG/ML Prefilled Syringe"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

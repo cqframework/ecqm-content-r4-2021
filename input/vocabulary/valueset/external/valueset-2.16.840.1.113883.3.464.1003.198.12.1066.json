@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.198.12.1066",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1066",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,25 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "concept": [ {
+        "code": "21595-4",
+        "display": "Varicella zoster virus IgG Ab [Titer] in Cerebral spinal fluid by Immunofluorescence"
+      }, {
+        "code": "22601-9",
+        "display": "Varicella zoster virus IgG Ab [Titer] in Cerebral spinal fluid"
+      }, {
+        "code": "22602-7",
+        "display": "Varicella zoster virus IgG Ab [Titer] in Serum"
+      }, {
+        "code": "6569-8",
+        "display": "Varicella zoster virus IgG Ab [Titer] in Serum by Immunofluorescence"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

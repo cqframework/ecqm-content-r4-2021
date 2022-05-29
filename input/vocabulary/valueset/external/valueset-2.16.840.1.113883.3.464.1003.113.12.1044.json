@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.113.12.1044",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1044",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,72 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "15552004",
+        "display": "Osteogenesis imperfecta, recessive perinatal lethal, with microcephaly AND cataracts (disorder)"
+      }, {
+        "code": "205496008",
+        "display": "Osteogenesis imperfecta type II (disorder)"
+      }, {
+        "code": "205497004",
+        "display": "Osteogenesis imperfecta type IV (disorder)"
+      }, {
+        "code": "254110009",
+        "display": "Osteogenesis imperfecta type IIA (disorder)"
+      }, {
+        "code": "254111008",
+        "display": "Osteogenesis imperfecta type IIB (disorder)"
+      }, {
+        "code": "254112001",
+        "display": "Osteoporosis with pseudoglioma (disorder)"
+      }, {
+        "code": "279309008",
+        "display": "Osteogenesis imperfecta, type IV B (disorder)"
+      }, {
+        "code": "280159008",
+        "display": "Osteogenesis imperfecta, type IV A (disorder)"
+      }, {
+        "code": "385482004",
+        "display": "Osteogenesis imperfecta type I (disorder)"
+      }, {
+        "code": "385483009",
+        "display": "Osteogenesis imperfecta type III (disorder)"
+      }, {
+        "code": "63890001",
+        "display": "Osteogenesis imperfecta with blue sclerae AND dentinogenesis imperfecta (disorder)"
+      }, {
+        "code": "64404003",
+        "display": "Osteogenesis imperfecta with blue sclerae AND normal teeth (disorder)"
+      }, {
+        "code": "7134007",
+        "display": "Osteogenesis imperfecta, dominant perinatal lethal (disorder)"
+      }, {
+        "code": "78314001",
+        "display": "Osteogenesis imperfecta (disorder)"
+      }, {
+        "code": "86470003",
+        "display": "Osteogenesis imperfecta, recessive perinatal lethal (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "Q78.0",
+        "display": "Osteogenesis imperfecta"
+      } ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/icd9cm",
+      "version": "2013",
+      "concept": [ {
+        "code": "756.51",
+        "display": "Osteogenesis imperfecta"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

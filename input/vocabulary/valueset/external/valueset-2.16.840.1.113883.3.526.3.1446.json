@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1446",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1446",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,194 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "1151008",
+        "display": "Visual field constriction (finding)"
+      }, {
+        "code": "12184005",
+        "display": "Visual field defect (finding)"
+      }, {
+        "code": "129625005",
+        "display": "Ring scotoma (finding)"
+      }, {
+        "code": "129626006",
+        "display": "Quadrantic scotoma (finding)"
+      }, {
+        "code": "15462009",
+        "display": "Arcuate scotoma (finding)"
+      }, {
+        "code": "16059151000119108",
+        "display": "Scotoma of left eye (finding)"
+      }, {
+        "code": "16059191000119103",
+        "display": "Scotoma of bilateral eyes (finding)"
+      }, {
+        "code": "193670002",
+        "display": "Blind spot scotoma (finding)"
+      }, {
+        "code": "193671003",
+        "display": "Paracecal scotoma (finding)"
+      }, {
+        "code": "193672005",
+        "display": "Angioscotoma (finding)"
+      }, {
+        "code": "19900004",
+        "display": "Decreased peripheral vision (finding)"
+      }, {
+        "code": "21273008",
+        "display": "Relative scotoma (finding)"
+      }, {
+        "code": "2228002",
+        "display": "Scintillating scotoma (finding)"
+      }, {
+        "code": "23388006",
+        "display": "Visual field scotoma (finding)"
+      }, {
+        "code": "24370009",
+        "display": "Seidel scotoma (finding)"
+      }, {
+        "code": "246656009",
+        "display": "Loss of part of visual field (finding)"
+      }, {
+        "code": "246658005",
+        "display": "Seeing blob in vision (finding)"
+      }, {
+        "code": "246659002",
+        "display": "Peripheral scotoma (finding)"
+      }, {
+        "code": "246660007",
+        "display": "Peripheral ring scotoma (finding)"
+      }, {
+        "code": "246661006",
+        "display": "Local peripheral scotoma (finding)"
+      }, {
+        "code": "246662004",
+        "display": "Altitudinal scotoma (finding)"
+      }, {
+        "code": "267628004",
+        "display": "Generalized visual field constriction (finding)"
+      }, {
+        "code": "33014001",
+        "display": "Centrocecal scotoma (finding)"
+      }, {
+        "code": "33048000",
+        "display": "Peripheral visual field defect (finding)"
+      }, {
+        "code": "336171000119109",
+        "display": "Central scotoma of right eye (finding)"
+      }, {
+        "code": "33970004",
+        "display": "Enlarged blind spot (finding)"
+      }, {
+        "code": "341781000119100",
+        "display": "Central scotoma of left eye (finding)"
+      }, {
+        "code": "345121001",
+        "display": "Heteronymous bilateral visual field defects (finding)"
+      }, {
+        "code": "346991000119107",
+        "display": "Central scotoma of bilateral eyes (finding)"
+      }, {
+        "code": "370961005",
+        "display": "Glaucomatous visual field defect (finding)"
+      }, {
+        "code": "38950008",
+        "display": "Central scotoma (finding)"
+      }, {
+        "code": "404650002",
+        "display": "Pericentral scotoma (finding)"
+      }, {
+        "code": "416626008",
+        "display": "Functional visual field loss (finding)"
+      }, {
+        "code": "420990001",
+        "display": "Tunnel visual field constriction (finding)"
+      }, {
+        "code": "421561005",
+        "display": "Concentric visual field constriction (finding)"
+      }, {
+        "code": "445923001",
+        "display": "Sector visual field defect (finding)"
+      }, {
+        "code": "446020008",
+        "display": "Arcuate visual field defect (finding)"
+      }, {
+        "code": "4806007",
+        "display": "Bjerrum scotoma (finding)"
+      }, {
+        "code": "49073008",
+        "display": "Absolute scotoma (finding)"
+      }, {
+        "code": "59695000",
+        "display": "Bilateral visual field constriction (finding)"
+      }, {
+        "code": "64418005",
+        "display": "Paracentral scotoma (finding)"
+      }, {
+        "code": "65133002",
+        "display": "Physiologic scotoma (finding)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "H53.411",
+        "display": "Scotoma involving central area, right eye"
+      }, {
+        "code": "H53.412",
+        "display": "Scotoma involving central area, left eye"
+      }, {
+        "code": "H53.413",
+        "display": "Scotoma involving central area, bilateral"
+      }, {
+        "code": "H53.421",
+        "display": "Scotoma of blind spot area, right eye"
+      }, {
+        "code": "H53.422",
+        "display": "Scotoma of blind spot area, left eye"
+      }, {
+        "code": "H53.423",
+        "display": "Scotoma of blind spot area, bilateral"
+      }, {
+        "code": "H53.431",
+        "display": "Sector or arcuate defects, right eye"
+      }, {
+        "code": "H53.432",
+        "display": "Sector or arcuate defects, left eye"
+      }, {
+        "code": "H53.433",
+        "display": "Sector or arcuate defects, bilateral"
+      }, {
+        "code": "H53.451",
+        "display": "Other localized visual field defect, right eye"
+      }, {
+        "code": "H53.452",
+        "display": "Other localized visual field defect, left eye"
+      }, {
+        "code": "H53.453",
+        "display": "Other localized visual field defect, bilateral"
+      }, {
+        "code": "H53.461",
+        "display": "Homonymous bilateral field defects, right side"
+      }, {
+        "code": "H53.462",
+        "display": "Homonymous bilateral field defects, left side"
+      }, {
+        "code": "H53.481",
+        "display": "Generalized contraction of visual field, right eye"
+      }, {
+        "code": "H53.482",
+        "display": "Generalized contraction of visual field, left eye"
+      }, {
+        "code": "H53.483",
+        "display": "Generalized contraction of visual field, bilateral"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

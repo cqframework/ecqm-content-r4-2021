@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1416",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1416",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,44 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "186266008",
+        "display": "Tuberculous chronic iridocyclitis (disorder)"
+      }, {
+        "code": "193493000",
+        "display": "Chronic iridocyclitis due to another disorder (disorder)"
+      }, {
+        "code": "416449002",
+        "display": "Chronic iridocyclitis in young girls (disorder)"
+      }, {
+        "code": "6869001",
+        "display": "Recurrent iridocyclitis (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "A18.54",
+        "display": "Tuberculous iridocyclitis"
+      }, {
+        "code": "H20.11",
+        "display": "Chronic iridocyclitis, right eye"
+      }, {
+        "code": "H20.12",
+        "display": "Chronic iridocyclitis, left eye"
+      }, {
+        "code": "H20.13",
+        "display": "Chronic iridocyclitis, bilateral"
+      }, {
+        "code": "H20.9",
+        "display": "Unspecified iridocyclitis"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

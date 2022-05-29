@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.101.12.1059",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1059",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,46 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "182969009",
+        "display": "Dependent drug detoxification (regime/therapy)"
+      }, {
+        "code": "20093000",
+        "display": "Alcohol rehabilitation and detoxification (regime/therapy)"
+      }, {
+        "code": "23915005",
+        "display": "Combined alcohol and drug rehabilitation and detoxification (regime/therapy)"
+      }, {
+        "code": "414054004",
+        "display": "Drug dependence home detoxification (regime/therapy)"
+      }, {
+        "code": "414056002",
+        "display": "Drug dependence self detoxification (regime/therapy)"
+      }, {
+        "code": "56876005",
+        "display": "Drug rehabilitation and detoxification (regime/therapy)"
+      }, {
+        "code": "61480009",
+        "display": "Drug detoxification (regime/therapy)"
+      }, {
+        "code": "64297001",
+        "display": "Detoxication psychiatric therapy for alcoholism (regime/therapy)"
+      }, {
+        "code": "67516001",
+        "display": "Detoxification therapy (regime/therapy)"
+      }, {
+        "code": "827094004",
+        "display": "Alcohol detoxification (regime/therapy)"
+      }, {
+        "code": "87106005",
+        "display": "Combined alcohol and drug detoxification (regime/therapy)"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

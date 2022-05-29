@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1448",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1448",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,134 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "193638002",
+        "display": "Stimulus deprivation amblyopia (disorder)"
+      }, {
+        "code": "232147001",
+        "display": "Anisometropic amblyopia (disorder)"
+      }, {
+        "code": "331961000119108",
+        "display": "Strabismic amblyopia of right eye (disorder)"
+      }, {
+        "code": "332701000119101",
+        "display": "Refractive amblyopia of right eye (disorder)"
+      }, {
+        "code": "335461000119102",
+        "display": "Deprivation amblyopia of right eye (disorder)"
+      }, {
+        "code": "336451000119108",
+        "display": "Amblyopia of right eye (disorder)"
+      }, {
+        "code": "337581000119100",
+        "display": "Strabismic amblyopia of left eye (disorder)"
+      }, {
+        "code": "338311000119102",
+        "display": "Refractive amblyopia of left eye (disorder)"
+      }, {
+        "code": "341071000119100",
+        "display": "Deprivation amblyopia of left eye (disorder)"
+      }, {
+        "code": "342061000119102",
+        "display": "Amblyopia of left eye (disorder)"
+      }, {
+        "code": "343371000119101",
+        "display": "Strabismic amblyopia of bilateral eyes (disorder)"
+      }, {
+        "code": "344081000119104",
+        "display": "Refractive amblyopia of bilateral eyes (disorder)"
+      }, {
+        "code": "346331000119107",
+        "display": "Deprivation amblyopia of bilateral eyes (disorder)"
+      }, {
+        "code": "347241000119107",
+        "display": "Amblyopia of bilateral eyes (disorder)"
+      }, {
+        "code": "35600002",
+        "display": "Strabismic amblyopia (disorder)"
+      }, {
+        "code": "361120000",
+        "display": "Nutritional amblyopia (disorder)"
+      }, {
+        "code": "387742006",
+        "display": "Amblyopia (disorder)"
+      }, {
+        "code": "387743001",
+        "display": "Functional amblyopia (disorder)"
+      }, {
+        "code": "396184003",
+        "display": "Isometropic amblyopia (disorder)"
+      }, {
+        "code": "410486005",
+        "display": "Occlusion amblyopia (disorder)"
+      }, {
+        "code": "70701004",
+        "display": "Alcoholic amblyopia (disorder)"
+      }, {
+        "code": "75834006",
+        "display": "Strachan's syndrome (disorder)"
+      }, {
+        "code": "90927000",
+        "display": "Refractive amblyopia (disorder)"
+      }, {
+        "code": "965003",
+        "display": "Toxic amblyopia (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "H53.001",
+        "display": "Unspecified amblyopia, right eye"
+      }, {
+        "code": "H53.002",
+        "display": "Unspecified amblyopia, left eye"
+      }, {
+        "code": "H53.003",
+        "display": "Unspecified amblyopia, bilateral"
+      }, {
+        "code": "H53.011",
+        "display": "Deprivation amblyopia, right eye"
+      }, {
+        "code": "H53.012",
+        "display": "Deprivation amblyopia, left eye"
+      }, {
+        "code": "H53.013",
+        "display": "Deprivation amblyopia, bilateral"
+      }, {
+        "code": "H53.021",
+        "display": "Refractive amblyopia, right eye"
+      }, {
+        "code": "H53.022",
+        "display": "Refractive amblyopia, left eye"
+      }, {
+        "code": "H53.023",
+        "display": "Refractive amblyopia, bilateral"
+      }, {
+        "code": "H53.031",
+        "display": "Strabismic amblyopia, right eye"
+      }, {
+        "code": "H53.032",
+        "display": "Strabismic amblyopia, left eye"
+      }, {
+        "code": "H53.033",
+        "display": "Strabismic amblyopia, bilateral"
+      }, {
+        "code": "H53.041",
+        "display": "Amblyopia suspect, right eye"
+      }, {
+        "code": "H53.042",
+        "display": "Amblyopia suspect, left eye"
+      }, {
+        "code": "H53.043",
+        "display": "Amblyopia suspect, bilateral"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

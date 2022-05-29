@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.110.12.1059",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1059",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,58 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "concept": [ {
+        "code": "21440-3",
+        "display": "Human papilloma virus 16+18+31+33+35+45+51+52+56 DNA [Presence] in Cervix by Probe"
+      }, {
+        "code": "30167-1",
+        "display": "Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+68 DNA [Presence] in Cervix by Probe with signal amplification"
+      }, {
+        "code": "38372-9",
+        "display": "Human papilloma virus 6+11+16+18+31+33+35+39+42+43+44+45+51+52+56+58+59+68 DNA [Presence] in Cervix by Probe with signal amplification"
+      }, {
+        "code": "59263-4",
+        "display": "Human papilloma virus 16 DNA [Presence] in Cervix by Probe with signal amplification"
+      }, {
+        "code": "59264-2",
+        "display": "Human papilloma virus 18 DNA [Presence] in Cervix by Probe with signal amplification"
+      }, {
+        "code": "59420-0",
+        "display": "Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Cervix by Probe with signal amplification"
+      }, {
+        "code": "69002-4",
+        "display": "Human papilloma virus E6+E7 mRNA [Presence] in Cervix by NAA with probe detection"
+      }, {
+        "code": "71431-1",
+        "display": "Human papilloma virus 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Cervix by NAA with probe detection"
+      }, {
+        "code": "75694-0",
+        "display": "Human papilloma virus 18+45 E6+E7 mRNA [Presence] in Cervix by NAA with probe detection"
+      }, {
+        "code": "77379-6",
+        "display": "Human papilloma virus 16 and 18 and 31+33+35+39+45+51+52+56+58+59+66+68 DNA [Interpretation] in Cervix"
+      }, {
+        "code": "77399-4",
+        "display": "Human papilloma virus 16 DNA [Presence] in Cervix by NAA with probe detection"
+      }, {
+        "code": "77400-0",
+        "display": "Human papilloma virus 18 DNA [Presence] in Cervix by NAA with probe detection"
+      }, {
+        "code": "82354-2",
+        "display": "Human papilloma virus 16 and 18+45 E6+E7 mRNA [Identifier] in Cervix by NAA with probe detection"
+      }, {
+        "code": "82456-5",
+        "display": "Human papilloma virus 16 E6+E7 mRNA [Presence] in Cervix by NAA with probe detection"
+      }, {
+        "code": "82675-0",
+        "display": "Human papilloma virus 16+18+31+33+35+39+45+51+52+56+58+59+66+68 DNA [Presence] in Cervix by NAA with probe detection"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

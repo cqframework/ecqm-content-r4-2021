@@ -2,37 +2,56 @@
   "resourceType": "ValueSet",
   "id": "ValueSet-33297",
   "meta": {
-    "lastUpdated": "2019-07-15T12:41:10.807-04:00"
+    "lastUpdated": "2019-07-15T12:41:10.807-04:00",
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
   },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1446",
-  "identifier": [
-    {
-      "value": "2.16.840.1.113883.3.464.1004.1446"
-    }
-  ],
+  "identifier": [ {
+    "value": "2.16.840.1.113883.3.464.1004.1446"
+  } ],
   "version": "Working",
   "name": "Online_Assessments",
   "title": "Online Assessments",
   "status": "active",
+  "compose": {
+    "include": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021.2.20AB",
+      "concept": [ {
+        "code": "98969",
+        "display": "Online assessment and management service provided by a qualified nonphysician health care professional to an established patient or guardian, not originating from a related assessment and management service provided within the previous 7 days, using the Internet or similar electronic communications network"
+      }, {
+        "code": "99444",
+        "display": "Online evaluation and management service provided by a physician or other qualified health care professional who may report evaluation and management services provided to an established patient or guardian, not originating from a related E/M service provided within the previous 7 days, using the Internet or similar electronic communications network"
+      } ]
+    } ]
+  },
   "expansion": {
     "timestamp": "2021-04-05T14:47:01-04:00",
     "total": 2,
     "offset": 0,
-    "contains": [
-      {
-        "system": "http://www.ama-assn.org/go/cpt",
-        "inactive": true,
-        "version": "2021.2.20AB",
-        "code": "98969",
-        "display": "Online assessment and management service provided by a qualified nonphysician health care professional to an established patient or guardian, not originating from a related assessment and management service provided within the previous 7 days, using the Internet or similar electronic communications network"
-      },
-      {
-        "system": "http://www.ama-assn.org/go/cpt",
-        "inactive": true,
-        "version": "2021.2.20AB",
-        "code": "99444",
-        "display": "Online evaluation and management service provided by a physician or other qualified health care professional who may report evaluation and management services provided to an established patient or guardian, not originating from a related E/M service provided within the previous 7 days, using the Internet or similar electronic communications network"
-      }
-    ]
+    "contains": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "inactive": true,
+      "version": "2021.2.20AB",
+      "code": "98969",
+      "display": "Online assessment and management service provided by a qualified nonphysician health care professional to an established patient or guardian, not originating from a related assessment and management service provided within the previous 7 days, using the Internet or similar electronic communications network"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "inactive": true,
+      "version": "2021.2.20AB",
+      "code": "99444",
+      "display": "Online evaluation and management service provided by a physician or other qualified health care professional who may report evaluation and management services provided to an established patient or guardian, not originating from a related E/M service provided within the previous 7 days, using the Internet or similar electronic communications network"
+    } ]
   }
 }

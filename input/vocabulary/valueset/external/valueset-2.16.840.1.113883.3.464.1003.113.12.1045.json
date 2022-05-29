@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.113.12.1045",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1045",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,76 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "162930007",
+        "display": "On examination - ankylosing spondylitis chest deformity (disorder)"
+      }, {
+        "code": "239810002",
+        "display": "Ankylosing spondylitis with organ / system involvement (disorder)"
+      }, {
+        "code": "239811003",
+        "display": "Ankylosing spondylitis with multisystem involvement (disorder)"
+      }, {
+        "code": "786077003",
+        "display": "Ankylosing spondylitis co-occurrent with anterior uveitis (disorder)"
+      }, {
+        "code": "9631008",
+        "display": "Ankylosing spondylitis (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "M45.0",
+        "display": "Ankylosing spondylitis of multiple sites in spine"
+      }, {
+        "code": "M45.1",
+        "display": "Ankylosing spondylitis of occipito-atlanto-axial region"
+      }, {
+        "code": "M45.2",
+        "display": "Ankylosing spondylitis of cervical region"
+      }, {
+        "code": "M45.3",
+        "display": "Ankylosing spondylitis of cervicothoracic region"
+      }, {
+        "code": "M45.4",
+        "display": "Ankylosing spondylitis of thoracic region"
+      }, {
+        "code": "M45.5",
+        "display": "Ankylosing spondylitis of thoracolumbar region"
+      }, {
+        "code": "M45.6",
+        "display": "Ankylosing spondylitis lumbar region"
+      }, {
+        "code": "M45.7",
+        "display": "Ankylosing spondylitis of lumbosacral region"
+      }, {
+        "code": "M45.8",
+        "display": "Ankylosing spondylitis sacral and sacrococcygeal region"
+      }, {
+        "code": "M45.9",
+        "display": "Ankylosing spondylitis of unspecified sites in spine"
+      } ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/icd9cm",
+      "version": "2013",
+      "concept": [ {
+        "code": "720.0",
+        "display": "Ankylosing spondylitis"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2019-03",
+      "concept": [ {
+        "code": "129564003",
+        "display": "Ankylosing spondylarthritis and eye lesions (disorder)"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1570",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1570",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,67 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "183524004",
+        "display": "Referral to psychiatry service (procedure)"
+      }, {
+        "code": "183583007",
+        "display": "Refer to mental health worker (procedure)"
+      }, {
+        "code": "183851006",
+        "display": "Referral to clinic (procedure)"
+      }, {
+        "code": "183866009",
+        "display": "Referral to emergency clinic (procedure)"
+      }, {
+        "code": "306136006",
+        "display": "Referral to liaison psychiatry service (procedure)"
+      }, {
+        "code": "306137002",
+        "display": "Referral to mental handicap psychiatry service (procedure)"
+      }, {
+        "code": "306226009",
+        "display": "Referral to mental health counseling service (procedure)"
+      }, {
+        "code": "306227000",
+        "display": "Referral for mental health counseling (procedure)"
+      }, {
+        "code": "306252003",
+        "display": "Referral to mental health counselor (procedure)"
+      }, {
+        "code": "306291008",
+        "display": "Referral to child and adolescent psychiatrist (procedure)"
+      }, {
+        "code": "306294000",
+        "display": "Referral to psychiatrist for mental handicap (procedure)"
+      }, {
+        "code": "308459004",
+        "display": "Referral to psychologist (procedure)"
+      }, {
+        "code": "308477009",
+        "display": "Referral to psychiatrist (procedure)"
+      }, {
+        "code": "309627007",
+        "display": "Child referral - clinical psychologist (procedure)"
+      }, {
+        "code": "390866009",
+        "display": "Referral to mental health team (procedure)"
+      }, {
+        "code": "703978000",
+        "display": "Referral to primary care service (procedure)"
+      }, {
+        "code": "710914003",
+        "display": "Referral to family therapy (procedure)"
+      }, {
+        "code": "711281004",
+        "display": "Referral to support group (procedure)"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

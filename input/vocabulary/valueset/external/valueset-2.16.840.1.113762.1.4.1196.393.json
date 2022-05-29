@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1196.393",
   "meta": {
-    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
   },
   "extension": [ {
     "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
@@ -28,6 +28,15 @@
   }, {
     "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
     "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
   } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.393",
   "version": "20210216",
@@ -37,6 +46,1048 @@
   "publisher": "IMPAQ International",
   "description": "The purpose of this value set is to represent concepts for medications capable of causing severe hypoglycemia.",
   "purpose": "This value set may use a model element related to Medication.",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-09",
+      "concept": [ {
+        "code": "105374",
+        "display": "gliquidone 30 MG Oral Tablet"
+      }, {
+        "code": "106892",
+        "display": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Humulin]"
+      }, {
+        "code": "1153126",
+        "display": "acetohexamide Oral Product"
+      }, {
+        "code": "1153127",
+        "display": "acetohexamide Pill"
+      }, {
+        "code": "1155471",
+        "display": "chlorpropamide Oral Product"
+      }, {
+        "code": "1155472",
+        "display": "chlorpropamide Pill"
+      }, {
+        "code": "1156197",
+        "display": "glyburide / metformin Pill"
+      }, {
+        "code": "1156200",
+        "display": "glyburide Oral Product"
+      }, {
+        "code": "1156201",
+        "display": "glyburide Pill"
+      }, {
+        "code": "1157121",
+        "display": "tolazamide Oral Product"
+      }, {
+        "code": "1157122",
+        "display": "tolazamide Pill"
+      }, {
+        "code": "1157240",
+        "display": "glimepiride / pioglitazone Oral Product"
+      }, {
+        "code": "1157241",
+        "display": "glimepiride / pioglitazone Pill"
+      }, {
+        "code": "1157242",
+        "display": "glimepiride / rosiglitazone Oral Product"
+      }, {
+        "code": "1157243",
+        "display": "glimepiride / rosiglitazone Pill"
+      }, {
+        "code": "1157244",
+        "display": "glimepiride Oral Product"
+      }, {
+        "code": "1157245",
+        "display": "glimepiride Pill"
+      }, {
+        "code": "1157246",
+        "display": "gliquidone Oral Product"
+      }, {
+        "code": "1157247",
+        "display": "gliquidone Pill"
+      }, {
+        "code": "1157407",
+        "display": "repaglinide Oral Product"
+      }, {
+        "code": "1157408",
+        "display": "repaglinide Pill"
+      }, {
+        "code": "1157459",
+        "display": "insulin glargine Injectable Product"
+      }, {
+        "code": "1157460",
+        "display": "insulin lispro / insulin lispro protamine, human Injectable Product"
+      }, {
+        "code": "1157461",
+        "display": "insulin lispro Injectable Product"
+      }, {
+        "code": "1157462",
+        "display": "insulin aspart protamine, human / insulin aspart, human Injectable Product"
+      }, {
+        "code": "1157463",
+        "display": "insulin aspart, human Injectable Product"
+      }, {
+        "code": "1157464",
+        "display": "insulin glulisine, human Injectable Product"
+      }, {
+        "code": "1157473",
+        "display": "insulin, regular, beef Injectable Product"
+      }, {
+        "code": "1157643",
+        "display": "tolbutamide Oral Product"
+      }, {
+        "code": "1157644",
+        "display": "tolbutamide Pill"
+      }, {
+        "code": "1158015",
+        "display": "insulin, regular, pork Injectable Product"
+      }, {
+        "code": "1158016",
+        "display": "lente insulin, human Injectable Product"
+      }, {
+        "code": "1158017",
+        "display": "lente insulin, pork Injectable Product"
+      }, {
+        "code": "1158396",
+        "display": "nateglinide Oral Product"
+      }, {
+        "code": "1158397",
+        "display": "nateglinide Pill"
+      }, {
+        "code": "1160696",
+        "display": "insulin detemir Injectable Product"
+      }, {
+        "code": "1160697",
+        "display": "insulin human, rDNA origin Inhalant Product"
+      }, {
+        "code": "1160698",
+        "display": "insulin, protamine zinc, beef Injectable Product"
+      }, {
+        "code": "1161599",
+        "display": "metformin / repaglinide Oral Product"
+      }, {
+        "code": "1161600",
+        "display": "metformin / repaglinide Pill"
+      }, {
+        "code": "1164824",
+        "display": "insulin, regular, human Injectable Product"
+      }, {
+        "code": "1165203",
+        "display": "gliclazide Oral Product"
+      }, {
+        "code": "1165204",
+        "display": "gliclazide Pill"
+      }, {
+        "code": "1165205",
+        "display": "glipizide / metformin Oral Product"
+      }, {
+        "code": "1165206",
+        "display": "glipizide / metformin Pill"
+      }, {
+        "code": "1165207",
+        "display": "glipizide Oral Product"
+      }, {
+        "code": "1165208",
+        "display": "glipizide Pill"
+      }, {
+        "code": "1165845",
+        "display": "glyburide / metformin Oral Product"
+      }, {
+        "code": "1166403",
+        "display": "Duetact Oral Product"
+      }, {
+        "code": "1166404",
+        "display": "Duetact Pill"
+      }, {
+        "code": "1167934",
+        "display": "Levemir Injectable Product"
+      }, {
+        "code": "1168563",
+        "display": "Apidra Injectable Product"
+      }, {
+        "code": "1170663",
+        "display": "Amaryl Oral Product"
+      }, {
+        "code": "1170664",
+        "display": "Amaryl Pill"
+      }, {
+        "code": "1171246",
+        "display": "Glucotrol Oral Product"
+      }, {
+        "code": "1171247",
+        "display": "Glucotrol Pill"
+      }, {
+        "code": "1171248",
+        "display": "Glucovance Oral Product"
+      }, {
+        "code": "1171249",
+        "display": "Glucovance Pill"
+      }, {
+        "code": "1171289",
+        "display": "Humalog Injectable Product"
+      }, {
+        "code": "1171291",
+        "display": "Humalog Mix Injectable Product"
+      }, {
+        "code": "1171933",
+        "display": "Glynase Oral Product"
+      }, {
+        "code": "1171934",
+        "display": "Glynase Pill"
+      }, {
+        "code": "1171997",
+        "display": "Humulin Injectable Product"
+      }, {
+        "code": "1172691",
+        "display": "Humulin N Injectable Product"
+      }, {
+        "code": "1172692",
+        "display": "Humulin R Injectable Product"
+      }, {
+        "code": "1173942",
+        "display": "Exubera Inhalant Product"
+      }, {
+        "code": "1175624",
+        "display": "Lantus Injectable Product"
+      }, {
+        "code": "1178119",
+        "display": "NovoLog Injectable Product"
+      }, {
+        "code": "1178120",
+        "display": "NovoLog Mix Injectable Product"
+      }, {
+        "code": "1178125",
+        "display": "Novolin Injectable Product"
+      }, {
+        "code": "1178127",
+        "display": "Novolin N Injectable Product"
+      }, {
+        "code": "1178128",
+        "display": "Novolin R Injectable Product"
+      }, {
+        "code": "1178433",
+        "display": "Starlix Oral Product"
+      }, {
+        "code": "1178434",
+        "display": "Starlix Pill"
+      }, {
+        "code": "1184631",
+        "display": "Prandin Oral Product"
+      }, {
+        "code": "1184632",
+        "display": "Prandin Pill"
+      }, {
+        "code": "1185049",
+        "display": "Metaglip Oral Product"
+      }, {
+        "code": "1185624",
+        "display": "Metaglip Pill"
+      }, {
+        "code": "1188080",
+        "display": "Vetsulin Injectable Product"
+      }, {
+        "code": "1361493",
+        "display": "glimepiride 6 MG Oral Tablet"
+      }, {
+        "code": "1361495",
+        "display": "glimepiride 8 MG Oral Tablet"
+      }, {
+        "code": "1371204",
+        "display": "lente insulin, pork Injectable Suspension [Vetsulin]"
+      }, {
+        "code": "153591",
+        "display": "glimepiride 2 MG Oral Tablet [Amaryl]"
+      }, {
+        "code": "153842",
+        "display": "glimepiride 3 MG Oral Tablet"
+      }, {
+        "code": "153843",
+        "display": "glimepiride 1 MG Oral Tablet [Amaryl]"
+      }, {
+        "code": "153845",
+        "display": "glimepiride 4 MG Oral Tablet [Amaryl]"
+      }, {
+        "code": "1543200",
+        "display": "insulin, regular, human Inhalant Product"
+      }, {
+        "code": "1543202",
+        "display": "insulin, regular, human 4 UNT Inhalation Powder"
+      }, {
+        "code": "1543207",
+        "display": "insulin, regular, human 4 UNT Inhalation Powder [Afrezza]"
+      }, {
+        "code": "1544488",
+        "display": "insulin, regular, human 8 UNT Inhalation Powder"
+      }, {
+        "code": "1544490",
+        "display": "insulin, regular, human 8 UNT Inhalation Powder [Afrezza]"
+      }, {
+        "code": "1551295",
+        "display": "0.5 ML dulaglutide 1.5 MG/ML Auto-Injector"
+      }, {
+        "code": "1551300",
+        "display": "0.5 ML dulaglutide 1.5 MG/ML Auto-Injector [Trulicity]"
+      }, {
+        "code": "1551304",
+        "display": "0.5 ML dulaglutide 3 MG/ML Auto-Injector"
+      }, {
+        "code": "1551306",
+        "display": "0.5 ML dulaglutide 3 MG/ML Auto-Injector [Trulicity]"
+      }, {
+        "code": "1598268",
+        "display": "3 ML liraglutide 6 MG/ML Pen Injector [Saxenda]"
+      }, {
+        "code": "1604543",
+        "display": "Toujeo Injectable Product"
+      }, {
+        "code": "1651313",
+        "display": "insulin glulisine, human Pen Injector"
+      }, {
+        "code": "1651315",
+        "display": "insulin glulisine, human Pen Injector [Apidra]"
+      }, {
+        "code": "1652238",
+        "display": "insulin lispro Pen Injector"
+      }, {
+        "code": "1652241",
+        "display": "insulin lispro Pen Injector [Humalog]"
+      }, {
+        "code": "1652639",
+        "display": "3 ML insulin lispro 100 UNT/ML Pen Injector"
+      }, {
+        "code": "1652640",
+        "display": "3 ML insulin lispro 100 UNT/ML Pen Injector [Humalog]"
+      }, {
+        "code": "1652643",
+        "display": "insulin lispro Cartridge"
+      }, {
+        "code": "1652645",
+        "display": "insulin lispro Cartridge [Humalog]"
+      }, {
+        "code": "1653104",
+        "display": "insulin lispro / insulin lispro protamine, human Pen Injector"
+      }, {
+        "code": "1653106",
+        "display": "insulin lispro / insulin lispro protamine, human Pen Injector [Humalog Mix]"
+      }, {
+        "code": "1653195",
+        "display": "insulin aspart, human Cartridge"
+      }, {
+        "code": "1653196",
+        "display": "3 ML insulin aspart, human 100 UNT/ML Cartridge"
+      }, {
+        "code": "1653197",
+        "display": "insulin aspart, human Cartridge [NovoLog]"
+      }, {
+        "code": "1653198",
+        "display": "3 ML insulin aspart, human 100 UNT/ML Cartridge [NovoLog]"
+      }, {
+        "code": "1653201",
+        "display": "insulin aspart, human Pen Injector"
+      }, {
+        "code": "1653202",
+        "display": "3 ML insulin aspart, human 100 UNT/ML Pen Injector"
+      }, {
+        "code": "1653203",
+        "display": "insulin aspart, human Pen Injector [NovoLog]"
+      }, {
+        "code": "1653204",
+        "display": "3 ML insulin aspart, human 100 UNT/ML Pen Injector [NovoLog]"
+      }, {
+        "code": "1653207",
+        "display": "insulin aspart protamine, human / insulin aspart, human Pen Injector"
+      }, {
+        "code": "1653209",
+        "display": "insulin aspart protamine, human / insulin aspart, human Pen Injector [NovoLog Mix]"
+      }, {
+        "code": "1653497",
+        "display": "insulin glargine Pen Injector"
+      }, {
+        "code": "1653499",
+        "display": "insulin glargine Pen Injector [Lantus]"
+      }, {
+        "code": "1653506",
+        "display": "insulin glargine Pen Injector [Toujeo]"
+      }, {
+        "code": "1653897",
+        "display": "insulin isophane Injectable Product"
+      }, {
+        "code": "1653899",
+        "display": "insulin isophane / insulin, regular, human Injectable Product"
+      }, {
+        "code": "1654190",
+        "display": "insulin detemir Pen Injector"
+      }, {
+        "code": "1654192",
+        "display": "insulin detemir Pen Injector [Levemir]"
+      }, {
+        "code": "1654651",
+        "display": "insulin isophane / insulin, regular, human Pen Injector"
+      }, {
+        "code": "1654855",
+        "display": "insulin isophane / insulin, regular, human Pen Injector [Humulin]"
+      }, {
+        "code": "1654861",
+        "display": "insulin isophane Pen Injector"
+      }, {
+        "code": "1654862",
+        "display": "3 ML insulin isophane, human 100 UNT/ML Pen Injector"
+      }, {
+        "code": "1654863",
+        "display": "insulin isophane Pen Injector [Humulin N]"
+      }, {
+        "code": "1654910",
+        "display": "insulin, regular, human 12 UNT Inhalation Powder"
+      }, {
+        "code": "1654912",
+        "display": "insulin, regular, human 12 UNT Inhalation Powder [Afrezza]"
+      }, {
+        "code": "1670009",
+        "display": "insulin degludec Injectable Product"
+      }, {
+        "code": "1670010",
+        "display": "insulin degludec Pen Injector"
+      }, {
+        "code": "1670011",
+        "display": "3 ML insulin degludec 100 UNT/ML Pen Injector"
+      }, {
+        "code": "1670014",
+        "display": "insulin degludec Pen Injector [Tresiba]"
+      }, {
+        "code": "1670015",
+        "display": "Tresiba Injectable Product"
+      }, {
+        "code": "1670016",
+        "display": "3 ML insulin degludec 100 UNT/ML Pen Injector [Tresiba]"
+      }, {
+        "code": "1670021",
+        "display": "3 ML insulin degludec 200 UNT/ML Pen Injector"
+      }, {
+        "code": "1670023",
+        "display": "3 ML insulin degludec 200 UNT/ML Pen Injector [Tresiba]"
+      }, {
+        "code": "1731314",
+        "display": "insulin, regular, human Pen Injector"
+      }, {
+        "code": "1731316",
+        "display": "insulin, regular, human Pen Injector [Humulin R]"
+      }, {
+        "code": "1736861",
+        "display": "insulin glargine Pen Injector [Basaglar]"
+      }, {
+        "code": "1736862",
+        "display": "Basaglar Injectable Product"
+      }, {
+        "code": "1736863",
+        "display": "3 ML insulin glargine 100 UNT/ML Pen Injector [Basaglar]"
+      }, {
+        "code": "1798387",
+        "display": "{90 (insulin, regular, human 4 UNT Inhalation Powder) / 90 (insulin, regular, human 8 UNT Inhalation Powder) } Pack"
+      }, {
+        "code": "1798388",
+        "display": "{90 (insulin, regular, human 4 UNT Inhalation Powder [Afrezza]) / 90 (insulin, regular, human 8 UNT Inhalation Powder [Afrezza]) } Pack [Afrezza Titration Pack]"
+      }, {
+        "code": "1860165",
+        "display": "insulin degludec / liraglutide Injectable Product"
+      }, {
+        "code": "1860166",
+        "display": "insulin degludec / liraglutide Pen Injector"
+      }, {
+        "code": "1860167",
+        "display": "3 ML insulin degludec 100 UNT/ML / liraglutide 3.6 MG/ML Pen Injector"
+      }, {
+        "code": "1860170",
+        "display": "insulin degludec / liraglutide Pen Injector [Xultophy]"
+      }, {
+        "code": "1860171",
+        "display": "Xultophy Injectable Product"
+      }, {
+        "code": "1860172",
+        "display": "3 ML insulin degludec 100 UNT/ML / liraglutide 3.6 MG/ML Pen Injector [Xultophy]"
+      }, {
+        "code": "1862101",
+        "display": "{60 (insulin, regular, human 12 UNT Inhalation Powder) / 60 (insulin, regular, human 4 UNT Inhalation Powder) / 60 (insulin, regular, human 8 UNT Inhalation Powder) } Pack"
+      }, {
+        "code": "1862102",
+        "display": "{60 (insulin, regular, human 12 UNT Inhalation Powder [Afrezza]) / 60 (insulin, regular, human 4 UNT Inhalation Powder [Afrezza]) / 60 (insulin, regular, human 8 UNT Inhalation Powder [Afrezza]) } Pack [Afrezza 180 Titration Pack- 60 (4 UNT), 60 (8 UNT), 60 (12 UNT)]"
+      }, {
+        "code": "197306",
+        "display": "acetohexamide 250 MG Oral Tablet"
+      }, {
+        "code": "197307",
+        "display": "acetohexamide 500 MG Oral Tablet"
+      }, {
+        "code": "197495",
+        "display": "chlorpropamide 100 MG Oral Tablet"
+      }, {
+        "code": "197496",
+        "display": "chlorpropamide 250 MG Oral Tablet"
+      }, {
+        "code": "197737",
+        "display": "glyburide 1.25 MG Oral Tablet"
+      }, {
+        "code": "198291",
+        "display": "tolazamide 100 MG Oral Tablet"
+      }, {
+        "code": "198292",
+        "display": "tolazamide 250 MG Oral Tablet"
+      }, {
+        "code": "198293",
+        "display": "tolazamide 500 MG Oral Tablet"
+      }, {
+        "code": "198294",
+        "display": "tolbutamide 500 MG Oral Tablet"
+      }, {
+        "code": "1986352",
+        "display": "insulin aspart, human Injectable Solution [Fiasp]"
+      }, {
+        "code": "1986353",
+        "display": "Fiasp Injectable Product"
+      }, {
+        "code": "1986354",
+        "display": "insulin aspart, human 100 UNT/ML Injectable Solution [Fiasp]"
+      }, {
+        "code": "1986355",
+        "display": "insulin aspart, human Pen Injector [Fiasp]"
+      }, {
+        "code": "1986356",
+        "display": "3 ML insulin aspart, human 100 UNT/ML Pen Injector [Fiasp]"
+      }, {
+        "code": "1992167",
+        "display": "insulin lispro Injectable Solution [Admelog]"
+      }, {
+        "code": "1992168",
+        "display": "Admelog Injectable Product"
+      }, {
+        "code": "1992169",
+        "display": "insulin lispro 100 UNT/ML Injectable Solution [Admelog]"
+      }, {
+        "code": "1992170",
+        "display": "insulin lispro Pen Injector [Admelog]"
+      }, {
+        "code": "1992171",
+        "display": "3 ML insulin lispro 100 UNT/ML Pen Injector [Admelog]"
+      }, {
+        "code": "199245",
+        "display": "glimepiride 1 MG Oral Tablet"
+      }, {
+        "code": "199246",
+        "display": "glimepiride 2 MG Oral Tablet"
+      }, {
+        "code": "199247",
+        "display": "glimepiride 4 MG Oral Tablet"
+      }, {
+        "code": "1994308",
+        "display": "insulin aspart, human / insulin degludec Injectable Product"
+      }, {
+        "code": "199825",
+        "display": "gliclazide 80 MG Oral Tablet"
+      }, {
+        "code": "200256",
+        "display": "repaglinide 1 MG Oral Tablet"
+      }, {
+        "code": "200257",
+        "display": "repaglinide 0.5 MG Oral Tablet"
+      }, {
+        "code": "200258",
+        "display": "repaglinide 2 MG Oral Tablet"
+      }, {
+        "code": "205828",
+        "display": "glipizide 5 MG Oral Tablet [Glucotrol]"
+      }, {
+        "code": "205830",
+        "display": "glipizide 10 MG Oral Tablet [Glucotrol]"
+      }, {
+        "code": "2100028",
+        "display": "{90 (insulin, regular, human 12 UNT Inhalation Powder) / 90 (insulin, regular, human 8 UNT Inhalation Powder) } Pack"
+      }, {
+        "code": "2100029",
+        "display": "{90 (insulin, regular, human 12 UNT Inhalation Powder [Afrezza]) / 90 (insulin, regular, human 8 UNT Inhalation Powder [Afrezza]) } Pack [Afrezza 180 - 90 (8 UNT), 90 (12 UNT)]"
+      }, {
+        "code": "2107519",
+        "display": "insulin degludec Injectable Solution"
+      }, {
+        "code": "2107520",
+        "display": "insulin degludec 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "2107521",
+        "display": "insulin degludec Injectable Solution [Tresiba]"
+      }, {
+        "code": "2107522",
+        "display": "insulin degludec 100 UNT/ML Injectable Solution [Tresiba]"
+      }, {
+        "code": "2108525",
+        "display": "insulin, regular, human Inhalation Powder"
+      }, {
+        "code": "2108527",
+        "display": "insulin, regular, human Inhalation Powder [Afrezza]"
+      }, {
+        "code": "213219",
+        "display": "repaglinide 1 MG Oral Tablet [Prandin]"
+      }, {
+        "code": "213220",
+        "display": "repaglinide 2 MG Oral Tablet [Prandin]"
+      }, {
+        "code": "213442",
+        "display": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension [Novolin]"
+      }, {
+        "code": "2179743",
+        "display": "insulin, regular, human Injection"
+      }, {
+        "code": "2179747",
+        "display": "insulin, regular, human Injection [Myxredlin]"
+      }, {
+        "code": "2206091",
+        "display": "insulin, regular, human Pen Injector [Novolin R]"
+      }, {
+        "code": "242120",
+        "display": "insulin lispro 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "242916",
+        "display": "insulin, protamine zinc, beef 100 UNT/ML Injectable Suspension"
+      }, {
+        "code": "245265",
+        "display": "insulin isophane, human 50 UNT/ML / insulin, regular, human 50 UNT/ML Injectable Suspension"
+      }, {
+        "code": "249220",
+        "display": "insulin, regular, human 500 UNT/ML Injectable Solution"
+      }, {
+        "code": "252960",
+        "display": "glyburide 4.5 MG Oral Tablet"
+      }, {
+        "code": "259111",
+        "display": "insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Injectable Suspension"
+      }, {
+        "code": "260265",
+        "display": "insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Injectable Suspension"
+      }, {
+        "code": "284529",
+        "display": "nateglinide 60 MG Oral Tablet [Starlix]"
+      }, {
+        "code": "284530",
+        "display": "nateglinide 120 MG Oral Tablet [Starlix]"
+      }, {
+        "code": "285018",
+        "display": "insulin glargine 100 UNT/ML Injectable Solution [Lantus]"
+      }, {
+        "code": "310488",
+        "display": "glipizide 10 MG Oral Tablet"
+      }, {
+        "code": "310489",
+        "display": "24 HR glipizide 2.5 MG Extended Release Oral Tablet"
+      }, {
+        "code": "310490",
+        "display": "glipizide 5 MG Oral Tablet"
+      }, {
+        "code": "310534",
+        "display": "glyburide 2.5 MG Oral Tablet"
+      }, {
+        "code": "310536",
+        "display": "glyburide 3 MG Oral Tablet"
+      }, {
+        "code": "310537",
+        "display": "glyburide 5 MG Oral Tablet"
+      }, {
+        "code": "310539",
+        "display": "glyburide 6 MG Oral Tablet"
+      }, {
+        "code": "311026",
+        "display": "insulin isophane, human 100 UNT/ML Injectable Suspension [Humulin N]"
+      }, {
+        "code": "311027",
+        "display": "insulin isophane, human 100 UNT/ML Injectable Suspension [Novolin N]"
+      }, {
+        "code": "311028",
+        "display": "insulin isophane, human 100 UNT/ML Injectable Suspension"
+      }, {
+        "code": "311033",
+        "display": "insulin, regular, human 100 UNT/ML Injectable Solution [Novolin R]"
+      }, {
+        "code": "311034",
+        "display": "insulin, regular, human 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "311036",
+        "display": "insulin, regular, human 100 UNT/ML Injectable Solution [Humulin R]"
+      }, {
+        "code": "311040",
+        "display": "insulin aspart, human 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "311041",
+        "display": "insulin glargine 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "311048",
+        "display": "insulin isophane, human 70 UNT/ML / insulin, regular, human 30 UNT/ML Injectable Suspension"
+      }, {
+        "code": "311052",
+        "display": "insulin isophane, pork 100 UNT/ML Injectable Suspension"
+      }, {
+        "code": "311056",
+        "display": "insulin, regular, beef 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "311057",
+        "display": "insulin, regular, pork 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "311919",
+        "display": "nateglinide 120 MG Oral Tablet"
+      }, {
+        "code": "314000",
+        "display": "glyburide 1.5 MG Oral Tablet"
+      }, {
+        "code": "314006",
+        "display": "24 HR glipizide 5 MG Extended Release Oral Tablet"
+      }, {
+        "code": "314142",
+        "display": "nateglinide 60 MG Oral Tablet"
+      }, {
+        "code": "315107",
+        "display": "24 HR glipizide 10 MG Extended Release Oral Tablet"
+      }, {
+        "code": "351297",
+        "display": "insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Injectable Suspension"
+      }, {
+        "code": "351859",
+        "display": "insulin, regular, human 500 UNT/ML Injectable Solution [Humulin R]"
+      }, {
+        "code": "351926",
+        "display": "insulin aspart, human 100 UNT/ML Injectable Solution [NovoLog]"
+      }, {
+        "code": "362585",
+        "display": "insulin glargine Injectable Solution [Lantus]"
+      }, {
+        "code": "362622",
+        "display": "insulin, regular, human Injectable Solution [Humulin R]"
+      }, {
+        "code": "363221",
+        "display": "insulin, regular, human Injectable Solution [Novolin R]"
+      }, {
+        "code": "363534",
+        "display": "insulin aspart, human Injectable Solution [NovoLog]"
+      }, {
+        "code": "365573",
+        "display": "insulin isophane Injectable Suspension [Novolin N]"
+      }, {
+        "code": "365672",
+        "display": "insulin isophane / insulin, regular, human Injectable Suspension [Novolin]"
+      }, {
+        "code": "365677",
+        "display": "insulin isophane Injectable Suspension [Humulin N]"
+      }, {
+        "code": "365679",
+        "display": "insulin isophane / insulin, regular, human Injectable Suspension [Humulin]"
+      }, {
+        "code": "367762",
+        "display": "glimepiride Oral Tablet [Amaryl]"
+      }, {
+        "code": "368289",
+        "display": "repaglinide Oral Tablet [Prandin]"
+      }, {
+        "code": "369500",
+        "display": "glipizide Oral Tablet [Glucotrol]"
+      }, {
+        "code": "370529",
+        "display": "acetohexamide Oral Tablet"
+      }, {
+        "code": "371465",
+        "display": "chlorpropamide Oral Tablet"
+      }, {
+        "code": "372318",
+        "display": "gliclazide Oral Tablet"
+      }, {
+        "code": "372319",
+        "display": "glimepiride Oral Tablet"
+      }, {
+        "code": "372320",
+        "display": "glipizide Oral Tablet"
+      }, {
+        "code": "372333",
+        "display": "glyburide Oral Tablet"
+      }, {
+        "code": "373759",
+        "display": "repaglinide Oral Tablet"
+      }, {
+        "code": "374149",
+        "display": "tolazamide Oral Tablet"
+      }, {
+        "code": "374152",
+        "display": "tolbutamide Oral Tablet"
+      }, {
+        "code": "374635",
+        "display": "glyburide / metformin Oral Tablet"
+      }, {
+        "code": "374648",
+        "display": "nateglinide Oral Tablet"
+      }, {
+        "code": "376236",
+        "display": "gliquidone Oral Tablet"
+      }, {
+        "code": "376915",
+        "display": "insulin, regular, human Injectable Solution"
+      }, {
+        "code": "376916",
+        "display": "insulin, regular, pork Injectable Solution"
+      }, {
+        "code": "378730",
+        "display": "glipizide / metformin Oral Tablet"
+      }, {
+        "code": "378841",
+        "display": "insulin lispro Injectable Solution"
+      }, {
+        "code": "378843",
+        "display": "insulin, regular, beef Injectable Solution"
+      }, {
+        "code": "378857",
+        "display": "insulin isophane / insulin, regular, human Injectable Suspension"
+      }, {
+        "code": "378864",
+        "display": "insulin glargine Injectable Solution"
+      }, {
+        "code": "378914",
+        "display": "insulin aspart, human Injectable Solution"
+      }, {
+        "code": "378928",
+        "display": "insulin isophane Injectable Suspension"
+      }, {
+        "code": "378950",
+        "display": "lente insulin, pork Injectable Suspension"
+      }, {
+        "code": "378966",
+        "display": "insulin lispro / insulin lispro protamine, human Injectable Suspension"
+      }, {
+        "code": "379008",
+        "display": "insulin, protamine zinc, beef Injectable Suspension"
+      }, {
+        "code": "379056",
+        "display": "insulin aspart protamine, human / insulin aspart, human Injectable Suspension"
+      }, {
+        "code": "379804",
+        "display": "glipizide 2.5 MG Oral Tablet"
+      }, {
+        "code": "389139",
+        "display": "nateglinide 180 MG Oral Tablet"
+      }, {
+        "code": "393406",
+        "display": "gliclazide Extended Release Oral Tablet"
+      }, {
+        "code": "402944",
+        "display": "nateglinide Oral Tablet [Starlix]"
+      }, {
+        "code": "433856",
+        "display": "24 HR gliclazide 30 MG Extended Release Oral Tablet"
+      }, {
+        "code": "484321",
+        "display": "insulin detemir Injectable Solution"
+      }, {
+        "code": "484322",
+        "display": "insulin detemir 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "485209",
+        "display": "insulin glulisine, human Injectable Solution"
+      }, {
+        "code": "485210",
+        "display": "insulin glulisine, human 100 UNT/ML Injectable Solution"
+      }, {
+        "code": "602543",
+        "display": "glimepiride / rosiglitazone Oral Tablet"
+      }, {
+        "code": "602544",
+        "display": "glimepiride 1 MG / rosiglitazone 4 MG Oral Tablet"
+      }, {
+        "code": "602549",
+        "display": "glimepiride 2 MG / rosiglitazone 4 MG Oral Tablet"
+      }, {
+        "code": "602550",
+        "display": "glimepiride 4 MG / rosiglitazone 4 MG Oral Tablet"
+      }, {
+        "code": "616237",
+        "display": "insulin detemir Injectable Solution [Levemir]"
+      }, {
+        "code": "616238",
+        "display": "insulin detemir 100 UNT/ML Injectable Solution [Levemir]"
+      }, {
+        "code": "647236",
+        "display": "glimepiride / pioglitazone Oral Tablet"
+      }, {
+        "code": "647237",
+        "display": "glimepiride 2 MG / pioglitazone 30 MG Oral Tablet"
+      }, {
+        "code": "647239",
+        "display": "glimepiride 4 MG / pioglitazone 30 MG Oral Tablet"
+      }, {
+        "code": "700835",
+        "display": "glipizide Extended Release Oral Tablet"
+      }, {
+        "code": "706895",
+        "display": "glimepiride 2 MG / rosiglitazone 8 MG Oral Tablet"
+      }, {
+        "code": "706896",
+        "display": "glimepiride 4 MG / rosiglitazone 8 MG Oral Tablet"
+      }, {
+        "code": "731280",
+        "display": "insulin lispro / insulin lispro protamine, human Injectable Suspension [Humalog Mix]"
+      }, {
+        "code": "731281",
+        "display": "insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Injectable Suspension [Humalog Mix]"
+      }, {
+        "code": "731457",
+        "display": "glimepiride 4 MG / pioglitazone 30 MG Oral Tablet [Duetact]"
+      }, {
+        "code": "731462",
+        "display": "glimepiride / pioglitazone Oral Tablet [Duetact]"
+      }, {
+        "code": "731463",
+        "display": "glimepiride 2 MG / pioglitazone 30 MG Oral Tablet [Duetact]"
+      }, {
+        "code": "752388",
+        "display": "insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Injectable Suspension [Humalog Mix]"
+      }, {
+        "code": "763013",
+        "display": "insulin human, rDNA origin 1 MG Inhalation Powder"
+      }, {
+        "code": "763014",
+        "display": "insulin human, rDNA origin 3 MG Inhalation Powder"
+      }, {
+        "code": "763017",
+        "display": "insulin human, rDNA origin 1 MG Inhalation Powder [Exubera]"
+      }, {
+        "code": "763018",
+        "display": "insulin human, rDNA origin 3 MG Inhalation Powder [Exubera]"
+      }, {
+        "code": "763020",
+        "display": "{180 (insulin human, rDNA origin 1 MG Inhalation Powder) / 90 (insulin human, rDNA origin 3 MG Inhalation Powder) } Pack"
+      }, {
+        "code": "763080",
+        "display": "{180 (insulin human, rDNA origin 1 MG Inhalation Powder [Exubera]) / 90 (insulin human, rDNA origin 3 MG Inhalation Powder [Exubera]) } Pack [Exubera Kit]"
+      }, {
+        "code": "802742",
+        "display": "metformin / repaglinide Oral Tablet"
+      }, {
+        "code": "803193",
+        "display": "insulin glulisine, human Injectable Solution [Apidra]"
+      }, {
+        "code": "803194",
+        "display": "insulin glulisine, human 100 UNT/ML Injectable Solution [Apidra]"
+      }, {
+        "code": "847191",
+        "display": "3 ML insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Pen Injector"
+      }, {
+        "code": "847199",
+        "display": "3 ML insulin isophane, human 100 UNT/ML Pen Injector [Humulin N]"
+      }, {
+        "code": "847211",
+        "display": "3 ML insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Pen Injector"
+      }, {
+        "code": "847213",
+        "display": "3 ML insulin lispro 50 UNT/ML / insulin lispro protamine, human 50 UNT/ML Pen Injector [Humalog Mix]"
+      }, {
+        "code": "847230",
+        "display": "3 ML insulin glargine 100 UNT/ML Pen Injector"
+      }, {
+        "code": "847232",
+        "display": "3 ML insulin glargine 100 UNT/ML Pen Injector [Lantus]"
+      }, {
+        "code": "847239",
+        "display": "3 ML insulin detemir 100 UNT/ML Pen Injector"
+      }, {
+        "code": "847241",
+        "display": "3 ML insulin detemir 100 UNT/ML Pen Injector [Levemir]"
+      }, {
+        "code": "847252",
+        "display": "3 ML insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Pen Injector"
+      }, {
+        "code": "847254",
+        "display": "3 ML insulin lispro 25 UNT/ML / insulin lispro protamine, human 75 UNT/ML Pen Injector [Humalog Mix]"
+      }, {
+        "code": "847259",
+        "display": "3 ML insulin glulisine, human 100 UNT/ML Pen Injector"
+      }, {
+        "code": "847261",
+        "display": "3 ML insulin glulisine, human 100 UNT/ML Pen Injector [Apidra]"
+      }, {
+        "code": "849585",
+        "display": "glipizide / metformin Oral Tablet [Metaglip]"
+      }, {
+        "code": "861731",
+        "display": "glipizide 2.5 MG / metformin hydrochloride 250 MG Oral Tablet"
+      }, {
+        "code": "861733",
+        "display": "glipizide 2.5 MG / metformin hydrochloride 250 MG Oral Tablet [Metaglip]"
+      }, {
+        "code": "861736",
+        "display": "glipizide 2.5 MG / metformin hydrochloride 500 MG Oral Tablet"
+      }, {
+        "code": "861740",
+        "display": "glipizide 5 MG / metformin hydrochloride 500 MG Oral Tablet"
+      }, {
+        "code": "861743",
+        "display": "glyburide 1.25 MG / metformin hydrochloride 250 MG Oral Tablet"
+      }, {
+        "code": "861747",
+        "display": "glyburide 1.25 MG / metformin hydrochloride 250 MG Oral Tablet [Glucovance]"
+      }, {
+        "code": "861748",
+        "display": "glyburide 2.5 MG / metformin hydrochloride 500 MG Oral Tablet"
+      }, {
+        "code": "861752",
+        "display": "glyburide 2.5 MG / metformin hydrochloride 500 MG Oral Tablet [Glucovance]"
+      }, {
+        "code": "861753",
+        "display": "glyburide 5 MG / metformin hydrochloride 500 MG Oral Tablet"
+      }, {
+        "code": "861756",
+        "display": "glyburide / metformin Oral Tablet [Glucovance]"
+      }, {
+        "code": "861757",
+        "display": "glyburide 5 MG / metformin hydrochloride 500 MG Oral Tablet [Glucovance]"
+      }, {
+        "code": "861787",
+        "display": "metformin hydrochloride 500 MG / repaglinide 1 MG Oral Tablet"
+      }, {
+        "code": "861790",
+        "display": "metformin hydrochloride 500 MG / repaglinide 2 MG Oral Tablet"
+      }, {
+        "code": "865097",
+        "display": "insulin lispro Injectable Solution [Humalog]"
+      }, {
+        "code": "865098",
+        "display": "insulin lispro 100 UNT/ML Injectable Solution [Humalog]"
+      }, {
+        "code": "865567",
+        "display": "glipizide Extended Release Oral Tablet [Glucotrol]"
+      }, {
+        "code": "865568",
+        "display": "24 HR glipizide 10 MG Extended Release Oral Tablet [Glucotrol]"
+      }, {
+        "code": "865571",
+        "display": "24 HR glipizide 2.5 MG Extended Release Oral Tablet [Glucotrol]"
+      }, {
+        "code": "865573",
+        "display": "24 HR glipizide 5 MG Extended Release Oral Tablet [Glucotrol]"
+      }, {
+        "code": "881406",
+        "display": "glyburide Oral Tablet [Glynase]"
+      }, {
+        "code": "881407",
+        "display": "glyburide 1.5 MG Oral Tablet [Glynase]"
+      }, {
+        "code": "881409",
+        "display": "glyburide 3 MG Oral Tablet [Glynase]"
+      }, {
+        "code": "881411",
+        "display": "glyburide 6 MG Oral Tablet [Glynase]"
+      }, {
+        "code": "977840",
+        "display": "3 ML insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Pen Injector [NovoLog Mix]"
+      }, {
+        "code": "977841",
+        "display": "insulin aspart protamine, human / insulin aspart, human Injectable Suspension [NovoLog Mix]"
+      }, {
+        "code": "977842",
+        "display": "insulin aspart protamine, human 70 UNT/ML / insulin aspart, human 30 UNT/ML Injectable Suspension [NovoLog Mix]"
+      } ]
+    } ]
+  },
   "expansion": {
     "timestamp": "2021-10-12T15:20:39-04:00",
     "contains": [ {

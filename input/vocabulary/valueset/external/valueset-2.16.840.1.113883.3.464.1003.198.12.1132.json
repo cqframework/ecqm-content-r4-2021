@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.198.12.1132",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1132",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,97 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "1010600",
+        "display": "buprenorphine 2 MG / naloxone 0.5 MG Sublingual Film"
+      }, {
+        "code": "1010604",
+        "display": "buprenorphine 8 MG / naloxone 2 MG Sublingual Film"
+      }, {
+        "code": "1307056",
+        "display": "buprenorphine 4 MG / naloxone 1 MG Sublingual Film"
+      }, {
+        "code": "1307061",
+        "display": "buprenorphine 12 MG / naloxone 3 MG Sublingual Film"
+      }, {
+        "code": "1431076",
+        "display": "buprenorphine 1.4 MG / naloxone 0.36 MG Sublingual Tablet"
+      }, {
+        "code": "1431102",
+        "display": "buprenorphine 5.7 MG / naloxone 1.4 MG Sublingual Tablet"
+      }, {
+        "code": "1483744",
+        "display": "naltrexone hydrochloride 50 MG Oral Tablet"
+      }, {
+        "code": "1542390",
+        "display": "buprenorphine 2.1 MG / naloxone 0.3 MG Buccal Film"
+      }, {
+        "code": "1544851",
+        "display": "buprenorphine 4.2 MG / naloxone 0.7 MG Buccal Film"
+      }, {
+        "code": "1544854",
+        "display": "buprenorphine 6.3 MG / naloxone 1 MG Buccal Film"
+      }, {
+        "code": "1551468",
+        "display": "12 HR bupropion hydrochloride 90 MG / naltrexone hydrochloride 8 MG Extended Release Oral Tablet"
+      }, {
+        "code": "1597568",
+        "display": "buprenorphine 11.4 MG / naloxone 2.9 MG Sublingual Tablet"
+      }, {
+        "code": "1597573",
+        "display": "buprenorphine 8.6 MG / naloxone 2.1 MG Sublingual Tablet"
+      }, {
+        "code": "1655032",
+        "display": "1 ML buprenorphine 0.3 MG/ML Cartridge"
+      }, {
+        "code": "1666338",
+        "display": "buprenorphine 2.9 MG / naloxone 0.71 MG Sublingual Tablet"
+      }, {
+        "code": "1797650",
+        "display": "buprenorphine 74.2 MG Drug Implant"
+      }, {
+        "code": "1864412",
+        "display": "buprenorphine 0.7 MG / naloxone 0.18 MG Sublingual Tablet"
+      }, {
+        "code": "197623",
+        "display": "disulfiram 250 MG Oral Tablet"
+      }, {
+        "code": "197624",
+        "display": "disulfiram 500 MG Oral Tablet"
+      }, {
+        "code": "1996184",
+        "display": "0.5 ML buprenorphine 200 MG/ML Prefilled Syringe"
+      }, {
+        "code": "1996192",
+        "display": "1.5 ML buprenorphine 200 MG/ML Prefilled Syringe"
+      }, {
+        "code": "238129",
+        "display": "1 ML buprenorphine 0.3 MG/ML Injection"
+      }, {
+        "code": "351264",
+        "display": "buprenorphine 2 MG Sublingual Tablet"
+      }, {
+        "code": "351265",
+        "display": "buprenorphine 8 MG Sublingual Tablet"
+      }, {
+        "code": "351266",
+        "display": "buprenorphine 2 MG / naloxone 0.5 MG Sublingual Tablet"
+      }, {
+        "code": "351267",
+        "display": "buprenorphine 8 MG / naloxone 2 MG Sublingual Tablet"
+      }, {
+        "code": "637213",
+        "display": "naltrexone 380 MG Injection"
+      }, {
+        "code": "835726",
+        "display": "acamprosate calcium 333 MG Delayed Release Oral Tablet"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.101.12.1090",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,35 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "305284002",
+        "display": "Admission by palliative care physician (procedure)"
+      }, {
+        "code": "305381007",
+        "display": "Admission to palliative care department (procedure)"
+      }, {
+        "code": "4901000124101",
+        "display": "Palliative care education (procedure)"
+      }, {
+        "code": "713281006",
+        "display": "Consultation for palliative care (procedure)"
+      } ]
+    }, {
+      "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+      "version": "2021",
+      "concept": [ {
+        "code": "G9054",
+        "display": "Oncology; primary focus of visit; supervising, coordinating or managing care of patient with terminal cancer or for whom other medical illness prevents further cancer treatment; includes symptom management, end-of-life care planning, management of palliative therapies (for use in a medicare-approved demonstration project)"
+      }, {
+        "code": "M1017",
+        "display": "Patient admitted to palliative care services"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

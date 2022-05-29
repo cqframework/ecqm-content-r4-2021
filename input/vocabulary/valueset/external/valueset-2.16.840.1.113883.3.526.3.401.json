@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.401",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.401",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,49 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "concept": [ {
+        "code": "10508-0",
+        "display": "Prostate specific Ag [Presence] in Tissue by Immune stain"
+      }, {
+        "code": "10886-0",
+        "display": "Prostate Specific Ag Free [Mass/volume] in Serum or Plasma"
+      }, {
+        "code": "12841-3",
+        "display": "Prostate Specific Ag Free/Prostate specific Ag.total in Serum or Plasma"
+      }, {
+        "code": "15323-9",
+        "display": "Prostate specific Ag/Prostate volume calculated from height, width and length"
+      }, {
+        "code": "15324-7",
+        "display": "Prostate specific Ag/Prostate volume calculated from planimetry"
+      }, {
+        "code": "15325-4",
+        "display": "Prostate specific Ag/Prostate volume calculated"
+      }, {
+        "code": "19195-7",
+        "display": "Prostate specific Ag [Units/volume] in Serum or Plasma"
+      }, {
+        "code": "19201-3",
+        "display": "Prostate Specific Ag Free [Units/volume] in Serum or Plasma"
+      }, {
+        "code": "2857-1",
+        "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+      }, {
+        "code": "33667-7",
+        "display": "Prostate specific Ag.protein bound [Mass/volume] in Serum or Plasma"
+      }, {
+        "code": "34611-4",
+        "display": "Prostate specific Ag [Mass/volume] in Urine"
+      }, {
+        "code": "35741-8",
+        "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit <= 0.01 ng/mL"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

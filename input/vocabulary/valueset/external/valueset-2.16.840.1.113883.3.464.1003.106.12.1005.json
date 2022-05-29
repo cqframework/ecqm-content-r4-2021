@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.106.12.1005",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.106.12.1005",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,194 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "171047005",
+        "display": "Drugs of addiction education (procedure)"
+      }, {
+        "code": "20093000",
+        "display": "Alcohol rehabilitation and detoxification (regime/therapy)"
+      }, {
+        "code": "23915005",
+        "display": "Combined alcohol and drug rehabilitation and detoxification (regime/therapy)"
+      }, {
+        "code": "24165007",
+        "display": "Alcoholism counseling (procedure)"
+      }, {
+        "code": "266707007",
+        "display": "Drug addiction therapy (regime/therapy)"
+      }, {
+        "code": "310653000",
+        "display": "Drug addiction therapy using methadone (regime/therapy)"
+      }, {
+        "code": "313071005",
+        "display": "Counseling for substance abuse (procedure)"
+      }, {
+        "code": "370881007",
+        "display": "Abuse prevention assessment (procedure)"
+      }, {
+        "code": "370884004",
+        "display": "Abuse prevention management (procedure)"
+      }, {
+        "code": "385989002",
+        "display": "Substance use therapy (regime/therapy)"
+      }, {
+        "code": "386448003",
+        "display": "Substance use prevention (procedure)"
+      }, {
+        "code": "386449006",
+        "display": "Substance use treatment: alcohol withdrawal (regime/therapy)"
+      }, {
+        "code": "386450006",
+        "display": "Substance use treatment: drug withdrawal (regime/therapy)"
+      }, {
+        "code": "386451005",
+        "display": "Substance use treatment: overdose (regime/therapy)"
+      }, {
+        "code": "408933008",
+        "display": "Substance abuse prevention (procedure)"
+      }, {
+        "code": "408934002",
+        "display": "Substance abuse prevention assessment (procedure)"
+      }, {
+        "code": "408935001",
+        "display": "Substance abuse prevention education (procedure)"
+      }, {
+        "code": "408936000",
+        "display": "Substance abuse prevention management (procedure)"
+      }, {
+        "code": "408941008",
+        "display": "Drug abuse prevention (procedure)"
+      }, {
+        "code": "408942001",
+        "display": "Drug abuse prevention assessment (procedure)"
+      }, {
+        "code": "408943006",
+        "display": "Drug abuse prevention education (procedure)"
+      }, {
+        "code": "408944000",
+        "display": "Drug abuse prevention management (procedure)"
+      }, {
+        "code": "408945004",
+        "display": "Alcohol abuse prevention (procedure)"
+      }, {
+        "code": "408947007",
+        "display": "Alcohol abuse prevention education (procedure)"
+      }, {
+        "code": "408948002",
+        "display": "Alcohol abuse prevention management (procedure)"
+      }, {
+        "code": "410419007",
+        "display": "Substance use surveillance (regime/therapy)"
+      }, {
+        "code": "413473000",
+        "display": "Counseling about alcohol consumption (procedure)"
+      }, {
+        "code": "423416000",
+        "display": "Substance use cessation case management (procedure)"
+      }, {
+        "code": "424148004",
+        "display": "Substance use cessation surveillance (regime/therapy)"
+      }, {
+        "code": "424407005",
+        "display": "Substance use cessation education, guidance, and counseling (procedure)"
+      }, {
+        "code": "424589009",
+        "display": "Substance use treatment: cessation (regime/therapy)"
+      }, {
+        "code": "426928008",
+        "display": "Prevention of opioid abuse (procedure)"
+      }, {
+        "code": "429291000124102",
+        "display": "Alcohol brief intervention (procedure)"
+      }, {
+        "code": "56876005",
+        "display": "Drug rehabilitation and detoxification (regime/therapy)"
+      }, {
+        "code": "60112009",
+        "display": "Drug addiction counseling (procedure)"
+      }, {
+        "code": "707166002",
+        "display": "Alcohol reduction program (regime/therapy)"
+      }, {
+        "code": "720174008",
+        "display": "Drug harm reduction program (regime/therapy)"
+      }, {
+        "code": "720175009",
+        "display": "Alcohol harm reduction program (regime/therapy)"
+      }, {
+        "code": "720176005",
+        "display": "Alcohol relapse prevention program (regime/therapy)"
+      }, {
+        "code": "720177001",
+        "display": "Drug relapse prevention program (regime/therapy)"
+      }, {
+        "code": "737363002",
+        "display": "Alcohol abuse surveillance (regime/therapy)"
+      }, {
+        "code": "792901003",
+        "display": "Drug addiction therapy using buprenorphine (regime/therapy)"
+      }, {
+        "code": "792902005",
+        "display": "Drug addiction therapy using buprenorphine and naloxone (regime/therapy)"
+      } ]
+    }, {
+      "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+      "version": "2021",
+      "concept": [ {
+        "code": "G2067",
+        "display": "Medication assisted treatment, methadone; weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing, if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2068",
+        "display": "Medication assisted treatment, buprenorphine (oral); weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2069",
+        "display": "Medication assisted treatment, buprenorphine (injectable); weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2070",
+        "display": "Medication assisted treatment, buprenorphine (implant insertion); weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2071",
+        "display": "Medication assisted treatment, buprenorphine (implant removal); weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2072",
+        "display": "Medication assisted treatment, buprenorphine (implant insertion and removal); weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2073",
+        "display": "Medication assisted treatment, naltrexone; weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2074",
+        "display": "Medication assisted treatment, weekly bundle not including the drug, including substance use counseling, individual and group therapy, and toxicology testing if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2075",
+        "display": "Medication assisted treatment, medication not otherwise specified; weekly bundle including dispensing and/or administration, substance use counseling, individual and group therapy, and toxicology testing, if performed (provision of the services by a medicare-enrolled opioid treatment program)"
+      }, {
+        "code": "G2076",
+        "display": "Intake activities, including initial medical examination that is a complete, fully documented physical evaluation and initial assessment by a program physician or a primary care physician, or an authorized healthcare professional under the supervision of a program physician qualified personnel that includes preparation of a treatment plan that includes the patient's short-term goals and the tasks the patient must perform to complete the short-term goals; the patient's requirements for education, vocational rehabilitation, and employment; and the medical, psycho- social, economic, legal, or other supportive services that a patient needs, conducted by qualified personnel (provision of the services by a medicare-enrolled opioid treatment program); list separately in addition to code for primary procedure"
+      }, {
+        "code": "G2077",
+        "display": "Periodic assessment; assessing periodically by qualified personnel to determine the most appropriate combination of services and treatment (provision of the services by a medicare-enrolled opioid treatment program); list separately in addition to code for primary procedure"
+      }, {
+        "code": "G2080",
+        "display": "Each additional 30 minutes of counseling in a week of medication assisted treatment, (provision of the services by a medicare-enrolled opioid treatment program); list separately in addition to code for primary procedure"
+      }, {
+        "code": "G2086",
+        "display": "Office-based treatment for opioid use disorder, including development of the treatment plan, care coordination, individual therapy and group therapy and counseling; at least 70 minutes in the first calendar month"
+      }, {
+        "code": "G2087",
+        "display": "Office-based treatment for opioid use disorder, including care coordination, individual therapy and group therapy and counseling; at least 60 minutes in a subsequent calendar month"
+      }, {
+        "code": "H0020",
+        "display": "Alcohol and/or drug services; methadone administration and/or service (provision of the drug by a licensed program)"
+      }, {
+        "code": "H0033",
+        "display": "Oral medication administration, direct observation"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

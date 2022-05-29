@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1561",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1561",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,64 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "1112982",
+        "display": "phentermine hydrochloride 15 MG Disintegrating Oral Tablet"
+      }, {
+        "code": "1112987",
+        "display": "phentermine hydrochloride 30 MG Disintegrating Oral Tablet"
+      }, {
+        "code": "1249083",
+        "display": "phentermine hydrochloride 37.5 MG Disintegrating Oral Tablet"
+      }, {
+        "code": "1302827",
+        "display": "24 HR phentermine 7.5 MG / topiramate 46 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1302839",
+        "display": "24 HR phentermine 3.75 MG / topiramate 23 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1302850",
+        "display": "24 HR phentermine 15 MG / topiramate 92 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1313059",
+        "display": "24 HR phentermine 11.25 MG / topiramate 69 MG Extended Release Oral Capsule"
+      }, {
+        "code": "314153",
+        "display": "orlistat 120 MG Oral Capsule"
+      }, {
+        "code": "692876",
+        "display": "orlistat 60 MG Oral Capsule"
+      }, {
+        "code": "803348",
+        "display": "phentermine hydrochloride 37.5 MG Oral Capsule"
+      }, {
+        "code": "803353",
+        "display": "phentermine hydrochloride 37.5 MG Oral Tablet"
+      }, {
+        "code": "826131",
+        "display": "phentermine hydrochloride 18.8 MG Oral Capsule"
+      }, {
+        "code": "826919",
+        "display": "phentermine hydrochloride 8 MG Oral Tablet"
+      }, {
+        "code": "900038",
+        "display": "phentermine hydrochloride 30 MG Oral Capsule"
+      }, {
+        "code": "968766",
+        "display": "phentermine hydrochloride 15 MG Oral Capsule"
+      }, {
+        "code": "978654",
+        "display": "diethylpropion hydrochloride 25 MG Oral Tablet"
+      }, {
+        "code": "978668",
+        "display": "24 HR diethylpropion hydrochloride 75 MG Extended Release Oral Tablet"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

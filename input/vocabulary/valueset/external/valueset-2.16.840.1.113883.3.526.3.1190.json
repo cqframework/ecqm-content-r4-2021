@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1190",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1190",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,163 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "1232585",
+        "display": "24 HR bupropion hydrochloride 450 MG Extended Release Oral Tablet"
+      }, {
+        "code": "1302827",
+        "display": "24 HR phentermine 7.5 MG / topiramate 46 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1302839",
+        "display": "24 HR phentermine 3.75 MG / topiramate 23 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1302850",
+        "display": "24 HR phentermine 15 MG / topiramate 92 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1436239",
+        "display": "24 HR topiramate 50 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1437278",
+        "display": "24 HR topiramate 25 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1437283",
+        "display": "24 HR topiramate 100 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1437288",
+        "display": "24 HR topiramate 200 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1494769",
+        "display": "Sprinkle 24 HR topiramate 150 MG Extended Release Oral Capsule"
+      }, {
+        "code": "151226",
+        "display": "topiramate 50 MG Oral Tablet"
+      }, {
+        "code": "1551468",
+        "display": "12 HR bupropion hydrochloride 90 MG / naltrexone hydrochloride 8 MG Extended Release Oral Tablet"
+      }, {
+        "code": "1797886",
+        "display": "nicotine 0.5 MG/ACTUAT Metered Dose Nasal Spray"
+      }, {
+        "code": "1801289",
+        "display": "Smoking Cessation 12 HR bupropion hydrochloride 150 MG Extended Release Oral Tablet"
+      }, {
+        "code": "1812419",
+        "display": "Sprinkle 24 HR topiramate 200 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1812421",
+        "display": "Sprinkle 24 HR topiramate 25 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1812425",
+        "display": "Sprinkle 24 HR topiramate 50 MG Extended Release Oral Capsule"
+      }, {
+        "code": "1812427",
+        "display": "Sprinkle 24 HR topiramate 100 MG Extended Release Oral Capsule"
+      }, {
+        "code": "198029",
+        "display": "24 HR nicotine 0.583 MG/HR Transdermal System"
+      }, {
+        "code": "198030",
+        "display": "24 HR nicotine 0.875 MG/HR Transdermal System"
+      }, {
+        "code": "198031",
+        "display": "24 HR nicotine 0.292 MG/HR Transdermal System"
+      }, {
+        "code": "198045",
+        "display": "nortriptyline 10 MG Oral Capsule"
+      }, {
+        "code": "198046",
+        "display": "nortriptyline 50 MG Oral Capsule"
+      }, {
+        "code": "198047",
+        "display": "nortriptyline 75 MG Oral Capsule"
+      }, {
+        "code": "199888",
+        "display": "topiramate 25 MG Oral Tablet"
+      }, {
+        "code": "199889",
+        "display": "topiramate 100 MG Oral Tablet"
+      }, {
+        "code": "199890",
+        "display": "topiramate 200 MG Oral Tablet"
+      }, {
+        "code": "205315",
+        "display": "topiramate 25 MG Oral Capsule"
+      }, {
+        "code": "205316",
+        "display": "topiramate 15 MG Oral Capsule"
+      }, {
+        "code": "250983",
+        "display": "nicotine 4 MG Inhalation Solution"
+      }, {
+        "code": "311975",
+        "display": "nicotine 4 MG Chewing Gum"
+      }, {
+        "code": "312036",
+        "display": "nortriptyline 2 MG/ML Oral Solution"
+      }, {
+        "code": "314119",
+        "display": "nicotine 2 MG Chewing Gum"
+      }, {
+        "code": "317136",
+        "display": "nortriptyline 25 MG Oral Capsule"
+      }, {
+        "code": "359817",
+        "display": "nicotine 2 MG Oral Lozenge"
+      }, {
+        "code": "359818",
+        "display": "nicotine 4 MG Oral Lozenge"
+      }, {
+        "code": "636671",
+        "display": "varenicline 0.5 MG Oral Tablet"
+      }, {
+        "code": "636676",
+        "display": "varenicline 1 MG Oral Tablet"
+      }, {
+        "code": "749289",
+        "display": "{11 (varenicline 0.5 MG Oral Tablet) / 42 (varenicline 1 MG Oral Tablet) } Pack"
+      }, {
+        "code": "749788",
+        "display": "{56 (varenicline 1 MG Oral Tablet) } Pack"
+      }, {
+        "code": "892244",
+        "display": "{14 (24 HR nicotine 0.292 MG/HR Transdermal System) / 14 (24 HR nicotine 0.583 MG/HR Transdermal System) / 28 (24 HR nicotine 0.875 MG/HR Transdermal System) } Pack"
+      }, {
+        "code": "993503",
+        "display": "12 HR bupropion hydrochloride 100 MG Extended Release Oral Tablet"
+      }, {
+        "code": "993518",
+        "display": "12 HR bupropion hydrochloride 150 MG Extended Release Oral Tablet"
+      }, {
+        "code": "993536",
+        "display": "12 HR bupropion hydrochloride 200 MG Extended Release Oral Tablet"
+      }, {
+        "code": "993541",
+        "display": "24 HR bupropion hydrochloride 150 MG Extended Release Oral Tablet"
+      }, {
+        "code": "993557",
+        "display": "24 HR bupropion hydrochloride 300 MG Extended Release Oral Tablet"
+      }, {
+        "code": "993687",
+        "display": "bupropion hydrochloride 100 MG Oral Tablet"
+      }, {
+        "code": "993691",
+        "display": "bupropion hydrochloride 75 MG Oral Tablet"
+      }, {
+        "code": "998671",
+        "display": "168 HR clonidine 0.00417 MG/HR Transdermal System"
+      }, {
+        "code": "998675",
+        "display": "168 HR clonidine 0.00833 MG/HR Transdermal System"
+      }, {
+        "code": "998679",
+        "display": "168 HR clonidine 0.0125 MG/HR Transdermal System"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

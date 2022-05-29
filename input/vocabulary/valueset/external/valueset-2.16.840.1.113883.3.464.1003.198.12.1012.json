@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.198.12.1012",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1012",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,58 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://loinc.org",
+      "version": "2.69",
+      "concept": [ {
+        "code": "11268-0",
+        "display": "Streptococcus pyogenes [Presence] in Throat by Organism specific culture"
+      }, {
+        "code": "17656-0",
+        "display": "Streptococcus pyogenes [Presence] in Specimen by Organism specific culture"
+      }, {
+        "code": "17898-8",
+        "display": "Bacteria identified in Throat by Aerobe culture"
+      }, {
+        "code": "18481-2",
+        "display": "Streptococcus pyogenes Ag [Presence] in Throat"
+      }, {
+        "code": "31971-5",
+        "display": "Streptococcus pyogenes Ag [Presence] in Specimen"
+      }, {
+        "code": "49610-9",
+        "display": "Streptococcus pyogenes DNA [Identifier] in Specimen by NAA with probe detection"
+      }, {
+        "code": "5036-9",
+        "display": "Streptococcus pyogenes rRNA [Presence] in Specimen by Probe"
+      }, {
+        "code": "60489-2",
+        "display": "Streptococcus pyogenes DNA [Presence] in Throat by NAA with probe detection"
+      }, {
+        "code": "626-2",
+        "display": "Bacteria identified in Throat by Culture"
+      }, {
+        "code": "6557-3",
+        "display": "Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence"
+      }, {
+        "code": "6558-1",
+        "display": "Streptococcus pyogenes Ag [Presence] in Specimen by Immunoassay"
+      }, {
+        "code": "6559-9",
+        "display": "Streptococcus pyogenes Ag [Presence] in Specimen by Immunofluorescence"
+      }, {
+        "code": "68954-7",
+        "display": "Streptococcus pyogenes rRNA [Presence] in Throat by Probe"
+      }, {
+        "code": "78012-2",
+        "display": "Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay"
+      }, {
+        "code": "96331-4",
+        "display": "Streptococcus pyogenes DNA [NCncRange] in Lower respiratory specimen Qualitative by NAA with non-probe detection"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

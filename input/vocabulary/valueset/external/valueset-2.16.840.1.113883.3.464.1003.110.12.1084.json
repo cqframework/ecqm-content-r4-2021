@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.110.12.1084",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1084",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,35 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "127787002",
+        "display": "Administration of vaccine product containing only Haemophilus influenzae type B antigen (procedure)"
+      }, {
+        "code": "170343007",
+        "display": "Administration of first dose of vaccine product containing only Haemophilus influenzae type B antigen (procedure)"
+      }, {
+        "code": "170344001",
+        "display": "Administration of second dose of vaccine product containing only Haemophilus influenzae type B antigen (procedure)"
+      }, {
+        "code": "170345000",
+        "display": "Administration of third dose of vaccine product containing only Haemophilus influenzae type B antigen (procedure)"
+      }, {
+        "code": "170346004",
+        "display": "Administration of booster dose of vaccine product containing only Haemophilus influenzae type B antigen (procedure)"
+      } ]
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021",
+      "concept": [ {
+        "code": "90647",
+        "display": "Haemophilus influenzae type b vaccine (Hib), PRP-OMP conjugate, 3 dose schedule, for intramuscular use"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

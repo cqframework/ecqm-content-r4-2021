@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.367",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.367",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,68 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "102451000119107",
+        "display": "Complete atrioventricular block as complication of atrioventricular nodal ablation (disorder)"
+      }, {
+        "code": "195042002",
+        "display": "Second degree atrioventricular block (disorder)"
+      }, {
+        "code": "204383001",
+        "display": "Congenital complete atrioventricular heart block (disorder)"
+      }, {
+        "code": "233917008",
+        "display": "Atrioventricular block (disorder)"
+      }, {
+        "code": "233918003",
+        "display": "Postoperative complete heart block (disorder)"
+      }, {
+        "code": "251114004",
+        "display": "Intermittent second degree atrioventricular block (disorder)"
+      }, {
+        "code": "27885002",
+        "display": "Complete atrioventricular block (disorder)"
+      }, {
+        "code": "28189009",
+        "display": "Mobitz type II atrioventricular block (disorder)"
+      }, {
+        "code": "283645003",
+        "display": "Lev's syndrome (disorder)"
+      }, {
+        "code": "284941000119107",
+        "display": "High degree second degree atrioventricular block (disorder)"
+      }, {
+        "code": "54016002",
+        "display": "Mobitz type I incomplete atrioventricular block (disorder)"
+      }, {
+        "code": "733125004",
+        "display": "Acquired complete atrioventricular block (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "I44.0",
+        "display": "Atrioventricular block, first degree"
+      }, {
+        "code": "I44.1",
+        "display": "Atrioventricular block, second degree"
+      }, {
+        "code": "I44.2",
+        "display": "Atrioventricular block, complete"
+      }, {
+        "code": "I44.30",
+        "display": "Unspecified atrioventricular block"
+      }, {
+        "code": "I44.39",
+        "display": "Other atrioventricular block"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

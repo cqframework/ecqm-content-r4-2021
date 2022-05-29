@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.600.1510",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1510",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,53 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "1181000175107",
+        "display": "Recommendation to lose weight (procedure)"
+      }, {
+        "code": "170795002",
+        "display": "Follow-up obesity assessment (regime/therapy)"
+      }, {
+        "code": "266724001",
+        "display": "Weight-reducing diet education (procedure)"
+      }, {
+        "code": "268523001",
+        "display": "Target weight discussed (regime/therapy)"
+      }, {
+        "code": "284352003",
+        "display": "Obesity diet education (procedure)"
+      }, {
+        "code": "388975008",
+        "display": "Weight reduction consultation (procedure)"
+      }, {
+        "code": "398752005",
+        "display": "Referral to weight maintenance regimen service (procedure)"
+      }, {
+        "code": "408289007",
+        "display": "Refer to weight management program (procedure)"
+      }, {
+        "code": "410200000",
+        "display": "Weight control education (procedure)"
+      }, {
+        "code": "410201001",
+        "display": "Weight maintenance regimen management (procedure)"
+      }, {
+        "code": "445033007",
+        "display": "Discussion about ideal body weight (procedure)"
+      } ]
+    }, {
+      "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+      "version": "2021",
+      "concept": [ {
+        "code": "S9449",
+        "display": "Weight management classes, non-physician provider, per session"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

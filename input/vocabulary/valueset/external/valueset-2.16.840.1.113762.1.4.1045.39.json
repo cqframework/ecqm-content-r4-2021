@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1045.39",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.39",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,58 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "1361226",
+        "display": "heparin sodium, porcine 1000 UNT/ML Injectable Solution"
+      }, {
+        "code": "1361568",
+        "display": "5 ML heparin sodium, porcine 2000 UNT/ML Injection"
+      }, {
+        "code": "1361574",
+        "display": "heparin sodium, porcine 20000 UNT/ML Injectable Solution"
+      }, {
+        "code": "1361577",
+        "display": "10 ML heparin sodium, porcine 2500 UNT/ML Injection"
+      }, {
+        "code": "1361615",
+        "display": "heparin sodium, porcine 5000 UNT/ML Injectable Solution"
+      }, {
+        "code": "1361853",
+        "display": "0.5 ML heparin sodium, porcine 10000 UNT/ML Cartridge"
+      }, {
+        "code": "1362831",
+        "display": "heparin sodium, porcine 10000 UNT/ML Injectable Solution"
+      }, {
+        "code": "1658634",
+        "display": "0.5 ML heparin sodium, porcine 10000 UNT/ML Injection"
+      }, {
+        "code": "1658637",
+        "display": "1 ML heparin sodium, porcine 10000 UNT/ML Injection"
+      }, {
+        "code": "1658647",
+        "display": "2 ML heparin sodium, porcine 1000 UNT/ML Injection"
+      }, {
+        "code": "1658659",
+        "display": "1 ML heparin sodium, porcine 1000 UNT/ML Injection"
+      }, {
+        "code": "1659260",
+        "display": "1 ML heparin sodium, porcine 5000 UNT/ML Cartridge"
+      }, {
+        "code": "1659263",
+        "display": "1 ML heparin sodium, porcine 5000 UNT/ML Injection"
+      }, {
+        "code": "1798389",
+        "display": "1 ML heparin sodium, porcine 5000 UNT/ML Prefilled Syringe"
+      }, {
+        "code": "2121591",
+        "display": "0.5 ML heparin sodium, porcine 10000 UNT/ML Prefilled Syringe"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

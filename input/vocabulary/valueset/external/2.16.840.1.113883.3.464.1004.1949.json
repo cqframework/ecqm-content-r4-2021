@@ -2,29 +2,46 @@
   "resourceType": "ValueSet",
   "id": "ValueSet-33043",
   "meta": {
-    "lastUpdated": "2019-06-09T16:57:48.431-04:00"
+    "lastUpdated": "2019-06-09T16:57:48.431-04:00",
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
   },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1949",
-  "identifier": [
-    {
-      "value": "2.16.840.1.113883.3.464.1004.1949"
-    }
-  ],
+  "identifier": [ {
+    "value": "2.16.840.1.113883.3.464.1004.1949"
+  } ],
   "version": "Working",
   "name": "Clinical_Left_Modifier",
   "title": "Clinical Left Modifier",
   "status": "active",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020.09.20AA",
+      "concept": [ {
+        "code": "7771000",
+        "display": "Left"
+      } ]
+    } ]
+  },
   "expansion": {
     "timestamp": "2021-04-05T14:51:06-04:00",
     "total": 1,
     "offset": 0,
-    "contains": [
-      {
-        "system": "http://snomed.info/sct",
-        "version": "2020.09.20AA",
-        "code": "7771000",
-        "display": "Left"
-      }
-    ]
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020.09.20AA",
+      "code": "7771000",
+      "display": "Left"
+    } ]
   }
 }

@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1432",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1432",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,124 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2019-09",
+      "concept": [ {
+        "code": "3712000",
+        "display": "Degenerated eye (disorder)"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "16320791000119106",
+        "display": "Myopic macular degeneration of bilateral eyes (disorder)"
+      }, {
+        "code": "16837461000119106",
+        "display": "Neovascularization of choroid of right eye due to degenerative myopia (disorder)"
+      }, {
+        "code": "16837521000119102",
+        "display": "Neovascularization of choroid of left eye due to degenerative myopia (disorder)"
+      }, {
+        "code": "232072004",
+        "display": "Forster-Fuchs' spot (disorder)"
+      }, {
+        "code": "232135007",
+        "display": "Index myopia (disorder)"
+      }, {
+        "code": "312898002",
+        "display": "Myopic macular degeneration (disorder)"
+      }, {
+        "code": "32022003",
+        "display": "Degenerative progressive high myopia (disorder)"
+      }, {
+        "code": "335471000119108",
+        "display": "Degenerative progressive high myopia of right eye (disorder)"
+      }, {
+        "code": "34187009",
+        "display": "Severe myopia (disorder)"
+      }, {
+        "code": "346481000119100",
+        "display": "Neovascularization of bilateral corneas (disorder)"
+      }, {
+        "code": "62585004",
+        "display": "Degenerative disorder of eye (disorder)"
+      }, {
+        "code": "846621001",
+        "display": "Degenerative myopia of left eye (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "H44.21",
+        "display": "Degenerative myopia, right eye"
+      }, {
+        "code": "H44.22",
+        "display": "Degenerative myopia, left eye"
+      }, {
+        "code": "H44.23",
+        "display": "Degenerative myopia, bilateral"
+      }, {
+        "code": "H44.2A1",
+        "display": "Degenerative myopia with choroidal neovascularization, right eye"
+      }, {
+        "code": "H44.2A2",
+        "display": "Degenerative myopia with choroidal neovascularization, left eye"
+      }, {
+        "code": "H44.2A3",
+        "display": "Degenerative myopia with choroidal neovascularization, bilateral eye"
+      }, {
+        "code": "H44.2B1",
+        "display": "Degenerative myopia with macular hole, right eye"
+      }, {
+        "code": "H44.2B2",
+        "display": "Degenerative myopia with macular hole, left eye"
+      }, {
+        "code": "H44.2B3",
+        "display": "Degenerative myopia with macular hole, bilateral eye"
+      }, {
+        "code": "H44.2C1",
+        "display": "Degenerative myopia with retinal detachment, right eye"
+      }, {
+        "code": "H44.2C2",
+        "display": "Degenerative myopia with retinal detachment, left eye"
+      }, {
+        "code": "H44.2C3",
+        "display": "Degenerative myopia with retinal detachment, bilateral eye"
+      }, {
+        "code": "H44.2D1",
+        "display": "Degenerative myopia with foveoschisis, right eye"
+      }, {
+        "code": "H44.2D2",
+        "display": "Degenerative myopia with foveoschisis, left eye"
+      }, {
+        "code": "H44.2D3",
+        "display": "Degenerative myopia with foveoschisis, bilateral eye"
+      }, {
+        "code": "H44.2E1",
+        "display": "Degenerative myopia with other maculopathy, right eye"
+      }, {
+        "code": "H44.2E2",
+        "display": "Degenerative myopia with other maculopathy, left eye"
+      }, {
+        "code": "H44.2E3",
+        "display": "Degenerative myopia with other maculopathy, bilateral eye"
+      }, {
+        "code": "H44.30",
+        "display": "Unspecified degenerative disorder of globe"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2020-03",
+      "concept": [ {
+        "code": "193276002",
+        "display": "Malignant myopia (disorder)"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

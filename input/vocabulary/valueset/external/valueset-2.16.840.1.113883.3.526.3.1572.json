@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1572",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1572",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,49 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+      "version": "2021-01",
+      "concept": [ {
+        "code": "2167565",
+        "display": "rosuvastatin 20 MG Oral Capsule"
+      }, {
+        "code": "2167569",
+        "display": "rosuvastatin 40 MG Oral Capsule"
+      }, {
+        "code": "259255",
+        "display": "atorvastatin 80 MG Oral Tablet"
+      }, {
+        "code": "404011",
+        "display": "amlodipine 5 MG / atorvastatin 80 MG Oral Tablet"
+      }, {
+        "code": "404013",
+        "display": "amlodipine 10 MG / atorvastatin 80 MG Oral Tablet"
+      }, {
+        "code": "476351",
+        "display": "ezetimibe 10 MG / simvastatin 80 MG Oral Tablet"
+      }, {
+        "code": "597984",
+        "display": "amlodipine 5 MG / atorvastatin 40 MG Oral Tablet"
+      }, {
+        "code": "597990",
+        "display": "amlodipine 10 MG / atorvastatin 40 MG Oral Tablet"
+      }, {
+        "code": "597993",
+        "display": "amlodipine 2.5 MG / atorvastatin 40 MG Oral Tablet"
+      }, {
+        "code": "617311",
+        "display": "atorvastatin 40 MG Oral Tablet"
+      }, {
+        "code": "859419",
+        "display": "rosuvastatin calcium 40 MG Oral Tablet"
+      }, {
+        "code": "859751",
+        "display": "rosuvastatin calcium 20 MG Oral Tablet"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

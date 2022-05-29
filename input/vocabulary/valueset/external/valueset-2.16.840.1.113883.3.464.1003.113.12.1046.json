@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.113.12.1046",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1046",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,51 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "200956002",
+        "display": "Psoriatic arthritis with spine involvement (disorder)"
+      }, {
+        "code": "239812005",
+        "display": "Psoriatic arthritis with distal interphalangeal joint involvement (disorder)"
+      }, {
+        "code": "33339001",
+        "display": "Psoriasis with arthropathy (disorder)"
+      }, {
+        "code": "410482007",
+        "display": "Iritis in psoriatic arthritis (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "L40.50",
+        "display": "Arthropathic psoriasis, unspecified"
+      }, {
+        "code": "L40.51",
+        "display": "Distal interphalangeal psoriatic arthropathy"
+      }, {
+        "code": "L40.52",
+        "display": "Psoriatic arthritis mutilans"
+      }, {
+        "code": "L40.53",
+        "display": "Psoriatic spondylitis"
+      }, {
+        "code": "L40.59",
+        "display": "Other psoriatic arthropathy"
+      } ]
+    }, {
+      "system": "http://terminology.hl7.org/CodeSystem/icd9cm",
+      "version": "2013",
+      "concept": [ {
+        "code": "696.0",
+        "display": "Psoriatic arthropathy"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:06-06:00",

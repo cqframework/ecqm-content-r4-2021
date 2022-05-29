@@ -1,6 +1,19 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.526.3.1450",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1450",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -12,6 +25,65 @@
   "status": "active",
   "experimental": false,
   "publisher": "NLM",
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2020-09",
+      "concept": [ {
+        "code": "193463006",
+        "display": "Diffuse secondary choroid atrophy (disorder)"
+      }, {
+        "code": "193466003",
+        "display": "Partial circumpapillary choroid dystrophy (disorder)"
+      }, {
+        "code": "19871000",
+        "display": "Total generalized choroidal dystrophy (disorder)"
+      }, {
+        "code": "231996009",
+        "display": "Central areolar choroidal sclerosis (disorder)"
+      }, {
+        "code": "231997000",
+        "display": "Peripapillary choroidal sclerosis (disorder)"
+      }, {
+        "code": "24950005",
+        "display": "Partial generalized choroidal dystrophy (disorder)"
+      }, {
+        "code": "312927001",
+        "display": "Bietti's crystalline retinopathy (disorder)"
+      }, {
+        "code": "38513001",
+        "display": "Senile atrophy of choroid (disorder)"
+      }, {
+        "code": "406446000",
+        "display": "Choroidal degeneration (disorder)"
+      }, {
+        "code": "41250005",
+        "display": "Diffuse choroidal sclerosis (disorder)"
+      }, {
+        "code": "59753003",
+        "display": "Total circumpapillary dystrophy of choroid (disorder)"
+      }, {
+        "code": "74469006",
+        "display": "Hereditary choroidal dystrophy (disorder)"
+      }, {
+        "code": "75241009",
+        "display": "Choroideremia (disorder)"
+      }, {
+        "code": "86103006",
+        "display": "Angioid streaks of choroid (disorder)"
+      }, {
+        "code": "92820007",
+        "display": "Circumpapillary dystrophy of choroid (disorder)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2021",
+      "concept": [ {
+        "code": "H35.33",
+        "display": "Angioid streaks of macula"
+      } ]
+    } ]
+  },
   "expansion": {
     "identifier": "20210506",
     "timestamp": "2021-07-19T17:22:05-06:00",

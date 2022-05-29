@@ -2,29 +2,46 @@
   "resourceType": "ValueSet",
   "id": "ValueSet-33089",
   "meta": {
-    "lastUpdated": "2019-06-09T17:07:12.552-04:00"
+    "lastUpdated": "2019-06-09T17:07:12.552-04:00",
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computablevalueset" ]
   },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueString": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueString": "structured"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "CAUTION: The compose element in this ValueSet resource was inferred from the expansion element. It is NOT an authoritative definition of the value set and is provided only for convenience for systems that assume a compose will be present."
+  } ],
   "url": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1148",
-  "identifier": [
-    {
-      "value": "2.16.840.1.113883.3.464.1004.1148"
-    }
-  ],
+  "identifier": [ {
+    "value": "2.16.840.1.113883.3.464.1004.1148"
+  } ],
   "version": "Working",
   "name": "Left_Modifier",
   "title": "Left Modifier",
   "status": "active",
+  "compose": {
+    "include": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021.2.20AB",
+      "concept": [ {
+        "code": "LT",
+        "display": "Left side (used to identify procedures performed on the left side of the body) [LT]"
+      } ]
+    } ]
+  },
   "expansion": {
     "timestamp": "2021-04-05T14:51:07-04:00",
     "total": 1,
     "offset": 0,
-    "contains": [
-      {
-        "system": "http://www.ama-assn.org/go/cpt",
-        "version": "2021.2.20AB",
-        "code": "LT",
-        "display": "Left side (used to identify procedures performed on the left side of the body) [LT]"
-      }
-    ]
+    "contains": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2021.2.20AB",
+      "code": "LT",
+      "display": "Left side (used to identify procedures performed on the left side of the body) [LT]"
+    } ]
   }
 }
