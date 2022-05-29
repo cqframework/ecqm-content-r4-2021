@@ -4,66 +4,6 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
-      "resourceType": "Bundle",
-      "id": "Bundle-62",
-      "entry": [ {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient-62",
-          "name": [ {
-            "family": "DenexPass",
-            "given": [ "PalliativeCareEncounterOverlapsB4MP" ]
-          } ],
-          "gender": "female",
-          "birthDate": "1970-12-31"
-        }
-      }, {
-        "resource": {
-          "resourceType": "Coverage",
-          "id": "Coverage-62-93",
-          "type": {
-            "coding": [ {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-              "code": "MCPOL"
-            } ]
-          },
-          "policyHolder": {
-            "reference": "Patient/Patient-62"
-          },
-          "period": {
-            "start": "2020-10-01T00:00:00.000Z",
-            "end": "2022-12-31T23:59:59.000Z"
-          }
-        }
-      }, {
-        "resource": {
-          "resourceType": "Encounter",
-          "id": "Encounter-62-94",
-          "status": "finished",
-          "type": [ {
-            "coding": [ {
-              "system": "http://snomed.info/sct",
-              "version": "2020.09.20AA",
-              "code": "305284002",
-              "display": "Admission by palliative care physician"
-            } ]
-          } ],
-          "subject": {
-            "reference": "Patient/Patient-62"
-          },
-          "period": {
-            "start": "2021-12-31T00:00:00.000Z",
-            "end": "2022-01-01T00:00:00.000Z"
-          }
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Bundle/Bundle-62"
-    }
-  }, {
-    "resource": {
       "resourceType": "Encounter",
       "id": "Encounter-62-92",
       "status": "finished",

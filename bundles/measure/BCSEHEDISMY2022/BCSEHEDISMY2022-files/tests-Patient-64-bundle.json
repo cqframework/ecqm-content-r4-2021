@@ -4,62 +4,6 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
-      "resourceType": "Bundle",
-      "id": "Bundle-64",
-      "entry": [ {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient-64",
-          "name": [ {
-            "family": "DenexFail",
-            "given": [ "PalliativeCareInterventionStatusNull" ]
-          } ],
-          "gender": "female",
-          "birthDate": "1970-12-31"
-        }
-      }, {
-        "resource": {
-          "resourceType": "Coverage",
-          "id": "Coverage-64-93",
-          "type": {
-            "coding": [ {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-              "code": "MCPOL"
-            } ]
-          },
-          "policyHolder": {
-            "reference": "Patient/Patient-64"
-          },
-          "period": {
-            "start": "2020-10-01T00:00:00.000Z",
-            "end": "2022-12-31T23:59:59.000Z"
-          }
-        }
-      }, {
-        "resource": {
-          "resourceType": "Procedure",
-          "id": "Procedure-64-94",
-          "code": {
-            "coding": [ {
-              "system": "http://snomed.info/sct",
-              "version": "2020.09.20AA",
-              "code": "443761007",
-              "display": "Anticipatory palliative care"
-            } ]
-          },
-          "subject": {
-            "reference": "Patient/Patient-64"
-          },
-          "performedDateTime": "2022-01-01T00:00:00.000Z"
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Bundle/Bundle-64"
-    }
-  }, {
-    "resource": {
       "resourceType": "Encounter",
       "id": "Encounter-64-92",
       "status": "finished",

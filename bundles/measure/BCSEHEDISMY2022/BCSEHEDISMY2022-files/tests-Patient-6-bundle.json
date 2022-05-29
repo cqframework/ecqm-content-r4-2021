@@ -4,45 +4,6 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
-      "resourceType": "Bundle",
-      "id": "Bundle-6",
-      "entry": [ {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient-6",
-          "name": [ {
-            "family": "IPPass",
-            "given": [ "EnrollmentOverlapsB4ParticipationPeriod" ]
-          } ],
-          "gender": "female",
-          "birthDate": "1970-12-31"
-        }
-      }, {
-        "resource": {
-          "resourceType": "Coverage",
-          "id": "Coverage-6-93",
-          "type": {
-            "coding": [ {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-              "code": "MCPOL"
-            } ]
-          },
-          "policyHolder": {
-            "reference": "Patient/Patient-6"
-          },
-          "period": {
-            "start": "2020-09-30T23:59:59.000Z",
-            "end": "2022-12-31T23:59:59.000Z"
-          }
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Bundle/Bundle-6"
-    }
-  }, {
-    "resource": {
       "resourceType": "Encounter",
       "id": "Encounter-6-92",
       "status": "finished",
