@@ -22,19 +22,20 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.001' called FHIRHelpers
 
-codesystem "ConditionClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-clinical' 
-codesystem "AllergyIntoleranceClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical' 
-codesystem "AllergyIntoleranceVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification' 
-codesystem "Diagnosis Role": 'http://terminology.hl7.org/CodeSystem/diagnosis-role' 
-codesystem "LOINC": 'http://loinc.org' 
-codesystem "MedicationRequestCategory": 'http://terminology.hl7.org/CodeSystem/medicationrequest-category' 
-codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-ver-status' 
-codesystem "SNOMEDCT": 'http://snomed.info/sct' 
-codesystem "RoleCode": 'http://terminology.hl7.org/CodeSystem/v3-RoleCode' 
+codesystem "ConditionClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
+codesystem "AllergyIntoleranceClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'
+codesystem "AllergyIntoleranceVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'
+codesystem "Diagnosis Role": 'http://terminology.hl7.org/CodeSystem/diagnosis-role'
+codesystem "LOINC": 'http://loinc.org'
+codesystem "MedicationRequestCategory": 'http://terminology.hl7.org/CodeSystem/medicationrequest-category'
+codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
+codesystem "SNOMEDCT": 'http://snomed.info/sct'
+codesystem "RoleCode": 'http://terminology.hl7.org/CodeSystem/v3-RoleCode'
 
-valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292' 
-valueset "Encounter Inpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307' 
-valueset "Observation Services": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143' 
+valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
+valueset "Encounter Inpatient": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307'
+valueset "Observation Services": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143'
+valueset "Present on Admission or Clinically Undetermined": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1147.197'
 
 code "active": 'active' from "ConditionClinicalStatusCodes" display 'active'
 code "allergy-active": 'active' from "AllergyIntoleranceClinicalStatusCodes" display 'allergy-active'
@@ -118,7 +119,7 @@ define function "Hospital Arrival Time"(TheEncounter FHIR.Encounter ):
   	    ( "Hospitalization Locations"(TheEncounter) ) HospitalLocation
   			sort by start of FHIRHelpers.ToInterval(period)
   	).period)
-  
+
   // TODO - fix these (must fetch Location resources and compare id to reference)
   /*Returns the latest departure time for encounter including any prior ED visit. */
   /*
@@ -127,7 +128,7 @@ define function "Hospital Arrival Time"(TheEncounter FHIR.Encounter ):
   	    ( "Hospitalization Locations"(TheEncounter) ) HospitalLocation
   			sort by start of FHIRHelpers.ToInterval(period)
   	).period)
-  
+
   define function "Emergency Department Arrival Time"(TheEncounter FHIR.Encounter):
   	start of FHIRHelpers.ToInterval((
   	    singleton from (
@@ -135,7 +136,7 @@ define function "Hospital Arrival Time"(TheEncounter FHIR.Encounter ):
   				where HospitalLocation.type ~ "ER"
   		)
   	).period)
-  
+
   define function "First Inpatient Intensive Care Unit"(TheEncounter FHIR.Encounter):
   	First(
   	    ( TheEncounter.location ) HospitalLocation
@@ -144,7 +145,7 @@ define function "Hospital Arrival Time"(TheEncounter FHIR.Encounter ):
   			sort by start of FHIRHelpers.ToInterval(period)
   	)
   */
-  
+
   /*Hospitalization with Observation and Outpatient Surgery Service returns the total interval from the start of any immediately prior emergency department visit, outpatient surgery visit or observation visit to the discharge of the given encounter.*/
   /* TODO:
   define function "HospitalizationWithObservationAndOutpatientSurgeryService"(Encounter "Encounter, Performed" ):
@@ -270,10 +271,15 @@ define function "GetId"(uri String ):
 define function "EncounterDiagnosis"(Encounter Encounter ):
   Encounter.diagnosis D
     return singleton from ([Condition] C where C.id = "GetId"(D.condition.reference))
-  
-  // Returns the condition that is specified as the principal diagnosis for the encounter
-  // TODO: BTR 2019-07-30: Shouldn't need the FHIRHelpers reference here, investigate
 
+define function "GetCondition"(reference Reference):
+  singleton from ([Condition] C where C.id = "GetId"(reference.reference))
+
+define function "PresentOnAdmissionIndicator"(element Element):
+  GetExtension(element, 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter-diagnosisPresentOnAdmission').value as FHIR.CodeableConcept
+
+// Returns the condition that is specified as the principal diagnosis for the encounter
+// TODO: BTR 2019-07-30: Shouldn't need the FHIRHelpers reference here, investigate
 define function "PrincipalDiagnosis"(Encounter Encounter ):
   (singleton from (Encounter.diagnosis D where FHIRHelpers.ToInteger(D.rank) = 1)) PD
   		return singleton from ([Condition] C where C.id = "GetId"(PD.condition.reference))
@@ -370,4 +376,3 @@ define function "Earliest"(choice Choice<FHIR.dateTime, FHIR.Period, FHIR.Timing
     return
       if (HasStart(period)) then start of period
       else end of period
-

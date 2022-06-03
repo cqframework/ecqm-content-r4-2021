@@ -3,7 +3,7 @@
     <id value="gov.healthit.ecqi.ecqms"/>
     <url value="http://ecqi.healthit.gov/ecqms/ImplementationGuide/gov.healthit.ecqi.ecqms"/>
     <version value="2021"/>
-    <name value="eCQMContentR4_2021"/>
+    <name value="eCQMContentR42021"/>
     <title value="eCQM FHIR R4 Content Implementation Guide (2021)"/>
     <status value="draft"/>
     <experimental value="false"/>
@@ -44,6 +44,11 @@
             <nameUrl value="measures.html" />
             <title value="Measures" />
             <generation value="html" />
+          </page>
+          <page>
+            <nameUrl value="patterns.html" />
+            <title value="Patterns" />
+            <generation value="markdown" />
           </page>
           <page>
             <nameUrl value="downloads.html" />
