@@ -1,0 +1,8 @@
+Running tests.
+No tests found at d:\src\ecqm-content-r4-2021\input\tests. Evaluation may fail if data is required.
+Terminology path: d:\src\ecqm-content-r4-2021\input\vocabulary\valueset
+Patient=null
+Most Recent BMI=Observation
+
+elapsed: -0.743 seconds
+
