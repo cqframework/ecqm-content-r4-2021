@@ -1,0 +1,336 @@
+{
+  "resourceType": "ValueSet",
+  "id": "33103",
+  "meta": {
+    "lastUpdated": "2021-08-30T02:12:44.816-04:00"
+  },
+  "url": "https://www.ncqa.org/fhir/valueset/2.16.840.1.113883.3.464.1004.1492",
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.3.464.1004.1492"
+    }
+  ],
+  "version": "2021-08-02",
+  "name": "Partial_Hospitalization_or_Intensive_Outpatient",
+  "title": "Partial Hospitalization or Intensive Outpatient",
+  "status": "active",
+  "expansion": {
+    "timestamp": "2021-09-03T17:30:32-04:00",
+    "total": 52,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "https://www.nubc.org/CodeSystem/RevenueCodes",
+        "version": "2012.05",
+        "code": "0905",
+        "display": "Intensive outpatient services-psychiatric"
+      },
+      {
+        "system": "https://www.nubc.org/CodeSystem/RevenueCodes",
+        "version": "2012.05",
+        "code": "0907",
+        "display": "Community behavioral health program (day treatment)"
+      },
+      {
+        "system": "https://www.nubc.org/CodeSystem/RevenueCodes",
+        "version": "2012.05",
+        "code": "0912",
+        "display": "Partial hospitalization-less intensive"
+      },
+      {
+        "system": "https://www.nubc.org/CodeSystem/RevenueCodes",
+        "version": "2012.05",
+        "code": "0913",
+        "display": "Partial hospitalization-intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "305347001",
+        "display": "Admission to elderly severely mentally ill day hospital"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "305345009",
+        "display": "Admission to psychiatric day hospital"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "305346005",
+        "display": "Admission to psychogeriatric day hospital"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "H2012",
+        "display": "Behavioral health day treatment, per hour"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "S9485",
+        "display": "Crisis intervention mental health services, per diem"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "S9484",
+        "display": "Crisis intervention mental health services, per hour"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391048007",
+        "display": "Crisis/short term interventions in mental health care - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391046006",
+        "display": "Crisis/short term interventions in mental health care - Full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391047002",
+        "display": "Crisis/short term interventions in mental health care - Part day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391188004",
+        "display": "Early intervention in psychosis - 1-2 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391187009",
+        "display": "Early intervention in psychosis - 3-5 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391186000",
+        "display": "Early intervention in psychosis - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391185001",
+        "display": "Early intervention in psychosis - Part day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391054008",
+        "display": "Emergency mental health assessment - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391038005",
+        "display": "Emergency mental health assessment - Part day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391170007",
+        "display": "General psychiatric care of older adults - 1 to 2 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391153004",
+        "display": "General psychiatric care of older adults - 3 to 5 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391152009",
+        "display": "General psychiatric care of older adults - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391150001",
+        "display": "General psychiatric care of older adults - Full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391151002",
+        "display": "General psychiatric care of older adults - Part day : day care"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "G0410",
+        "display": "Group psychotherapy other than of a multiple-family group, in a partial hospitalization setting, approximately 45 to 50 minutes"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391195008",
+        "display": "Homeless mental health care - 3-5 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391194007",
+        "display": "Homeless mental health care - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391191004",
+        "display": "Homeless mental health care - Full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391192006",
+        "display": "Homeless mental health care - Part day : day care"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "S9480",
+        "display": "Intensive outpatient psychiatric services, per diem"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "G0411",
+        "display": "Interactive group psychotherapy, in a partial hospitalization setting, approximately 45 to 50 minutes"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391211007",
+        "display": "Mental health addiction programs - 1-2 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391210008",
+        "display": "Mental health addiction programs - 3-5 contacts/week"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391209003",
+        "display": "Mental health addiction programs - daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391207001",
+        "display": "Mental health addiction programs - full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391208006",
+        "display": "Mental health addiction programs - part day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391056005",
+        "display": "Mental health crisis resolution - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391133003",
+        "display": "Mental health crisis resolution - Full day: day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391055009",
+        "display": "Mental health crisis resolution - Part day: day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391256000",
+        "display": "Mental health functional therapies - 3-5 contacts/wk"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391255001",
+        "display": "Mental health functional therapies - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391252003",
+        "display": "Mental health functional therapies - Full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391254002",
+        "display": "Mental health functional therapies - Part day : day care"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "H0035",
+        "display": "Mental health partial hospitalization, treatment, less than 24 hours"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "S0201",
+        "display": "Partial hospitalization services, less than 24 hours, per diem"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391042008",
+        "display": "Planned mental health assessment - Full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391043003",
+        "display": "Planned mental health assessment - Part day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "7133001",
+        "display": "Psychiatric day care by day"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391232004",
+        "display": "Psychological therapies - Daily intensive"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391228005",
+        "display": "Psychological therapies - Full day : day care"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "version": "2021.03.20AB",
+        "code": "391229002",
+        "display": "Psychological therapies - Part day : day care"
+      },
+      {
+        "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+        "version": "2021.3.21AA",
+        "code": "H2001",
+        "display": "Rehabilitation program, per 1/2 day"
+      }
+    ]
+  }
+}
