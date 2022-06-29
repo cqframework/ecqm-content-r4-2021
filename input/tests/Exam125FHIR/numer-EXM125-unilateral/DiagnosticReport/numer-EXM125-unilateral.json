@@ -1,0 +1,26 @@
+{
+    "resourceType": "DiagnosticReport",
+    "id": "numer-EXM125-unilateral-3",
+    "meta": {
+        "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+        ]
+      },
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "26347-5",
+                "display": "MG Breast - left Diagnostic"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/numer-EXM125-unilateral"
+    },
+    "effectivePeriod": {
+      "start": "2020-11-17T12:30:00",
+      "end":"2020-11-17T12:30:00"
+  }
+}
