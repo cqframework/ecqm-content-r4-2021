@@ -4,27 +4,6 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
-      "resourceType": "Bundle",
-      "id": "Bundle-5",
-      "entry": [ {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient-5",
-          "name": [ {
-            "family": "IPFail",
-            "given": [ "NotEnrolled" ]
-          } ],
-          "gender": "female",
-          "birthDate": "1970-12-31"
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Bundle/Bundle-5"
-    }
-  }, {
-    "resource": {
       "resourceType": "Encounter",
       "id": "Encounter-5-92",
       "status": "finished",

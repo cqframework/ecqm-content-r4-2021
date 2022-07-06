@@ -14,13 +14,6 @@
     "extension": [ {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
       "valueCoding": {
-        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-        "code": "laboratory",
-        "display": "laboratory"
-      }
-    }, {
-      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
-      "valueCoding": {
         "system": "http://snomed.info/sct",
         "version": "http://snomed.info/sct/version/201709",
         "code": "428361000124107",
@@ -103,7 +96,7 @@
         "valueString": "Fecal Occult Blood Test Performed"
       }, {
         "url": "statement",
-        "valueString": "define \"Fecal Occult Blood Test Performed\":\n  [Observation: \"Fecal Occult Blood Test (FOBT)\"] FecalOccultResult\n            where FecalOccultResult.status in { 'final', 'amended', 'corrected' }\n              and exists ( FecalOccultResult.category FecalOccultResultCategory\n                  where \"laboratory\" in FHIRHelpers.ToConcept ( FecalOccultResultCategory ).codes\n              )\n              and FecalOccultResult.value is not null\n              and Global.\"Latest\" ( FecalOccultResult.effective ) during \"Measurement Period\""
+        "valueString": "// add- PROBLEM - category evaluation was not working - THIS WORKS\ndefine \"Fecal Occult Blood Test Performed\":\n  [Observation: \"Fecal Occult Blood Test (FOBT)\"] FecalOccult\n            where FecalOccult.status in { 'final', 'amended', 'corrected' }\n              and exists ( FecalOccult.category FecalOccultCategory\n                  where FecalOccultCategory.coding.code.value  ~ { 'laboratory' } )\n              and FecalOccult.value is not null\n              and Global.\"Latest\" ( FecalOccult.effective ) during \"Measurement Period\""
       }, {
         "url": "displaySequence",
         "valueInteger": 3
@@ -133,7 +126,7 @@
         "valueString": "Fecal Immunochemical Test DNA Performed"
       }, {
         "url": "statement",
-        "valueString": "define \"Fecal Immunochemical Test DNA Performed\":\n  [Observation: \"FIT DNA\"] FitDNA\n            where FitDNA.status in { 'final', 'amended', 'corrected' }\n              and exists ( FitDNA.category FitDNACategory\n                  where \"laboratory\" in FHIRHelpers.ToConcept ( FitDNACategory ).codes\n              )\n              and FitDNA.value is not null\n              and Global.\"Latest\" ( FitDNA.effective ) 3 years or less on or before \n              end of \"Measurement Period\""
+        "valueString": "// add - PROBLEM - category evaluation was not working - THIS WORKS\ndefine \"Fecal Immunochemical Test DNA Performed\":\n  [Observation: \"FIT DNA\"] FitDNA\n            where FitDNA.status in { 'final', 'amended', 'corrected' }\n              and exists ( FitDNA.category FitDNACategory\n                  where FitDNACategory.coding.code.value  ~ { 'laboratory' } )\n              and FitDNA.value is not null\n              and Global.\"Latest\" ( FitDNA.effective ) 3 years or less on or before \n              end of \"Measurement Period\""
       }, {
         "url": "displaySequence",
         "valueInteger": 5
@@ -208,7 +201,7 @@
         "valueString": "Initial Population"
       }, {
         "url": "statement",
-        "valueString": "define \"Initial Population\":\n  AgeInYearsAt(date from start of \"Measurement Period\")in Interval[50, 75 )\n            and exists ( AdultOutpatientEncounters.\"Qualifying Encounters\"\n                union \"Telehealth Services\"\n            )"
+        "valueString": "define \"Initial Population\":\n  AgeInYearsAt(date from start of \"Measurement Period\")in Interval[51, 75 )\n    and exists ( AdultOutpatientEncounters.\"Qualifying Encounters\"\n      union \"Telehealth Services\"\n    )"
       }, {
         "url": "displaySequence",
         "valueInteger": 10
@@ -337,6 +330,21 @@
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
+        "valueString": "ColorectalCancerScreeningsFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Total Colectomy Condition"
+      }, {
+        "url": "statement",
+        "valueString": "// add Condition for DxCodes\ndefine \"Total Colectomy Condition\":\n  [Condition: \"Total Colectomy ICD9\"] ColectomyDx\n              where Global.\"Prevalence Period\" ( ColectomyDx ) starts on or before\n              end of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 19
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
         "valueString": "AdvancedIllnessandFrailtyExclusionECQMFHIR4"
       }, {
         "url": "name",
@@ -346,7 +354,7 @@
         "valueString": "define \"Has Criteria Indicating Frailty\":\n  exists ( [DeviceRequest: \"Frailty Device\"] FrailtyDeviceOrder\n                where FrailtyDeviceOrder.status in { 'active', 'on-hold', 'completed' }\n                  and FrailtyDeviceOrder.intent = 'order'\n                  and Global.\"Normalize Interval\" ( FrailtyDeviceOrder.authoredOn ) during \"Measurement Period\"\n            )\n              or exists ( [Observation: \"Frailty Device\"] FrailtyDeviceApplied\n                  where FrailtyDeviceApplied.status in { 'final', 'amended', 'corrected' }\n                    and Global.\"Normalize Interval\" ( FrailtyDeviceApplied.effective ) overlaps \"Measurement Period\"\n              )\n           or exists  ( [Condition: \"Frailty Diagnosis\"] FrailtyDiagnosis\n                where Global.\"Prevalence Period\" ( FrailtyDiagnosis ) overlaps \"Measurement Period\"\n            )\n              or exists ( [Encounter: \"Frailty Encounter\"] FrailtyEncounter\n                  where FrailtyEncounter.status = 'finished'\n                    and Global.\"Normalize Interval\" ( FrailtyEncounter.period ) overlaps \"Measurement Period\"\n              )\n              or exists ( [Observation: \"Frailty Symptom\"] FrailtySymptom\n                  where FrailtySymptom.status in { 'preliminary', 'final', 'amended', 'corrected' }\n                    and Global.\"Normalize Interval\" ( FrailtySymptom.effective ) overlaps \"Measurement Period\"\n              )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 19
+        "valueInteger": 20
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -361,7 +369,7 @@
         "valueString": "define \"Outpatient Encounters with Advanced Illness\":\n  ( ( [Encounter: \"Outpatient\"]\n                union [Encounter: \"Observation\"]\n                union [Encounter: \"Emergency Department Visit\"]\n                union [Encounter: \"Nonacute Inpatient\"] ) Outpatient\n                where Outpatient.status = 'finished' ) OutpatientEncounter\n                with [Condition: \"Advanced Illness\"] AdvancedIllnessDiagnosis\n                  such that AdvancedIllnessDiagnosis in Global.EncounterDiagnosis ( OutpatientEncounter )\n                    and Global.\"Normalize Interval\" ( OutpatientEncounter.period ) starts 2 years or less on or before \n                    end of \"Measurement Period\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 20
+        "valueInteger": 21
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -376,7 +384,7 @@
         "valueString": "define \"Two Outpatient Encounters with Advanced Illness on Different Dates of Service\":\n  from\n                \"Outpatient Encounters with Advanced Illness\" OutpatientEncounter1,\n                \"Outpatient Encounters with Advanced Illness\" OutpatientEncounter2\n                where OutpatientEncounter2.period ends 1 day or more after day of \n                end of OutpatientEncounter1.period\n                return OutpatientEncounter1"
       }, {
         "url": "displaySequence",
-        "valueInteger": 21
+        "valueInteger": 22
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -391,7 +399,7 @@
         "valueString": "define \"Inpatient Encounter with Advanced Illness\":\n  ( [Encounter: \"Acute Inpatient\"] AcuteInpatient\n                where AcuteInpatient.status = 'finished' ) InpatientEncounter\n                with [Condition: \"Advanced Illness\"] AdvancedIllnessDiagnosis\n                  such that AdvancedIllnessDiagnosis in Global.EncounterDiagnosis ( InpatientEncounter )\n                    and Global.\"Normalize Interval\" ( InpatientEncounter.period ) starts 2 years or less on or before \n                    end of \"Measurement Period\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 22
+        "valueInteger": 23
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -406,7 +414,7 @@
         "valueString": "define \"Dementia Medications In Year Before or During Measurement Period\":\n  [MedicationRequest: \"Dementia Medications\"] DementiaMed\n                where DementiaMed.status = 'active'\n                  and DementiaMed.intent = 'order'\n                  and CMD.\"MedicationPeriod\"(DementiaMed)overlaps Interval[( start of \"Measurement Period\" - 1 year ), \n                  end of \"Measurement Period\"]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 23
+        "valueInteger": 24
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -421,7 +429,7 @@
         "valueString": "define \"Advanced Illness and Frailty Exclusion Not Including Over Age 80\":\n  AgeInYearsAt(date from start of \"Measurement Period\")>= 65\n                and \"Has Criteria Indicating Frailty\"\n                and ( exists \"Two Outpatient Encounters with Advanced Illness on Different Dates of Service\"\n                    or exists ( \"Inpatient Encounter with Advanced Illness\" )\n                    or exists \"Dementia Medications In Year Before or During Measurement Period\"\n                )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 24
+        "valueInteger": 25
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -436,7 +444,7 @@
         "valueString": "define \"Long Term Care Periods During Measurement Period\":\n  ( [Encounter: \"Care Services in Long-Term Residential Facility\"]\n                union [Encounter: \"Nursing Facility Visit\"] ) LongTermFacilityEncounter\n                where LongTermFacilityEncounter.status = 'finished'\n                  and Global.\"Normalize Interval\" ( LongTermFacilityEncounter.period ) overlaps \"Measurement Period\"\n                return Global.\"Normalize Interval\" ( LongTermFacilityEncounter.period )\n                  intersect \"Measurement Period\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 25
+        "valueInteger": 26
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -451,7 +459,7 @@
         "valueString": "define \"Long Term Care Overlapping Periods\":\n  collapse ( \"Long Term Care Periods During Measurement Period\" )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 26
+        "valueInteger": 27
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -466,7 +474,7 @@
         "valueString": "define \"Long Term Care Adjacent Periods\":\n  from\n                \"Long Term Care Overlapping Periods\" LTCPeriod1,\n                \"Long Term Care Overlapping Periods\" LTCPeriod2\n                where \n                end of LTCPeriod1 within 1 day of start of LTCPeriod2\n                return Interval[start of LTCPeriod1, \n                end of LTCPeriod2]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 27
+        "valueInteger": 28
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -481,7 +489,7 @@
         "valueString": "define \"Max Long Term Care Period Length\":\n  Max((collapse(\"Long Term Care Overlapping Periods\"\n                    union \"Long Term Care Adjacent Periods\"\n                ))LTCPeriods\n                  return duration in days of LTCPeriods\n              )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 28
+        "valueInteger": 29
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -496,7 +504,7 @@
         "valueString": "define \"Has Long Term Care Periods Longer Than 90 Consecutive Days\":\n  \"Max Long Term Care Period Length\" > 90"
       }, {
         "url": "displaySequence",
-        "valueInteger": 29
+        "valueInteger": 30
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -511,7 +519,7 @@
         "valueString": "define \"Palliative Care in the Measurement Period\":\n  exists ( [Observation: \"Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)\"] PalliativeAssessment\n              where PalliativeAssessment.status in { 'final', 'amended', 'corrected' }\n                and exists ( PalliativeAssessment.category PalliativeAssessmentCategory\n                    where \"survey\" in FHIRHelpers.ToConcept ( PalliativeAssessmentCategory ).codes\n                )\n                and Global.\"Normalize Interval\" ( PalliativeAssessment.effective ) overlaps \"Measurement Period\"\n          )\n            or exists ( [Encounter: \"Palliative Care Encounter\"] PalliativeEncounter\n                where PalliativeEncounter.status = 'finished'\n                  and Global.\"Normalize Interval\" ( PalliativeEncounter.period ) overlaps \"Measurement Period\"\n            )\n            or exists ( [Procedure: \"Palliative Care Intervention\"] PalliativeIntervention\n                where PalliativeIntervention.status in { 'completed', 'in-progress' }\n                  and Global.\"Normalize Interval\" ( PalliativeIntervention.performed ) overlaps \"Measurement Period\"\n            )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 30
+        "valueInteger": 31
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -523,10 +531,10 @@
         "valueString": "Denominator Exclusions"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator Exclusions\":\n  Hospice.\"Has Hospice\"\n            or exists \"Malignant Neoplasm\"\n            or exists \"Total Colectomy Performed\"\n            or FrailtyLTI.\"Advanced Illness and Frailty Exclusion Not Including Over Age 80\"\n            or ( AgeInYearsAt(date from start of \"Measurement Period\")>= 65\n                and FrailtyLTI.\"Has Long Term Care Periods Longer Than 90 Consecutive Days\"\n            )\n            or PalliativeCare.\"Palliative Care in the Measurement Period\""
+        "valueString": "// add \"Total Colectomy Condition\" for DxCodes\ndefine \"Denominator Exclusions\":\n  Hospice.\"Has Hospice\"\n            or exists \"Malignant Neoplasm\"\n            or exists \"Total Colectomy Performed\"\n            or exists \"Total Colectomy Condition\"\n            or FrailtyLTI.\"Advanced Illness and Frailty Exclusion Not Including Over Age 80\"\n            or ( AgeInYearsAt(date from start of \"Measurement Period\")>= 65\n                and FrailtyLTI.\"Has Long Term Care Periods Longer Than 90 Consecutive Days\"\n            )\n            or PalliativeCare.\"Palliative Care in the Measurement Period\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 31
+        "valueInteger": 32
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -541,7 +549,7 @@
         "valueString": "define \"SDE Race\":\n  (flatten (\n      Patient.extension Extension\n        where Extension.url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race'\n          return Extension.extension\n    )) E\n      where E.url = 'ombCategory'\n        or E.url = 'detailed'\n      return E.value as Coding"
       }, {
         "url": "displaySequence",
-        "valueInteger": 32
+        "valueInteger": 33
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -556,7 +564,7 @@
         "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 33
+        "valueInteger": 34
       } ]
     } ],
     "status": "active",
@@ -600,16 +608,16 @@
       "resource": "http://ecqi.healthit.gov/ecqms/Library/PalliativeCareFHIR|0.6.000"
     }, {
       "type": "depends-on",
-      "display": "Code system ObservationCategoryCodes",
-      "resource": "http://terminology.hl7.org/CodeSystem/observation-category"
-    }, {
-      "type": "depends-on",
       "display": "Code system SNOMEDCT:2017-09",
       "resource": "http://snomed.info/sct|http://snomed.info/sct/version/201709"
     }, {
       "type": "depends-on",
       "display": "Code system LOINC",
       "resource": "http://loinc.org"
+    }, {
+      "type": "depends-on",
+      "display": "Code system ObservationCategoryCodes",
+      "resource": "http://terminology.hl7.org/CodeSystem/observation-category"
     }, {
       "type": "depends-on",
       "display": "Value set Colonoscopy",
@@ -678,6 +686,10 @@
       "type": "depends-on",
       "display": "Value set Total Colectomy",
       "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1019"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Total Colectomy ICD9",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.11.1136"
     }, {
       "type": "depends-on",
       "display": "Value set Frailty Device",
@@ -1062,6 +1074,14 @@
       "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.11.1136"
+      } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.12.1074"
       } ]
     }, {
@@ -1124,7 +1144,7 @@
   "title": "Colorectal Cancer ScreeningFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2022-05-02T13:37:52-04:00",
+  "date": "2022-07-05T22:19:04-04:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {

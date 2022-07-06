@@ -4,64 +4,6 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
-      "resourceType": "Bundle",
-      "id": "Bundle-16",
-      "entry": [ {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient-16",
-          "name": [ {
-            "family": "DenexFail",
-            "given": [ "HospiceEncounterStatusNull" ]
-          } ],
-          "gender": "female",
-          "birthDate": "1970-12-31"
-        }
-      }, {
-        "resource": {
-          "resourceType": "Coverage",
-          "id": "Coverage-16-93",
-          "type": {
-            "coding": [ {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-              "code": "MCPOL"
-            } ]
-          },
-          "policyHolder": {
-            "reference": "Patient/Patient-16"
-          },
-          "period": {
-            "start": "2020-10-01T00:00:00.000Z",
-            "end": "2022-12-31T23:59:59.000Z"
-          }
-        }
-      }, {
-        "resource": {
-          "resourceType": "Encounter",
-          "id": "Encounter-16-94",
-          "type": [ {
-            "coding": [ {
-              "version": "2012.05",
-              "code": "0115",
-              "display": "Hospice"
-            } ]
-          } ],
-          "subject": {
-            "reference": "Patient/Patient-16"
-          },
-          "period": {
-            "start": "2021-12-31T23:59:59.000Z",
-            "end": "2022-01-01T00:00:00.000Z"
-          }
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Bundle/Bundle-16"
-    }
-  }, {
-    "resource": {
       "resourceType": "Encounter",
       "id": "Encounter-16-92",
       "status": "finished",

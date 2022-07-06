@@ -4,68 +4,6 @@
   "type": "transaction",
   "entry": [ {
     "resource": {
-      "resourceType": "Bundle",
-      "id": "Bundle-30",
-      "entry": [ {
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient-30",
-          "name": [ {
-            "family": "DenexFail",
-            "given": [ "BilateralMastectomyHistoryAfterMP" ]
-          } ],
-          "gender": "female",
-          "birthDate": "1970-12-31"
-        }
-      }, {
-        "resource": {
-          "resourceType": "Coverage",
-          "id": "Coverage-30-93",
-          "type": {
-            "coding": [ {
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-              "code": "MCPOL"
-            } ]
-          },
-          "policyHolder": {
-            "reference": "Patient/Patient-30"
-          },
-          "period": {
-            "start": "2020-10-01T00:00:00.000Z",
-            "end": "2022-12-31T23:59:59.000Z"
-          }
-        }
-      }, {
-        "resource": {
-          "resourceType": "Condition",
-          "id": "Condition-30-94",
-          "clinicalStatus": {
-            "coding": [ {
-              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-              "code": "active"
-            } ]
-          },
-          "code": {
-            "coding": [ {
-              "system": "http://snomed.info/sct",
-              "version": "2020.09.20AA",
-              "code": "428529004",
-              "display": "History of bilateral mastectomy"
-            } ]
-          },
-          "subject": {
-            "reference": "Patient/Patient-30"
-          },
-          "onsetDateTime": "2023-01-01T00:00:00.000Z"
-        }
-      } ]
-    },
-    "request": {
-      "method": "PUT",
-      "url": "Bundle/Bundle-30"
-    }
-  }, {
-    "resource": {
       "resourceType": "Condition",
       "id": "Condition-30-93",
       "clinicalStatus": {

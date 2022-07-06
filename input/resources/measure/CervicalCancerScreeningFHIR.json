@@ -88,7 +88,7 @@
         "valueString": "Cervical Cytology Within 3 Years"
       }, {
         "url": "statement",
-        "valueString": "define \"Cervical Cytology Within 3 Years\":\n  [Observation: \"Pap Test\"] CervicalCytology\n              where CervicalCytology.status in { 'final', 'amended', 'corrected' }\n                and exists ( CervicalCytology.category CervicalCytologyCategory\n                    where \"laboratory\" in FHIRHelpers.ToConcept ( CervicalCytologyCategory ).codes\n                )\n                and Global.\"Latest\" ( CervicalCytology.effective ) 3 years or less on or before\n                end of \"Measurement Period\"\n                and CervicalCytology.value is not null"
+        "valueString": "define \"Cervical Cytology Within 3 Years\":\n  [Observation: \"Pap Test\"] CervicalCytology\n    where CervicalCytology.status in { 'final', 'amended', 'corrected' }\n      and exists ( CervicalCytology.category CervicalCytologyCategory\n          where \"laboratory\" in FHIRHelpers.ToConcept ( CervicalCytologyCategory ).codes\n      )\n      and Global.\"Latest\" ( CervicalCytology.effective ) 3 years or less on or before end of \"Measurement Period\"\n      and CervicalCytology.value is not null"
       }, {
         "url": "displaySequence",
         "valueInteger": 2
@@ -103,7 +103,7 @@
         "valueString": "HPV Test Within 5 Years for Women Age 30 and Older"
       }, {
         "url": "statement",
-        "valueString": "define \"HPV Test Within 5 Years for Women Age 30 and Older\":\n  [Observation: \"HPV Test\"] HPVTest\n              where HPVTest.status in { 'final', 'amended', 'corrected' }\n                and exists ( HPVTest.category HPVTestCategory\n                    where \"laboratory\" in FHIRHelpers.ToConcept ( HPVTestCategory ).codes\n                )\n                and AgeInYearsAt(date from start of Global.\"Normalize Interval\"(HPVTest.effective))>= 30\n                and Global.\"Latest\" ( HPVTest.effective ) 5 years or less on or before\n                end of \"Measurement Period\"\n                and HPVTest.value is not null"
+        "valueString": "define \"HPV Test Within 5 Years for Women Age 30 and Older\":\n  [Observation: \"HPV Test\"] HPVTest\n    where HPVTest.status in { 'final', 'amended', 'corrected' }\n      and exists ( HPVTest.category HPVTestCategory\n          where \"laboratory\" in FHIRHelpers.ToConcept ( HPVTestCategory ).codes\n      )\n      and AgeInYearsAt(date from start of Global.\"Normalize Interval\"(HPVTest.effective))>= 30\n      and Global.\"Latest\" ( HPVTest.effective ) 5 years or less on or before end of \"Measurement Period\"\n      and HPVTest.value is not null"
       }, {
         "url": "displaySequence",
         "valueInteger": 3
@@ -650,7 +650,7 @@
   "title": "Cervical Cancer ScreeningFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2022-05-02T11:37:52-06:00",
+  "date": "2022-07-05T20:19:04-06:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {
