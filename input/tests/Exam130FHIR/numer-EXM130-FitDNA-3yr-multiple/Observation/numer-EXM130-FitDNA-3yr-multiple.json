@@ -1,11 +1,11 @@
 {
   "resourceType": "Observation",
-  "id": "numer-EXM130-FitDNA-FAIL-3yr-TZoffset-00-1",
+  "id": "numer-EXM130-FitDNA-3yr-multiple-1",
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" ]
   },
   "status": "final",
-   "category" : [
+  "category" : [
     {
       "coding" : [
         {
@@ -16,7 +16,7 @@
       ],
       "text" : "Laboratory"
     }
-  ],
+  ],  
   "code": {
     "coding": [ {
       "system": "http://loinc.org",
@@ -30,12 +30,12 @@
       "code": "260385009",
       "display": "Negative (qualifier value)"
     } ]
-  },  
+  }, 
   "subject": {
-    "reference": "Patient/numer-EXM130-FitDNA-FAIL-3yr-TZoffset-00"
+    "reference": "Patient/numer-EXM130-FitDNA-3yr-multiple"
   },
   "effectivePeriod": {
-    "start": "2019-01-01T01:00:00+00:00",
-    "end": "2019-01-01T02:00:00+00:00"
+    "start": "2019-01-01T01:00:00",
+    "end": "2019-01-01T02:00:00"
   }
 }

@@ -1,6 +1,6 @@
 {
   "resourceType": "Observation",
-  "id": "numer-EXM130-FitDNA-3yr-1",
+  "id": "numer-EXM130-FitDNA-FAIL-status-missing-1",
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" ]
   },
@@ -23,9 +23,15 @@
       "display": "Noninvasive colorectal cancer DNA and occult blood screening [Interpretation] in Stool Narrative"
     } ]
   },
-  "valueBoolean": "false", 
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "260385009",
+      "display": "Negative (qualifier value)"
+    } ]
+  },  
   "subject": {
-    "reference": "Patient/numer-EXM130-FitDNA-3yr"
+    "reference": "Patient/numer-EXM130-FitDNA-FAIL-status-missing"
   },
   "effectivePeriod": {
     "start": "2019-01-01T01:00:00",

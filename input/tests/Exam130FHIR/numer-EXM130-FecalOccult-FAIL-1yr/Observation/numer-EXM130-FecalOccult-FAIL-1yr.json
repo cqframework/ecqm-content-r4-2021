@@ -24,7 +24,13 @@
       "display": "Hemoglobin.gastrointestinal [Presence] in Stool"
     } ]
   },
-  "valueBoolean": "false", 
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "260385009",
+      "display": "Negative (qualifier value)"
+    } ]
+  }, 
   "subject": {
     "reference": "Patient/numer-EXM130-FecalOccult-FAIL-1yr"
   },

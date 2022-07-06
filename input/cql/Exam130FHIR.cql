@@ -1,7 +1,7 @@
 library Exam130FHIR version '0.0.003'
 /* 20220609 modified from ColorectalCancerScreeningsFHIR
-default Interval, colonoscopy with inappropriate status, MP 2021
-and display order to assist edge testing, may need to increment increment version number */
+default Interval, colonoscopy with inappropriate status, MP 2021, 
+display order and test case content definitions to assist edge testing, may need to increment increment version number */
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.001' called FHIRHelpers
@@ -74,7 +74,7 @@ define "Telehealth Services":
             where TelehealthEncounter.status = 'finished'
               and Global."Normalize Interval" ( TelehealthEncounter.period ) during "Measurement Period"
 
-/* add age to result output */
+/* add display of age to result output for edge testing*/
 define "Age at start of Measurement Period":
   AgeInYearsAt(date from start of "Measurement Period")
 
@@ -88,7 +88,7 @@ define "Initial Population":
 define "Denominator":
   "Initial Population"
 
-// add "Total Colectomy Condition" for dxcodes
+// add "Total Colectomy Condition" for DxCodes
 define "Denominator Exclusions":
   Hospice."Has Hospice"
             or exists "Malignant Neoplasm"
@@ -117,170 +117,122 @@ define "Total Colectomy Condition":
               where Global."Prevalence Period" ( ColectomyDx ) starts on or before
               end of "Measurement Period"
 
+
 // --- Fecal Occult Blood Test ---
 
-// revised definition to display date of hemoccult 1 year for edge testing
-define "Fecal Occult Blood Test Performed Date":
+// add definition to Display Date, Result, Category, Status of hemoccult, 2 year for edge testing
+define "Fecal Occult Blood Test Display Date, Result, Category, Status":
   [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
-    let occultDate: Global."Latest" ( FecalOccult.effective )
     where Global."Latest" ( FecalOccult.effective ) during Interval ( start of "Measurement Period" - 1 year, end of "Measurement Period" )
-  return occultDate
+    return Tuple { 
+      occultDate: Global."Latest" ( FecalOccult.effective ),
+      occultResult: FecalOccult.value.coding.display,
+      occultCategoryCode: FecalOccult.category.coding.code.value,
+      occultStatus: FecalOccult.status 
+    }
 
-// revised definition to display CATEGORY of hemoccult 2 yr for edge testing
-define "Fecal Occult Blood Test Performed Category":
-  [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
-    let occultCategory: FecalOccult.category
-    where Global."Latest" ( FecalOccult.effective ) during Interval ( start of "Measurement Period" - 1 year, end of "Measurement Period" )
-  return occultCategory
-
-// PROBLEM - category evaluation not working?
+// add- PROBLEM - category evaluation was not working - THIS WORKS
 define "Fecal Occult Blood Test Performed":
   [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
             where FecalOccult.status in { 'final', 'amended', 'corrected' }
               and exists ( FecalOccult.category FecalOccultCategory
-                  where "laboratory" in FHIRHelpers.ToConcept ( FecalOccultCategory ).codes
-              )
+                  where FecalOccultCategory.coding.code.value  ~ { 'laboratory' } )
               and FecalOccult.value is not null
               and Global."Latest" ( FecalOccult.effective ) during "Measurement Period"
 
-// TZoffset issue corrected by use of 'day of'
+// add - PROBLEM - TZoffset issue corrected by use of 'day of' - THIS WORKS
 define "Fecal Occult Blood Test Performed, day of TZoffset":
   [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
             where FecalOccult.status in { 'final', 'amended', 'corrected' }
               and exists ( FecalOccult.category FecalOccultCategory
-                  where "laboratory" in FHIRHelpers.ToConcept ( FecalOccultCategory ).codes
-              )
+                  where FecalOccultCategory.coding.code.value  ~ { 'laboratory' } )
               and FecalOccult.value is not null
               and Global."Latest" ( FecalOccult.effective ) during day of "Measurement Period"
 
-// comment out to ignore category logic
-define "Fecal Occult Blood Test Performed ignore category":
+// add for edge testing of category but ignore status, use day of for TZoffset issue
+// consider potential for presence of EHR data as category 'exam', 'procedure', 'survey' ??? 
+define "Fecal Occult Blood Test Performed without appropriate category, ignore status, day of TZoffset":
   [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
-            where FecalOccult.status in { 'final', 'amended', 'corrected' }
-//              and exists ( FecalOccult.category FecalOccultCategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FecalOccultCategory ).codes
-//              )
-              and FecalOccult.value is not null
-              and Global."Latest" ( FecalOccult.effective ) during "Measurement Period"
-
-// TZoffset issue corrected by use of 'day of' and ignore category
-define "Fecal Occult Blood Test Performed, day of TZoffset ignore category":
-  [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
-            where FecalOccult.status in { 'final', 'amended', 'corrected' }
-//              and exists ( FecalOccultResult.category FecalOccultCategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FecalOccultCategory ).codes
-//              )
+            where 
+//             FecalOccult.status in { 'final', 'amended', 'corrected' }
+//              and 
+              exists ( FecalOccult.category FecalOccultCategory
+                  where FecalOccultCategory.coding.code.value  !~ { 'laboratory' } )
               and FecalOccult.value is not null
               and Global."Latest" ( FecalOccult.effective ) during day of "Measurement Period"
 
-/* add for edge testing of status, caution re status */
-define "Fecal Occult Blood Test Performed without appropriate status":
+// add for edge testing of status but ignore category, use day of for TZoffset issue
+define "Fecal Occult Blood Test Performed without appropriate status, ignore category, day of TZoffset":
   [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
             where not ( FecalOccult.status in { 'final', 'amended', 'corrected' } )
 //              and exists ( FecalOccult.category FecalOccultCategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FecalOccultCategory ).codes
-//              )
-              and FecalOccult.value is not null
-              and Global."Latest" ( FecalOccult.effective ) during "Measurement Period"
-
-/* add for edge testing of status, caution re status - add day of for TZoffset issue*/
-define "Fecal Occult Blood Test Performed without appropriate status, day of TZoffset":
-  [Observation: "Fecal Occult Blood Test (FOBT)"] FecalOccult
-            where not ( FecalOccult.status in { 'final', 'amended', 'corrected' } )
-//              and exists ( FecalOccult.category FecalOccultCategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FecalOccultCategory ).codes
-//              )
+//                  where FecalOccultCategory.coding.code.value  ~ { 'laboratory' } )
               and FecalOccult.value is not null
               and Global."Latest" ( FecalOccult.effective ) during day of "Measurement Period"
+
 
 // --- Fecal Immunochemical Test DNA ---
 
-// revised definition to display DATE of FIT 4 yr for edge testing
-define "Fecal Immunochemical Test DNA Performed Date":
+// add definition to Display Date, Result, Category, Status of FitDNA, 4 year for edge testing
+define "Fecal Immunochemical Test DNA Display Date, Result, Category, Status":
   [Observation: "FIT DNA"] FitDNA
-    let fitDate: Global."Latest" ( FitDNA.effective )
-    where Global."Latest" ( FitDNA.effective ) 4 years or less on or before 
+    where Global."Latest" ( FitDNA.effective )  4 years or less on or before 
       end of "Measurement Period"
-    return fitDate  
+    return Tuple { 
+      occultDate: Global."Latest" ( FitDNA.effective ),
+      occultResult: FitDNA.value.coding.display,
+      occultCategoryCode: FitDNA.category.coding.code.value,
+      occultStatus: FitDNA.status 
+    }
 
-// revised definition to display CATEGORY of FIT 4 yr for edge testing
-define "Fecal Immunochemical Test DNA Performed Category":
-  [Observation: "FIT DNA"] FitDNA
-    let fitCategory: FitDNA.category
-    where Global."Latest" ( FitDNA.effective ) 4 years or less on or before 
-      end of "Measurement Period"
-    return fitCategory
-
-// PROBLEM - category evaluation not working?
+// add - PROBLEM - category evaluation was not working - THIS WORKS
 define "Fecal Immunochemical Test DNA Performed":
   [Observation: "FIT DNA"] FitDNA
             where FitDNA.status in { 'final', 'amended', 'corrected' }
               and exists ( FitDNA.category FitDNACategory
-                  where "laboratory" in FHIRHelpers.ToConcept ( FitDNACategory ).codes
-             )
+                  where FitDNACategory.coding.code.value  ~ { 'laboratory' } )
               and FitDNA.value is not null
               and Global."Latest" ( FitDNA.effective ) 3 years or less on or before 
               end of "Measurement Period"
 
-// TZoffset issue corrected by use of 'day of'
+// add - PROBLEM - TZoffset issue corrected by use of 'day of' - THIS WORKS
 define "Fecal Immunochemical Test DNA Performed, day of TZoffset":
   [Observation: "FIT DNA"] FitDNA
             where FitDNA.status in { 'final', 'amended', 'corrected' }
               and exists ( FitDNA.category FitDNACategory
-                  where "laboratory" in FHIRHelpers.ToConcept ( FitDNACategory ).codes
-              )
+                  where FitDNACategory.coding.code.value  ~ { 'laboratory' } )
               and FitDNA.value is not null
               and Global."Latest" ( FitDNA.effective ) 3 years or less on or before 
               day of end of "Measurement Period"
 
-// comment out to ignore category logic
-define "Fecal Immunochemical Test DNA Performed ignore category":
+// add for edge testing of category but ignore status, use day of for TZoffset issue
+// consider potential for presence of EHR data as category 'exam', 'procedure', 'survey' ??? 
+define "Fecal Immunochemical Test DNA Performed without appropriate category, ignore status, day of TZoffset":
   [Observation: "FIT DNA"] FitDNA
-            where FitDNA.status in { 'final', 'amended', 'corrected' }
-//              and exists ( FitDNA.category FitDNACategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FitDNACategory ).codes
-//             )
-              and FitDNA.value is not null
-              and Global."Latest" ( FitDNA.effective ) 3 years or less on or before 
-              end of "Measurement Period"
-
-// TZoffset issue corrected by use of 'day of' and ignore category
-define "Fecal Immunochemical Test DNA Performed, day of TZoffset ignore category":
-  [Observation: "FIT DNA"] FitDNA
-            where FitDNA.status in { 'final', 'amended', 'corrected' }
-//              and exists ( FitDNA.category FitDNACategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FitDNACategory ).codes
-//              )
+            where 
+//            FitDNA.status in { 'final', 'amended', 'corrected' }
+//              and 
+              exists ( FitDNA.category FitDNACategory
+                  where FitDNACategory.coding.code.value  !~ { 'laboratory' } )
               and FitDNA.value is not null
               and Global."Latest" ( FitDNA.effective ) 3 years or less on or before 
               day of end of "Measurement Period"
 
-/* add for edge testing of status, caution re status */
-define "Fecal Immunochemical Test DNA Performed without appropriate status":
+/* add for edge testing of status but ignore category, use day of for TZoffset issue*/
+define "Fecal Immunochemical Test DNA Performed without appropriate status, ignore category, day of TZoffset":
   [Observation: "FIT DNA"] FitDNA
             where not ( FitDNA.status in { 'final', 'amended', 'corrected' } )
 //              and exists ( FitDNA.category FitDNACategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FitDNACategory ).codes
-//              )
-              and FitDNA.value is not null
-              and Global."Latest" ( FitDNA.effective ) 3 years or less on or before 
-              end of "Measurement Period"
-
-/* add for edge testing of status, caution re status - add day of for TZoffset issue*/
-define "Fecal Immunochemical Test DNA Performed without appropriate status, day of TZoffset":
-  [Observation: "FIT DNA"] FitDNA
-            where not ( FitDNA.status in { 'final', 'amended', 'corrected' } )
-//              and exists ( FitDNA.category FitDNACategory
-//                  where "laboratory" in FHIRHelpers.ToConcept ( FitDNACategory ).codes
-//              )
+//                  where FitDNACategory.coding.code.value  ~ { 'laboratory' } )
               and FitDNA.value is not null
               and Global."Latest" ( FitDNA.effective ) 3 years or less on or before 
               day of end of "Measurement Period"
+
 
 // --- CT Colonography ---
 
-// revised definition to display date of Colonography as 6 years for edge testing
-define "CT Colonography Performed Date":
+// add definition to Display Date of Colonography as 6 years for edge testing
+define "CT Colonography Display Date":
   [Observation: "CT Colonography"] Colonography
     let ctDate: Global."Latest" ( Colonography.effective )
             where Global."Normalize Interval" ( Colonography.effective ) ends 6 years or less on or before 
@@ -293,17 +245,18 @@ define "CT Colonography Performed":
               and Global."Normalize Interval" ( Colonography.effective ) ends 5 years or less on or before 
               end of "Measurement Period"
 
-/* add for edge testing of status, caution re status */
+// add for edge testing of status, caution re status
 define "CT Colonography Performed without appropriate status":
   [Observation: "CT Colonography"] Colonography
             where not ( Colonography.status in { 'final', 'amended', 'corrected', 'appended' } )
               and Global."Normalize Interval" ( Colonography.effective ) ends 5 years or less on or before 
               end of "Measurement Period"
 
+
 // --- Flexible Sigmoidoscopy ---
 
-// revised definition to display date of sigmoidoscopy as 6 years for edge testing
-define "Flexible Sigmoidoscopy Performed Date":
+// add definition to Display Date of sigmoidoscopy as 6 years for edge testing 
+define "Flexible Sigmoidoscopy Display Date":
   [Procedure: "Flexible Sigmoidoscopy"] FlexibleSigmoidoscopy
     let sigmoidDate: Global."Latest" ( FlexibleSigmoidoscopy.performed )
     where Global."Normalize Interval" ( FlexibleSigmoidoscopy.performed ) ends 6 years or less on or before 
@@ -316,17 +269,18 @@ define "Flexible Sigmoidoscopy Performed":
               and Global."Normalize Interval" ( FlexibleSigmoidoscopy.performed ) ends 5 years or less on or before 
               end of "Measurement Period"
 
-/* add for edge testing of status, caution re status */
+// add for edge testing of status, caution re status 
 define "Flexible Sigmoidoscopy Performed without appropriate status":
   [Procedure: "Flexible Sigmoidoscopy"] FlexibleSigmoidoscopy
             where not ( FlexibleSigmoidoscopy.status = 'completed' )
               and Global."Normalize Interval" ( FlexibleSigmoidoscopy.performed ) ends 5 years or less on or before 
               end of "Measurement Period"
 
+
 // --- Colonoscopy ---
 
-// revised definition to display date of colonoscopy as 11 years for edge testing
-define "Colonoscopy Performed Date":
+// add definition to Display Date of colonoscopy as 11 years for edge testing 
+define "Colonoscopy Display Date":
   [Procedure: "Colonoscopy"] Colonoscopy
     let colonoscopyDate: Global."Latest" ( Colonoscopy.performed )
     where Global."Normalize Interval" ( Colonoscopy.performed ) ends 11 years or less on or before 
@@ -339,7 +293,7 @@ define "Colonoscopy Performed":
               and Global."Normalize Interval" ( Colonoscopy.performed ) ends 10 years or less on or before 
               end of "Measurement Period"
 
-/* add for edge testing of status */
+// add for edge testing of status 
 define "Colonoscopy Performed without appropriate status":
   [Procedure: "Colonoscopy"] Colonoscopy
             where not ( Colonoscopy.status = 'completed' )
@@ -353,7 +307,7 @@ define "Numerator":
             or exists "Fecal Immunochemical Test DNA Performed"
             or exists "CT Colonography Performed"
 
-/* Final Numerator Population in IP DENOM not in DENEX */
+// add Final Numerator Population in IP DENOM not in DENEX
 define "Final Numerator Population":
   "Numerator" 
   and "Initial Population"
