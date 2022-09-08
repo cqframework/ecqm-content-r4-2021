@@ -2,7 +2,7 @@ library Common version '0.0.1'
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.001' called FHIRHelpers
+include FHIRHelpers version '4.0.1' called FHIRHelpers
 
 codesystem "ObservationStatusCodes": 'http://hl7.org/fhir/observation-status'
 
@@ -58,7 +58,7 @@ define function CaseFeatureObservation(code CodeableConcept, value System.Quanti
     Observation {
         meta: 
             Meta {
-                profile: {
+                profle: {
                     canonical { value: profile }
                 }
             },

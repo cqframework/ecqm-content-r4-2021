@@ -2,7 +2,7 @@ library AdultOutpatientEncountersFHIR4 version '2.2.000'
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.001' called FHIRHelpers
+include FHIRHelpers version '4.0.1' called FHIRHelpers
 include MATGlobalCommonFunctionsFHIR4 version '6.1.000' called Global
 
 valueset "Annual Wellness Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240' 
