@@ -330,12 +330,12 @@ define function "CumulativeDuration"(Intervals List<Interval<DateTime>> ):
 /*Next, we define a function that rolls out intervals:*/
 define function "RolloutIntervals"(intervals List<Interval<DateTime>> ):
   intervals I
-    aggregate R starting (null as List<Interval<DateTime>>):
+    aggregate all R starting (null as List<Interval<DateTime>>):
       R union ({
         I X
           let
             S: Max({ end of Last(R) + 1 day, start of X }),
-            E: S + duration in days of X
+            E: S + System.Quantity { value: Coalesce(duration in days of X, 0), unit: 'day' }
           return Interval[S, E]
       })
 
