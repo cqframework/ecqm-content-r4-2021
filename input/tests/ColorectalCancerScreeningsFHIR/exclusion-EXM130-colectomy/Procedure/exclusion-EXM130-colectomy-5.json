@@ -1,0 +1,22 @@
+{
+  "resourceType": "Procedure",
+  "id": "exclusion-EXM130-colectomy-5",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure" ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "code": "44155",
+      "display": "Colectomy, total, abdominal, with proctectomy; with ileostomy"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/exclusion-EXM130-colectomy"
+  },
+  "performedPeriod": {
+    "start": "2020-01-01T00:00:00-06:00",
+    "end": "2020-01-01T01:00:00-07:00"
+  }
+}

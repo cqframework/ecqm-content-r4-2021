@@ -1,0 +1,30 @@
+{
+    "resourceType": "MedicationRequest",
+    "id": "denomexcl-EXM125-frailtyWcRx-8",
+    "status": "active",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+            "code": "discharge",
+            "display": "Discharge"
+          }
+        ]
+      }
+    ],
+    "medicationCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "997223",
+          "display": "donepezil hydrochloride 10 MG Oral Tablet"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "denomexcl-EXM125-frailtyWcRx"
+    },
+    "authoredOn": "2020-01-16T08:00:00"
+  }

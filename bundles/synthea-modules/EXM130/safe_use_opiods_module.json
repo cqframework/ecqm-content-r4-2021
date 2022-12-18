@@ -1,0 +1,44 @@
+{
+  "name": "Safe Use Opiods Module",
+  "remarks": [
+    "Master control module for generating patients in the various population groups for the CMS506 quality measure."
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "distributed_transition": [
+        {
+          "transition": "Numerator_Submodule",
+          "distribution": 0.095
+        },
+        {
+          "transition": "Denominator_Submodule",
+          "distribution": 0.855
+        },
+        {
+          "transition": "Denominator_Exclusion_Submodule",
+          "distribution": 0.05
+        }
+      ]
+    },
+    "Terminal": {
+      "type": "Terminal"
+    },
+    "Numerator_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "cms506/cms506_numerator",
+      "direct_transition": "Terminal"
+    },
+    "Denominator_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "cms506/cms506_denominator",
+      "direct_transition": "Terminal"
+    },
+    "Denominator_Exclusion_Submodule": {
+      "type": "CallSubmodule",
+      "submodule": "cms506/cms506_denomexcl",
+      "direct_transition": "Terminal"
+    }
+  },
+  "gmf_version": 2
+}

@@ -1,0 +1,1318 @@
+{
+  "name": "Safe Use of Opioids Numerator",
+  "remarks": [
+    "Module Title: Safe Use of Opoids - Concurrent Prescribing  Numerator Population and Denonimnator",
+    "Version Number: 3.0",
+    "Date Created: 03/21/2022",
+    "Module Steward: CMS",
+    "Module Developer: Telligen",
+    "",
+    ""
+  ],
+  "states": {
+    "Initial": {
+      "type": "Initial",
+      "distributed_transition": [
+        {
+          "transition": "Distribute2020",
+          "distribution": 0.5
+        },
+        {
+          "transition": "Distribute2021",
+          "distribution": 0.5
+        }
+      ]
+    },
+    "Terminal": {
+      "type": "Terminal"
+    },
+    "DischargeDelay": {
+      "type": "Delay",
+      "distribution": {
+        "kind": "UNIFORM",
+        "parameters": {
+          "high": 12,
+          "low": 3
+        }
+      },
+      "unit": "days",
+      "direct_transition": "EncounterEnd"
+    },
+    "Age_Guard": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Age",
+            "operator": ">=",
+            "quantity": 18,
+            "unit": "years",
+            "value": 0
+          },
+          {
+            "condition_type": "Age",
+            "operator": "<",
+            "quantity": 65,
+            "unit": "years",
+            "value": 0
+          }
+        ]
+      },
+      "direct_transition": "EncounterDistribution"
+    },
+    "ElectiveHA_Encounter": {
+      "type": "Encounter",
+      "encounter_class": "inpatient",
+      "reason": "tapenradol ER 100MG Order",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 8715000,
+          "display": "Hospital admission, elective (procedure)"
+        }
+      ],
+      "direct_transition": "MedicationDistribution"
+    },
+    "EmergencyHA Encounter": {
+      "type": "Encounter",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 183452005,
+          "display": "Emergency hospital admission (procedure)"
+        }
+      ],
+      "encounter_class": "inpatient",
+      "reason": "Select Condition/Enter Attribute",
+      "direct_transition": "MedicationDistribution"
+    },
+    "HospitalAdm_Encounter": {
+      "type": "Encounter",
+      "encounter_class": "inpatient",
+      "reason": "tapenradol ER 100MG Order",
+      "codes": [
+        {
+          "system": "SNOMED-CT",
+          "code": 32485007,
+          "display": "Hospital admission (procedure)"
+        }
+      ],
+      "direct_transition": "MedicationDistribution"
+    },
+    "EncounterDistribution": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "ElectiveHA_Encounter",
+          "distribution": 0.33
+        },
+        {
+          "transition": "EmergencyHA Encounter",
+          "distribution": 0.33
+        },
+        {
+          "transition": "HospitalAdm_Encounter",
+          "distribution": 0.33999999999999997
+        }
+      ]
+    },
+    "MedicationDistribution": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "Acetaminophen 325/Oxycodone 5MG POOpioid Order A",
+          "distribution": 0.2
+        },
+        {
+          "transition": "acetaminophen 325 MG oxycodone 25MG Order",
+          "distribution": 0.2
+        },
+        {
+          "transition": "chlorpheniramine maleate 04 MG codeine phosphate 16 MG  pseudoephedrine hydrochloride 6 MG Order",
+          "distribution": 0.1
+        },
+        {
+          "transition": "Oxycodone 5MG Order",
+          "distribution": 0.1
+        },
+        {
+          "transition": "12Hr Oxycodone Order",
+          "distribution": 0.1
+        },
+        {
+          "transition": "Lorazepa 1MG PO Order",
+          "distribution": 0.15
+        },
+        {
+          "transition": "Diazepam 2MG Order",
+          "distribution": 0.15
+        }
+      ]
+    },
+    "EncounterEnd": {
+      "type": "EncounterEnd",
+      "distributed_transition": [
+        {
+          "transition": "Terminal",
+          "distribution": 1
+        }
+      ]
+    },
+    "Mar2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 3,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 4,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Feb2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 2,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 3,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Jan2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 1,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 2,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Apr2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 4,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 5,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "May2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 5,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 6,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Jun2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 6,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 7,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Jul2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 7,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 8,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Aug2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 8,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 9,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Sep2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 9,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 10,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Oct2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 10,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 11,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Nov2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 11,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 12,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Dec2021": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "date": {
+              "year": 2021,
+              "month": 12,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            },
+            "value": 0
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2022,
+              "month": 1,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Distribute2020": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.098,
+          "transition": "Jan2020"
+        },
+        {
+          "transition": "Feb2020",
+          "distribution": 0.07
+        },
+        {
+          "transition": "Mar2020",
+          "distribution": 0.07
+        },
+        {
+          "transition": "Apr2020",
+          "distribution": 0.08
+        },
+        {
+          "transition": "May2020",
+          "distribution": 0.06
+        },
+        {
+          "transition": "Jun2020",
+          "distribution": 0.065
+        },
+        {
+          "transition": "Jul2020",
+          "distribution": 0.085
+        },
+        {
+          "transition": "Aug2020",
+          "distribution": 0.075
+        },
+        {
+          "transition": "Sep2020",
+          "distribution": 0.09
+        },
+        {
+          "transition": "Oct2020",
+          "distribution": 0.1
+        },
+        {
+          "transition": "Nov2020",
+          "distribution": 0.11
+        },
+        {
+          "transition": "Dec2020",
+          "distribution": 0.09700000000000009
+        }
+      ]
+    },
+    "Distribute2021": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "distribution": 0.1,
+          "transition": "Jan2021"
+        },
+        {
+          "transition": "Feb2021",
+          "distribution": 0.08
+        },
+        {
+          "transition": "Mar2021",
+          "distribution": 0.08
+        },
+        {
+          "transition": "Apr2021",
+          "distribution": 0.1
+        },
+        {
+          "transition": "May2021",
+          "distribution": 0.09
+        },
+        {
+          "transition": "Jun2021",
+          "distribution": 0.06
+        },
+        {
+          "transition": "Jul2021",
+          "distribution": 0.07
+        },
+        {
+          "transition": "Aug2021",
+          "distribution": 0.08
+        },
+        {
+          "transition": "Sep2021",
+          "distribution": 0.06
+        },
+        {
+          "transition": "Oct2021",
+          "distribution": 0.09
+        },
+        {
+          "transition": "Nov2021",
+          "distribution": 0.1
+        },
+        {
+          "transition": "Dec2021",
+          "distribution": 0.09000000000000008
+        }
+      ]
+    },
+    "Jan2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 1,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 2,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Feb2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 2,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 3,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Mar2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 3,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 4,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Apr2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 4,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 5,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "May2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 5,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 6,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Jun2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 6,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 7,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Jul2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 7,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 8,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Aug2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 8,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 9,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Sep2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 9,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 10,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Oct2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 10,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 11,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Nov2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 11,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 12,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "Dec2020": {
+      "type": "Guard",
+      "allow": {
+        "condition_type": "And",
+        "conditions": [
+          {
+            "condition_type": "Date",
+            "operator": ">=",
+            "value": 0,
+            "date": {
+              "year": 2020,
+              "month": 12,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          },
+          {
+            "condition_type": "Date",
+            "operator": "<",
+            "value": 0,
+            "date": {
+              "year": 2021,
+              "month": 1,
+              "day": 1,
+              "hour": 0,
+              "minute": 0,
+              "second": 0,
+              "millisecond": 0
+            }
+          }
+        ]
+      },
+      "direct_transition": "Age_Guard"
+    },
+    "SecondMedDistribution": {
+      "type": "Simple",
+      "distributed_transition": [
+        {
+          "transition": "levophanol tartrate 2MG Order",
+          "distribution": 0.3
+        },
+        {
+          "transition": "Morphine Sulfate 5MG Order",
+          "distribution": 0.1
+        },
+        {
+          "transition": "Acetaminophen 325MG Oxycodone 75 MG Order",
+          "distribution": 0.2
+        },
+        {
+          "transition": "fentanyl 098 MG Order",
+          "distribution": 0.15
+        },
+        {
+          "transition": "tapenradol ER 100MG Order",
+          "distribution": 0.2499999999999999
+        }
+      ]
+    },
+    "Diazepam 2MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 197590,
+          "display": "diazepam 2 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution",
+      "reason": "Select Condition/Enter Attribute"
+    },
+    "Lorazepa 1MG PO Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 197901,
+          "display": "lorazepam 1 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution",
+      "reason": "Select Condition/Enter Attribute"
+    },
+    "Acetaminophen 325/Oxycodone 5MG POOpioid Order A": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1049221,
+          "display": "acetaminophen 325 MG / oxycodone hydrochloride 5 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution",
+      "reason": "Select Condition/Enter Attribute"
+    },
+    "chlorpheniramine maleate 04 MG codeine phosphate 16 MG  pseudoephedrine hydrochloride 6 MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1114003,
+          "display": "chlorpheniramine maleate 0.4 MG/ML / codeine phosphate 1.6 MG/ML / pseudoephedrine hydrochloride 6 MG/ML Oral Solution"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution"
+    },
+    "12Hr Oxycodone Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1049502,
+          "display": "12 HR oxycodone hydrochloride 10 MG Extended Release Oral Tablet"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution"
+    },
+    "Oxycodone 5MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1049621,
+          "display": "Oxycodone Hydrochloride 5 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution"
+    },
+    "acetaminophen 325 MG oxycodone 25MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1049635,
+          "display": "acetaminophen 325 MG / oxycodone hydrochloride 2.5 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "SecondMedDistribution"
+    },
+    "levophanol tartrate 2MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 197873,
+          "display": "levorphanol tartrate 2 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "DischargeDelay"
+    },
+    "Acetaminophen 325MG Oxycodone 75 MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1049225,
+          "display": "Acetaminophen 325 MG / Oxycodone Hydrochloride 7.5 MG Oral Tablet"
+        }
+      ],
+      "direct_transition": "DischargeDelay"
+    },
+    "fentanyl 098 MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1053664,
+          "display": "fentanyl 0.8 MG Sublingual Tablet"
+        }
+      ],
+      "direct_transition": "DischargeDelay"
+    },
+    "Morphine Sulfate 5MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1442790,
+          "display": "1 ML Morphine Sulfate 5 MG/ML Prefilled Syringe"
+        }
+      ],
+      "direct_transition": "DischargeDelay"
+    },
+    "tapenradol ER 100MG Order": {
+      "type": "MedicationOrder",
+      "codes": [
+        {
+          "system": "RxNorm",
+          "code": 1148797,
+          "display": "12 HR tapentadol 100 MG Extended Release Oral Tablet"
+        }
+      ],
+      "direct_transition": "DischargeDelay"
+    }
+  },
+  "gmf_version": 2
+}
